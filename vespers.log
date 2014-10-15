@@ -1,4 +1,4 @@
-This is LuaTeX, Version beta-0.76.0-2013061708 (rev 4627)  (format=lualatex 2014.9.13)  5 OCT 2014 19:58
+This is LuaTeX, Version beta-0.76.0-2013061708 (rev 4627)  (format=lualatex 2014.9.13)  15 OCT 2014 22:28
  restricted \write18 enabled.
 **vespers.tex
 (./vespers.tex
@@ -336,7 +336,7 @@ luaotfload:  then use the possibly updated libraries. The merged
 luaotfload:  version is not supported as it is a frozen instance.
 luaotfload:  Problems can be reported to the ConTeXt mailing list."
 luaotfload: pop namespace from font loader -- non-destructive
-luaotfload: fontloader loaded in 0.032 seconds
+luaotfload: fontloader loaded in 0.034 seconds
 luatexbase-mcb: inserting 'luaotfload.node_processor'
 at position 1 in 'pre_linebreak_filter'
 luatexbase-mcb: inserting 'luaotfload.node_processor'
@@ -861,8 +861,8 @@ s/otf/linlibertine-r.luc)
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : path lookup of "LinLibertine_R.otf" unsuccessful, falling ba
 ck to file:
-luaotfload: font no 22 (LinLibertineO) defines feature ccmp for script latn
-luaotfload: font no 22 (LinLibertineO) defines feature ccmp for script latn
+luaotfload: font no 22 (LinLibertineO) defines feature rtbd for script latn
+luaotfload: font no 22 (LinLibertineO) defines feature rtbd for script latn
 luaotfload: font no 22 (LinLibertineO) defines feature tnum for script latn with
  language dflt
 luaotfload: font no 22 (LinLibertineO) defines feature onum for script latn with
@@ -1000,8 +1000,8 @@ k to file:(load luc: /home/ben/.texlive2013/texmf-var/luatex-cache/generic/fonts
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : path lookup of "LinBiolinum_R.otf" unsuccessful, falling bac
 k to file:
-luaotfload: font no 27 (LinBiolinumO) defines feature ccmp for script latn
-luaotfload: font no 27 (LinBiolinumO) defines feature ccmp for script latn
+luaotfload: font no 27 (LinBiolinumO) defines feature mark for script latn
+luaotfload: font no 27 (LinBiolinumO) defines feature mark for script latn
 luaotfload: font no 27 (LinBiolinumO) defines feature tnum for script latn with 
 language dflt
 luaotfload: font no 27 (LinBiolinumO) defines feature onum for script latn with 
@@ -1134,8 +1134,8 @@ ck to file:
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : path lookup of "LinLibertine_R.otf" unsuccessful, falling ba
 ck to file:
-luaotfload: font no 22 (LinLibertineO) defines feature ccmp for script latn
-luaotfload: font no 22 (LinLibertineO) defines feature ccmp for script latn
+luaotfload: font no 22 (LinLibertineO) defines feature rtbd for script latn
+luaotfload: font no 22 (LinLibertineO) defines feature rtbd for script latn
 luaotfload: font no 22 (LinLibertineO) defines feature tnum for script latn with
  language dflt
 luaotfload: font no 22 (LinLibertineO) defines feature onum for script latn with
@@ -1156,8 +1156,8 @@ ck to file:
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : path lookup of "LinLibertine_R.otf" unsuccessful, falling ba
 ck to file:
-luaotfload: font no 22 (LinLibertineO) defines feature ccmp for script latn
-luaotfload: font no 22 (LinLibertineO) defines feature ccmp for script latn
+luaotfload: font no 22 (LinLibertineO) defines feature rtbd for script latn
+luaotfload: font no 22 (LinLibertineO) defines feature rtbd for script latn
 luaotfload: font no 22 (LinLibertineO) defines feature tnum for script latn with
  language dflt
 luaotfload: font no 22 (LinLibertineO) defines feature onum for script latn with
@@ -1302,8 +1302,8 @@ ck to file:
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : path lookup of "LinLibertine_R.otf" unsuccessful, falling ba
 ck to file:
-luaotfload: font no 22 (LinLibertineO) defines feature ccmp for script latn
-luaotfload: font no 22 (LinLibertineO) defines feature ccmp for script latn
+luaotfload: font no 22 (LinLibertineO) defines feature rtbd for script latn
+luaotfload: font no 22 (LinLibertineO) defines feature rtbd for script latn
 luaotfload: font no 22 (LinLibertineO) defines feature tnum for script latn with
  language dflt
 luaotfload: font no 22 (LinLibertineO) defines feature onum for script latn with
@@ -1324,8 +1324,8 @@ ck to file:
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : path lookup of "LinLibertine_R.otf" unsuccessful, falling ba
 ck to file:
-luaotfload: font no 22 (LinLibertineO) defines feature ccmp for script latn
-luaotfload: font no 22 (LinLibertineO) defines feature ccmp for script latn
+luaotfload: font no 22 (LinLibertineO) defines feature rtbd for script latn
+luaotfload: font no 22 (LinLibertineO) defines feature rtbd for script latn
 luaotfload: font no 22 (LinLibertineO) defines feature tnum for script latn with
  language dflt
 luaotfload: font no 22 (LinLibertineO) defines feature lnum for script latn with
@@ -1455,9 +1455,9 @@ ts/otf/linlibertine-dr.luc)
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : path lookup of "LinLibertine_DR.otf" unsuccessful, falling b
 ack to file:
-luaotfload: font no 33 (LinLibertineDisplayO) defines feature ccmp for script la
+luaotfload: font no 33 (LinLibertineDisplayO) defines feature mark for script la
 tn
-luaotfload: font no 33 (LinLibertineDisplayO) defines feature ccmp for script la
+luaotfload: font no 33 (LinLibertineDisplayO) defines feature mark for script la
 tn
 luaotfload: font no 33 (LinLibertineDisplayO) defines feature tnum for script la
 tn with language dflt
@@ -1575,8 +1575,8 @@ k to file:
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : path lookup of "LinBiolinum_R.otf" unsuccessful, falling bac
 k to file:
-luaotfload: font no 27 (LinBiolinumO) defines feature ccmp for script latn
-luaotfload: font no 27 (LinBiolinumO) defines feature ccmp for script latn
+luaotfload: font no 27 (LinBiolinumO) defines feature mark for script latn
+luaotfload: font no 27 (LinBiolinumO) defines feature mark for script latn
 luaotfload: font no 27 (LinBiolinumO) defines feature tnum for script latn with 
 language dflt
 luaotfload: font no 27 (LinBiolinumO) defines feature onum for script latn with 
@@ -1597,8 +1597,8 @@ k to file:
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : path lookup of "LinBiolinum_R.otf" unsuccessful, falling bac
 k to file:
-luaotfload: font no 27 (LinBiolinumO) defines feature ccmp for script latn
-luaotfload: font no 27 (LinBiolinumO) defines feature ccmp for script latn
+luaotfload: font no 27 (LinBiolinumO) defines feature mark for script latn
+luaotfload: font no 27 (LinBiolinumO) defines feature mark for script latn
 luaotfload: font no 27 (LinBiolinumO) defines feature tnum for script latn with 
 language dflt
 luaotfload: font no 27 (LinBiolinumO) defines feature onum for script latn with 
@@ -1619,8 +1619,8 @@ k to file:
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : path lookup of "LinBiolinum_R.otf" unsuccessful, falling bac
 k to file:
-luaotfload: font no 27 (LinBiolinumO) defines feature ccmp for script latn
-luaotfload: font no 27 (LinBiolinumO) defines feature ccmp for script latn
+luaotfload: font no 27 (LinBiolinumO) defines feature mark for script latn
+luaotfload: font no 27 (LinBiolinumO) defines feature mark for script latn
 luaotfload: font no 27 (LinBiolinumO) defines feature tnum for script latn with 
 language dflt
 luaotfload | load : auto-selecting default features for script: dflt
@@ -1732,8 +1732,8 @@ s/otf/linlibertine-m.luc)
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : path lookup of "LinLibertine_M.otf" unsuccessful, falling ba
 ck to file:
-luaotfload: font no 34 (LinLibertineMO) defines feature ccmp for script latn
-luaotfload: font no 34 (LinLibertineMO) defines feature ccmp for script latn
+luaotfload: font no 34 (LinLibertineMO) defines feature mark for script latn
+luaotfload: font no 34 (LinLibertineMO) defines feature mark for script latn
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : path lookup of "LinLibertine_M.otf" unsuccessful, falling ba
 ck to file:
@@ -1788,8 +1788,8 @@ ck to file:
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : path lookup of "LinLibertine_M.otf" unsuccessful, falling ba
 ck to file:
-luaotfload: font no 34 (LinLibertineMO) defines feature ccmp for script latn
-luaotfload: font no 34 (LinLibertineMO) defines feature ccmp for script latn
+luaotfload: font no 34 (LinLibertineMO) defines feature mark for script latn
+luaotfload: font no 34 (LinLibertineMO) defines feature mark for script latn
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1806,8 +1806,8 @@ k to file:(load luc: /home/ben/.texlive2013/texmf-var/luatex-cache/generic/fonts
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : path lookup of "LinBiolinum_K.otf" unsuccessful, falling bac
 k to file:
-luaotfload: font no 38 (LinBiolinumOKb) defines feature liga for script latn
-luaotfload: font no 38 (LinBiolinumOKb) defines feature liga for script latn
+luaotfload: font no 38 (LinBiolinumOKb) defines feature mark for script latn
+luaotfload: font no 38 (LinBiolinumOKb) defines feature mark for script latn
 \g_fontspec_family_LinBiolinum_K_int=\count338
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : path lookup of "LinBiolinum_K.otf" unsuccessful, falling bac
@@ -1830,8 +1830,8 @@ s/otf/linlibertine-i.luc)
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : path lookup of "LinLibertine_I.otf" unsuccessful, falling ba
 ck to file:
-luaotfload: font no 39 (LinLibertineIO) defines feature ccmp for script latn
-luaotfload: font no 39 (LinLibertineIO) defines feature ccmp for script latn
+luaotfload: font no 39 (LinLibertineIO) defines feature mark for script latn
+luaotfload: font no 39 (LinLibertineIO) defines feature mark for script latn
 \g_fontspec_family_LinLibertine_I_int=\count339
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : path lookup of "LinLibertine_I.otf" unsuccessful, falling ba
@@ -1855,8 +1855,8 @@ ck to file:
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : path lookup of "LinLibertine_R.otf" unsuccessful, falling ba
 ck to file:
-luaotfload: font no 22 (LinLibertineO) defines feature ccmp for script latn
-luaotfload: font no 22 (LinLibertineO) defines feature ccmp for script latn
+luaotfload: font no 22 (LinLibertineO) defines feature rtbd for script latn
+luaotfload: font no 22 (LinLibertineO) defines feature rtbd for script latn
 luaotfload: font no 22 (LinLibertineO) defines feature tnum for script latn with
  language dflt
 luaotfload: font no 22 (LinLibertineO) defines feature onum for script latn with
@@ -1969,8 +1969,8 @@ ck to file:
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : path lookup of "LinLibertine_R.otf" unsuccessful, falling ba
 ck to file:
-luaotfload: font no 22 (LinLibertineO) defines feature ccmp for script latn
-luaotfload: font no 22 (LinLibertineO) defines feature ccmp for script latn
+luaotfload: font no 22 (LinLibertineO) defines feature rtbd for script latn
+luaotfload: font no 22 (LinLibertineO) defines feature rtbd for script latn
 luaotfload: font no 22 (LinLibertineO) defines feature pnum for script latn with
  language dflt
 luaotfload: font no 22 (LinLibertineO) defines feature onum for script latn with
@@ -2083,8 +2083,8 @@ k to file:
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : path lookup of "LinBiolinum_R.otf" unsuccessful, falling bac
 k to file:
-luaotfload: font no 27 (LinBiolinumO) defines feature ccmp for script latn
-luaotfload: font no 27 (LinBiolinumO) defines feature ccmp for script latn
+luaotfload: font no 27 (LinBiolinumO) defines feature mark for script latn
+luaotfload: font no 27 (LinBiolinumO) defines feature mark for script latn
 luaotfload: font no 27 (LinBiolinumO) defines feature tnum for script latn with 
 language dflt
 luaotfload: font no 27 (LinBiolinumO) defines feature onum for script latn with 
@@ -2204,8 +2204,8 @@ k to file:
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : path lookup of "LinBiolinum_R.otf" unsuccessful, falling bac
 k to file:
-luaotfload: font no 27 (LinBiolinumO) defines feature ccmp for script latn
-luaotfload: font no 27 (LinBiolinumO) defines feature ccmp for script latn
+luaotfload: font no 27 (LinBiolinumO) defines feature mark for script latn
+luaotfload: font no 27 (LinBiolinumO) defines feature mark for script latn
 luaotfload: font no 27 (LinBiolinumO) defines feature pnum for script latn with 
 language dflt
 luaotfload: font no 27 (LinBiolinumO) defines feature onum for script latn with 
@@ -2652,9 +2652,9 @@ luaotfload | load : auto-selecting default features for script: dflt(load luc: /
 home/ben/.texlive2013/texmf-var/luatex-cache/generic/fonts/otf/linlibertine-drah
 ben.luc)
 luaotfload | load : auto-selecting default features for script: dflt
-luaotfload: font no 58 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 58 (LinLibertineDisplay) defines feature mark for script lat
 n
-luaotfload: font no 58 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 58 (LinLibertineDisplay) defines feature mark for script lat
 n
 \g_fontspec_family_LinLibertine_DRahBen_int=\count348
 luaotfload | load : auto-selecting default features for script: dflt
@@ -2699,9 +2699,9 @@ luaotfload | load : auto-selecting default features for script: dflt(load luc: /
 home/ben/.texlive2013/texmf-var/luatex-cache/generic/fonts/otf/linlibertine-drah
 ben2.luc)
 luaotfload | load : auto-selecting default features for script: dflt
-luaotfload: font no 60 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 60 (LinLibertineDisplay) defines feature mark for script lat
 n
-luaotfload: font no 60 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 60 (LinLibertineDisplay) defines feature mark for script lat
 n
 \g_fontspec_family_LinLibertine_DRahBen2_int=\count349
 luaotfload | load : auto-selecting default features for script: dflt
@@ -2746,9 +2746,9 @@ luaotfload | load : auto-selecting default features for script: dflt(load luc: /
 home/ben/.texlive2013/texmf-var/luatex-cache/generic/fonts/otf/linlibertine-drah
 ben3.luc)
 luaotfload | load : auto-selecting default features for script: dflt
-luaotfload: font no 62 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 62 (LinLibertineDisplay) defines feature mark for script lat
 n
-luaotfload: font no 62 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 62 (LinLibertineDisplay) defines feature mark for script lat
 n
 \g_fontspec_family_LinLibertine_DRahBen3_int=\count350
 luaotfload | load : auto-selecting default features for script: dflt
@@ -2791,9 +2791,9 @@ luaotfload | load : auto-selecting default features for script: latn
 luaotfload | load : no defaults for script "latn", falling back to "dflt"
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : auto-selecting default features for script: dflt
-luaotfload: font no 58 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 58 (LinLibertineDisplay) defines feature mark for script lat
 n
-luaotfload: font no 58 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 58 (LinLibertineDisplay) defines feature mark for script lat
 n
 .................................................
 . fontspec info: "defining-font"
@@ -2805,9 +2805,9 @@ n
 .................................................
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : auto-selecting default features for script: dflt
-luaotfload: font no 60 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 60 (LinLibertineDisplay) defines feature mark for script lat
 n
-luaotfload: font no 60 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 60 (LinLibertineDisplay) defines feature mark for script lat
 n
 .................................................
 . fontspec info: "defining-font"
@@ -2819,9 +2819,9 @@ n
 .................................................
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : auto-selecting default features for script: dflt
-luaotfload: font no 62 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 62 (LinLibertineDisplay) defines feature mark for script lat
 n
-luaotfload: font no 62 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 62 (LinLibertineDisplay) defines feature mark for script lat
 n
 .................................................
 . fontspec info: "defining-font"
@@ -3100,9 +3100,9 @@ luaotfload | load : path lookup of "LinLibertine_R.otf" unsuccessful, falling ba
 ck to file:
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : auto-selecting default features for script: dflt
-luaotfload: font no 69 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 69 (LinLibertineDisplay) defines feature mark for script lat
 n
-luaotfload: font no 69 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 69 (LinLibertineDisplay) defines feature mark for script lat
 n
 .................................................
 . fontspec info: "defining-font"
@@ -3118,9 +3118,9 @@ luaotfload | load : auto-selecting default features for script: dflt(load luc: /
 home/ben/.texlive2013/texmf-var/luatex-cache/generic/fonts/otf/linlibertine-drah
 ben4.luc)
 luaotfload | load : auto-selecting default features for script: dflt
-luaotfload: font no 71 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 71 (LinLibertineDisplay) defines feature mark for script lat
 n
-luaotfload: font no 71 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 71 (LinLibertineDisplay) defines feature mark for script lat
 n
 \g_fontspec_family_LinLibertine_DRahBen4_int=\count351
 luaotfload | load : auto-selecting default features for script: dflt
@@ -3163,9 +3163,9 @@ luaotfload | load : auto-selecting default features for script: latn
 luaotfload | load : no defaults for script "latn", falling back to "dflt"
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : auto-selecting default features for script: dflt
-luaotfload: font no 69 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 69 (LinLibertineDisplay) defines feature mark for script lat
 n
-luaotfload: font no 69 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 69 (LinLibertineDisplay) defines feature mark for script lat
 n
 .................................................
 . fontspec info: "defining-font"
@@ -3177,9 +3177,9 @@ n
 .................................................
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : auto-selecting default features for script: dflt
-luaotfload: font no 71 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 71 (LinLibertineDisplay) defines feature mark for script lat
 n
-luaotfload: font no 71 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 71 (LinLibertineDisplay) defines feature mark for script lat
 n
 .................................................
 . fontspec info: "defining-font"
@@ -3416,9 +3416,9 @@ luatexbase-mcb: inserting 'gregoriotex.disable_hyphenation'
 at position 1 in 'hyphenate'
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : auto-selecting default features for script: dflt
-luaotfload: font no 69 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 69 (LinLibertineDisplay) defines feature mark for script lat
 n
-luaotfload: font no 69 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 69 (LinLibertineDisplay) defines feature mark for script lat
 n
 .................................................
 . fontspec info: "defining-font"
@@ -3430,9 +3430,9 @@ n
 .................................................
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : auto-selecting default features for script: dflt
-luaotfload: font no 71 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 71 (LinLibertineDisplay) defines feature mark for script lat
 n
-luaotfload: font no 71 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 71 (LinLibertineDisplay) defines feature mark for script lat
 n
 .................................................
 . fontspec info: "defining-font"
@@ -3444,9 +3444,9 @@ n
 .................................................
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : auto-selecting default features for script: dflt
-luaotfload: font no 69 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 69 (LinLibertineDisplay) defines feature mark for script lat
 n
-luaotfload: font no 69 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 69 (LinLibertineDisplay) defines feature mark for script lat
 n
 .................................................
 . fontspec info: "defining-font"
@@ -3458,9 +3458,9 @@ n
 .................................................
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : auto-selecting default features for script: dflt
-luaotfload: font no 71 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 71 (LinLibertineDisplay) defines feature mark for script lat
 n
-luaotfload: font no 71 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 71 (LinLibertineDisplay) defines feature mark for script lat
 n
 .................................................
 . fontspec info: "defining-font"
@@ -3660,9 +3660,9 @@ luatexbase-mcb: inserting 'gregoriotex.disable_hyphenation'
 at position 1 in 'hyphenate'
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : auto-selecting default features for script: dflt
-luaotfload: font no 69 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 69 (LinLibertineDisplay) defines feature mark for script lat
 n
-luaotfload: font no 69 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 69 (LinLibertineDisplay) defines feature mark for script lat
 n
 .................................................
 . fontspec info: "defining-font"
@@ -3674,9 +3674,9 @@ n
 .................................................
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : auto-selecting default features for script: dflt
-luaotfload: font no 71 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 71 (LinLibertineDisplay) defines feature mark for script lat
 n
-luaotfload: font no 71 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 71 (LinLibertineDisplay) defines feature mark for script lat
 n
 .................................................
 . fontspec info: "defining-font"
@@ -3688,9 +3688,9 @@ n
 .................................................
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : auto-selecting default features for script: dflt
-luaotfload: font no 69 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 69 (LinLibertineDisplay) defines feature mark for script lat
 n
-luaotfload: font no 69 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 69 (LinLibertineDisplay) defines feature mark for script lat
 n
 .................................................
 . fontspec info: "defining-font"
@@ -3702,9 +3702,9 @@ n
 .................................................
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : auto-selecting default features for script: dflt
-luaotfload: font no 71 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 71 (LinLibertineDisplay) defines feature mark for script lat
 n
-luaotfload: font no 71 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 71 (LinLibertineDisplay) defines feature mark for script lat
 n
 .................................................
 . fontspec info: "defining-font"
@@ -3860,9 +3860,9 @@ luatexbase-mcb: inserting 'gregoriotex.disable_hyphenation'
 at position 1 in 'hyphenate'
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : auto-selecting default features for script: dflt
-luaotfload: font no 69 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 69 (LinLibertineDisplay) defines feature mark for script lat
 n
-luaotfload: font no 69 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 69 (LinLibertineDisplay) defines feature mark for script lat
 n
 .................................................
 . fontspec info: "defining-font"
@@ -3874,9 +3874,9 @@ n
 .................................................
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : auto-selecting default features for script: dflt
-luaotfload: font no 71 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 71 (LinLibertineDisplay) defines feature mark for script lat
 n
-luaotfload: font no 71 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 71 (LinLibertineDisplay) defines feature mark for script lat
 n
 .................................................
 . fontspec info: "defining-font"
@@ -3888,9 +3888,9 @@ n
 .................................................
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : auto-selecting default features for script: dflt
-luaotfload: font no 69 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 69 (LinLibertineDisplay) defines feature mark for script lat
 n
-luaotfload: font no 69 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 69 (LinLibertineDisplay) defines feature mark for script lat
 n
 .................................................
 . fontspec info: "defining-font"
@@ -3902,9 +3902,9 @@ n
 .................................................
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : auto-selecting default features for script: dflt
-luaotfload: font no 71 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 71 (LinLibertineDisplay) defines feature mark for script lat
 n
-luaotfload: font no 71 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 71 (LinLibertineDisplay) defines feature mark for script lat
 n
 .................................................
 . fontspec info: "defining-font"
@@ -4094,9 +4094,9 @@ luatexbase-mcb: inserting 'gregoriotex.disable_hyphenation'
 at position 1 in 'hyphenate'
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : auto-selecting default features for script: dflt
-luaotfload: font no 69 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 69 (LinLibertineDisplay) defines feature mark for script lat
 n
-luaotfload: font no 69 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 69 (LinLibertineDisplay) defines feature mark for script lat
 n
 .................................................
 . fontspec info: "defining-font"
@@ -4108,9 +4108,9 @@ n
 .................................................
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : auto-selecting default features for script: dflt
-luaotfload: font no 71 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 71 (LinLibertineDisplay) defines feature mark for script lat
 n
-luaotfload: font no 71 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 71 (LinLibertineDisplay) defines feature mark for script lat
 n
 .................................................
 . fontspec info: "defining-font"
@@ -4122,9 +4122,9 @@ n
 .................................................
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : auto-selecting default features for script: dflt
-luaotfload: font no 69 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 69 (LinLibertineDisplay) defines feature mark for script lat
 n
-luaotfload: font no 69 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 69 (LinLibertineDisplay) defines feature mark for script lat
 n
 .................................................
 . fontspec info: "defining-font"
@@ -4136,9 +4136,9 @@ n
 .................................................
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : auto-selecting default features for script: dflt
-luaotfload: font no 71 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 71 (LinLibertineDisplay) defines feature mark for script lat
 n
-luaotfload: font no 71 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 71 (LinLibertineDisplay) defines feature mark for script lat
 n
 .................................................
 . fontspec info: "defining-font"
@@ -4323,9 +4323,9 @@ luatexbase-mcb: inserting 'gregoriotex.disable_hyphenation'
 at position 1 in 'hyphenate'
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : auto-selecting default features for script: dflt
-luaotfload: font no 69 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 69 (LinLibertineDisplay) defines feature mark for script lat
 n
-luaotfload: font no 69 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 69 (LinLibertineDisplay) defines feature mark for script lat
 n
 .................................................
 . fontspec info: "defining-font"
@@ -4337,9 +4337,9 @@ n
 .................................................
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : auto-selecting default features for script: dflt
-luaotfload: font no 71 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 71 (LinLibertineDisplay) defines feature mark for script lat
 n
-luaotfload: font no 71 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 71 (LinLibertineDisplay) defines feature mark for script lat
 n
 .................................................
 . fontspec info: "defining-font"
@@ -4351,9 +4351,9 @@ n
 .................................................
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : auto-selecting default features for script: dflt
-luaotfload: font no 69 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 69 (LinLibertineDisplay) defines feature mark for script lat
 n
-luaotfload: font no 69 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 69 (LinLibertineDisplay) defines feature mark for script lat
 n
 .................................................
 . fontspec info: "defining-font"
@@ -4365,9 +4365,9 @@ n
 .................................................
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : auto-selecting default features for script: dflt
-luaotfload: font no 71 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 71 (LinLibertineDisplay) defines feature mark for script lat
 n
-luaotfload: font no 71 (LinLibertineDisplay) defines feature ccmp for script lat
+luaotfload: font no 71 (LinLibertineDisplay) defines feature mark for script lat
 n
 .................................................
 . fontspec info: "defining-font"
@@ -5158,15 +5158,15 @@ spers.aux) )
 
 Here is how much of LuaTeX's memory you used:
  28149 strings out of 494698
- 3553552,552014 words of node,token memory allocated
+ 3553547,552014 words of node,token memory allocated
  3030807 words of node memory still in use:
    103404 hlist, 17275 vlist, 69099 rule, 172657 glue, 68911 kern, 445 penalty, 
 34624 glyph, 69239 attribute, 775 glue_spec, 34646 attribute_list, 1 write, 442 
 pdf_literal, 1 pdf_refximage, 884 pdf_colorstack, 1 pdf_setmatrix, 1 pdf_save, 1
  pdf_restore nodes
-   avail lists: 1:2,2:4420,3:1421,4:288,5:957,6:760,7:115,8:3,9:481,10:139
+   avail lists: 1:3,2:4420,3:1420,4:288,5:957,6:760,7:115,8:3,9:481,10:139
  29632 multiletter control sequences out of 65536+600000
- 75 fonts using 19293823 bytes
+ 75 fonts using 19293983 bytes
  48i,15n,53p,837b,2058s stack positions out of 5000i,500n,10000p,200000b,100000s
 <./gresym3.ttf><./LinLibertine_DRahBen4.ttf><./LinLibertine_DRahBen3.ttf><./LinL
 ibertine_DRahBen2.ttf><./LinLibertine_DRahBen.ttf></usr/local/texlive/2013/texmf
@@ -5175,7 +5175,7 @@ ibertine_DRahBen2.ttf><./LinLibertine_DRahBen.ttf></usr/local/texlive/2013/texmf
 onts/opentype/public/libertine/LinLibertine_RB.otf></usr/local/texlive/2013/texm
 f-dist/fonts/opentype/public/libertine/LinLibertine_R.otf></home/ben/texmf/fonts
 /truetype/public/gregoriotex/gresym.ttf>
-Output written on vespers.pdf (74 pages, 865934 bytes).
+Output written on vespers.pdf (74 pages, 865939 bytes).
 
 PDF statistics: 308 PDF objects out of 1000 (max. 8388607)
  198 compressed objects within 2 object streams
