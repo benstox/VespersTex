@@ -1,4 +1,4 @@
-This is LuaTeX, Version beta-0.76.0-2013061708 (rev 4627)  (format=lualatex 2014.9.13)  20 DEC 2014 10:39
+This is LuaTeX, Version beta-0.76.0-2013061708 (rev 4627)  (format=lualatex 2014.9.13)  22 DEC 2014 14:16
  restricted \write18 enabled.
 **vespers.tex
 (./vespers.tex
@@ -336,7 +336,7 @@ luaotfload:  then use the possibly updated libraries. The merged
 luaotfload:  version is not supported as it is a frozen instance.
 luaotfload:  Problems can be reported to the ConTeXt mailing list."
 luaotfload: pop namespace from font loader -- non-destructive
-luaotfload: fontloader loaded in 0.033 seconds
+luaotfload: fontloader loaded in 0.031 seconds
 luatexbase-mcb: inserting 'luaotfload.node_processor'
 at position 1 in 'pre_linebreak_filter'
 luatexbase-mcb: inserting 'luaotfload.node_processor'
@@ -861,8 +861,8 @@ s/otf/linlibertine-r.luc)
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : path lookup of "LinLibertine_R.otf" unsuccessful, falling ba
 ck to file:
-luaotfload: font no 22 (LinLibertineO) defines feature kern for script latn
-luaotfload: font no 22 (LinLibertineO) defines feature kern for script latn
+luaotfload: font no 22 (LinLibertineO) defines feature mkmk for script latn
+luaotfload: font no 22 (LinLibertineO) defines feature mkmk for script latn
 luaotfload: font no 22 (LinLibertineO) defines feature tnum for script latn with
  language dflt
 luaotfload: font no 22 (LinLibertineO) defines feature onum for script latn with
@@ -1134,8 +1134,8 @@ ck to file:
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : path lookup of "LinLibertine_R.otf" unsuccessful, falling ba
 ck to file:
-luaotfload: font no 22 (LinLibertineO) defines feature kern for script latn
-luaotfload: font no 22 (LinLibertineO) defines feature kern for script latn
+luaotfload: font no 22 (LinLibertineO) defines feature mkmk for script latn
+luaotfload: font no 22 (LinLibertineO) defines feature mkmk for script latn
 luaotfload: font no 22 (LinLibertineO) defines feature tnum for script latn with
  language dflt
 luaotfload: font no 22 (LinLibertineO) defines feature onum for script latn with
@@ -1156,8 +1156,8 @@ ck to file:
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : path lookup of "LinLibertine_R.otf" unsuccessful, falling ba
 ck to file:
-luaotfload: font no 22 (LinLibertineO) defines feature kern for script latn
-luaotfload: font no 22 (LinLibertineO) defines feature kern for script latn
+luaotfload: font no 22 (LinLibertineO) defines feature mkmk for script latn
+luaotfload: font no 22 (LinLibertineO) defines feature mkmk for script latn
 luaotfload: font no 22 (LinLibertineO) defines feature tnum for script latn with
  language dflt
 luaotfload: font no 22 (LinLibertineO) defines feature onum for script latn with
@@ -1302,8 +1302,8 @@ ck to file:
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : path lookup of "LinLibertine_R.otf" unsuccessful, falling ba
 ck to file:
-luaotfload: font no 22 (LinLibertineO) defines feature kern for script latn
-luaotfload: font no 22 (LinLibertineO) defines feature kern for script latn
+luaotfload: font no 22 (LinLibertineO) defines feature mkmk for script latn
+luaotfload: font no 22 (LinLibertineO) defines feature mkmk for script latn
 luaotfload: font no 22 (LinLibertineO) defines feature tnum for script latn with
  language dflt
 luaotfload: font no 22 (LinLibertineO) defines feature onum for script latn with
@@ -1324,8 +1324,8 @@ ck to file:
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : path lookup of "LinLibertine_R.otf" unsuccessful, falling ba
 ck to file:
-luaotfload: font no 22 (LinLibertineO) defines feature kern for script latn
-luaotfload: font no 22 (LinLibertineO) defines feature kern for script latn
+luaotfload: font no 22 (LinLibertineO) defines feature mkmk for script latn
+luaotfload: font no 22 (LinLibertineO) defines feature mkmk for script latn
 luaotfload: font no 22 (LinLibertineO) defines feature tnum for script latn with
  language dflt
 luaotfload: font no 22 (LinLibertineO) defines feature lnum for script latn with
@@ -1855,8 +1855,8 @@ ck to file:
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : path lookup of "LinLibertine_R.otf" unsuccessful, falling ba
 ck to file:
-luaotfload: font no 22 (LinLibertineO) defines feature kern for script latn
-luaotfload: font no 22 (LinLibertineO) defines feature kern for script latn
+luaotfload: font no 22 (LinLibertineO) defines feature mkmk for script latn
+luaotfload: font no 22 (LinLibertineO) defines feature mkmk for script latn
 luaotfload: font no 22 (LinLibertineO) defines feature tnum for script latn with
  language dflt
 luaotfload: font no 22 (LinLibertineO) defines feature onum for script latn with
@@ -1969,8 +1969,8 @@ ck to file:
 luaotfload | load : auto-selecting default features for script: dflt
 luaotfload | load : path lookup of "LinLibertine_R.otf" unsuccessful, falling ba
 ck to file:
-luaotfload: font no 22 (LinLibertineO) defines feature kern for script latn
-luaotfload: font no 22 (LinLibertineO) defines feature kern for script latn
+luaotfload: font no 22 (LinLibertineO) defines feature mkmk for script latn
+luaotfload: font no 22 (LinLibertineO) defines feature mkmk for script latn
 luaotfload: font no 22 (LinLibertineO) defines feature pnum for script latn with
  language dflt
 luaotfload: font no 22 (LinLibertineO) defines feature onum for script latn with
@@ -5166,7 +5166,7 @@ pdf_literal, 1 pdf_refximage, 884 pdf_colorstack, 1 pdf_setmatrix, 1 pdf_save, 1
  pdf_restore nodes
    avail lists: 1:1,2:4420,3:1420,4:288,5:957,6:760,7:115,8:4,9:481,10:133
  29632 multiletter control sequences out of 65536+600000
- 75 fonts using 19293823 bytes
+ 75 fonts using 19293903 bytes
  48i,15n,53p,837b,2058s stack positions out of 5000i,500n,10000p,200000b,100000s
 <./gresym3.ttf><./LinLibertine_DRahBen4.ttf><./LinLibertine_DRahBen3.ttf><./LinL
 ibertine_DRahBen2.ttf><./LinLibertine_DRahBen.ttf></usr/local/texlive/2013/texmf
@@ -5175,7 +5175,7 @@ ibertine_DRahBen2.ttf><./LinLibertine_DRahBen.ttf></usr/local/texlive/2013/texmf
 onts/opentype/public/libertine/LinLibertine_RB.otf></usr/local/texlive/2013/texm
 f-dist/fonts/opentype/public/libertine/LinLibertine_R.otf></home/ben/texmf/fonts
 /truetype/public/gregoriotex/gresym.ttf>
-Output written on vespers.pdf (74 pages, 866479 bytes).
+Output written on vespers.pdf (74 pages, 866481 bytes).
 
 PDF statistics: 308 PDF objects out of 1000 (max. 8388607)
  198 compressed objects within 2 object streams
