@@ -1,0 +1,13 @@
+*.log
+.goutputstream-3MWXCX
+*~
+*.gaux
+*.end
+*.aux
+*.1
+*.1R
+*.synctex.gz
+*(busy)
+.DS_Store
+vespers_1*
+vespers_2*
