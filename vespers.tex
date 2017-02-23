@@ -25,10 +25,10 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \lhead{}
-\chead{\color{benblue1}{\gregoriosymbolfont  \char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76}} 
+\chead{\color{benblue1}{\greornamentation  \char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76}} 
 \rhead{}
 \lfoot{}
-\cfoot{\color{benblue1}{\gregoriosymbolfont  \char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76}\\ \color{black}\thepage}
+\cfoot{\color{benblue1}{\greornamentation  \char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76}\\ \color{black}\thepage}
 \rfoot{}
 \renewcommand{\headrulewidth}{0pt}
 
@@ -56,20 +56,20 @@
 \definecolor{benred3}{HTML}{EA4031}
 \definecolor{benred4}{HTML}{E9432D}
 \definecolor{benred5}{HTML}{B22312}
-\definecolor{benred6}{HTML}{EE4F3/F31}
+\definecolor{benred6}{HTML}{EE4F31}
 \definecolor{benred7}{HTML}{C4160D}
 \definecolor{benred8}{HTML}{E82C00} %seems good, maybe the best?
-\definecolor{benred9}{HTML}{FF3/F3100} %seems good
-\definecolor{benred10}{HTML}{FF5/F5000}
-\definecolor{benred11}{HTML}{F5/F53000} %seems good
-\definecolor{benred12}{HTML}{F5/F53010} %seems good, maybe the best?
+\definecolor{benred9}{HTML}{FF3100} %seems good
+\definecolor{benred10}{HTML}{FF5000}
+\definecolor{benred11}{HTML}{F53000} %seems good
+\definecolor{benred12}{HTML}{F53010} %seems good, maybe the best?
 
 % BLUES
 \definecolor{benblue1}{HTML}{2B22C7}
 
 % YELLOWS
 \definecolor{benyellow1}{HTML}{FFD435}
-\definecolor{benyellow2}{HTML}{7C6F3/F3B}
+\definecolor{benyellow2}{HTML}{7C6F3B}
 
 % TRYING TO DEFINE THE FORMATTING OF
 % PSALM TEXT
@@ -102,13 +102,13 @@
 % MAKES T.P. TEXT
 \def\TemporePaschale{\textit{\textcolor{benred8}{T. P.}}}
 
-% MAKES ALL \gresixstars RED
-\let\oldgresixstar\gresixstar
-\renewcommand{\gresixstar}{\textcolor{benred8}{\oldgresixstar}}
+% MAKES ALL \GreStars RED
+\let\OldGreStar\GreStar
+\renewcommand{\GreStar}{\textcolor{benred8}{\OldGreStar}}
 
 % MAKES ALL \gredaggers RED
-\let\oldgredagger\gredagger
-\renewcommand{\gredagger}{\textcolor{benred8}{\oldgredagger}}
+\let\OldGreDagger\GreDagger
+\renewcommand{\GreDagger}{\textcolor{benred8}{\OldGreDagger}}
 
 % MAKES ALL \Vbars RED
 \let\oldVbar\Vbar
@@ -238,13 +238,13 @@ ORNATUM SIGNIS RHYTHMICIS
 
 \begin{large}
 
-\textsc{Versio 1.6 MMXV}
+\textsc{Versio 2.0 MMXVII}
 
 \end{large}
 
 \end{center}
 
-%redefine 'plain' page styel to have blue page numbers too
+%redefine 'plain' page style to have blue page numbers too
 \fancypagestyle{plain}{
 	\chead{}
 	\cfoot{\textcolor{benblue1}{\thepage}}
@@ -291,7 +291,7 @@ ORNATUM SIGNIS RHYTHMICIS
 %\commentary{{\small \emph{Cf. Is. 30, 19 . 30 ; Ps. 79}}}
 
 % and finally we include the score. The file must be in the same directory as this one.
-\includescore{DeusInAdjutorium.tex}
+\gregorioscore[a]{DeusInAdjutorium.gtex}
 
 
 %%%%%%%%%%%%%%%%
@@ -307,7 +307,7 @@ A Septuagesima usque ad Pascha, loco \emph{\textcolor{black}{Allelúia}}, canitu
 \end{rubric}
 
 {\noinitial
-\includescore{LausTibi.tex}
+\gregorioscore[a]{LausTibi.gtex}
 }
 
 %\vspace{2 mm}
@@ -326,7 +326,7 @@ A Septuagesima usque ad Pascha, loco \emph{\textcolor{black}{Allelúia}}, canitu
 {\fontsize{170}{170}\selectfont #1}%
 }
 {\gresetbiginitial
-\includescore{Dominica/DomAnt1-01.tex}
+\gregorioscore[a]{Dominica/DomAnt1-01.gtex}
 
 }
 
@@ -358,7 +358,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \end{psalmtext}
 
 {\noinitial
-\includescore{Dominica/DomAnt1-02.tex}
+\gregorioscore[a]{Dominica/DomAnt1-02.gtex}
 }
 
 \vspace{2 mm}
@@ -371,7 +371,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \setspacebeforeinitial{6mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{2 \Abar\ IV g}}}}{\small \textsc{ \textbf{\textcolor{benred8}{2 \Abar\ IV g}}}}
-\includescore{Dominica/DomAnt2-01.tex}
+\gregorioscore[a]{Dominica/DomAnt2-01.gtex}
 
 {
 \centering
@@ -383,7 +383,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 
 {\noinitial
 %\grenoinitial
-\includescore{Dominica/DomFL2.tex}
+\gregorioscore[a]{Dominica/DomFL2.gtex}
 
 }
 
@@ -414,7 +414,7 @@ Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in
 \end{psalmtext}
 
 {\noinitial
-\includescore{Dominica/DomAnt2-02.tex}
+\gregorioscore[a]{Dominica/DomAnt2-02.gtex}
 }
 
 \vspace{2 mm}
@@ -427,7 +427,7 @@ Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in
 \setspacebeforeinitial{7mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{3 \Abar\ IV a}}}}{\small \textsc{ \textbf{\textcolor{benred8}{3 \Abar\ IV a}}}}
-\includescore{Dominica/DomAnt3-01.tex}
+\gregorioscore[a]{Dominica/DomAnt3-01.gtex}
 
 %{
 %\centering
@@ -438,7 +438,7 @@ Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in
 \subsubsection*{Psalmus 111.}
 
 {\noinitial
-\includescore{Dominica/DomFL3.tex}
+\gregorioscore[a]{Dominica/DomFL3.gtex}
 }
 
 
@@ -466,7 +466,7 @@ Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in
 \end{psalmtext}
 
 {\noinitial
-\includescore{Dominica/DomAnt3-02.tex}
+\gregorioscore[a]{Dominica/DomAnt3-02.gtex}
 }
 
 \vspace{2 mm}
@@ -479,12 +479,12 @@ Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in
 \setspacebeforeinitial{7mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{4 \Abar\ VII c}}}}{\small \textsc{ \textbf{\textcolor{benred8}{4 \Abar\ VII c}}}}
-\includescore{Dominica/DomAnt4-01.tex}
+\gregorioscore[a]{Dominica/DomAnt4-01.gtex}
 
 \subsubsection*{Psalmus 112.}
 
 {\noinitial
-\includescore{Dominica/DomFL4.tex}
+\gregorioscore[a]{Dominica/DomFL4.gtex}
 }
 
 
@@ -510,7 +510,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \end{psalmtext}
 
 {\noinitial
-\includescore{Dominica/DomAnt4-02.tex}
+\gregorioscore[a]{Dominica/DomAnt4-02.gtex}
 }
 
 \vspace{2 mm}
@@ -523,12 +523,12 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \setspacebeforeinitial{6.5mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{5 \Abar\ T. Per.}}}}{\small \textsc{ \textbf{\textcolor{benred8}{5 \Abar\ T. Per.}}}}
-\includescore{Dominica/DomAnt5-01.tex}
+\gregorioscore[a]{Dominica/DomAnt5-01.gtex}
 
 \subsubsection*{Psalmus 113.}
 
 {\noinitial
-\includescore{Dominica/DomFL5.tex}
+\gregorioscore[a]{Dominica/DomFL5.gtex}
 }
 
 
@@ -592,7 +592,7 @@ Sicut erat in princípio, \emph{et nunc, et} \textbf{sem}per, \gresixstar\ et in
 \end{psalmtext}
 
 {\noinitial
-\includescore{Dominica/DomAnt5-02.tex}
+\gregorioscore[a]{Dominica/DomAnt5-02.gtex}
 }
 \vspace{2 mm}
 
@@ -611,7 +611,7 @@ Sequens Capitulum \emph{\textcolor{black}{Bened\'{i}\libertineGlyph{c_t}us Deus}
 
 \setspaceafterinitial{1mm plus 0em minus 0em}
 \setspacebeforeinitial{1mm plus 0em minus 0em}
-\includescore{CapitulumBenedictus.tex}
+\gregorioscore[a]{CapitulumBenedictus.gtex}
 
 % DOMINICA HYMNUS HIEME
 
@@ -628,7 +628,7 @@ Sequens tonus canitur in Dominicis po\libertineGlyph{s_t} Epiphaniam a die 14 Ja
 \setspacebeforeinitial{3.2mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{IV}}}}{\small \textsc{ \textbf{\textcolor{benred8}{IV}}}}
-\includescore{Dominica/DomHym-Hieme.tex}
+\gregorioscore[a]{Dominica/DomHym-Hieme.gtex}
 
 \begin{rubric}
 Quando fit Commemoratio B. M. V., canitur doxologia \emph{\textcolor{black}{Gl\'{o}ria tibi, D\'{o}mine, Qui natus es de V\'{i}rgine, Cum Patre \emph{et} Sancto Sp\'{i}ritu, In sempit\'{e}rna s\'{\ae}cula}}, sed non mutatur tonus hymni.
@@ -636,7 +636,7 @@ Quando fit Commemoratio B. M. V., canitur doxologia \emph{\textcolor{black}{Gl\'
 \end{rubric}
 
 {\noinitial
-\includescore{DirigaturDomine.tex}
+\gregorioscore[a]{DirigaturDomine.gtex}
 
 }
 
@@ -657,7 +657,7 @@ Sequens tonus canitur in Dominica IV et reliquis Dominicis po\libertineGlyph{s_t
 \end{rubric}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{VIII}}}}{\small \textsc{ \textbf{\textcolor{benred8}{VIII}}}}
-\includescore{Dominica/DomHym-Aestate.tex}
+\gregorioscore[a]{Dominica/DomHym-Aestate.gtex}
 
 \begin{response}
 \Vbar\ Dirig\'{a}tur D\'{o}mine or\'{a}tio mea.\\
@@ -672,7 +672,7 @@ Sequens tonus canitur in Dominica IV et reliquis Dominicis po\libertineGlyph{s_t
 \subsubsection*{Tonus ad libitum I.}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{VIII}}}}{\small \textsc{ \textbf{\textcolor{benred8}{VIII}}}}
-\includescore{Dominica/DomHym-AdLib1.tex}
+\gregorioscore[a]{Dominica/DomHym-AdLib1.gtex}
 
 \begin{response}
 \Vbar\ Dirig\'{a}tur D\'{o}mine or\'{a}tio mea.\\
@@ -687,7 +687,7 @@ Sequens tonus canitur in Dominica IV et reliquis Dominicis po\libertineGlyph{s_t
 \subsubsection*{Tonus ad libitum II.}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{I}}}}{\small \textsc{ \textbf{\textcolor{benred8}{I}}}}
-\includescore{Dominica/DomHym-AdLib2.tex}
+\gregorioscore[a]{Dominica/DomHym-AdLib2.gtex}
 
 \begin{response}
 \Vbar\ Dirig\'{a}tur D\'{o}mine or\'{a}tio mea.\\
@@ -749,7 +749,7 @@ Deinde repetitur Antiphona.
 \setspacebeforeinitial{1.2mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{\Vbar}}}}{\small \textsc{ \textbf{\textcolor{benred8}{\Vbar}}}}
-\includescore{DomineExaudi-short-01.tex}
+\gregorioscore[a]{DomineExaudi-short-01.gtex}
 
 \begin{rubric}
 Canitur Oratio propria, secundum tonum ut habetur in p.~\pageref{sec:TonusOrationis}, et post eam, si occurrat eo die aliquod Fe\libertineGlyph{s_t}um Simplex, vel ad modum Simplicis recolendum, fit de eo commemoratio. Po\libertineGlyph{s_t}remo (~si id tempus requirit~) fiunt Commemorationes de San\libertineGlyph{c_t}a Maria, de San\libertineGlyph{c_t}o Joseph, de Apo\libertineGlyph{s_t}olis, et de Patrono Ecclesi\ae\ in ordine aliarum Commemorationum secundum illius dignitatem, et ultimo loco de Pace, ut infra in p.~\pageref{sec:Commem}. Post ultimam Orationem canitur :
@@ -757,7 +757,7 @@ Canitur Oratio propria, secundum tonum ut habetur in p.~\pageref{sec:TonusOratio
 \end{rubric}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{\Vbar}}}}{\small \textsc{ \textbf{\textcolor{benred8}{\Vbar}}}}
-\includescore{DomineExaudi-short-01.tex}
+\gregorioscore[a]{DomineExaudi-short-01.gtex}
 
 \begin{rubric}
 Per annum :
@@ -768,7 +768,7 @@ Per annum :
 \setspacebeforeinitial{2.2mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{I}}}}{\small \textsc{ \textbf{\textcolor{benred8}{I}}}}
-\includescore{Dominica/DomBenedicamus.tex}
+\gregorioscore[a]{Dominica/DomBenedicamus.gtex}
 
 \vspace{1.5mm}
 
@@ -781,7 +781,7 @@ Tempore Adventus et Quadragesim\ae\ :
 \setspacebeforeinitial{2.2mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{IV}}}}{\small \textsc{ \textbf{\textcolor{benred8}{IV}}}}
-\includescore{Dominica/DomBenedicamusAdvLent.tex}
+\gregorioscore[a]{Dominica/DomBenedicamusAdvLent.gtex}
 
 \vspace{1.5mm}
 
@@ -789,7 +789,7 @@ Tempore Adventus et Quadragesim\ae\ :
 \setspacebeforeinitial{2.2mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{\Vbar}}}}{\small \textsc{ \textbf{\textcolor{benred8}{\Vbar}}}}
-\includescore{FideliumAnimae.tex}
+\gregorioscore[a]{FideliumAnimae.gtex}
 
 \vspace{1.5mm}
 
@@ -802,7 +802,7 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 %\setspacebeforeinitial{1.2mm plus 0em minus 0em}
 
 %\gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{\Vbar}}}}{\small \textsc{ \textbf{\textcolor{benred8}{\Vbar}}}}
-%\includescore{DominusDet.tex}
+%\gregorioscore[a]{DominusDet.gtex}
 
 %\begin{rubric}
 %Atque \libertineGlyph{s_t}atim canitur una ex Antiphonis finalibus Beat\ae\ Mari\ae\ Virginis, cum Versu suo et Oratione, qu\ae\ in p.~\pageref{sec:AntBMV} notantur. Po\libertineGlyph{s_t}ea concluditur :% , ut habetur infra. %infra post Completorium.
@@ -813,7 +813,7 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 %\setspacebeforeinitial{1.2mm plus 0em minus 0em}
 
 %\gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{\Vbar}}}}{\\small \textsc{ \textbf{\textcolor{benred8}{\Vbar}}}}
-%\includescore{DivinumAuxilium.tex}
+%\gregorioscore[a]{DivinumAuxilium.gtex}
 
 \newpage
 
@@ -845,7 +845,7 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 }
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{1 \Abar\ I g 2}}}}{}%\small \textsc{ \textbf{\textcolor{benred8}{1 \Abar\ I g 2}}}}
-\includescore{F2/F2Ant1-01.tex}
+\gregorioscore[a]{F2/F2Ant1-01.gtex}
 
 \def\greinitialformat#1{%
 {\fontsize{43}{43}\selectfont #1}%
@@ -854,7 +854,7 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 \subsubsection*{Psalmus 114.}
 
 {\noinitial
-\includescore{F2/F2FL1.tex}
+\gregorioscore[a]{F2/F2FL1.gtex}
 }
 
 
@@ -882,7 +882,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \end{psalmtext}
 
 {\noinitial
-\includescore{F2/F2Ant1-02.tex}
+\gregorioscore[a]{F2/F2Ant1-02.gtex}
 
 }
 
@@ -896,7 +896,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \setspacebeforeinitial{6.5mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{2 \Abar\ VIII a}}}}{\small \textsc{ \textbf{\textcolor{benred8}{2 \Abar\ VIII a}}}}
-\includescore{F2/F2FL2.tex}
+\gregorioscore[a]{F2/F2FL2.gtex}
 
 \subsubsection*{Psalmus 115.}
 
@@ -923,7 +923,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 
 {\noinitial
-\includescore{F2/F2Ant2-02.tex}
+\gregorioscore[a]{F2/F2Ant2-02.gtex}
 
 }
 
@@ -937,7 +937,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \setspacebeforeinitial{6mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{3 \Abar\ VI F}}}}{\small \textsc{ \textbf{\textcolor{benred8}{3 \Abar\ VI F}}}}
-\includescore{F2/F2FL3.tex}
+\gregorioscore[a]{F2/F2FL3.gtex}
 
 \subsubsection*{Psalmus 116.}
 
@@ -952,7 +952,7 @@ Sicut erat in princípio, et nunc, \emph{et} \textbf{sem}per, \gresixstar\ et in
 
 
 {\noinitial
-\includescore{F2/F2Ant3-02.tex}
+\gregorioscore[a]{F2/F2Ant3-02.gtex}
 
 }
 
@@ -966,12 +966,12 @@ Sicut erat in princípio, et nunc, \emph{et} \textbf{sem}per, \gresixstar\ et in
 \setspacebeforeinitial{2.5mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{4 \Abar\ E}}}}{\small \textsc{ \textbf{\textcolor{benred8}{4 \Abar\ E}}}}
-\includescore{F2/F2Ant4-01.tex}
+\gregorioscore[a]{F2/F2Ant4-01.gtex}
 
 \subsubsection*{Psalmus 119.}
 
 {\noinitial
-\includescore{F2/F2FL4.tex}
+\gregorioscore[a]{F2/F2FL4.gtex}
 }
 
 
@@ -993,7 +993,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \end{psalmtext}
 
 {\noinitial
-\includescore{F2/F2Ant4-02.tex}
+\gregorioscore[a]{F2/F2Ant4-02.gtex}
 
 }
 
@@ -1007,12 +1007,12 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \setspacebeforeinitial{4.5mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{5 \Abar\ I D}}}}{\small \textsc{ \textbf{\textcolor{benred8}{5 \Abar\ I D}}}}
-\includescore{F2/F2Ant5-01.tex}
+\gregorioscore[a]{F2/F2Ant5-01.gtex}
 
 \subsubsection*{Psalmus 120.}
 
 {\noinitial
-\includescore{F2/F2FL5.tex}
+\gregorioscore[a]{F2/F2FL5.gtex}
 }
 
 
@@ -1038,7 +1038,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \end{psalmtext}
 
 {\noinitial
-\includescore{F2/F2Ant5-02.tex}
+\gregorioscore[a]{F2/F2Ant5-02.gtex}
 
 }
 
@@ -1064,7 +1064,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \setspacebeforeinitial{3.8mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{VIII}}}}{\small \textsc{ \textbf{\textcolor{benred8}{VIII}}}}
-\includescore{F2/F2Hym-Hieme.tex}
+\gregorioscore[a]{F2/F2Hym-Hieme.gtex}
 
 \begin{response}
 \Vbar\ Dirig\'{a}tur D\'{o}mine or\'{a}tio mea.\\
@@ -1084,7 +1084,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \setspacebeforeinitial{3.2mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{I}}}}{\small \textsc{ \textbf{\textcolor{benred8}{I}}}}
-\includescore{F2/F2Hym-Aestate.tex}
+\gregorioscore[a]{F2/F2Hym-Aestate.gtex}
 
 \begin{response}
 \Vbar\ Dirig\'{a}tur D\'{o}mine or\'{a}tio mea.\\
@@ -1102,7 +1102,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \setspacebeforeinitial{3.8mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{VIII G}}}}{\small \textsc{ \textbf{\textcolor{benred8}{VIII G}}}}
-\includescore{F2/F2MagAnt-01.tex}
+\gregorioscore[a]{F2/F2MagAnt-01.gtex}
 
 \begin{psalmtext}
 Quia resp\'{e}xit humilit\'{a}tem anc\'{i}ll\ae\ \textbf{su}\ae\ : \gresixstar\ ecce enim ex hoc be\'{a}tam me dicent omnes gene\emph{rati}\textbf{\'{o}}nes.
@@ -1128,7 +1128,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \end{psalmtext}
 
 {\noinitial
-\includescore{F2/F2MagAnt-02.tex}
+\gregorioscore[a]{F2/F2MagAnt-02.gtex}
 
 }
 
@@ -1149,17 +1149,17 @@ In feriis Adventus, Quadragesim\ae , Quatuor Temporum et Vigiliis qu\ae\ jejunan
 \setspacebeforeinitial{2.2mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{\Vbar}}}}{\small \textsc{ \textbf{\textcolor{benred8}{\Vbar}}}}
-\includescore{Kyrie.tex}
+\gregorioscore[a]{Kyrie.gtex}
 
 \subsubsection*{Oratio Dominica.}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{\Vbar}}}}{\small \textsc{ \textbf{\textcolor{benred8}{\Vbar}}}}
-\includescore{PaterNoster.tex}
+\gregorioscore[a]{PaterNoster.gtex}
 
 \vspace{2mm}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{\Vbar}}}}{\small \textsc{ \textbf{\textcolor{benred8}{\Vbar}}}}
-\includescore{EgoDixiPreces.tex}
+\gregorioscore[a]{EgoDixiPreces.gtex}
 
 \begin{response}
 \Vbar\ Conv\'{e}rtere D\'{o}mine \'{u}squequo.
@@ -1208,7 +1208,7 @@ In feriis Adventus, Quadragesim\ae , Quatuor Temporum et Vigiliis qu\ae\ jejunan
 \setspaceafterinitial{2.2mm plus 0em minus 0em}
 \setspacebeforeinitial{2.2mm plus 0em minus 0em}
 
-\includescore{Miserere.tex}
+\gregorioscore[a]{Miserere.gtex}
 
 %\lettrine{M}{i}ser\'{e}re mei Deus, \gresixstar\ sec\'{u}ndum magnam miseric\'{o}rdiam tuam.
 
@@ -1263,7 +1263,7 @@ Sicut erat in princ\'{i}pio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et
 \setspacebeforeinitial{2.2mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{\Vbar}}}}{\small \textsc{ \textbf{\textcolor{benred8}{\Vbar}}}}
-\includescore{DomineExaudi2.tex}
+\gregorioscore[a]{DomineExaudi2.gtex}
 
 \begin{rubric}
 Oratio, quando propria non assignatur, canitur de Dominica pr\ae cedenti, ut habetur in Proprio de Tempore. Po\libertineGlyph{s_t}ea fiunt Commemorationes ( si id tempus requirit ). In conclusione omnia ut in Dominicis, pr\ae ter tonum ad \emph{\textcolor{black}{Benedicamus D\'{o}mino}} :
@@ -1281,7 +1281,7 @@ Per annum :
 \end{rubric}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{I}}}}{\small \textsc{ \textbf{\textcolor{benred8}{I}}}}
-\includescore{FerBenedicamus_annum.tex}
+\gregorioscore[a]{FerBenedicamus_annum.gtex}
 
 \begin{rubric}
 Tempore Adventus et Quadragesim\ae , ac in Vigiliis et Feriis Quatuor Temporum :
@@ -1289,7 +1289,7 @@ Tempore Adventus et Quadragesim\ae , ac in Vigiliis et Feriis Quatuor Temporum :
 \end{rubric}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{IV}}}}{\small \textsc{ \textbf{\textcolor{benred8}{IV}}}}
-\includescore{FerBenedicamus_penitential.tex}
+\gregorioscore[a]{FerBenedicamus_penitential.gtex}
 
 \begin{response}
 \Vbar\ Fid\'{e}lium \'{a}nim\ae\ per miseric\'{o}rdiam Dei requi\'{e}scant in pace. \Rbar\ Amen.
@@ -1346,7 +1346,7 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 }
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{1 \Abar\ IV E}}}}{}%\small \textsc{ \textbf{\textcolor{benred8}{1 \Abar\ IV E}}}}
-\includescore{F3/F3Ant1-01.tex}
+\gregorioscore[a]{F3/F3Ant1-01.gtex}
 
 \def\greinitialformat#1{%
 {\fontsize{43}{43}\selectfont #1}%
@@ -1355,7 +1355,7 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 \subsubsection*{Psalmus 121.}
 
 {\noinitial
-\includescore{F3/F3FL1.tex}
+\gregorioscore[a]{F3/F3FL1.gtex}
 }
 
 \begin{psalmtext}
@@ -1382,7 +1382,7 @@ Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in
 \end{psalmtext}
 
 {\noinitial
-\includescore{F3/F3Ant1-02.tex}
+\gregorioscore[a]{F3/F3Ant1-02.gtex}
 
 }
 
@@ -1396,12 +1396,12 @@ Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in
 \setspacebeforeinitial{6mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{2 \Abar\ VIII G}}}}{\small \textsc{ \textbf{\textcolor{benred8}{2 \Abar\ VIII G}}}}
-\includescore{F3/F3Ant2-01.tex}
+\gregorioscore[a]{F3/F3Ant2-01.gtex}
 
 \subsubsection*{Psalmus 122.}
 
 {\noinitial
-\includescore{F3/F3FL2.tex}
+\gregorioscore[a]{F3/F3FL2.gtex}
 }
 
 \begin{psalmtext}
@@ -1420,7 +1420,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \end{psalmtext}
 
 {\noinitial
-\includescore{F3/F3Ant2-02.tex}
+\gregorioscore[a]{F3/F3Ant2-02.gtex}
 
 }
 
@@ -1434,12 +1434,12 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \setspacebeforeinitial{5mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{3 \Abar\ I g 2}}}}{\small \textsc{ \textbf{\textcolor{benred8}{3 \Abar\ I g 2}}}}
-\includescore{F3/F3Ant3-01.tex}
+\gregorioscore[a]{F3/F3Ant3-01.gtex}
 
 \subsubsection*{Psalmus 123.}
 
 {\noinitial
-\includescore{F3/F3FL3.tex}
+\gregorioscore[a]{F3/F3FL3.gtex}
 }
 
 \begin{psalmtext}
@@ -1464,7 +1464,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \end{psalmtext}
 
 {\noinitial
-\includescore{F3/F3Ant3-02.tex}
+\gregorioscore[a]{F3/F3Ant3-02.gtex}
 
 }
 
@@ -1478,12 +1478,12 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \setspacebeforeinitial{7.5mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{4 \Abar\ VIII G}}}}{\small \textsc{ \textbf{\textcolor{benred8}{4 \Abar\ VIII G}}}}
-\includescore{F3/F3Ant4-01.tex}
+\gregorioscore[a]{F3/F3Ant4-01.gtex}
 
 \subsubsection*{Psalmus 124.}
 
 {\noinitial
-\includescore{F3/F3FL4.tex}
+\gregorioscore[a]{F3/F3FL4.gtex}
 }
 
 \begin{psalmtext}
@@ -1502,7 +1502,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \end{psalmtext}
 
 {\noinitial
-\includescore{F3/F3Ant4-02.tex}
+\gregorioscore[a]{F3/F3Ant4-02.gtex}
 
 }
 
@@ -1516,12 +1516,12 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \setspacebeforeinitial{5mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{5 \Abar\ I f}}}}{\small \textsc{ \textbf{\textcolor{benred8}{5 \Abar\ I f}}}}
-\includescore{F3/F3Ant5-01.tex}
+\gregorioscore[a]{F3/F3Ant5-01.gtex}
 
 \subsubsection*{Psalmus 125.}
 
 {\noinitial
-\includescore{F3/F3FL5.tex}
+\gregorioscore[a]{F3/F3FL5.gtex}
 }
 
 \begin{psalmtext}
@@ -1546,7 +1546,7 @@ Sicut erat in princípio, et \textbf{nunc}, et s\textbf{em}per, \gresixstar\ et 
 \end{psalmtext}
 
 {\noinitial
-\includescore{F3/F3Ant5-02.tex}
+\gregorioscore[a]{F3/F3Ant5-02.gtex}
 
 }
 
@@ -1572,7 +1572,7 @@ Sicut erat in princípio, et \textbf{nunc}, et s\textbf{em}per, \gresixstar\ et 
 \setspacebeforeinitial{3.2mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{VIII}}}}{\small \textsc{ \textbf{\textcolor{benred8}{VIII}}}}
-\includescore{F3/F3Hym-Hieme.tex}
+\gregorioscore[a]{F3/F3Hym-Hieme.gtex}
 
 \begin{response}
 \Vbar\ Dirig\'{a}tur D\'{o}mine or\'{a}tio mea.\\
@@ -1592,7 +1592,7 @@ Sicut erat in princípio, et \textbf{nunc}, et s\textbf{em}per, \gresixstar\ et 
 \setspacebeforeinitial{2.8mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{I}}}}{\small \textsc{ \textbf{\textcolor{benred8}{I}}}}
-\includescore{F3/F3Hym-Aestate.tex}
+\gregorioscore[a]{F3/F3Hym-Aestate.gtex}
 
 \begin{response}
 \Vbar\ Dirig\'{a}tur D\'{o}mine or\'{a}tio mea.\\
@@ -1610,7 +1610,7 @@ Sicut erat in princípio, et \textbf{nunc}, et s\textbf{em}per, \gresixstar\ et 
 \setspacebeforeinitial{3.8mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{V a}}}}{\small \textsc{ \textbf{\textcolor{benred8}{V a}}}}
-\includescore{F3/F3MagAnt-01.tex}
+\gregorioscore[a]{F3/F3MagAnt-01.gtex}
 
 \begin{psalmtext}
 Quia resp\'{e}xit humilit\'{a}tem anc\'{i}ll\ae\ \textbf{su}\ae\ : \gresixstar\ ecce enim ex hoc be\'{a}tam me dicent omnes gene\textbf{ra}ti\textbf{\'{o}}nes.
@@ -1636,7 +1636,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \end{psalmtext}
 
 {\noinitial
-\includescore{F3/F3MagAnt-02.tex}
+\gregorioscore[a]{F3/F3MagAnt-02.gtex}
 
 }
 
@@ -1704,7 +1704,7 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 }
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{1 \Abar\ II D}}}}{}%\small \textsc{ \textbf{\textcolor{benred8}{1 \Abar\ II D}}}}
-\includescore{F4/F4Ant1-01.tex}
+\gregorioscore[a]{F4/F4Ant1-01.gtex}
 
 \def\greinitialformat#1{%
 {\fontsize{43}{43}\selectfont #1}%
@@ -1713,7 +1713,7 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 \subsubsection*{Psalmus 126.}
 
 {\noinitial
-\includescore{F4/F4FL1.tex}
+\gregorioscore[a]{F4/F4FL1.gtex}
 
 }
 
@@ -1735,7 +1735,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \end{psalmtext}
 
 {\noinitial
-\includescore{F4/F4Ant1-02.tex}
+\gregorioscore[a]{F4/F4Ant1-02.gtex}
 
 }
 
@@ -1749,7 +1749,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \setspacebeforeinitial{5mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{2 \Abar\ II D}}}}{\small \textsc{ \textbf{\textcolor{benred8}{2 \Abar\ II D}}}}
-\includescore{F4/F4FL2.tex}
+\gregorioscore[a]{F4/F4FL2.gtex}
 
 \subsubsection*{Psalmus 127.}
 
@@ -1773,7 +1773,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \end{psalmtext}
 
 {\noinitial
-\includescore{F4/F4Ant2-02.tex}
+\gregorioscore[a]{F4/F4Ant2-02.gtex}
 
 }
 
@@ -1787,7 +1787,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \setspacebeforeinitial{5.5mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{3 \Abar\ II D}}}}{\small \textsc{ \textbf{\textcolor{benred8}{3 \Abar\ II D}}}}
-\includescore{F4/F4FL3.tex}
+\gregorioscore[a]{F4/F4FL3.gtex}
 
 \subsubsection*{Psalmus 128.}
 
@@ -1811,7 +1811,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \end{psalmtext}
 
 {\noinitial
-\includescore{F4/F4Ant3-02.tex}
+\gregorioscore[a]{F4/F4Ant3-02.gtex}
 
 }
 
@@ -1825,7 +1825,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \setspacebeforeinitial{6mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{4 \Abar\ VIII a}}}}{\small \textsc{ \textbf{\textcolor{benred8}{4 \Abar\ VIII a}}}}
-\includescore{F4/F4FL4.tex}
+\gregorioscore[a]{F4/F4FL4.gtex}
 
 \subsubsection*{Psalmus 129.}
 
@@ -1851,7 +1851,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \end{psalmtext}
 
 {\noinitial
-\includescore{F4/F4Ant4-02.tex}
+\gregorioscore[a]{F4/F4Ant4-02.gtex}
 
 }
 
@@ -1865,12 +1865,12 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \setspacebeforeinitial{4mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{5 \Abar\ E}}}}{\small \textsc{ \textbf{\textcolor{benred8}{5 \Abar\ E}}}}
-\includescore{F4/F4Ant5-01.tex}
+\gregorioscore[a]{F4/F4Ant5-01.gtex}
 
 \subsubsection*{Psalmus 130.}
 
 {\noinitial
-\includescore{F4/F4FL5.tex}
+\gregorioscore[a]{F4/F4FL5.gtex}
 
 }
 
@@ -1890,7 +1890,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \end{psalmtext}
 
 {\noinitial
-\includescore{F4/F4Ant5-02.tex}
+\gregorioscore[a]{F4/F4Ant5-02.gtex}
 
 }
 
@@ -1916,7 +1916,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \setspacebeforeinitial{2.2mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{VIII}}}}{\small \textsc{ \textbf{\textcolor{benred8}{VIII}}}}
-\includescore{F4/F4Hym-Hieme.tex}
+\gregorioscore[a]{F4/F4Hym-Hieme.gtex}
 
 \begin{response}
 \Vbar\ Dirig\'{a}tur D\'{o}mine or\'{a}tio mea.\\
@@ -1934,7 +1934,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \setspacebeforeinitial{2.2mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{I}}}}{\small \textsc{ \textbf{\textcolor{benred8}{I}}}}
-\includescore{F4/F4Hym-Aestate.tex}
+\gregorioscore[a]{F4/F4Hym-Aestate.gtex}
 
 \begin{response}
 \Vbar\ Dirig\'{a}tur D\'{o}mine or\'{a}tio mea.\\
@@ -1952,7 +1952,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \setspacebeforeinitial{3.8mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{VIII G 2}}}}{\small \textsc{ \textbf{\textcolor{benred8}{VIII G 2}}}}
-\includescore{F4/F4MagAnt-01.tex}
+\gregorioscore[a]{F4/F4MagAnt-01.gtex}
 
 \begin{psalmtext}
 Quia resp\'{e}xit humilit\'{a}tem anc\'{i}ll\ae\ \textbf{su}\ae\ : \gresixstar\ ecce enim ex hoc be\'{a}tam me dicent omnes gene\emph{rati}\textbf{\'{o}}nes.
@@ -1978,7 +1978,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \end{psalmtext}
 
 {\noinitial
-\includescore{F4/F4MagAnt-02.tex}
+\gregorioscore[a]{F4/F4MagAnt-02.gtex}
 
 }
 
@@ -2046,7 +2046,7 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 }
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{1 \Abar\ E}}}}{}%\small \textsc{ \textbf{\textcolor{benred8}{1 \Abar\ E}}}}
-\includescore{F5/F5Ant1-01.tex}
+\gregorioscore[a]{F5/F5Ant1-01.gtex}
 
 \def\greinitialformat#1{%
 {\fontsize{43}{43}\selectfont #1}%
@@ -2055,7 +2055,7 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 \subsubsection*{Psalmus 131.}
 
 {\noinitial
-\includescore{F5/F5FL1.tex}
+\gregorioscore[a]{F5/F5FL1.gtex}
 
 }
 
@@ -2103,7 +2103,7 @@ Sicut erat in princípio, et nunc, et\textbf{ sem}per, \gresixstar\ et in sǽcul
 \end{psalmtext}
 
 {\noinitial
-\includescore{F5/F5Ant1-02.tex}
+\gregorioscore[a]{F5/F5Ant1-02.gtex}
 
 }
 
@@ -2117,7 +2117,7 @@ Sicut erat in princípio, et nunc, et\textbf{ sem}per, \gresixstar\ et in sǽcul
 \setspacebeforeinitial{4mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{2 \Abar\ I a}}}}{\small \textsc{ \textbf{\textcolor{benred8}{2 \Abar\ I a}}}}
-\includescore{F5/F5FL2.tex}
+\gregorioscore[a]{F5/F5FL2.gtex}
 
 \subsubsection*{Psalmus 132.}
 
@@ -2135,7 +2135,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \end{psalmtext}
 
 {\noinitial
-\includescore{F5/F5Ant2-02.tex}
+\gregorioscore[a]{F5/F5Ant2-02.gtex}
 
 }
 
@@ -2149,12 +2149,12 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \setspacebeforeinitial{4.5mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{3 \Abar\ III g}}}}{\small \textsc{ \textbf{\textcolor{benred8}{3 \Abar\ III g}}}}
-\includescore{F5/F5Ant3-01.tex}
+\gregorioscore[a]{F5/F5Ant3-01.gtex}
 
 \subsubsection*{Psalmus 134.}
 
 {\noinitial
-\includescore{F5/F5FL3.tex}
+\gregorioscore[a]{F5/F5FL3.gtex}
 
 }
 
@@ -2206,7 +2206,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \end{psalmtext}
 
 {\noinitial
-\includescore{F5/F5Ant3-02.tex}
+\gregorioscore[a]{F5/F5Ant3-02.gtex}
 
 }
 
@@ -2220,12 +2220,12 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \setspacebeforeinitial{4.5mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{4 \Abar\ III g}}}}{\small \textsc{ \textbf{\textcolor{benred8}{4 \Abar\ III g}}}}
-\includescore{F5/F5Ant4-01.tex}
+\gregorioscore[a]{F5/F5Ant4-01.gtex}
 
 \subsubsection*{Psalmus 135.}
 
 {\noinitial
-\includescore{F5/F5FL4.tex}
+\gregorioscore[a]{F5/F5FL4.gtex}
 
 }
 
@@ -2289,7 +2289,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \end{psalmtext}
 
 {\noinitial
-\includescore{F5/F5Ant4-02.tex}
+\gregorioscore[a]{F5/F5Ant4-02.gtex}
 
 }
 
@@ -2303,12 +2303,12 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \setspacebeforeinitial{6.5mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{5 \Abar\ VIII G}}}}{\small \textsc{ \textbf{\textcolor{benred8}{5 \Abar\ VIII G}}}}
-\includescore{F5/F5Ant5-01.tex}
+\gregorioscore[a]{F5/F5Ant5-01.gtex}
 
 \subsubsection*{Psalmus 136.}
 
 {\noinitial
-\includescore{F5/F5FL5.tex}
+\gregorioscore[a]{F5/F5FL5.gtex}
 
 }
 
@@ -2342,7 +2342,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \end{psalmtext}
 
 {\noinitial
-\includescore{F5/F5Ant5-02.tex}
+\gregorioscore[a]{F5/F5Ant5-02.gtex}
 
 }
 
@@ -2368,7 +2368,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \setspacebeforeinitial{3mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{VIII}}}}{\small \textsc{ \textbf{\textcolor{benred8}{VIII}}}}
-\includescore{F5/F5Hym-Hieme.tex}
+\gregorioscore[a]{F5/F5Hym-Hieme.gtex}
 
 \begin{response}
 \Vbar\ Dirig\'{a}tur D\'{o}mine or\'{a}tio mea.\\
@@ -2386,7 +2386,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \setspacebeforeinitial{3mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{I}}}}{\small \textsc{ \textbf{\textcolor{benred8}{I}}}}
-\includescore{F5/F5Hym-Aestate.tex}
+\gregorioscore[a]{F5/F5Hym-Aestate.gtex}
 
 \begin{response}
 \Vbar\ Dirig\'{a}tur D\'{o}mine or\'{a}tio mea.\\
@@ -2404,7 +2404,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \setspacebeforeinitial{3.8mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{VII c}}}}{\small \textsc{ \textbf{\textcolor{benred8}{VII c}}}}
-\includescore{F5/F5MagAnt-01.tex}
+\gregorioscore[a]{F5/F5MagAnt-01.gtex}
 
 \begin{psalmtext}
 Quia resp\'{e}xit humilit\'{a}tem an\textbf{c\'{i}l}l\ae\ \textbf{su}\ae\ : \gresixstar\ ecce enim ex hoc be\'{a}tam me dicent omnes gene\textbf{ra}ti\textbf{\'{o}}nes.
@@ -2430,7 +2430,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \end{psalmtext}
 
 {\noinitial
-\includescore{F5/F5MagAnt-02.tex}
+\gregorioscore[a]{F5/F5MagAnt-02.gtex}
 
 }
 
@@ -2498,7 +2498,7 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 }
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{1 \Abar\ V a}}}}{}%\small \textsc{ \textbf{\textcolor{benred8}{1 \Abar\ V a}}}}
-\includescore{F6/F6Ant1-01.tex}
+\gregorioscore[a]{F6/F6Ant1-01.gtex}
 
 \def\greinitialformat#1{%
 {\fontsize{43}{43}\selectfont #1}%
@@ -2507,7 +2507,7 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 \subsubsection*{Psalmus 137.}
 
 {\noinitial
-\includescore{F6/F6FL1.tex}
+\gregorioscore[a]{F6/F6FL1.gtex}
 
 }
 
@@ -2535,7 +2535,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \end{psalmtext}
 
 {\noinitial
-\includescore{F6/F6Ant1-02.tex}
+\gregorioscore[a]{F6/F6Ant1-02.gtex}
 
 }
 
@@ -2549,7 +2549,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \setspacebeforeinitial{4.5mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{2 \Abar\ III g}}}}{\small \textsc{ \textbf{\textcolor{benred8}{2 \Abar\ III g}}}}
-\includescore{F6/F6FL2.tex}
+\gregorioscore[a]{F6/F6FL2.gtex}
 
 \subsubsection*{Psalmus 138.}
 
@@ -2605,7 +2605,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \end{psalmtext}
 
 {\noinitial
-\includescore{F6/F6Ant2-02.tex}
+\gregorioscore[a]{F6/F6Ant2-02.gtex}
 
 }
 
@@ -2619,12 +2619,12 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \setspacebeforeinitial{5mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{3 \Abar\ IV g}}}}{\small \textsc{ \textbf{\textcolor{benred8}{3 \Abar\ IV g}}}}
-\includescore{F6/F6Ant3-01.tex}
+\gregorioscore[a]{F6/F6Ant3-01.gtex}
 
 \subsubsection*{Psalmus 139.}
 
 {\noinitial
-\includescore{F6/F6FL3.tex}
+\gregorioscore[a]{F6/F6FL3.gtex}
 
 }
 
@@ -2662,7 +2662,7 @@ Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in
 \end{psalmtext}
 
 {\noinitial
-\includescore{F6/F6Ant3-02.tex}
+\gregorioscore[a]{F6/F6Ant3-02.gtex}
 
 }
 
@@ -2676,7 +2676,7 @@ Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in
 \setspacebeforeinitial{6mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{4 \Abar\ VIII a}}}}{\small \textsc{ \textbf{\textcolor{benred8}{4 \Abar\ VIII a}}}}
-\includescore{F6/F6FL4.tex}
+\gregorioscore[a]{F6/F6FL4.gtex}
 
 \subsubsection*{Psalmus 140.}
 
@@ -2708,7 +2708,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \end{psalmtext}
 
 {\noinitial
-\includescore{F6/F6Ant4-02.tex}
+\gregorioscore[a]{F6/F6Ant4-02.gtex}
 
 }
 
@@ -2722,12 +2722,12 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \setspacebeforeinitial{7mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{5 \Abar\ VIII a}}}}{\small \textsc{ \textbf{\textcolor{benred8}{5 \Abar\ VIII a}}}}
-\includescore{F6/F6Ant5-01.tex}
+\gregorioscore[a]{F6/F6Ant5-01.gtex}
 
 \subsubsection*{Psalmus 141.}
 
 {\noinitial
-\includescore{F6/F6FL5.tex}
+\gregorioscore[a]{F6/F6FL5.gtex}
 
 }
 
@@ -2757,7 +2757,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \end{psalmtext}
 
 {\noinitial
-\includescore{F6/F6Ant5-02.tex}
+\gregorioscore[a]{F6/F6Ant5-02.gtex}
 
 }
 
@@ -2783,7 +2783,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \setspacebeforeinitial{3mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{VIII}}}}{\small \textsc{ \textbf{\textcolor{benred8}{VIII}}}}
-\includescore{F6/F6Hym-Hieme.tex}
+\gregorioscore[a]{F6/F6Hym-Hieme.gtex}
 
 \begin{response}
 \Vbar\ Dirig\'{a}tur D\'{o}mine or\'{a}tio mea.\\
@@ -2801,7 +2801,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \setspacebeforeinitial{3mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{I}}}}{\small \textsc{ \textbf{\textcolor{benred8}{I}}}}
-\includescore{F6/F6Hym-Aestate.tex}
+\gregorioscore[a]{F6/F6Hym-Aestate.gtex}
 
 \begin{response}
 \Vbar\ Dirig\'{a}tur D\'{o}mine or\'{a}tio mea.\\
@@ -2819,7 +2819,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \setspacebeforeinitial{3.8mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{I f}}}}{\small \textsc{ \textbf{\textcolor{benred8}{I f}}}}
-\includescore{F6/F6MagAnt-01.tex}
+\gregorioscore[a]{F6/F6MagAnt-01.gtex}
 
 \begin{psalmtext}
 Quia resp\'{e}xit humilit\'{a}tem an\textbf{c\'{i}l}l\ae\ \textbf{su}\ae\ : \gresixstar\ ecce enim ex hoc be\'{a}tam me dicent omnes gene\emph{rati}\textbf{\'{o}}nes.
@@ -2845,7 +2845,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \end{psalmtext}
 
 {\noinitial
-\includescore{F6/F6MagAnt-02.tex}
+\gregorioscore[a]{F6/F6MagAnt-02.gtex}
 
 }
 
@@ -2913,7 +2913,7 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 }
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{1 \Abar\ VI F}}}}{}%\small \textsc{ \textbf{\textcolor{benred8}{1 \Abar\ VI F}}}}
-\includescore{Sabbato/SabFL1.tex}
+\gregorioscore[a]{Sabbato/SabFL1.gtex}
 
 \def\greinitialformat#1{%
 {\fontsize{43}{43}\selectfont #1}%
@@ -2963,7 +2963,7 @@ Sicut erat in princípio, et nunc, \emph{et} \textbf{sem}per, \gresixstar\ et in
 \end{psalmtext}
 
 {\noinitial
-\includescore{Sabbato/SabAnt1-02.tex}
+\gregorioscore[a]{Sabbato/SabAnt1-02.gtex}
 
 }
 
@@ -2977,12 +2977,12 @@ Sicut erat in princípio, et nunc, \emph{et} \textbf{sem}per, \gresixstar\ et in
 \setspacebeforeinitial{7mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{2 \Abar\ VIII a}}}}{\small \textsc{ \textbf{\textcolor{benred8}{2 \Abar\ VIII a}}}}
-\includescore{Sabbato/SabAnt2-01.tex}
+\gregorioscore[a]{Sabbato/SabAnt2-01.gtex}
 
 \subsubsection*{Psalmus 144.}
 
 {\noinitial
-\includescore{Sabbato/SabFL2.tex}
+\gregorioscore[a]{Sabbato/SabFL2.gtex}
 
 }
 
@@ -3036,7 +3036,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \end{psalmtext}
 
 {\noinitial
-\includescore{Sabbato/SabAnt2-02.tex}
+\gregorioscore[a]{Sabbato/SabAnt2-02.gtex}
 
 }
 
@@ -3050,12 +3050,12 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \setspacebeforeinitial{5.5mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{3 \Abar\ IV E}}}}{\small \textsc{ \textbf{\textcolor{benred8}{3 \Abar\ IV E}}}}
-\includescore{Sabbato/SabAnt3-01.tex}
+\gregorioscore[a]{Sabbato/SabAnt3-01.gtex}
 
 \subsubsection*{Psalmus 145.}
 
 {\noinitial
-\includescore{Sabbato/SabFL3.tex}
+\gregorioscore[a]{Sabbato/SabFL3.gtex}
 
 }
 
@@ -3083,7 +3083,7 @@ Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in
 \end{psalmtext}
 
 {\noinitial
-\includescore{Sabbato/SabAnt3-02.tex}
+\gregorioscore[a]{Sabbato/SabAnt3-02.gtex}
 
 }
 
@@ -3097,12 +3097,12 @@ Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in
 \setspacebeforeinitial{6mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{4 \Abar\ VIII a}}}}{\small \textsc{ \textbf{\textcolor{benred8}{4 \Abar\ VIII a}}}}
-\includescore{Sabbato/SabAnt4-01.tex}
+\gregorioscore[a]{Sabbato/SabAnt4-01.gtex}
 
 \subsubsection*{Psalmus 146.}
 
 {\noinitial
-\includescore{Sabbato/SabFL4.tex}
+\gregorioscore[a]{Sabbato/SabFL4.gtex}
 
 }
 
@@ -3136,7 +3136,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \end{psalmtext}
 
 {\noinitial
-\includescore{Sabbato/SabAnt4-02.tex}
+\gregorioscore[a]{Sabbato/SabAnt4-02.gtex}
 
 }
 
@@ -3150,7 +3150,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \setspacebeforeinitial{3.5mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{5 \Abar\ E}}}}{\small \textsc{ \textbf{\textcolor{benred8}{5 \Abar\ E}}}}
-\includescore{Sabbato/SabFL5.tex}
+\gregorioscore[a]{Sabbato/SabFL5.gtex}
 
 \subsubsection*{Psalmus 147.}
 
@@ -3178,7 +3178,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \end{psalmtext}
 
 {\noinitial
-\includescore{Sabbato/SabAnt5-02.tex}
+\gregorioscore[a]{Sabbato/SabAnt5-02.gtex}
 
 }
 
@@ -3209,7 +3209,7 @@ Sequens Capitulum \emph{\textcolor{black}{O altit\'{u}do}} canitur in Vesperis S
 \setspacebeforeinitial{3mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{I}}}}{\small \textsc{ \textbf{\textcolor{benred8}{I}}}}
-\includescore{Sabbato/SabHym-Hieme.tex}
+\gregorioscore[a]{Sabbato/SabHym-Hieme.gtex}
 
 \begin{rubric}
 Quando fit Commemoratio B. M. V., canitur doxologia \emph{\textcolor{black}{Gl\'{o}ria tibi, D\'{o}mine, Qui natus es de V\'{i}rgine}}, sed non mutatur tonus hymni.
@@ -3232,7 +3232,7 @@ Quando fit Commemoratio B. M. V., canitur doxologia \emph{\textcolor{black}{Gl\'
 \setspacebeforeinitial{3mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{VIII}}}}{\small \textsc{ \textbf{\textcolor{benred8}{VIII}}}}
-\includescore{Sabbato/SabHym-Aestate.tex}
+\gregorioscore[a]{Sabbato/SabHym-Aestate.gtex}
 
 \begin{response}
 \Vbar\ Vespert\'{i}na or\'{a}tio asc\'{e}ndat ad te, D\'{o}mine.\\
@@ -3250,7 +3250,7 @@ Quando fit Commemoratio B. M. V., canitur doxologia \emph{\textcolor{black}{Gl\'
 \setspacebeforeinitial{3.8mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{VII a}}}}{\small \textsc{ \textbf{\textcolor{benred8}{VII a}}}}
-\includescore{Sabbato/SabMagAnt-01.tex}
+\gregorioscore[a]{Sabbato/SabMagAnt-01.gtex}
 
 \begin{psalmtext}
 Quia resp\'{e}xit humilit\'{a}tem an\textbf{c\'{i}l}l\ae\ \textbf{su}\ae\ : \gresixstar\ ecce enim ex hoc be\'{a}tam me dicent omnes gene\textbf{ra}ti\textbf{\'{o}}nes.
@@ -3276,7 +3276,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \end{psalmtext}
 
 {\noinitial
-\includescore{Sabbato/SabMagAnt-02.tex}
+\gregorioscore[a]{Sabbato/SabMagAnt-02.gtex}
 
 }
 
@@ -3337,7 +3337,7 @@ Lector incipit :
 \end{rubric}
 
 {\noinitial
-\includescore{JubeDomine.tex}
+\gregorioscore[a]{JubeDomine.gtex}
 
 }
 
@@ -3346,7 +3346,7 @@ Lector incipit :
 \subsubsection*{Benedictio.}
 
 {\noinitial
-\includescore{NoctemQuietam.tex}
+\gregorioscore[a]{NoctemQuietam.gtex}
 
 }
 
@@ -3358,19 +3358,19 @@ Lector incipit :
 \setspacebeforeinitial{2.0mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{}}}}{\small \textsc{ \textbf{\textcolor{benred8}{}}}}
-\includescore{CapitulumFratres.tex}
+\gregorioscore[a]{CapitulumFratres.gtex}
 
 \vspace{2.0mm}
 
 {\noinitial
-\includescore{AdjutoriumNostrum.tex}
+\gregorioscore[a]{AdjutoriumNostrum.gtex}
 
 }
 
 \vspace{1.0mm}
 
 {\noinitial
-\includescore{QuiFecitCaelum.tex}
+\gregorioscore[a]{QuiFecitCaelum.gtex}
 
 }
 
@@ -3404,7 +3404,7 @@ Deinde, clara voce, pollice signando sibi pe\libertineGlyph{c_t}us signo crucis,
 \end{rubric}
 
 {\noinitial
-\includescore{ConverteNosDeus.tex}
+\gregorioscore[a]{ConverteNosDeus.gtex}
 
 }
 
@@ -3418,7 +3418,7 @@ Deinde, clara voce, pollice signando sibi pe\libertineGlyph{c_t}us signo crucis,
 
 \gresetfirstlineaboveinitial{\textcolor{benred8}{\small \textsc{\textbf{\Vbar}}}}{\textcolor{benred8}{\small \textsc{\textbf{\Vbar}}}}
 
-\includescore{DeusInAdjutoriumFerial.tex}
+\gregorioscore[a]{DeusInAdjutoriumFerial.gtex}
 
 \begin{rubric}
 A Septuagesima usque ad Pascha, loco \emph{\textcolor{black}{Allelúia}}, canitur :
@@ -3426,7 +3426,7 @@ A Septuagesima usque ad Pascha, loco \emph{\textcolor{black}{Allelúia}}, canitu
 \end{rubric}
 
 {\noinitial
-\includescore{LausTibi.tex}
+\gregorioscore[a]{LausTibi.gtex}
 }
 
 \vspace{2.0mm}
@@ -3437,12 +3437,12 @@ A Septuagesima usque ad Pascha, loco \emph{\textcolor{black}{Allelúia}}, canitu
 \setspacebeforeinitial{3.5mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{\Abar\ VIII G}}}}{\small \textsc{ \textbf{\textcolor{benred8}{\Abar\ VIII G}}}}
-\includescore{Completorium/CompAnt-01.tex}
+\gregorioscore[a]{Completorium/CompAnt-01.gtex}
 
 \subsubsection*{Psalmus 4.}
 
 {\noinitial
-\includescore{Completorium/CompFL1.tex}
+\gregorioscore[a]{Completorium/CompFL1.gtex}
 
 }
 
@@ -3478,7 +3478,7 @@ Sicut erat in princ\'{i}pio, et nunc, et \textbf{sem}per, \gresixstar\ et in s\'
 \subsubsection*{Psalmus 30.}
 
 {\noinitial
-\includescore{Completorium/CompFL2.tex}
+\gregorioscore[a]{Completorium/CompFL2.gtex}
 
 }
 
@@ -3506,7 +3506,7 @@ Sicut erat in princ\'{i}pio, et nunc, et \textbf{sem}per, \gresixstar\ et in s\'
 \subsubsection*{Psalmus 90.}
 
 {\noinitial
-\includescore{Completorium/CompFL3.tex}
+\gregorioscore[a]{Completorium/CompFL3.gtex}
 
 }
 
@@ -3554,7 +3554,7 @@ Sicut erat in princ\'{i}pio, et nunc, et \textbf{sem}per, \gresixstar\ et in s\'
 \subsubsection*{Psalmus 133.}
 
 {\noinitial
-\includescore{Completorium/CompFL4.tex}
+\gregorioscore[a]{Completorium/CompFL4.gtex}
 
 }
 
@@ -3574,7 +3574,7 @@ Sicut erat in princ\'{i}pio, et nunc, et \textbf{sem}per, \gresixstar\ et in s\'
 \end{psalmtext}
 
 {\noinitial
-\includescore{Completorium/CompAnt-02.tex}
+\gregorioscore[a]{Completorium/CompAnt-02.gtex}
 
 }
 
@@ -3595,7 +3595,7 @@ Tonus Hymni \emph{\textcolor{black}{Te lucis ante t\'{e}rminum}} variatur secund
 \setspacebeforeinitial{3mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{VIII}}}}{\small \textsc{ \textbf{\textcolor{benred8}{VIII}}}}
-\includescore{Completorium/TeLucisPAFeriis.tex}
+\gregorioscore[a]{Completorium/TeLucisPAFeriis.gtex}
 
 \subsubsection*{Tonus in Sabbatis et Dominicis.}
 
@@ -3603,7 +3603,7 @@ Tonus Hymni \emph{\textcolor{black}{Te lucis ante t\'{e}rminum}} variatur secund
 \setspacebeforeinitial{3mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{VIII}}}}{\small \textsc{ \textbf{\textcolor{benred8}{VIII}}}}
-\includescore{Completorium/TeLucisPADominicis.tex}
+\gregorioscore[a]{Completorium/TeLucisPADominicis.gtex}
 
 \vspace{10.0mm}
 
@@ -3613,7 +3613,7 @@ Tonus Hymni \emph{\textcolor{black}{Te lucis ante t\'{e}rminum}} variatur secund
 \setspacebeforeinitial{3mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{VIII}}}}{\small \textsc{ \textbf{\textcolor{benred8}{VIII}}}}
-\includescore{Completorium/TeLucisPASimplex.tex}
+\gregorioscore[a]{Completorium/TeLucisPASimplex.gtex}
 
 \subsubsection*{Tonus in Festis Duplicibus.}
 
@@ -3621,7 +3621,7 @@ Tonus Hymni \emph{\textcolor{black}{Te lucis ante t\'{e}rminum}} variatur secund
 \setspacebeforeinitial{3mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{IV}}}}{\small \textsc{ \textbf{\textcolor{benred8}{IV}}}}
-\includescore{Completorium/TeLucisPADuplex.tex}
+\gregorioscore[a]{Completorium/TeLucisPADuplex.gtex}
 
 \vspace{10.0mm}
 
@@ -3631,7 +3631,7 @@ Tonus Hymni \emph{\textcolor{black}{Te lucis ante t\'{e}rminum}} variatur secund
 \setspacebeforeinitial{3mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{II}}}}{\small \textsc{ \textbf{\textcolor{benred8}{II}}}}
-\includescore{Completorium/TeLucisAdvent.tex}
+\gregorioscore[a]{Completorium/TeLucisAdvent.gtex}
 
 \subsubsection*{Tonus in Tempore Quadragesim\ae.}
 
@@ -3639,7 +3639,7 @@ Tonus Hymni \emph{\textcolor{black}{Te lucis ante t\'{e}rminum}} variatur secund
 \setspacebeforeinitial{3mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{II}}}}{\small \textsc{ \textbf{\textcolor{benred8}{II}}}}
-\includescore{Completorium/TeLucisLent.tex}
+\gregorioscore[a]{Completorium/TeLucisLent.gtex}
 
 \vspace{10.0mm}
 
@@ -3649,7 +3649,7 @@ Tonus Hymni \emph{\textcolor{black}{Te lucis ante t\'{e}rminum}} variatur secund
 \setspacebeforeinitial{3mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{II}}}}{\small \textsc{ \textbf{\textcolor{benred8}{II}}}}
-\includescore{Completorium/TeLucisBMVCorpChrist.tex}
+\gregorioscore[a]{Completorium/TeLucisBMVCorpChrist.gtex}
 
 \newpage
 
@@ -3677,12 +3677,12 @@ Tonus ut ad Vesperas ( p. \pageref{DominicaCapitulum} ).
 \setspacebeforeinitial{2.5mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{VI}}}}{\small \textsc{ \textbf{\textcolor{benred8}{VI}}}}
-\includescore{Completorium/CompRespPA.tex}
+\gregorioscore[a]{Completorium/CompRespPA.gtex}
 
 \vspace{2.0mm}
 
 {\noinitial
-\includescore{CustodiNosDomine.tex}
+\gregorioscore[a]{CustodiNosDomine.gtex}
 
 }
 
@@ -3699,12 +3699,12 @@ Tonus ut ad Vesperas ( p. \pageref{DominicaCapitulum} ).
 \setspacebeforeinitial{2.5mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{IV}}}}{\small \textsc{ \textbf{\textcolor{benred8}{IV}}}}
-\includescore{Completorium/CompRespAdvent.tex}
+\gregorioscore[a]{Completorium/CompRespAdvent.gtex}
 
 \vspace{2.0mm}
 
 {\noinitial
-\includescore{CustodiNosDomine.tex}
+\gregorioscore[a]{CustodiNosDomine.gtex}
 
 }
 
@@ -3719,12 +3719,12 @@ Tonus ut ad Vesperas ( p. \pageref{DominicaCapitulum} ).
 \setspacebeforeinitial{2.5mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{IV}}}}{\small \textsc{ \textbf{\textcolor{benred8}{IV}}}}
-\includescore{Completorium/CompRespLent.tex}
+\gregorioscore[a]{Completorium/CompRespLent.gtex}
 
 \vspace{2.0mm}
 
 {\noinitial
-\includescore{CustodiNosDomine.tex}
+\gregorioscore[a]{CustodiNosDomine.gtex}
 
 }
 
@@ -3745,7 +3745,7 @@ Tonus ut ad Vesperas ( p. \pageref{DominicaCapitulum} ).
 \setspacebeforeinitial{2.8mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{III a}}}}{\small \textsc{ \textbf{\textcolor{benred8}{III a}}}}
-\includescore{Completorium/CompNuncDimAnt-01.tex}
+\gregorioscore[a]{Completorium/CompNuncDimAnt-01.gtex}
 
 \begin{psalmtext}
 Quia vid\'{e}runt \textbf{\'{o}}culi \textbf{me}i \gresixstar\ salu\textbf{t\'{a}}re \textbf{tu}um :
@@ -3761,7 +3761,7 @@ Sicut erat in princ\'{i}pio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ 
 \end{psalmtext}
 
 {\noinitial
-\includescore{Completorium/CompNuncDimAnt-02.tex}
+\gregorioscore[a]{Completorium/CompNuncDimAnt-02.gtex}
 
 }
 
@@ -3777,17 +3777,17 @@ Sequentes Preces semper dicuntur, pr\ae terquam in Officio Duplici, et infra O\l
 \end{rubric}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{\Vbar}}}}{\small \textsc{ \textbf{\textcolor{benred8}{\Vbar}}}}
-\includescore{Kyrie.tex}
+\gregorioscore[a]{Kyrie.gtex}
 
 \vspace{2mm}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{\Vbar}}}}{\small \textsc{ \textbf{\textcolor{benred8}{\Vbar}}}}
-\includescore{PaterNosterSecreto.tex}
+\gregorioscore[a]{PaterNosterSecreto.gtex}
 
 \vspace{2mm}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{\Vbar}}}}{\small \textsc{ \textbf{\textcolor{benred8}{\Vbar}}}}
-\includescore{CredoSecreto.tex}
+\gregorioscore[a]{CredoSecreto.gtex}
 
 \begin{response}
 \Vbar\ Bened\'{i}\libertineGlyph{c_t}us es D\'{o}mine Deus patrum no\libertineGlyph{s_t}r\'{o}rum.
@@ -3814,7 +3814,7 @@ Sequentes Preces semper dicuntur, pr\ae terquam in Officio Duplici, et infra O\l
 \end{response}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{\Vbar}}}}{\small \textsc{ \textbf{\textcolor{benred8}{\Vbar}}}}
-\includescore{DomineExaudi-short-03.tex}
+\gregorioscore[a]{DomineExaudi-short-03.gtex}
 
 % COMPLINE ORATION
 
@@ -3837,7 +3837,7 @@ Oratio canitur in Tono Simplici, ut in p.~\pageref{OratioSimplex}.
 \vspace{1.5mm}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{II}}}}{\small \textsc{ \textbf{\textcolor{benred8}{II}}}}
-\includescore{Completorium/CompBenedicamus.tex}
+\gregorioscore[a]{Completorium/CompBenedicamus.gtex}
 
 %USED TO HAVE THE Benedicamus FROM FERIAL VESPERS
 %\begin{rubric}
@@ -3846,7 +3846,7 @@ Oratio canitur in Tono Simplici, ut in p.~\pageref{OratioSimplex}.
 %\end{rubric}
 %
 %\gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{I}}}}{\small \textsc{ \textbf{\textcolor{benred8}{I}}}}
-%\includescore{FerBenedicamus_annum.tex}
+%\gregorioscore[a]{FerBenedicamus_annum.gtex}
 %
 %\begin{rubric}
 %Tempore Adventus et Quadragesim\ae , ac in Vigiliis et Feriis Quatuor Temporum :
@@ -3854,14 +3854,14 @@ Oratio canitur in Tono Simplici, ut in p.~\pageref{OratioSimplex}.
 %\end{rubric}
 %
 %\gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{IV}}}}{\small \textsc{ \textbf{\textcolor{benred8}{IV}}}}
-%\includescore{FerBenedicamus_penitential.tex}
+%\gregorioscore[a]{FerBenedicamus_penitential.gtex}
 
 \vspace{1.5mm}
 
 \subsubsection*{Benedictio.}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{}}}}{\small \textsc{ \textbf{\textcolor{benred8}{}}}}
-\includescore{BenedicatEtCustodiat.tex}
+\gregorioscore[a]{BenedicatEtCustodiat.gtex}
 
 \vspace{1.5mm}
 
@@ -3893,7 +3893,7 @@ Deinde dicuntur secreto \textcolor{black}{\emph{Pater no\libertineGlyph{s_t}er}}
 \setspaceafterinitial{2.2mm plus 0em minus 0em}
 \setspacebeforeinitial{2.2mm plus 0em minus 0em}
 
-\includescore{TonusOrationis1.tex}
+\gregorioscore[a]{TonusOrationis1.gtex}
 
 \vspace{1mm}
 
@@ -3902,7 +3902,7 @@ In Orationibus fit flexa tantum in fine prim\ae\ distin\libertineGlyph{c_t}ionis
 
 \end{rubric}
 
-\includescore{TonusOrationis3.tex}
+\gregorioscore[a]{TonusOrationis3.gtex}
 
 \vspace{1mm}
 
@@ -3913,7 +3913,7 @@ Si autem Oratio sit solito longior, flexa fieri pote\libertineGlyph{s_t} in ipso
 
 \subsubsection*{Ali\ae\ Conclusiones.}
 
-\includescore{TonusOrationis2.tex}
+\gregorioscore[a]{TonusOrationis2.gtex}
 
 \vspace*{-1.0mm}
 
@@ -3926,11 +3926,11 @@ Ad Completorium et ad Antiphonas de B. M. V. in fine Officii, servatur sequens t
 
 \end{rubric}
 
-\includescore{OratioSimplex1.tex}
+\gregorioscore[a]{OratioSimplex1.gtex}
 
 \subsubsection*{Alia Conclusio Toni Simplicis.}
 
-\includescore{OratioSimplex2.tex}
+\gregorioscore[a]{OratioSimplex2.gtex}
 
 \newpage
 
@@ -3955,7 +3955,7 @@ In Feriali tantum Officio, extra Tempus Paschale, etiam quando non dicuntur Prec
 \setspacebeforeinitial{2.2mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{II}}}}{\small \textsc{ \textbf{\textcolor{benred8}{II}}}}
-\includescore{CommemoratioCrucis.tex}
+\gregorioscore[a]{CommemoratioCrucis.gtex}
 
 \begin{rubric}
 Sequens tonus adhibetur in omnibus versiculis Commemorationum :
@@ -3963,7 +3963,7 @@ Sequens tonus adhibetur in omnibus versiculis Commemorationum :
 \end{rubric}
 
 {\noinitial
-\includescore{OmnisTerraV.tex}
+\gregorioscore[a]{OmnisTerraV.gtex}
 
 }
 
@@ -3991,7 +3991,7 @@ Sequentes Commemorationes de San\libertineGlyph{c_t}a Maria, de San\libertineGly
 \setspacebeforeinitial{2.2mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{I}}}}{\small \textsc{ \textbf{\textcolor{benred8}{I}}}}
-\includescore{CommemoratioBMV.tex}
+\gregorioscore[a]{CommemoratioBMV.gtex}
 
 \begin{response}
 \Vbar\ Ora pro nobis, san\libertineGlyph{c_t}a Dei G\'{e}netrix.
@@ -4032,7 +4032,7 @@ Ab Octava Epiphani\ae\ usque ad Purificationem :
 \setspacebeforeinitial{2.2mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{VIII}}}}{\small \textsc{ \textbf{\textcolor{benred8}{VIII}}}}
-\includescore{CommemoratioJoseph.tex}
+\gregorioscore[a]{CommemoratioJoseph.gtex}
 
 \begin{response}
 \Vbar\ Gl\'{o}ria et div\'{i}ti\ae\ in domo ejus.
@@ -4055,7 +4055,7 @@ Ab Octava Epiphani\ae\ usque ad Purificationem :
 \setspacebeforeinitial{2.2mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{VIII}}}}{\small \textsc{ \textbf{\textcolor{benred8}{VIII}}}}
-\includescore{CommemoratioApost.tex}
+\gregorioscore[a]{CommemoratioApost.gtex}
 
 \begin{response}
 \Vbar\ Con\libertineGlyph{s_t}\'{i}tues eos pr\'{i}ncipes super omnem terram.
@@ -4086,7 +4086,7 @@ Fiat Commemoratio consueta ante vel po\libertineGlyph{s_t} Commemorationes pr\ae
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{II}}}}{\small \textsc{ \textbf{\textcolor{benred8}{II}}}}
 
-\includescore{CommemoratioBedae.tex}
+\gregorioscore[a]{CommemoratioBedae.gtex}
 
 \begin{response}
 \Vbar\ Am\'{a}vit eum D\'{o}minus, et orn\'{a}vit eum.
@@ -4115,7 +4115,7 @@ Ultimo loco~:
 \setspacebeforeinitial{2.2mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{II}}}}{\small \textsc{ \textbf{\textcolor{benred8}{II}}}}
-\includescore{CommemoratioPacis.tex}
+\gregorioscore[a]{CommemoratioPacis.gtex}
 
 \begin{response}
 \Vbar\ Fiat pax in virt\'{u}te tua.
@@ -4151,7 +4151,7 @@ Ultimo loco~:
 \setspacebeforeinitial{2.2mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{V}}}}{\small \textsc{ \textbf{\textcolor{benred8}{V}}}}
-\includescore{AlmaRedemptorisSolemn.tex}
+\gregorioscore[a]{AlmaRedemptorisSolemn.gtex}
 
 \vspace{2mm}
 
@@ -4202,7 +4202,7 @@ A primis Vesperis Nativitatis Domini et deinceps :
 \setspacebeforeinitial{2.2mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{VI}}}}{\small \textsc{ \textbf{\textcolor{benred8}{VI}}}}
-\includescore{AveReginaCaelorumSolemn.tex}
+\gregorioscore[a]{AveReginaCaelorumSolemn.gtex}
 
 \vspace{2mm}
 
@@ -4232,7 +4232,7 @@ A Completorio Sabbati San\libertineGlyph{c_t}i usque ad Nonam Sabbati infra O\li
 \setspacebeforeinitial{2.2mm plus 0em minus 0em}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{VI}}}}{\small \textsc{ \textbf{\textcolor{benred8}{VI}}}}
-\includescore{ReginaCaeliSolemn2.tex}
+\gregorioscore[a]{ReginaCaeliSolemn2.gtex}
 
 \vspace{2mm}
 
@@ -4263,7 +4263,7 @@ A primis Vesperis Fe\libertineGlyph{s_t}i Ss.~Trinitatis usque ad Nonam Sabbati 
 
 {\grespacelinestext=4.60mm
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{I}}}}{\small \textsc{ \textbf{\textcolor{benred8}{I}}}}
-\includescore{SalveReginaSolemn.tex}
+\gregorioscore[a]{SalveReginaSolemn.gtex}
 
 }
 
@@ -4295,24 +4295,24 @@ A primis Vesperis Fe\libertineGlyph{s_t}i Ss.~Trinitatis usque ad Nonam Sabbati 
 
 {\grespacelinestext=7.5mm
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{V}}}}{\small \textsc{ \textbf{\textcolor{benred8}{V}}}}
-\includescore{AlmaRedemptorisSimple.tex}
+\gregorioscore[a]{AlmaRedemptorisSimple.gtex}
 
 }
 
 \vspace{2mm}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{VI}}}}{\small \textsc{ \textbf{\textcolor{benred8}{VI}}}}
-\includescore{AveReginaCaelorumSimple.tex}
+\gregorioscore[a]{AveReginaCaelorumSimple.gtex}
 
 \vspace{2mm}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{VI}}}}{\small \textsc{ \textbf{\textcolor{benred8}{VI}}}}
-\includescore{ReginaCaeliSimple.tex}
+\gregorioscore[a]{ReginaCaeliSimple.gtex}
 
 \vspace{2mm}
 
 \gresetfirstlineaboveinitial{\small \textsc{ \textbf{\textcolor{benred8}{V}}}}{\small \textsc{ \textbf{\textcolor{benred8}{V}}}}
-\includescore{SalveReginaSimple.tex}
+\gregorioscore[a]{SalveReginaSimple.gtex}
 
 \vspace{2mm}
 
