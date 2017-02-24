@@ -9,6 +9,7 @@
 \usepackage[pscoord]{eso-pic}% The zero point of the coordinate systemis the lower left corner of the page (the default).
 
 % usual packages loading:
+\usepackage{calc}
 \usepackage{fontspec}
 \usepackage{graphicx} % support the \includegraphics command and options
 \usepackage{geometry} % See geometry.pdf to learn the layout options. There are lots.
@@ -44,11 +45,11 @@
  
  
 %% No space for initial letter
-\def\noinitial{%
-\setspaceafterinitial{0pt plus 0em minus 0em}%
-\setspacebeforeinitial{0pt plus 0em minus 0em}%
-\relax %
-}
+% \def\noinitial{%
+% \setspaceafterinitial{0pt plus 0em minus 0em}%
+% \setspacebeforeinitial{0pt plus 0em minus 0em}%
+% \relax %
+% }
 
 % REDS
 \definecolor{benred1}{HTML}{E73930}
@@ -131,16 +132,6 @@
 \newcommand{\grebencross}{\fontspec{gresym3.ttf}\textcolor{benred8}{T}}
 
 
-
-% to change the font to something better, you can install the kpfonts package (if not already installed). To do so
-% go open the "TeX Live Manager" in the Menu Start->All Programs->TeX Live 2010
-
-%\title{\color{benred8}PSALTERIUM VESPERALE\\JUXTA RITUM ROMANUM\\Annotatum cum Signis Rhythmicis}
-%\author{}
-%\date{} % Activate to display a given date or no date (if empty),
-         % otherwise the current date is printed 
-
-
 % FORMAT SECTIONS - use titlesec package
 \titleformat{\section}{\centering\scshape\Huge\color{benred8}}{}{1em}{}
 
@@ -158,22 +149,13 @@
 \def\capitulumSpace{\hspace{20 mm}}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% HERE BEGINS THE DOCUMENT %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
-
-
-
-
-
-
-% here we begin the document
 \begin{document}
 
-\pagenumbering{gobble}
-
-%\maketitle
-%\thispagestyle{fancy}
+% \pagenumbering{gobble}
 
 \vspace*{35 pt}
 
@@ -231,7 +213,6 @@ ORNATUM SIGNIS RHYTHMICIS
 
 \vspace*{3 mm}
 
-%\includegraphics[width=5.75cm]{DavidScan.png} %heigh ~= 7.06 cm
 \includegraphics[height=7.06cm]{CoverImage02_s.png}
 
 \vspace*{3 mm}
@@ -244,51 +225,38 @@ ORNATUM SIGNIS RHYTHMICIS
 
 \end{center}
 
-%redefine 'plain' page style to have blue page numbers too
-\fancypagestyle{plain}{
-	\chead{}
-	\cfoot{\textcolor{benblue1}{\thepage}}
+% %redefine 'plain' page style to have blue page numbers too
+% \fancypagestyle{plain}{
+% 	\chead{}
+% 	\cfoot{\textcolor{benblue1}{Page number.}}%\thepage}}
 
-}
+% }
 
-%\newpage STARTS A NEW PAGE AT THIS POINT
 \newpage
-\thispagestyle{empty}
-\mbox{}
-\newpage
-\chead{\color{benred8}\textsc{Dominica}}
-%\cfoot{\thepage}
-\cfoot{\textcolor{benblue1}{\thepage}}
-\thispagestyle{plain}
-%\pagenumbering{roman}  
-\pagenumbering{arabic}  
-\setcounter{page}{3}
+% \thispagestyle{empty}
+% \mbox{}
+% \newpage
+% \chead{\color{benred8}\textsc{Dominica}}
+% \cfoot{\textcolor{benblue1}{Page number.}}%\thepage}}
+% \thispagestyle{plain}
+% \pagenumbering{arabic}  
+% \setcounter{page}{3}
 
 % The title:
 \begin{center}\begin{Huge}\textsc{\textcolor{benred8}{Dominica ad Vesperas}}\end{Huge}\end{center}
-%\section*{Dominica ad Vesperas}
 
 \begin{center}Pater no\libertineGlyph{s_t}er. Ave Mar\'{i}a.\end{center}
 
-% Here we set the space around the initial.
-% Please report to http://home.gna.org/gregorio/gregoriotex/details for more details and options
-%was 2.2mm for both
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{2.2mm plus 0em minus 0em}
+
+% \setspaceafterinitial{2.2mm plus 0em minus 0em}
+% \setspacebeforeinitial{2.2mm plus 0em minus 0em}
 
 % Here we set the initial font. Change 43 if you want a bigger initial.
 \def\greinitialformat#1{%
 {\fontsize{43}{43}\selectfont #1}%
 }
 
-% We set red lines here, comment it if you want black ones.
-%\redlines
-
-% We set VII above the initial.
-\gresetfirstlineaboveinitial{\textcolor{benred8}{\small \textsc{\textbf{\Vbar}}}}{\textcolor{benred8}{\small \textsc{\textbf{\Vbar}}}}
-
-% We type a text in the top right corner of the score:
-%\commentary{{\small \emph{Cf. Is. 30, 19 . 30 ; Ps. 79}}}
+% \gresetfirstlineaboveinitial{\textcolor{benred8}{\small \textsc{\textbf{\Vbar}}}}{\textcolor{benred8}{\small \textsc{\textbf{\Vbar}}}}
 
 % and finally we include the score. The file must be in the same directory as this one.
 \gregorioscore[a]{DeusInAdjutorium.gtex}
@@ -298,7 +266,7 @@ ORNATUM SIGNIS RHYTHMICIS
 % eso pic here ???
 % the staff of the first line of the Dixit Dominus extends too far into the right margin
 % this thing should cover that up
-\placetextbox{0.95}{0.55}{\includegraphics[width=2.963cm]{blank.PNG}}%
+% \placetextbox{0.95}{0.55}{\includegraphics[width=2.963cm]{blank.PNG}}%
 %%%%%%%%%%%%%%%%
 
 \begin{rubric}
@@ -306,9 +274,7 @@ A Septuagesima usque ad Pascha, loco \emph{\textcolor{black}{Allelúia}}, canitu
 
 \end{rubric}
 
-{\noinitial
 \gregorioscore[a]{LausTibi.gtex}
-}
 
 %\vspace{2 mm}
 
@@ -357,9 +323,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{Dominica/DomAnt1-02.gtex}
-}
 
 \vspace{2 mm}
 
@@ -379,13 +343,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 
 }
 
-%\subsubsection*{Psalmus 110.}
-
-{\noinitial
-%\grenoinitial
 \gregorioscore[a]{Dominica/DomFL2.gtex}
-
-}
 
 
 \begin{psalmtext}
@@ -413,9 +371,7 @@ Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{Dominica/DomAnt2-02.gtex}
-}
 
 \vspace{2 mm}
 
@@ -437,9 +393,7 @@ Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in
 
 \subsubsection*{Psalmus 111.}
 
-{\noinitial
 \gregorioscore[a]{Dominica/DomFL3.gtex}
-}
 
 
 \begin{psalmtext}
@@ -465,9 +419,7 @@ Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{Dominica/DomAnt3-02.gtex}
-}
 
 \vspace{2 mm}
 
@@ -483,10 +435,7 @@ Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in
 
 \subsubsection*{Psalmus 112.}
 
-{\noinitial
 \gregorioscore[a]{Dominica/DomFL4.gtex}
-}
-
 
 \begin{psalmtext}
 \textcolor{benred8}{\emph{Fit reverentia :}} Sit nomen Dómini \textbf{be}ne\textbf{díc}tum, \gresixstar\ ex hoc nunc, et \textbf{us}que in \textbf{sǽ}culum.
@@ -509,9 +458,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{Dominica/DomAnt4-02.gtex}
-}
 
 \vspace{2 mm}
 
@@ -527,10 +474,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 
 \subsubsection*{Psalmus 113.}
 
-{\noinitial
 \gregorioscore[a]{Dominica/DomFL5.gtex}
-}
-
 
 \begin{psalmtext}
 Fa\libertineGlyph{c_t}a e\libertineGlyph{s_t} Judǽa san\libertineGlyph{c_t}ifi\emph{cátio} \textbf{e}jus, \gresixstar\ Israel potés\emph{tas} \textbf{e}jus.
@@ -591,9 +535,8 @@ Sicut erat in princípio, \emph{et nunc, et} \textbf{sem}per, \gresixstar\ et in
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{Dominica/DomAnt5-02.gtex}
-}
+
 \vspace{2 mm}
 
 \begin{rubric}
@@ -635,10 +578,7 @@ Quando fit Commemoratio B. M. V., canitur doxologia \emph{\textcolor{black}{Gl\'
 
 \end{rubric}
 
-{\noinitial
 \gregorioscore[a]{DirigaturDomine.gtex}
-
-}
 
 \begin{response}
 \hspace{1.0 mm}\Rbar\ Sicut \hspace{1.1mm} inc\'{e}nsum \hspace{1.1mm} in \hspace{1.1mm} consp\'{e}\libertineGlyph{c_t}u \hspace{1.2mm} tu- o.
@@ -853,10 +793,7 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 
 \subsubsection*{Psalmus 114.}
 
-{\noinitial
 \gregorioscore[a]{F2/F2FL1.gtex}
-}
-
 
 \begin{psalmtext}
 Quia inclinávit aurem \textbf{su}am \textbf{mi}hi : \gresixstar\ et in diébus meis \emph{invo}\textbf{cá}bo.
@@ -881,10 +818,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{F2/F2Ant1-02.gtex}
-
-}
 
 \vspace{2 mm}
 
@@ -921,11 +855,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \end{psalmtext}
 
-
-{\noinitial
 \gregorioscore[a]{F2/F2Ant2-02.gtex}
-
-}
 
 \vspace{2 mm}
 
@@ -950,11 +880,7 @@ Sicut erat in princípio, et nunc, \emph{et} \textbf{sem}per, \gresixstar\ et in
 
 \end{psalmtext}
 
-
-{\noinitial
 \gregorioscore[a]{F2/F2Ant3-02.gtex}
-
-}
 
 \vspace{2 mm}
 
@@ -970,10 +896,7 @@ Sicut erat in princípio, et nunc, \emph{et} \textbf{sem}per, \gresixstar\ et in
 
 \subsubsection*{Psalmus 119.}
 
-{\noinitial
 \gregorioscore[a]{F2/F2FL4.gtex}
-}
-
 
 \begin{psalmtext}
 Dómine líbera ánimam meam a lábiis i\textbf{ní}quis, \gresixstar\ et a \textbf{lin}gua do\textbf{ló}sa.
@@ -992,10 +915,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{F2/F2Ant4-02.gtex}
-
-}
 
 \vspace{2 mm}
 
@@ -1011,10 +931,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \subsubsection*{Psalmus 120.}
 
-{\noinitial
 \gregorioscore[a]{F2/F2FL5.gtex}
-}
-
 
 \begin{psalmtext}
 Auxílium \textbf{me}um a \textbf{Dó}mino, \gresixstar\ qui fecit cæ\emph{lum et} \textbf{ter}ram.
@@ -1037,10 +954,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{F2/F2Ant5-02.gtex}
-
-}
 
 \vspace{2 mm}
 
@@ -1127,10 +1041,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{F2/F2MagAnt-02.gtex}
-
-}
 
 % PRECES
 
@@ -1354,9 +1265,7 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 
 \subsubsection*{Psalmus 121.}
 
-{\noinitial
 \gregorioscore[a]{F3/F3FL1.gtex}
-}
 
 \begin{psalmtext}
 Stantes erant \emph{pedes} \textbf{no}\libertineGlyph{s_t}ri, \gresixstar\ in átriis \emph{tuis Je}\textbf{rúsa}lem.
@@ -1381,10 +1290,7 @@ Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{F3/F3Ant1-02.gtex}
-
-}
 
 \vspace{2 mm}
 
@@ -1400,9 +1306,7 @@ Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in
 
 \subsubsection*{Psalmus 122.}
 
-{\noinitial
 \gregorioscore[a]{F3/F3FL2.gtex}
-}
 
 \begin{psalmtext}
 Ecce sicut óculi ser\textbf{vó}rum \gresixstar\ in mánibus dominó\emph{rum su}\textbf{ó}rum,
@@ -1419,10 +1323,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{F3/F3Ant2-02.gtex}
-
-}
 
 \vspace{2 mm}
 
@@ -1438,9 +1339,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \subsubsection*{Psalmus 123.}
 
-{\noinitial
 \gregorioscore[a]{F3/F3FL3.gtex}
-}
 
 \begin{psalmtext}
 Cum exsúrgerent \textbf{hó}mines \textbf{in} nos, \gresixstar\ forte vivos \emph{deglu}\textbf{tís}sent nos :
@@ -1463,10 +1362,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{F3/F3Ant3-02.gtex}
-
-}
 
 \vspace{2 mm}
 
@@ -1482,9 +1378,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 
 \subsubsection*{Psalmus 124.}
 
-{\noinitial
 \gregorioscore[a]{F3/F3FL4.gtex}
-}
 
 \begin{psalmtext}
 Montes in circúitu ejus : \gredagger\ et Dóminus in circúitu pópuli \textbf{su}i, \gresixstar\ ex hoc nunc et us\emph{que in} \textbf{sǽ}culum.
@@ -1501,10 +1395,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{F3/F3Ant4-02.gtex}
-
-}
 
 \vspace{2 mm}
 
@@ -1520,9 +1411,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \subsubsection*{Psalmus 125.}
 
-{\noinitial
 \gregorioscore[a]{F3/F3FL5.gtex}
-}
 
 \begin{psalmtext}
 Tunc replétum e\libertineGlyph{s_t} gáudi\textbf{o} os \textbf{nos}trum : \gresixstar\ et lingua no\libertineGlyph{s_t}ra exsul\emph{tati}\textbf{ó}ne.
@@ -1545,10 +1434,7 @@ Sicut erat in princípio, et \textbf{nunc}, et s\textbf{em}per, \gresixstar\ et 
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{F3/F3Ant5-02.gtex}
-
-}
 
 \vspace{2 mm}
 
@@ -1635,10 +1521,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{F3/F3MagAnt-02.gtex}
-
-}
 
 \begin{rubric}
 Preces, si dicend\ae\ sint, canuntur ut in Feria II. Oratio, quando propria non assignatur, canitur de Dominica pr\ae cedenti, ut habetur in Proprio de Tempore. Po\libertineGlyph{s_t}ea fiunt Commemorationes ( si id tempus requirit ). Tonus ad \emph{\textcolor{black}{Benedic\'{a}mus D\'{o}mino}} ut in Feria II.
@@ -1712,10 +1595,7 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 
 \subsubsection*{Psalmus 126.}
 
-{\noinitial
 \gregorioscore[a]{F4/F4FL1.gtex}
-
-}
 
 \begin{psalmtext}
 Nisi Dóminus cu\libertineGlyph{s_t}odíerit civi\textbf{tá}tem, \gresixstar\ fru\libertineGlyph{s_t}ra vígilat qui cu\libertineGlyph{s_t}ó\emph{dit} \textbf{e}am.
@@ -1734,10 +1614,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{F4/F4Ant1-02.gtex}
-
-}
 
 \vspace{2 mm}
 
@@ -1772,10 +1649,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{F4/F4Ant2-02.gtex}
-
-}
 
 \vspace{2 mm}
 
@@ -1810,10 +1684,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{F4/F4Ant3-02.gtex}
-
-}
 
 \vspace{2 mm}
 
@@ -1850,10 +1721,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{F4/F4Ant4-02.gtex}
-
-}
 
 \vspace{2 mm}
 
@@ -1869,10 +1737,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \subsubsection*{Psalmus 130.}
 
-{\noinitial
 \gregorioscore[a]{F4/F4FL5.gtex}
-
-}
 
 \begin{psalmtext}
 Neque ambulávi in \textbf{ma}gnis : \gresixstar\ neque in mira\textbf{bí}libus \textbf{su}per me.
@@ -1889,10 +1754,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{F4/F4Ant5-02.gtex}
-
-}
 
 \vspace{2 mm}
 
@@ -1977,10 +1839,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{F4/F4MagAnt-02.gtex}
-
-}
 
 \begin{rubric}
 Preces, si dicend\ae\ sint, canuntur ut in Feria II. Oratio, quando propria non assignatur, canitur de Dominica pr\ae cedenti, ut habetur in Proprio de Tempore. Po\libertineGlyph{s_t}ea fiunt Commemorationes ( si id tempus requirit ). Tonus ad \emph{\textcolor{black}{Benedic\'{a}mus D\'{o}mino}} ut in Feria II.
@@ -2054,10 +1913,7 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 
 \subsubsection*{Psalmus 131.}
 
-{\noinitial
 \gregorioscore[a]{F5/F5FL1.gtex}
-
-}
 
 \begin{psalmtext}
 Sicut jurávit \textbf{Dó}mino, \gresixstar\ votum vovit \textbf{De}o \textbf{Ja}cob :
@@ -2102,10 +1958,7 @@ Sicut erat in princípio, et nunc, et\textbf{ sem}per, \gresixstar\ et in sǽcul
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{F5/F5Ant1-02.gtex}
-
-}
 
 \vspace{2 mm}
 
@@ -2134,10 +1987,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{F5/F5Ant2-02.gtex}
-
-}
 
 \vspace{2 mm}
 
@@ -2153,10 +2003,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 
 \subsubsection*{Psalmus 134.}
 
-{\noinitial
 \gregorioscore[a]{F5/F5FL3.gtex}
-
-}
 
 \begin{psalmtext}
 Qui \libertineGlyph{s_t}atis in \textbf{do}mo \textbf{Dómi}ni, \gresixstar\ in átriis domus \textbf{De}i \textbf{nos}tri.
@@ -2205,10 +2052,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{F5/F5Ant3-02.gtex}
-
-}
 
 \vspace{2 mm}
 
@@ -2224,10 +2068,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 
 \subsubsection*{Psalmus 135.}
 
-{\noinitial
 \gregorioscore[a]{F5/F5FL4.gtex}
-
-}
 
 \begin{psalmtext}
 Confitémini \textbf{De}o de\textbf{ó}rum : \gresixstar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
@@ -2288,10 +2129,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{F5/F5Ant4-02.gtex}
-
-}
 
 \vspace{2 mm}
 
@@ -2307,10 +2145,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 
 \subsubsection*{Psalmus 136.}
 
-{\noinitial
 \gregorioscore[a]{F5/F5FL5.gtex}
-
-}
 
 \begin{psalmtext}
 In salícibus in médio \textbf{e}jus, \gresixstar\ suspéndimus ór\emph{gana} \textbf{nos}tra.
@@ -2341,10 +2176,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{F5/F5Ant5-02.gtex}
-
-}
 
 \vspace{2 mm}
 
@@ -2429,10 +2261,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{F5/F5MagAnt-02.gtex}
-
-}
 
 \begin{rubric}
 Preces, si dicend\ae\ sint, canuntur ut in Feria II. Oratio, quando propria non assignatur, canitur de Dominica pr\ae cedenti, ut habetur in Proprio de Tempore. Po\libertineGlyph{s_t}ea fiunt Commemorationes ( si id tempus requirit ). Tonus ad \emph{\textcolor{black}{Benedic\'{a}mus D\'{o}mino}} ut in Feria II.
@@ -2506,10 +2335,7 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 
 \subsubsection*{Psalmus 137.}
 
-{\noinitial
 \gregorioscore[a]{F6/F6FL1.gtex}
-
-}
 
 \begin{psalmtext}
 In conspé\libertineGlyph{c_t}u Angelórum psallam \textbf{ti}bi : \gresixstar\ adorábo ad templum san\libertineGlyph{c_t}um tuum, et confitébor \textbf{nó}mini \textbf{tu}o.
@@ -2534,10 +2360,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{F6/F6Ant1-02.gtex}
-
-}
 
 \vspace{2 mm}
 
@@ -2604,10 +2427,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{F6/F6Ant2-02.gtex}
-
-}
 
 \vspace{2 mm}
 
@@ -2623,10 +2443,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 
 \subsubsection*{Psalmus 139.}
 
-{\noinitial
 \gregorioscore[a]{F6/F6FL3.gtex}
-
-}
 
 \begin{psalmtext}
 Qui cogitavérunt iniquitá\emph{tes in} \textbf{cor}de : \gresixstar\ tota die con\libertineGlyph{s_t}ituébant \textbf{prǽ}lia.
@@ -2661,10 +2478,7 @@ Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{F6/F6Ant3-02.gtex}
-
-}
 
 \vspace{2 mm}
 
@@ -2707,10 +2521,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{F6/F6Ant4-02.gtex}
-
-}
 
 \vspace{2 mm}
 
@@ -2726,10 +2537,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \subsubsection*{Psalmus 141.}
 
-{\noinitial
 \gregorioscore[a]{F6/F6FL5.gtex}
-
-}
 
 \begin{psalmtext}
 Effúndo in conspé\libertineGlyph{c_t}u ejus oratiónem \textbf{me}am, \gresixstar\ et tribulatiónem meam ante ip\emph{sum pro}\textbf{nún}tio.
@@ -2756,10 +2564,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{F6/F6Ant5-02.gtex}
-
-}
 
 \vspace{2 mm}
 
@@ -2844,10 +2649,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{F6/F6MagAnt-02.gtex}
-
-}
 
 \begin{rubric}
 Preces, si dicend\ae\ sint, canuntur ut in Feria II. Oratio, quando propria non assignatur, canitur de Dominica pr\ae cedenti, ut habetur in Proprio de Tempore. Po\libertineGlyph{s_t}ea fiunt Commemorationes ( si id tempus requirit ). Tonus ad \emph{\textcolor{black}{Benedic\'{a}mus D\'{o}mino}} ut in Feria II.
@@ -2962,10 +2764,7 @@ Sicut erat in princípio, et nunc, \emph{et} \textbf{sem}per, \gresixstar\ et in
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{Sabbato/SabAnt1-02.gtex}
-
-}
 
 \vspace{2 mm}
 
@@ -2981,10 +2780,7 @@ Sicut erat in princípio, et nunc, \emph{et} \textbf{sem}per, \gresixstar\ et in
 
 \subsubsection*{Psalmus 144.}
 
-{\noinitial
 \gregorioscore[a]{Sabbato/SabFL2.gtex}
-
-}
 
 \begin{psalmtext}
 Per síngulos dies benedícam \textbf{ti}bi : \gresixstar\ et laudábo nomen tuum in sǽculum et in sǽ\emph{culum} \textbf{sǽ}culi.
@@ -3035,10 +2831,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{Sabbato/SabAnt2-02.gtex}
-
-}
 
 \vspace{2 mm}
 
@@ -3054,10 +2847,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \subsubsection*{Psalmus 145.}
 
-{\noinitial
 \gregorioscore[a]{Sabbato/SabFL3.gtex}
-
-}
 
 \begin{psalmtext}
 Nolíte confídere \emph{in prin}\textbf{cí}pibus : \gresixstar\ in fíliis hóminum, in qui\emph{bus non e\libertineGlyph{s_t}} \textbf{sa}lus.
@@ -3082,10 +2872,7 @@ Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{Sabbato/SabAnt3-02.gtex}
-
-}
 
 \vspace{2 mm}
 
@@ -3101,10 +2888,7 @@ Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in
 
 \subsubsection*{Psalmus 146.}
 
-{\noinitial
 \gregorioscore[a]{Sabbato/SabFL4.gtex}
-
-}
 
 \begin{psalmtext}
 Ædíficans Jerúsalem \textbf{Dó}minus : \gresixstar\ dispersiónes Israélis \emph{congre}\textbf{gá}bit.
@@ -3135,10 +2919,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{Sabbato/SabAnt4-02.gtex}
-
-}
 
 \vspace{2 mm}
 
@@ -3177,10 +2958,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{Sabbato/SabAnt5-02.gtex}
-
-}
 
 \vspace{2 mm}
 
@@ -3275,10 +3053,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{Sabbato/SabMagAnt-02.gtex}
-
-}
 
 \begin{response}
 \Vbar\ Dómine exáudi oratiónem meam. \Rbar\ Et clamor meus ad te véniat.
@@ -3336,19 +3111,13 @@ Lector incipit :
 
 \end{rubric}
 
-{\noinitial
 \gregorioscore[a]{JubeDomine.gtex}
-
-}
 
 \vspace{-1.0mm}
 
 \subsubsection*{Benedictio.}
 
-{\noinitial
 \gregorioscore[a]{NoctemQuietam.gtex}
-
-}
 
 \vspace{-0.5mm}
 
@@ -3362,17 +3131,11 @@ Lector incipit :
 
 \vspace{2.0mm}
 
-{\noinitial
 \gregorioscore[a]{AdjutoriumNostrum.gtex}
-
-}
 
 \vspace{1.0mm}
 
-{\noinitial
 \gregorioscore[a]{QuiFecitCaelum.gtex}
-
-}
 
 %\begin{response}
 %\hspace{1.0 mm}\Rbar\hspace{0.3mm} Qui \hspace{7.7mm} fecit \hspace{7.7mm} c\ae lum \hspace{7.7mm} et \hspace{6.6mm} ter-\hspace{4.4mm}ram.
@@ -3403,10 +3166,7 @@ Deinde, clara voce, pollice signando sibi pe\libertineGlyph{c_t}us signo crucis,
 
 \end{rubric}
 
-{\noinitial
 \gregorioscore[a]{ConverteNosDeus.gtex}
-
-}
 
 \begin{response}
 \hspace{1.0 mm}\Rbar\hspace{0.3mm} Et \hspace{7.5mm} av\'{e}rte \hspace{6.7mm} iram \hspace{6.5mm} tuam \hspace{0.3mm} a \hspace{1.0mm} nobis.
@@ -3425,9 +3185,7 @@ A Septuagesima usque ad Pascha, loco \emph{\textcolor{black}{Allelúia}}, canitu
 
 \end{rubric}
 
-{\noinitial
 \gregorioscore[a]{LausTibi.gtex}
-}
 
 \vspace{2.0mm}
 
@@ -3441,10 +3199,7 @@ A Septuagesima usque ad Pascha, loco \emph{\textcolor{black}{Allelúia}}, canitu
 
 \subsubsection*{Psalmus 4.}
 
-{\noinitial
 \gregorioscore[a]{Completorium/CompFL1.gtex}
-
-}
 
 %\vspace{2 mm}
 
@@ -3477,10 +3232,7 @@ Sicut erat in princ\'{i}pio, et nunc, et \textbf{sem}per, \gresixstar\ et in s\'
 
 \subsubsection*{Psalmus 30.}
 
-{\noinitial
 \gregorioscore[a]{Completorium/CompFL2.gtex}
-
-}
 
 %\vspace{2 mm}
 
@@ -3505,10 +3257,7 @@ Sicut erat in princ\'{i}pio, et nunc, et \textbf{sem}per, \gresixstar\ et in s\'
 
 \subsubsection*{Psalmus 90.}
 
-{\noinitial
 \gregorioscore[a]{Completorium/CompFL3.gtex}
-
-}
 
 %\vspace{2 mm}
 
@@ -3553,10 +3302,7 @@ Sicut erat in princ\'{i}pio, et nunc, et \textbf{sem}per, \gresixstar\ et in s\'
 
 \subsubsection*{Psalmus 133.}
 
-{\noinitial
 \gregorioscore[a]{Completorium/CompFL4.gtex}
-
-}
 
 %\vspace{2 mm}
 
@@ -3573,10 +3319,7 @@ Sicut erat in princ\'{i}pio, et nunc, et \textbf{sem}per, \gresixstar\ et in s\'
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{Completorium/CompAnt-02.gtex}
-
-}
 
 % COMPLINE HYMN
 
@@ -3681,10 +3424,7 @@ Tonus ut ad Vesperas ( p. \pageref{DominicaCapitulum} ).
 
 \vspace{2.0mm}
 
-{\noinitial
 \gregorioscore[a]{CustodiNosDomine.gtex}
-
-}
 
 \begin{response}
 \hspace{1.0 mm}\Rbar\hspace{0.3mm} Sub \hspace{2.0mm} umbra \hspace{2.0mm} al\'{a}rum \hspace{2.0mm} tu\'{a}rum \hspace{1.2mm} pr\'{o}tege nos.
@@ -3703,10 +3443,7 @@ Tonus ut ad Vesperas ( p. \pageref{DominicaCapitulum} ).
 
 \vspace{2.0mm}
 
-{\noinitial
 \gregorioscore[a]{CustodiNosDomine.gtex}
-
-}
 
 \begin{response}
 \hspace{1.0 mm}\Rbar\hspace{0.3mm} Sub \hspace{2.0mm} umbra \hspace{2.0mm} al\'{a}rum \hspace{2.0mm} tu\'{a}rum \hspace{1.2mm} pr\'{o}tege nos.
@@ -3723,10 +3460,7 @@ Tonus ut ad Vesperas ( p. \pageref{DominicaCapitulum} ).
 
 \vspace{2.0mm}
 
-{\noinitial
 \gregorioscore[a]{CustodiNosDomine.gtex}
-
-}
 
 \begin{response}
 \hspace{1.0 mm}\Rbar\hspace{0.3mm} Sub \hspace{2.0mm} umbra \hspace{2.0mm} al\'{a}rum \hspace{2.0mm} tu\'{a}rum \hspace{1.2mm} pr\'{o}tege nos.
@@ -3760,10 +3494,7 @@ Sicut erat in princ\'{i}pio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ 
 
 \end{psalmtext}
 
-{\noinitial
 \gregorioscore[a]{Completorium/CompNuncDimAnt-02.gtex}
-
-}
 
 \newpage
 
@@ -3962,10 +3693,7 @@ Sequens tonus adhibetur in omnibus versiculis Commemorationum :
 
 \end{rubric}
 
-{\noinitial
 \gregorioscore[a]{OmnisTerraV.gtex}
-
-}
 
 \begin{response}
 \hspace{1.0 mm}\Rbar\hspace{0.3mm} Psalmum \hspace{3.4mm} dicat \hspace{3.4mm} n\'{o}mini \hspace{3.9mm} tuo \hspace{3.4mm} D\'{o}mine.
