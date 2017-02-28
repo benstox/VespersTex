@@ -41,15 +41,6 @@
     \put(\LenToUnit{#1\paperwidth},\LenToUnit{#2\paperheight}){\vtop{{\null}\makebox[0pt][c]{#3}}}%
   }%
 }%
- 
- 
- 
-%% No space for initial letter
-% \def\noinitial{%
-% \setspaceafterinitial{0pt plus 0em minus 0em}%
-% \setspacebeforeinitial{0pt plus 0em minus 0em}%
-% \relax %
-% }
 
 % REDS
 \definecolor{benred1}{HTML}{E73930}
@@ -107,7 +98,7 @@
 \let\OldGreStar\GreStar
 \renewcommand{\GreStar}{\textcolor{benred8}{\OldGreStar}}
 
-% MAKES ALL \gredaggers RED
+% MAKES ALL \GreDaggers RED
 \let\OldGreDagger\GreDagger
 \renewcommand{\GreDagger}{\textcolor{benred8}{\OldGreDagger}}
 
@@ -242,24 +233,13 @@ ORNATUM SIGNIS RHYTHMICIS
 % \pagenumbering{arabic}  
 % \setcounter{page}{3}
 
-% The title:
 \begin{center}\begin{Huge}\textsc{\textcolor{benred8}{Dominica ad Vesperas}}\end{Huge}\end{center}
 
 \begin{center}Pater no\libertineGlyph{s_t}er. Ave Mar\'{i}a.\end{center}
 
-
-% \setspaceafterinitial{2.2mm plus 0em minus 0em}
-% \setspacebeforeinitial{2.2mm plus 0em minus 0em}
-
-% Here we set the initial font. Change 43 if you want a bigger initial.
-\def\greinitialformat#1{%
-{\fontsize{43}{43}\selectfont #1}%
-}
-
 \grechangestyle{annotation}{\small\scshape\bfseries\color{benred8}}
 \greannotation{\Vbar}
 
-% and finally we include the score. The file must be in the same directory as this one.
 \gregorioscore[a]{DeusInAdjutorium.gtex}
 
 
@@ -283,19 +263,7 @@ A Septuagesima usque ad Pascha, loco \emph{\textcolor{black}{Allelúia}}, canitu
 
 \vspace*{-1.75 cm}
 
-% THE BIG INITIAL INSIDE Dominica/DomAnt1-01.tex
-%\raisebox{3.05cm}{
-%\greinitial{D\llap{\fontspec{LinLibertine_DRahBen}\color{benred8}D}\llap{\fontspec{LinLibertine_DRahBen2}\color{benblue1}D}\llap{\fontspec{LinLibertine_DRahBen3}\color{benyellow1}D}}%
-%
-%}
-
-\def\grebiginitialformat#1{%
-{\fontsize{170}{170}\selectfont #1}%
-}
-{\gresetbiginitial
 \gregorioscore[a]{Dominica/DomAnt1-01.gtex}
-
-}
 
 {
 \centering
@@ -332,9 +300,6 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 
 \subsection*{}
 
-\setspaceafterinitial{6mm plus 0em minus 0em}
-\setspacebeforeinitial{6mm plus 0em minus 0em}
-
 \greannotation{2 \Abar\ IV g}
 \gregorioscore[a]{Dominica/DomAnt2-01.gtex}
 
@@ -352,13 +317,13 @@ Magna ó\emph{pera} \textbf{Dó}mini : \gresixstar\ exquisíta in omnes voluntá
 
 Conféssio et magnificéntia \emph{opus} \textbf{e}jus : \gresixstar\ et ju\libertineGlyph{s_t}ítia ejus manet in sǽculum \textbf{sǽ}culi.
 
-Memóriam fécit mirabílium suórum, \gredagger\ miséricors et mise\emph{rátor} \textbf{Dó}minus : \gresixstar\ escam dedit timénti\textbf{bus} se.
+Memóriam fécit mirabílium suórum, \GreDagger\ miséricors et mise\emph{rátor} \textbf{Dó}minus : \gresixstar\ escam dedit timénti\textbf{bus} se.
 
 Memor erit in sǽculum te\libertineGlyph{s_t}a\emph{ménti} \textbf{su}i : \gresixstar\ virtútem óperum suórum annuntiábit pópulo \textbf{su}o :
 
 Ut det illis hæredi\emph{tátem} \textbf{gén}tium : \gresixstar\ ópera mánuum ejus véritas et ju\textbf{dí}cium.
 
-Fidélia ómnia mandáta ejus : \gredagger\ confirmáta in sǽ\emph{culum} \textbf{sǽ}culi : \gresixstar\ fa\libertineGlyph{c_t}a in veritáte et æqui\textbf{tá}te.
+Fidélia ómnia mandáta ejus : \GreDagger\ confirmáta in sǽ\emph{culum} \textbf{sǽ}culi : \gresixstar\ fa\libertineGlyph{c_t}a in veritáte et æqui\textbf{tá}te.
 
 Redemptiónem misit pó\emph{pulo} \textbf{su}o : \gresixstar\ mandávit in ætérnum te\libertineGlyph{s_t}améntum \textbf{su}um.
 
@@ -379,9 +344,6 @@ Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in
 %% DOMINICA 3 ANT.
 
 \subsection*{}
-
-\setspaceafterinitial{7mm plus 0em minus 0em}
-\setspacebeforeinitial{7mm plus 0em minus 0em}
 
 \greannotation{3 \Abar\ IV a}
 \gregorioscore[a]{Dominica/DomAnt3-01.gtex}
@@ -404,15 +366,15 @@ Glória et divítiae in \emph{domo} \textbf{e}jus : \gresixstar\ et ju\libertine
 
 Exórtum e\libertineGlyph{s_t} in ténebris \emph{lumen} \textbf{rec}tis : \gresixstar\ miséricors, et mise\emph{rátor, et} \textbf{jus}tus.
 
-Jucúndus homo qui miserétur et cómmodat, \gredagger\ dispónet sermónes suos \emph{in ju}\textbf{dí}cio : \gresixstar\ quia in ætérnum \emph{non commo}\textbf{vé}bitur.
+Jucúndus homo qui miserétur et cómmodat, \GreDagger\ dispónet sermónes suos \emph{in ju}\textbf{dí}cio : \gresixstar\ quia in ætérnum \emph{non commo}\textbf{vé}bitur.
 
 In memória ætérna \emph{erit} \textbf{jus}tus : \gresixstar\ ab auditióne ma\emph{la non ti}\textbf{mé}bit.
 
-Parátum cor ejus speráre in Dómino, \gredagger\ confirmátum \emph{e\libertineGlyph{s_t} cor} \textbf{e}jus : \gresixstar\ non commovébitur donec despíciat i\emph{nimícos} \textbf{su}os.
+Parátum cor ejus speráre in Dómino, \GreDagger\ confirmátum \emph{e\libertineGlyph{s_t} cor} \textbf{e}jus : \gresixstar\ non commovébitur donec despíciat i\emph{nimícos} \textbf{su}os.
 
-Dispérsit, dedit paupéribus : \gredagger\ ju\libertineGlyph{s_t}ítia ejus manet in sǽ\emph{culum} \textbf{sǽ}culi : \gresixstar\ cornu ejus exaltá\emph{bitur in} \textbf{gló}ria.
+Dispérsit, dedit paupéribus : \GreDagger\ ju\libertineGlyph{s_t}ítia ejus manet in sǽ\emph{culum} \textbf{sǽ}culi : \gresixstar\ cornu ejus exaltá\emph{bitur in} \textbf{gló}ria.
 
-Peccátor vidébit, et irascétur, \gredagger\ déntibus suis fremet \emph{et ta}\textbf{bé}scet : \gresixstar\ desidérium pecca\emph{tórum pe}\textbf{rí}bit.
+Peccátor vidébit, et irascétur, \GreDagger\ déntibus suis fremet \emph{et ta}\textbf{bé}scet : \gresixstar\ desidérium pecca\emph{tórum pe}\textbf{rí}bit.
 
 Glória Pa\emph{tri, et} \textbf{Fí}lio, \gresixstar\ et Sp\emph{irítui} \textbf{Sanc}to.
 
@@ -427,9 +389,6 @@ Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in
 %% DOMINICA 4 ANT.
 
 \subsection*{}
-
-\setspaceafterinitial{7mm plus 0em minus 0em}
-\setspacebeforeinitial{7mm plus 0em minus 0em}
 
 \greannotation{4 \Abar\ VII c}
 \gregorioscore[a]{Dominica/DomAnt4-01.gtex}
@@ -467,9 +426,6 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 
 \subsection*{}
 
-\setspaceafterinitial{6.5mm plus 0em minus 0em}
-\setspacebeforeinitial{6.5mm plus 0em minus 0em}
-
 \greannotation{5 \Abar\ T. Per.}
 \gregorioscore[a]{Dominica/DomAnt5-01.gtex}
 
@@ -504,7 +460,7 @@ Os habent, \emph{et non lo}\textbf{quén}tur : \gresixstar\ óculos habent, et n
 
 Aures ha\emph{bent, et non} \textbf{áu}dient : \gresixstar\ nares habent, et non o\emph{do}\textbf{rá}bunt.
 
-Manus habent, et non palpábunt : \gredagger\ pedes habent, et \emph{non ambu}\textbf{lá}bunt : \gresixstar\ non clamábunt in gúttu\emph{re} \textbf{su}o.
+Manus habent, et non palpábunt : \GreDagger\ pedes habent, et \emph{non ambu}\textbf{lá}bunt : \gresixstar\ non clamábunt in gúttu\emph{re} \textbf{su}o.
 
 Símiles illis fiant qui \emph{fáciunt} \textbf{e}a : \gresixstar\ et omnes qui confídunt \emph{in} \textbf{e}is.
 
@@ -553,8 +509,6 @@ Sequens Capitulum \emph{\textcolor{black}{Bened\'{i}\libertineGlyph{c_t}us Deus}
 
 \label{DominicaCapitulum}
 
-\setspaceafterinitial{1mm plus 0em minus 0em}
-\setspacebeforeinitial{1mm plus 0em minus 0em}
 \gregorioscore[a]{CapitulumBenedictus.gtex}
 
 % DOMINICA HYMNUS HIEME
@@ -567,9 +521,6 @@ Sequens Capitulum \emph{\textcolor{black}{Bened\'{i}\libertineGlyph{c_t}us Deus}
 Sequens tonus canitur in Dominicis po\libertineGlyph{s_t} Epiphaniam a die 14 Januarii usque ad Dominicam Quinquagesim\ae\ inclusive, et a Dominica proximiori Kalendis O\libertineGlyph{c_t}obris scilicet a die 28 Septembris usque ad Dominicam ultimam po\libertineGlyph{s_t} Penteco\libertineGlyph{s_t}en.
 
 \end{rubric}
-
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{3.2mm plus 0em minus 0em}
 
 \greannotation{IV}
 \gregorioscore[a]{Dominica/DomHym-Hieme.gtex}
@@ -686,9 +637,6 @@ Deinde repetitur Antiphona.
 
 \subsubsection*{Oratio.}
 
-\setspaceafterinitial{1.2mm plus 0em minus 0em}
-\setspacebeforeinitial{1.2mm plus 0em minus 0em}
-
 \greannotation{\Vbar}
 \gregorioscore[a]{DomineExaudi-short-01.gtex}
 
@@ -705,9 +653,6 @@ Per annum :
 
 \end{rubric}
 
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{2.2mm plus 0em minus 0em}
-
 \greannotation{I}
 \gregorioscore[a]{Dominica/DomBenedicamus.gtex}
 
@@ -718,16 +663,10 @@ Tempore Adventus et Quadragesim\ae\ :
 
 \end{rubric}
 
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{2.2mm plus 0em minus 0em}
-
 \greannotation{IV}
 \gregorioscore[a]{Dominica/DomBenedicamusAdvLent.gtex}
 
 \vspace{1.5mm}
-
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{2.2mm plus 0em minus 0em}
 
 \greannotation{\Vbar}
 \gregorioscore[a]{FideliumAnimae.gtex}
@@ -739,9 +678,6 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 
 \end{rubric}
 
-%\setspaceafterinitial{1.2mm plus 0em minus 0em}
-%\setspacebeforeinitial{1.2mm plus 0em minus 0em}
-
 %\greannotation{\Vbar}
 %\gregorioscore[a]{DominusDet.gtex}
 
@@ -749,9 +685,6 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 %Atque \libertineGlyph{s_t}atim canitur una ex Antiphonis finalibus Beat\ae\ Mari\ae\ Virginis, cum Versu suo et Oratione, qu\ae\ in p.~\pageref{sec:AntBMV} notantur. Po\libertineGlyph{s_t}ea concluditur :% , ut habetur infra. %infra post Completorium.
 
 %\end{rubric}
-
-%\setspaceafterinitial{1.2mm plus 0em minus 0em}
-%\setspacebeforeinitial{1.2mm plus 0em minus 0em}
 
 %\greannotation{\Vbar}
 %\gregorioscore[a]{DivinumAuxilium.gtex}
@@ -776,21 +709,8 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 
 \subsection*{}
 
-\setspaceafterinitial{7mm plus 0em minus 0em}
-\setspacebeforeinitial{7mm plus 0em minus 0em}
-
-%\greinitial{I\llap{\fontspec{LinLibertine_DRahBen}\color{benred8}I}\llap{\fontspec{LinLibertine_DRahBen4}\color{benyellow1}I}}%
-
-\def\greinitialformat#1{%
-{\fontsize{60}{60}\selectfont #1}%
-}
-
 \greannotation{1 \Abar\ I g 2}
 \gregorioscore[a]{F2/F2Ant1-01.gtex}
-
-\def\greinitialformat#1{%
-{\fontsize{43}{43}\selectfont #1}%
-}
 
 \subsubsection*{Psalmus 114.}
 
@@ -803,13 +723,13 @@ Circumdedérunt me do\textbf{ló}res \textbf{mor}tis : \gresixstar\ et perícula
 
 Tribulatiónem et do\textbf{ló}rem in\textbf{vé}ni : \gresixstar\ et nomen Dómini \emph{invo}\textbf{cá}vi.
 
-O Dómine líbera ánimam meam : \gredagger\ miséricors Dómi\textbf{nus}, et \textbf{jus}tus, \gresixstar\ et Deus no\libertineGlyph{s_t}er \emph{mise}\textbf{ré}tur.
+O Dómine líbera ánimam meam : \GreDagger\ miséricors Dómi\textbf{nus}, et \textbf{jus}tus, \gresixstar\ et Deus no\libertineGlyph{s_t}er \emph{mise}\textbf{ré}tur.
 
 Cu\libertineGlyph{s_t}ódiens \textbf{pár}vulos \textbf{Dó}minus : \gresixstar\ humiliátus sum, et \emph{libe}\textbf{rá}vit me.
 
 Convértere ánima mea in \textbf{ré}quiem \textbf{tu}am : \gresixstar\ quia Dóminus bene\emph{fécit} \textbf{ti}bi.
 
-Quia erípuit ánimam meam de morte : \gredagger\ óculos \textbf{me}os a \textbf{lác}rimis, \gresixstar\ pedes me\emph{os a} \textbf{lap}su.
+Quia erípuit ánimam meam de morte : \GreDagger\ óculos \textbf{me}os a \textbf{lác}rimis, \gresixstar\ pedes me\emph{os a} \textbf{lap}su.
 
 Pla\textbf{cé}bo \textbf{Dó}mino \gresixstar\ in regió\emph{ne vi}\textbf{vó}rum.
 
@@ -827,9 +747,6 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 
 \subsection*{}
 
-\setspaceafterinitial{6.5mm plus 0em minus 0em}
-\setspacebeforeinitial{6.5mm plus 0em minus 0em}
-
 \greannotation{2 \Abar\ VIII a}
 \gregorioscore[a]{F2/F2FL2.gtex}
 
@@ -846,7 +763,7 @@ Vota mea Dómino reddam coram omni pópulo \textbf{e}jus : \gresixstar\ pretiós
 
 O Dómine quia ego servus \textbf{tu}us : \gresixstar\ ego servus tuus, et fílius an\emph{cíllæ} \textbf{tu}æ.
 
-Dirupí\libertineGlyph{s_t}i víncula mea : \gredagger\ tibi sacrificábo hó\libertineGlyph{s_t}iam \textbf{lau}dis, \gresixstar\ et nomen Dómini \emph{invo}\textbf{cá}bo.
+Dirupí\libertineGlyph{s_t}i víncula mea : \GreDagger\ tibi sacrificábo hó\libertineGlyph{s_t}iam \textbf{lau}dis, \gresixstar\ et nomen Dómini \emph{invo}\textbf{cá}bo.
 
 Vota mea Dómino reddam in conspé\libertineGlyph{c_t}u omnis pópuli \textbf{e}jus, \gresixstar\ in átriis domus Dómini, in médio tu\emph{i Je}\textbf{rú}salem.
 
@@ -863,9 +780,6 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 % FERIA II 3 ANT
 
 \subsection*{}
-
-\setspaceafterinitial{6mm plus 0em minus 0em}
-\setspacebeforeinitial{6mm plus 0em minus 0em}
 
 \greannotation{3 \Abar\ VI F}
 \gregorioscore[a]{F2/F2FL3.gtex}
@@ -889,9 +803,6 @@ Sicut erat in princípio, et nunc, \emph{et} \textbf{sem}per, \gresixstar\ et in
 
 \subsection*{}
 
-\setspaceafterinitial{2.5mm plus 0em minus 0em}
-\setspacebeforeinitial{2.5mm plus 0em minus 0em}
-
 \greannotation{4 \Abar\ E}
 \gregorioscore[a]{F2/F2Ant4-01.gtex}
 
@@ -906,7 +817,7 @@ Quid detur tibi, aut quid apponátur \textbf{ti}bi \gresixstar\ ad \textbf{lin}g
 
 Sagíttæ poténtis a\textbf{cú}tæ, \gresixstar\ cum carbónibus de\textbf{so}la\textbf{tó}riis.
 
-Heu mihi, quia incolátus meus prolongátus e\libertineGlyph{s_t} : \gredagger\ habitávi cum habitántibus \textbf{Ce}dar : \gresixstar\ multum íncola fuit \textbf{á}nima \textbf{me}a.
+Heu mihi, quia incolátus meus prolongátus e\libertineGlyph{s_t} : \GreDagger\ habitávi cum habitántibus \textbf{Ce}dar : \gresixstar\ multum íncola fuit \textbf{á}nima \textbf{me}a.
 
 Cum his qui odérunt pacem, eram pa\textbf{cí}ficus : \gresixstar\ cum loquébar illis, impu\textbf{gná}bant me \textbf{gra}tis.
 
@@ -923,9 +834,6 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 % FERIA II 5 ANT
 
 \subsection*{}
-
-\setspaceafterinitial{4.5mm plus 0em minus 0em}
-\setspacebeforeinitial{4.5mm plus 0em minus 0em}
 
 \greannotation{5 \Abar\ I D}
 \gregorioscore[a]{F2/F2Ant5-01.gtex}
@@ -965,7 +873,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 
 \subsubsection*{Capitulum.\capitulumSpace \emph{2 Cor. 1, 3--4.}}
 
-\begin{response}\lettrine{B}{e}nedí\libertineGlyph{c_t}us Deus, et Pater Dómini no\libertineGlyph{s_t}ri Jesu Chri\libertineGlyph{s_t}i, \gredagger\ Pater misericordiárum, et Deus totíus consolatiónis, \gresixstar\ qui consolátur nos in omni tribulatióne no\libertineGlyph{s_t}ra. \Rbar\ Deo grátias.
+\begin{response}\lettrine{B}{e}nedí\libertineGlyph{c_t}us Deus, et Pater Dómini no\libertineGlyph{s_t}ri Jesu Chri\libertineGlyph{s_t}i, \GreDagger\ Pater misericordiárum, et Deus totíus consolatiónis, \gresixstar\ qui consolátur nos in omni tribulatióne no\libertineGlyph{s_t}ra. \Rbar\ Deo grátias.
 
 \end{response}
 
@@ -974,9 +882,6 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \subsection*{}
 
 \subsubsection*{Hymnus.\\Tonus in Hieme.}
-
-\setspaceafterinitial{3mm plus 0em minus 0em}
-\setspacebeforeinitial{3.8mm plus 0em minus 0em}
 
 \greannotation{VIII}
 \gregorioscore[a]{F2/F2Hym-Hieme.gtex}
@@ -995,9 +900,6 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 
 \subsubsection*{Tonus in \AE \libertineGlyph{s_t}ate.}
 
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{3.2mm plus 0em minus 0em}
-
 \greannotation{I}
 \gregorioscore[a]{F2/F2Hym-Aestate.gtex}
 
@@ -1012,9 +914,6 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \subsection*{}
 
 \subsubsection*{Canticum Beat\ae\ Mari\ae\ Virginis.\capitulumSpace \emph{Luc. 1, 46--55.}}
-
-\setspaceafterinitial{3mm plus 0em minus 0em}
-\setspacebeforeinitial{3.8mm plus 0em minus 0em}
 
 \greannotation{VIII G}
 \gregorioscore[a]{F2/F2MagAnt-01.gtex}
@@ -1056,9 +955,6 @@ In feriis Adventus, Quadragesim\ae , Quatuor Temporum et Vigiliis qu\ae\ jejunan
 \end{rubric}
 
 \subsubsection*{Supplicatio Litani\ae .}
-
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{2.2mm plus 0em minus 0em}
 
 \greannotation{\Vbar}
 \gregorioscore[a]{Kyrie.gtex}
@@ -1117,9 +1013,6 @@ In feriis Adventus, Quadragesim\ae , Quatuor Temporum et Vigiliis qu\ae\ jejunan
 
 \subsubsection*{Psalmus 50.}
 
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{2.2mm plus 0em minus 0em}
-
 \gregorioscore[a]{Miserere.gtex}
 
 %\lettrine{M}{i}ser\'{e}re mei Deus, \gresixstar\ sec\'{u}ndum magnam miseric\'{o}rdiam tuam.
@@ -1170,9 +1063,6 @@ Gl\'{o}ria Pa\emph{tri, et} \textbf{F\'{i}}lio, \gresixstar\ et Spir\'{i}tui San
 Sicut erat in princ\'{i}pio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in s\'{\ae}cula s\ae cul\'{o}rum. Amen.
 
 \end{psalmtext}
-
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{2.2mm plus 0em minus 0em}
 
 \greannotation{\Vbar}
 \gregorioscore[a]{DomineExaudi2.gtex}
@@ -1248,21 +1138,8 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 
 \subsection*{}
 
-\setspaceafterinitial{7.3mm plus 0em minus 0em}
-\setspacebeforeinitial{7.3mm plus 0em minus 0em}
-
-%\greinitial{I\llap{\fontspec{LinLibertine_DRahBen}\color{benred8}I}\llap{\fontspec{LinLibertine_DRahBen4}\color{benyellow1}I}}%
-
-\def\greinitialformat#1{%
-{\fontsize{60}{60}\selectfont #1}%
-}
-
 \greannotation{1 \Abar\ IV E}
 \gregorioscore[a]{F3/F3Ant1-01.gtex}
-
-\def\greinitialformat#1{%
-{\fontsize{43}{43}\selectfont #1}%
-}
 
 \subsubsection*{Psalmus 121.}
 
@@ -1299,9 +1176,6 @@ Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in
 
 \subsection*{}
 
-\setspaceafterinitial{6mm plus 0em minus 0em}
-\setspacebeforeinitial{6mm plus 0em minus 0em}
-
 \greannotation{2 \Abar\ VIII G}
 \gregorioscore[a]{F3/F3Ant2-01.gtex}
 
@@ -1331,9 +1205,6 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 % FERIA III 3 ANT
 
 \subsection*{}
-
-\setspaceafterinitial{5mm plus 0em minus 0em}
-\setspacebeforeinitial{5mm plus 0em minus 0em}
 
 \greannotation{3 \Abar\ I g 2}
 \gregorioscore[a]{F3/F3Ant3-01.gtex}
@@ -1371,9 +1242,6 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 
 \subsection*{}
 
-\setspaceafterinitial{7.5mm plus 0em minus 0em}
-\setspacebeforeinitial{7.5mm plus 0em minus 0em}
-
 \greannotation{4 \Abar\ VIII G}
 \gregorioscore[a]{F3/F3Ant4-01.gtex}
 
@@ -1382,7 +1250,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \gregorioscore[a]{F3/F3FL4.gtex}
 
 \begin{psalmtext}
-Montes in circúitu ejus : \gredagger\ et Dóminus in circúitu pópuli \textbf{su}i, \gresixstar\ ex hoc nunc et us\emph{que in} \textbf{sǽ}culum.
+Montes in circúitu ejus : \GreDagger\ et Dóminus in circúitu pópuli \textbf{su}i, \gresixstar\ ex hoc nunc et us\emph{que in} \textbf{sǽ}culum.
 
 Quia non relínquet Dóminus virgam peccatórum super sortem jus\textbf{tó}rum : \gresixstar\ ut non exténdant ju\libertineGlyph{s_t}i ad iniquitátem \emph{manus} \textbf{su}as.
 
@@ -1403,9 +1271,6 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 % FERIA III 5 ANT
 
 \subsection*{}
-
-\setspaceafterinitial{5mm plus 0em minus 0em}
-\setspacebeforeinitial{5mm plus 0em minus 0em}
 
 \greannotation{5 \Abar\ I f}
 \gregorioscore[a]{F3/F3Ant5-01.gtex}
@@ -1445,7 +1310,7 @@ Sicut erat in princípio, et \textbf{nunc}, et s\textbf{em}per, \gresixstar\ et 
 
 \subsubsection*{Capitulum.\capitulumSpace \emph{2 Cor. 1, 3--4.}}
 
-\begin{response}\lettrine{B}{e}nedí\libertineGlyph{c_t}us Deus, et Pater Dómini no\libertineGlyph{s_t}ri Jesu Chri\libertineGlyph{s_t}i, \gredagger\ Pater misericordiárum, et Deus totíus consolatiónis, \gresixstar\ qui consolátur nos in omni tribulatióne no\libertineGlyph{s_t}ra. \Rbar\ Deo grátias.
+\begin{response}\lettrine{B}{e}nedí\libertineGlyph{c_t}us Deus, et Pater Dómini no\libertineGlyph{s_t}ri Jesu Chri\libertineGlyph{s_t}i, \GreDagger\ Pater misericordiárum, et Deus totíus consolatiónis, \gresixstar\ qui consolátur nos in omni tribulatióne no\libertineGlyph{s_t}ra. \Rbar\ Deo grátias.
 
 \end{response}
 
@@ -1454,9 +1319,6 @@ Sicut erat in princípio, et \textbf{nunc}, et s\textbf{em}per, \gresixstar\ et 
 \subsection*{}
 
 \subsubsection*{Hymnus.\\Tonus in Hieme.}
-
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{3.2mm plus 0em minus 0em}
 
 \greannotation{VIII}
 \gregorioscore[a]{F3/F3Hym-Hieme.gtex}
@@ -1475,9 +1337,6 @@ Sicut erat in princípio, et \textbf{nunc}, et s\textbf{em}per, \gresixstar\ et 
 
 \subsubsection*{Tonus in \AE \libertineGlyph{s_t}ate.}
 
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{2.8mm plus 0em minus 0em}
-
 \greannotation{I}
 \gregorioscore[a]{F3/F3Hym-Aestate.gtex}
 
@@ -1492,9 +1351,6 @@ Sicut erat in princípio, et \textbf{nunc}, et s\textbf{em}per, \gresixstar\ et 
 \subsection*{}
 
 \subsubsection*{Canticum Beat\ae\ Mari\ae\ Virginis.\capitulumSpace \emph{Luc. 1, 46--55.}}
-
-\setspaceafterinitial{3mm plus 0em minus 0em}
-\setspacebeforeinitial{3.8mm plus 0em minus 0em}
 
 \greannotation{V a}
 \gregorioscore[a]{F3/F3MagAnt-01.gtex}
@@ -1578,21 +1434,8 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 
 \subsection*{}
 
-\setspaceafterinitial{4.5mm plus 0em minus 0em}
-\setspacebeforeinitial{4.5mm plus 0em minus 0em}
-
-%\greinitial{N\llap{\fontspec{LinLibertine_DRahBen}\color{benred8}N}\llap{\fontspec{LinLibertine_DRahBen4}\color{benyellow1}N}}%
-
-\def\greinitialformat#1{%
-{\fontsize{60}{60}\selectfont #1}%
-}
-
 \greannotation{1 \Abar\ II D}
 \gregorioscore[a]{F4/F4Ant1-01.gtex}
-
-\def\greinitialformat#1{%
-{\fontsize{43}{43}\selectfont #1}%
-}
 
 \subsubsection*{Psalmus 126.}
 
@@ -1622,9 +1465,6 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 % FERIA IV 2 ANT
 
 \subsection*{}
-
-\setspaceafterinitial{5mm plus 0em minus 0em}
-\setspacebeforeinitial{5mm plus 0em minus 0em}
 
 \greannotation{2 \Abar\ II D}
 \gregorioscore[a]{F4/F4FL2.gtex}
@@ -1658,9 +1498,6 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \subsection*{}
 
-\setspaceafterinitial{5.5mm plus 0em minus 0em}
-\setspacebeforeinitial{5.5mm plus 0em minus 0em}
-
 \greannotation{3 \Abar\ II D}
 \gregorioscore[a]{F4/F4FL3.gtex}
 
@@ -1692,9 +1529,6 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 % FERIA IV 4 ANT
 
 \subsection*{}
-
-\setspaceafterinitial{6mm plus 0em minus 0em}
-\setspacebeforeinitial{6mm plus 0em minus 0em}
 
 \greannotation{4 \Abar\ VIII a}
 \gregorioscore[a]{F4/F4FL4.gtex}
@@ -1730,9 +1564,6 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \subsection*{}
 
-\setspaceafterinitial{4mm plus 0em minus 0em}
-\setspacebeforeinitial{4mm plus 0em minus 0em}
-
 \greannotation{5 \Abar\ E}
 \gregorioscore[a]{F4/F4Ant5-01.gtex}
 
@@ -1765,7 +1596,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \subsubsection*{Capitulum.\capitulumSpace \emph{2 Cor. 1, 3--4.}}
 
-\begin{response}\lettrine{B}{e}nedí\libertineGlyph{c_t}us Deus, et Pater Dómini no\libertineGlyph{s_t}ri Jesu Chri\libertineGlyph{s_t}i, \gredagger\ Pater misericordiárum, et Deus totíus consolatiónis, \gresixstar\ qui consolátur nos in omni tribulatióne no\libertineGlyph{s_t}ra. \Rbar\ Deo grátias.
+\begin{response}\lettrine{B}{e}nedí\libertineGlyph{c_t}us Deus, et Pater Dómini no\libertineGlyph{s_t}ri Jesu Chri\libertineGlyph{s_t}i, \GreDagger\ Pater misericordiárum, et Deus totíus consolatiónis, \gresixstar\ qui consolátur nos in omni tribulatióne no\libertineGlyph{s_t}ra. \Rbar\ Deo grátias.
 
 \end{response}
 
@@ -1774,9 +1605,6 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \subsection*{}
 
 \subsubsection*{Hymnus.\\Tonus in Hieme.}
-
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{2.2mm plus 0em minus 0em}
 
 \greannotation{VIII}
 \gregorioscore[a]{F4/F4Hym-Hieme.gtex}
@@ -1793,9 +1621,6 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \subsubsection*{Tonus in \AE \libertineGlyph{s_t}ate.}
 
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{2.2mm plus 0em minus 0em}
-
 \greannotation{I}
 \gregorioscore[a]{F4/F4Hym-Aestate.gtex}
 
@@ -1810,9 +1635,6 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \subsection*{}
 
 \subsubsection*{Canticum Beat\ae\ Mari\ae\ Virginis.\capitulumSpace \emph{Luc. 1, 46--55.}}
-
-\setspaceafterinitial{3mm plus 0em minus 0em}
-\setspacebeforeinitial{3.8mm plus 0em minus 0em}
 
 \greannotation{VIII G 2}
 \gregorioscore[a]{F4/F4MagAnt-01.gtex}
@@ -1896,21 +1718,8 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 
 \subsection*{}
 
-\setspaceafterinitial{3.5mm plus 0em minus 0em}
-\setspacebeforeinitial{3.5mm plus 0em minus 0em}
-
-%\greinitial{E\llap{\fontspec{LinLibertine_DRahBen}\color{benred8}E}\llap{\fontspec{LinLibertine_DRahBen4}\color{benyellow1}E}}%
-
-\def\greinitialformat#1{%
-{\fontsize{60}{60}\selectfont #1}%
-}
-
 \greannotation{1 \Abar\ E}
 \gregorioscore[a]{F5/F5Ant1-01.gtex}
-
-\def\greinitialformat#1{%
-{\fontsize{43}{43}\selectfont #1}%
-}
 
 \subsubsection*{Psalmus 131.}
 
@@ -1967,9 +1776,6 @@ Sicut erat in princípio, et nunc, et\textbf{ sem}per, \gresixstar\ et in sǽcul
 
 \subsection*{}
 
-\setspaceafterinitial{4mm plus 0em minus 0em}
-\setspacebeforeinitial{4mm plus 0em minus 0em}
-
 \greannotation{2 \Abar\ I a}
 \gregorioscore[a]{F5/F5FL2.gtex}
 
@@ -1995,9 +1801,6 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 % FERIA V 3 ANT
 
 \subsection*{}
-
-\setspaceafterinitial{4.5mm plus 0em minus 0em}
-\setspacebeforeinitial{4.5mm plus 0em minus 0em}
 
 \greannotation{3 \Abar\ III g}
 \gregorioscore[a]{F5/F5Ant3-01.gtex}
@@ -2060,9 +1863,6 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 % FERIA V 4 ANT
 
 \subsection*{}
-
-\setspaceafterinitial{4.5mm plus 0em minus 0em}
-\setspacebeforeinitial{4.5mm plus 0em minus 0em}
 
 \greannotation{4 \Abar\ III g}
 \gregorioscore[a]{F5/F5Ant4-01.gtex}
@@ -2138,9 +1938,6 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 
 \subsection*{}
 
-\setspaceafterinitial{6.5mm plus 0em minus 0em}
-\setspacebeforeinitial{6.5mm plus 0em minus 0em}
-
 \greannotation{5 \Abar\ VIII G}
 \gregorioscore[a]{F5/F5Ant5-01.gtex}
 
@@ -2187,7 +1984,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \subsubsection*{Capitulum.\capitulumSpace \emph{2 Cor. 1, 3--4.}}
 
-\begin{response}\lettrine{B}{e}nedí\libertineGlyph{c_t}us Deus, et Pater Dómini no\libertineGlyph{s_t}ri Jesu Chri\libertineGlyph{s_t}i, \gredagger\ Pater misericordiárum, et Deus totíus consolatiónis, \gresixstar\ qui consolátur nos in omni tribulatióne no\libertineGlyph{s_t}ra. \Rbar\ Deo grátias.
+\begin{response}\lettrine{B}{e}nedí\libertineGlyph{c_t}us Deus, et Pater Dómini no\libertineGlyph{s_t}ri Jesu Chri\libertineGlyph{s_t}i, \GreDagger\ Pater misericordiárum, et Deus totíus consolatiónis, \gresixstar\ qui consolátur nos in omni tribulatióne no\libertineGlyph{s_t}ra. \Rbar\ Deo grátias.
 
 \end{response}
 
@@ -2196,9 +1993,6 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \subsection*{}
 
 \subsubsection*{Hymnus.\\Tonus in Hieme.}
-
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{3mm plus 0em minus 0em}
 
 \greannotation{VIII}
 \gregorioscore[a]{F5/F5Hym-Hieme.gtex}
@@ -2215,9 +2009,6 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \subsubsection*{Tonus in \AE \libertineGlyph{s_t}ate.}
 
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{3mm plus 0em minus 0em}
-
 \greannotation{I}
 \gregorioscore[a]{F5/F5Hym-Aestate.gtex}
 
@@ -2232,9 +2023,6 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \subsection*{}
 
 \subsubsection*{Canticum Beat\ae\ Mari\ae\ Virginis.\capitulumSpace \emph{Luc. 1, 46--55.}}
-
-\setspaceafterinitial{3mm plus 0em minus 0em}
-\setspacebeforeinitial{3.8mm plus 0em minus 0em}
 
 \greannotation{VII c}
 \gregorioscore[a]{F5/F5MagAnt-01.gtex}
@@ -2318,21 +2106,8 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 
 \subsection*{}
 
-\setspaceafterinitial{7mm plus 0em minus 0em}
-\setspacebeforeinitial{7mm plus 0em minus 0em}
-
-%\greinitial{I\llap{\fontspec{LinLibertine_DRahBen}\color{benred8}I}\llap{\fontspec{LinLibertine_DRahBen4}\color{benyellow1}I}}%
-
-\def\greinitialformat#1{%
-{\fontsize{60}{60}\selectfont #1}%
-}
-
 \greannotation{1 \Abar\ V a}
 \gregorioscore[a]{F6/F6Ant1-01.gtex}
-
-\def\greinitialformat#1{%
-{\fontsize{43}{43}\selectfont #1}%
-}
 
 \subsubsection*{Psalmus 137.}
 
@@ -2351,9 +2126,9 @@ Et cantent in viis \textbf{Dó}mini : \gresixstar\ quóniam magna e\libertineGly
 
 Quóniam excélsus Dóminus, et humília \textbf{rés}picit : \gresixstar\ et alta a \textbf{lon}ge co\textbf{gnó}scit.
 
-Si ambulávero in médio tribulatiónis, vivificábis me : \gredagger\ et super iram inimicórum meórum extendí\libertineGlyph{s_t}i manum \textbf{tu}am, \gresixstar\ et salvum me fecit \textbf{déx}tera \textbf{tu}a.
+Si ambulávero in médio tribulatiónis, vivificábis me : \GreDagger\ et super iram inimicórum meórum extendí\libertineGlyph{s_t}i manum \textbf{tu}am, \gresixstar\ et salvum me fecit \textbf{déx}tera \textbf{tu}a.
 
-Dóminus retríbuet pro me : \gredagger\ Dómine misericórdia tua in \textbf{sǽ}culum : \gresixstar\ ópera mánuum tuárum \textbf{ne} des\textbf{pí}cias.
+Dóminus retríbuet pro me : \GreDagger\ Dómine misericórdia tua in \textbf{sǽ}culum : \gresixstar\ ópera mánuum tuárum \textbf{ne} des\textbf{pí}cias.
 
 Glória Patri, et \textbf{Fí}lio, \gresixstar\ et Spi\textbf{rí}tui \textbf{Sanc}to.
 
@@ -2368,9 +2143,6 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 % FERIA VI 2 ANT
 
 \subsection*{}
-
-\setspaceafterinitial{4.5mm plus 0em minus 0em}
-\setspacebeforeinitial{4.5mm plus 0em minus 0em}
 
 \greannotation{2 \Abar\ III g}
 \gregorioscore[a]{F6/F6FL2.gtex}
@@ -2396,15 +2168,15 @@ Etenim illuc manus \textbf{tu}a de\textbf{dúcet} me : \gresixstar\ et tenébit 
 
 Et dixi : Fórsitan ténebræ \textbf{con}cul\textbf{cábunt} me : \gresixstar\ et nox illuminátio mea in de\textbf{lí}ciis \textbf{me}is.
 
-Quia ténebræ non obscurabúntur a te, \gredagger\ et nox sicut dies il\textbf{lu}mi\textbf{nábi}tur : \gresixstar\ sicut ténebræ ejus, ita et \textbf{lu}men \textbf{e}jus.
+Quia ténebræ non obscurabúntur a te, \GreDagger\ et nox sicut dies il\textbf{lu}mi\textbf{nábi}tur : \gresixstar\ sicut ténebræ ejus, ita et \textbf{lu}men \textbf{e}jus.
 
 Quia tu possed\'{i}sti \textbf{re}nes \textbf{me}os : \gresixstar\ suscep\'{i}sti me de \'{u}tero \textbf{ma}tris \textbf{me}\ae .
 
-Confitébor tibi quia terribíliter magnificátus es : \gredagger\ mirabília \textbf{ó}pera \textbf{tu}a, \gresixstar\ et ánima mea co\textbf{gnó}scit \textbf{ni}mis.
+Confitébor tibi quia terribíliter magnificátus es : \GreDagger\ mirabília \textbf{ó}pera \textbf{tu}a, \gresixstar\ et ánima mea co\textbf{gnó}scit \textbf{ni}mis.
 
 Non e\libertineGlyph{s_t} occultátum os meum a te, quod fecí\libertineGlyph{s_t}i \textbf{in} oc\textbf{cúl}to : \gresixstar\ et sub\libertineGlyph{s_t}ántia mea in inferi\textbf{ó}ribus \textbf{ter}ræ.
 
-Imperfé\libertineGlyph{c_t}um meum vidérunt óculi tui, \gredagger\ et in libro tuo \textbf{om}nes scri\textbf{bén}tur : \gresixstar\ dies formabúntur, et \textbf{ne}mo in \textbf{e}is.
+Imperfé\libertineGlyph{c_t}um meum vidérunt óculi tui, \GreDagger\ et in libro tuo \textbf{om}nes scri\textbf{bén}tur : \gresixstar\ dies formabúntur, et \textbf{ne}mo in \textbf{e}is.
 
 Mihi autem nimis honorificáti sunt amíci \textbf{tu}i \textbf{De}us : \gresixstar\ nimis confortátus e\libertineGlyph{s_t} princi\textbf{pá}tus e\textbf{ó}rum.
 
@@ -2436,9 +2208,6 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 
 \subsection*{}
 
-\setspaceafterinitial{5mm plus 0em minus 0em}
-\setspacebeforeinitial{5mm plus 0em minus 0em}
-
 \greannotation{3 \Abar\ IV g}
 \gregorioscore[a]{F6/F6Ant3-01.gtex}
 
@@ -2461,11 +2230,11 @@ Dixi Dómino : Deus \emph{meus} \textbf{es} tu : \gresixstar\ exáudi Dómine vo
 
 Dómine, Dómine virtus sa\emph{lútis} \textbf{me}æ : \gresixstar\ obumbrá\libertineGlyph{s_t}i super caput meum in die \textbf{bel}li :
 
-Ne tradas me Dómine a desidério meo peccatóri : \gredagger\ cogita\emph{vérunt} \textbf{con}tra me, \gresixstar\ ne derelínquas me, ne forte exal\textbf{tén}tur.
+Ne tradas me Dómine a desidério meo peccatóri : \GreDagger\ cogita\emph{vérunt} \textbf{con}tra me, \gresixstar\ ne derelínquas me, ne forte exal\textbf{tén}tur.
 
 Caput circúi\emph{tus e}\textbf{ó}rum : \gresixstar\ labor labiórum ipsórum opériet \textbf{e}os :
 
-Cadent super eos carbónes, \gredagger\ in ignem dejí\emph{cies} \textbf{e}os : \gresixstar\ in misériis non sub\textbf{sís}tent.
+Cadent super eos carbónes, \GreDagger\ in ignem dejí\emph{cies} \textbf{e}os : \gresixstar\ in misériis non sub\textbf{sís}tent.
 
 Vir linguósus non dirigé\emph{tur in} \textbf{ter}ra : \gresixstar\ virum injú\libertineGlyph{s_t}um mala cápient in in\textbf{té}ritu.
 
@@ -2487,9 +2256,6 @@ Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in
 
 \subsection*{}
 
-\setspaceafterinitial{6mm plus 0em minus 0em}
-\setspacebeforeinitial{6mm plus 0em minus 0em}
-
 \greannotation{4 \Abar\ VIII a}
 \gregorioscore[a]{F6/F6FL4.gtex}
 
@@ -2510,7 +2276,7 @@ Quóniam adhuc et orátio mea in beneplácitis e\textbf{ó}rum : \gresixstar\ ab
 
 Audient verba mea quóniam potu\textbf{é}runt : \gresixstar\ sicut crassitúdo terræ erúpta e\libertineGlyph{s_t} \emph{super} \textbf{ter}ram.
 
-Dissipáta sunt ossa no\libertineGlyph{s_t}ra secus inférnum : \gredagger\ quia ad te Dómine, Dómine óculi \textbf{me}i : \gresixstar\ in te sperávi, non áuferas á\emph{nimam} \textbf{me}am.
+Dissipáta sunt ossa no\libertineGlyph{s_t}ra secus inférnum : \GreDagger\ quia ad te Dómine, Dómine óculi \textbf{me}i : \gresixstar\ in te sperávi, non áuferas á\emph{nimam} \textbf{me}am.
 
 Cu\libertineGlyph{s_t}ódi me a láqueo quem \libertineGlyph{s_t}atuérunt \textbf{mi}hi : \gresixstar\ et a scándalis operántium in\emph{iqui}\textbf{tá}tem.
 
@@ -2530,9 +2296,6 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \subsection*{}
 
-\setspaceafterinitial{7mm plus 0em minus 0em}
-\setspacebeforeinitial{7mm plus 0em minus 0em}
-
 \greannotation{5 \Abar\ VIII a}
 \gregorioscore[a]{F6/F6Ant5-01.gtex}
 
@@ -2551,7 +2314,7 @@ Considerábam ad déxteram et vi\textbf{dé}bam : \gresixstar\ et non erat qui c
 
 Périit fuga \textbf{a} me, \gresixstar\ et non e\libertineGlyph{s_t} qui requírat á\emph{nimam} \textbf{me}am.
 
-Clamávi ad te Dómine, \gredagger\ dixi : Tu es spes \textbf{me}a, \gresixstar\ pórtio mea in ter\emph{ra vi}\textbf{vén}tium.
+Clamávi ad te Dómine, \GreDagger\ dixi : Tu es spes \textbf{me}a, \gresixstar\ pórtio mea in ter\emph{ra vi}\textbf{vén}tium.
 
 Inténde ad deprecatiónem \textbf{me}am : \gresixstar\ quia humiliá\emph{tus sum} \textbf{ni}mis.
 
@@ -2575,7 +2338,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \subsubsection*{Capitulum.\capitulumSpace \emph{2 Cor. 1, 3--4.}}
 
-\begin{response}\lettrine{B}{e}nedí\libertineGlyph{c_t}us Deus, et Pater Dómini no\libertineGlyph{s_t}ri Jesu Chri\libertineGlyph{s_t}i, \gredagger\ Pater misericordiárum, et Deus totíus consolatiónis, \gresixstar\ qui consolátur nos in omni tribulatióne no\libertineGlyph{s_t}ra. \Rbar\ Deo grátias.
+\begin{response}\lettrine{B}{e}nedí\libertineGlyph{c_t}us Deus, et Pater Dómini no\libertineGlyph{s_t}ri Jesu Chri\libertineGlyph{s_t}i, \GreDagger\ Pater misericordiárum, et Deus totíus consolatiónis, \gresixstar\ qui consolátur nos in omni tribulatióne no\libertineGlyph{s_t}ra. \Rbar\ Deo grátias.
 
 \end{response}
 
@@ -2584,9 +2347,6 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \subsection*{}
 
 \subsubsection*{Hymnus.\\Tonus in Hieme.}
-
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{3mm plus 0em minus 0em}
 
 \greannotation{VIII}
 \gregorioscore[a]{F6/F6Hym-Hieme.gtex}
@@ -2603,9 +2363,6 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \subsubsection*{Tonus in \AE \libertineGlyph{s_t}ate.}
 
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{3mm plus 0em minus 0em}
-
 \greannotation{I}
 \gregorioscore[a]{F6/F6Hym-Aestate.gtex}
 
@@ -2620,9 +2377,6 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \subsection*{}
 
 \subsubsection*{Canticum Beat\ae\ Mari\ae\ Virginis.\capitulumSpace \emph{Luc. 1, 46--55.}}
-
-\setspaceafterinitial{3mm plus 0em minus 0em}
-\setspacebeforeinitial{3.8mm plus 0em minus 0em}
 
 \greannotation{I f}
 \gregorioscore[a]{F6/F6MagAnt-01.gtex}
@@ -2706,21 +2460,8 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 
 \subsection*{}
 
-\setspaceafterinitial{5.5mm plus 0em minus 0em}
-\setspacebeforeinitial{5.5mm plus 0em minus 0em}
-
-%\greinitial{B\llap{\fontspec{LinLibertine_DRahBen}\color{benred8}B}\llap{\fontspec{LinLibertine_DRahBen4}\color{benyellow1}B}}%
-
-\def\greinitialformat#1{%
-{\fontsize{60}{60}\selectfont #1}%
-}
-
 \greannotation{1 \Abar\ VI F}
 \gregorioscore[a]{Sabbato/SabFL1.gtex}
-
-\def\greinitialformat#1{%
-{\fontsize{43}{43}\selectfont #1}%
-}
 
 \subsubsection*{Psalmus 143.}
 
@@ -2737,7 +2478,7 @@ Dómine inclína cælos tuos, et \emph{de}\textbf{scén}de : \gresixstar\ tange 
 
 Fúlgura coruscatiónem, et dissipá\emph{bis} \textbf{e}os : \gresixstar\ emí\libertineGlyph{t_t}e sagí\libertineGlyph{t_t}as tuas, et contur\emph{bábis} \textbf{e}os :
 
-Emí\libertineGlyph{t_t}e manum tuam de alto, \gredagger\ éripe me, et líbera me de a\emph{quis} \textbf{mul}tis : \gresixstar\ de manu filiórum a\emph{lie}\textbf{nó}rum.
+Emí\libertineGlyph{t_t}e manum tuam de alto, \GreDagger\ éripe me, et líbera me de a\emph{quis} \textbf{mul}tis : \gresixstar\ de manu filiórum a\emph{lie}\textbf{nó}rum.
 
 Quorum os locútum e\libertineGlyph{s_t} va\emph{ni}\textbf{tá}tem : \gresixstar\ et déxtera eórum, déxtera i\emph{niqui}\textbf{tá}tis.
 
@@ -2745,7 +2486,7 @@ Deus cánticum novum cantá\emph{bo} \textbf{ti}bi : \gresixstar\ in psaltério,
 
 Qui das salú\emph{tem} \textbf{ré}gibus : \gresixstar\ qui redemí\libertineGlyph{s_t}i David servum tuum de gládio malígno : \emph{éri}\textbf{pe} me.
 
-Et érue me de manu filiórum alienórum, \gredagger\ quorum os locútum e\libertineGlyph{s_t} va\emph{ni}\textbf{tá}tem : \gresixstar\ et déxtera eórum, déxtera i\emph{niqui}\textbf{tá}tis.
+Et érue me de manu filiórum alienórum, \GreDagger\ quorum os locútum e\libertineGlyph{s_t} va\emph{ni}\textbf{tá}tem : \gresixstar\ et déxtera eórum, déxtera i\emph{niqui}\textbf{tá}tis.
 
 Quorum fílii, sicut novéllæ planta\emph{ti}\textbf{ó}nes \gresixstar\ in juven\emph{túte} \textbf{su}a.
 
@@ -2772,9 +2513,6 @@ Sicut erat in princípio, et nunc, \emph{et} \textbf{sem}per, \gresixstar\ et in
 % SABBATO 2 ANT
 
 \subsection*{}
-
-\setspaceafterinitial{7mm plus 0em minus 0em}
-\setspacebeforeinitial{7mm plus 0em minus 0em}
 
 \greannotation{2 \Abar\ VIII a}
 \gregorioscore[a]{Sabbato/SabAnt2-01.gtex}
@@ -2820,7 +2558,7 @@ Ju\libertineGlyph{s_t}us Dóminus in ómnibus viis \textbf{su}is : \gresixstar\ 
 
 Prope e\libertineGlyph{s_t} Dóminus ómnibus invocántibus \textbf{e}um : \gresixstar\ ómnibus invocántibus eum in \emph{veri}\textbf{tá}te.
 
-Voluntátem timéntium se fáciet : \gredagger\ et deprecatiónem eórum ex\textbf{áu}diet : \gresixstar\ et salvos fá\emph{ciet} \textbf{e}os.
+Voluntátem timéntium se fáciet : \GreDagger\ et deprecatiónem eórum ex\textbf{áu}diet : \gresixstar\ et salvos fá\emph{ciet} \textbf{e}os.
 
 Cu\libertineGlyph{s_t}ódit Dóminus omnes dili\textbf{gén}tes se : \gresixstar\ et omnes peccató\emph{res dis}\textbf{pér}det.
 
@@ -2840,9 +2578,6 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \subsection*{}
 
-\setspaceafterinitial{5.5mm plus 0em minus 0em}
-\setspacebeforeinitial{5.5mm plus 0em minus 0em}
-
 \greannotation{3 \Abar\ IV E}
 \gregorioscore[a]{Sabbato/SabAnt3-01.gtex}
 
@@ -2855,15 +2590,15 @@ Nolíte confídere \emph{in prin}\textbf{cí}pibus : \gresixstar\ in fíliis hó
 
 Exíbit spíritus ejus, et revertétur in \emph{terram} \textbf{su}am : \gresixstar\ in illa die períbunt omnes cogitati\emph{ónes e}\textbf{ó}rum.
 
-Beátus cujus Deus Jacob adjútor ejus, \gredagger\ spes ejus in Dómino De\emph{o ip}\textbf{sí}us : \gresixstar\ qui fecit cælum et terram, mare, et ómni\emph{a quæ in} \textbf{eis} sunt.
+Beátus cujus Deus Jacob adjútor ejus, \GreDagger\ spes ejus in Dómino De\emph{o ip}\textbf{sí}us : \gresixstar\ qui fecit cælum et terram, mare, et ómni\emph{a quæ in} \textbf{eis} sunt.
 
-Qui cu\libertineGlyph{s_t}ódit veritátem in sǽculum, \gredagger\ facit judícium injúriam \emph{pati}\textbf{én}tibus : \gresixstar\ dat escam \emph{esuri}\textbf{énti}bus.
+Qui cu\libertineGlyph{s_t}ódit veritátem in sǽculum, \GreDagger\ facit judícium injúriam \emph{pati}\textbf{én}tibus : \gresixstar\ dat escam \emph{esuri}\textbf{énti}bus.
 
 Dóminus solvit \emph{compe}\textbf{dí}tos : \gresixstar\ Dóminus il\emph{lúminat} \textbf{cæ}cos.
 
 Dóminus éri\emph{git e}\textbf{lí}sos, \gresixstar\ Dóminus \emph{díligit} \textbf{jus}tos.
 
-Dóminus cu\libertineGlyph{s_t}ódit ádvenas, \gredagger\ pupíllum et vídu\emph{am su}\textbf{scí}piet : \gresixstar\ et vias pecca\emph{tórum dis}\textbf{pér}det.
+Dóminus cu\libertineGlyph{s_t}ódit ádvenas, \GreDagger\ pupíllum et vídu\emph{am su}\textbf{scí}piet : \gresixstar\ et vias pecca\emph{tórum dis}\textbf{pér}det.
 
 Regnábit Dóminus in sǽcula Deus \emph{tuus} \textbf{Si}on, \gresixstar\ in generatiónem et ge\emph{nerati}\textbf{ó}nem.
 
@@ -2880,9 +2615,6 @@ Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in
 % SABBATO 4 ANT
 
 \subsection*{}
-
-\setspaceafterinitial{6mm plus 0em minus 0em}
-\setspacebeforeinitial{6mm plus 0em minus 0em}
 
 \greannotation{4 \Abar\ VIII a}
 \gregorioscore[a]{Sabbato/SabAnt4-01.gtex}
@@ -2928,9 +2660,6 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \subsection*{}
 
-\setspaceafterinitial{3.5mm plus 0em minus 0em}
-\setspacebeforeinitial{3.5mm plus 0em minus 0em}
-
 \greannotation{5 \Abar\ E}
 \gregorioscore[a]{Sabbato/SabFL5.gtex}
 
@@ -2974,7 +2703,7 @@ Sequens Capitulum \emph{\textcolor{black}{O altit\'{u}do}} canitur in Vesperis S
 
 \subsubsection*{Capitulum.\capitulumSpace \emph{Rom. 11, 33.}}
 
-\begin{response}\lettrine{O}{ a}ltit\'{u}do diviti\'{a}rum sapi\'{e}nti\ae\ et sci\'{e}nti\ae\ Dei : \gredagger\ quam incomprehensib\'{i}lia sunt jud\'{i}cia ejus, \gresixstar\ et inve\libertineGlyph{s_t}ig\'{a}biles vi\ae\ ejus! \Rbar\ Deo grátias.
+\begin{response}\lettrine{O}{ a}ltit\'{u}do diviti\'{a}rum sapi\'{e}nti\ae\ et sci\'{e}nti\ae\ Dei : \GreDagger\ quam incomprehensib\'{i}lia sunt jud\'{i}cia ejus, \gresixstar\ et inve\libertineGlyph{s_t}ig\'{a}biles vi\ae\ ejus! \Rbar\ Deo grátias.
 
 \end{response}
 
@@ -2983,9 +2712,6 @@ Sequens Capitulum \emph{\textcolor{black}{O altit\'{u}do}} canitur in Vesperis S
 \subsection*{}
 
 \subsubsection*{Hymnus.\\Tonus in Hieme.}
-
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{3mm plus 0em minus 0em}
 
 \greannotation{I}
 \gregorioscore[a]{Sabbato/SabHym-Hieme.gtex}
@@ -3007,9 +2733,6 @@ Quando fit Commemoratio B. M. V., canitur doxologia \emph{\textcolor{black}{Gl\'
 
 \subsubsection*{Tonus in \AE \libertineGlyph{s_t}ate.}
 
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{3mm plus 0em minus 0em}
-
 \greannotation{VIII}
 \gregorioscore[a]{Sabbato/SabHym-Aestate.gtex}
 
@@ -3024,9 +2747,6 @@ Quando fit Commemoratio B. M. V., canitur doxologia \emph{\textcolor{black}{Gl\'
 \subsection*{}
 
 \subsubsection*{Canticum Beat\ae\ Mari\ae\ Virginis.\capitulumSpace \emph{Luc. 1, 46--55.}}
-
-\setspaceafterinitial{3mm plus 0em minus 0em}
-\setspacebeforeinitial{3.8mm plus 0em minus 0em}
 
 \greannotation{VII a}
 \gregorioscore[a]{Sabbato/SabMagAnt-01.gtex}
@@ -3124,9 +2844,6 @@ Lector incipit :
 
 \subsubsection*{Capitulum.\capitulumSpace \emph{1 Petri 5, 8--9.}}
 
-\setspaceafterinitial{2.0mm plus 0em minus 0em}
-\setspacebeforeinitial{2.0mm plus 0em minus 0em}
-
 \greannotation{}
 \gregorioscore[a]{CapitulumFratres.gtex}
 
@@ -3174,9 +2891,6 @@ Deinde, clara voce, pollice signando sibi pe\libertineGlyph{c_t}us signo crucis,
 
 \end{response}
 
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{2.2mm plus 0em minus 0em}
-
 \greannotation{\Vbar}
 
 \gregorioscore[a]{DeusInAdjutoriumFerial.gtex}
@@ -3191,9 +2905,6 @@ A Septuagesima usque ad Pascha, loco \emph{\textcolor{black}{Allelúia}}, canitu
 \vspace{2.0mm}
 
 % COMPLINE PSALM 4
-
-\setspaceafterinitial{3.5mm plus 0em minus 0em}
-\setspacebeforeinitial{3.5mm plus 0em minus 0em}
 
 \greannotation{\Abar\ VIII G}
 \gregorioscore[a]{Completorium/CompAnt-01.gtex}
@@ -3211,9 +2922,9 @@ F\'{i}lii h\'{o}minum \'{u}squequo gravi \textbf{cor}de? \gresixstar\ ut quid di
 
 Et scit\'{o}te qu\'{o}niam mirific\'{a}vit D\'{o}minus san\libertineGlyph{c_t}um \textbf{su}um, \gresixstar\ D\'{o}minus ex\'{a}udiet me cum clam\'{a}ve\emph{ro ad} \textbf{e}um.
 
-Irasc\'{i}mini, et nol\'{i}te pecc\'{a}re : \gredagger\ qu\ae\ d\'{i}citis in c\'{o}rdibus \textbf{ves}tris, \gresixstar\ in cub\'{i}libus ve\libertineGlyph{s_t}ris \emph{compun}\textbf{g\'{i}}mini.
+Irasc\'{i}mini, et nol\'{i}te pecc\'{a}re : \GreDagger\ qu\ae\ d\'{i}citis in c\'{o}rdibus \textbf{ves}tris, \gresixstar\ in cub\'{i}libus ve\libertineGlyph{s_t}ris \emph{compun}\textbf{g\'{i}}mini.
 
-Sacrific\'{a}te sacrif\'{i}cium ju\libertineGlyph{s_t}\'{i}ti\ae , \gredagger\ et sper\'{a}te  in \textbf{D\'{o}}mino. \gresixstar\ Multi dicunt : Quis o\libertineGlyph{s_t}\'{e}ndit \emph{nobis} \textbf{bo}na?
+Sacrific\'{a}te sacrif\'{i}cium ju\libertineGlyph{s_t}\'{i}ti\ae , \GreDagger\ et sper\'{a}te  in \textbf{D\'{o}}mino. \gresixstar\ Multi dicunt : Quis o\libertineGlyph{s_t}\'{e}ndit \emph{nobis} \textbf{bo}na?
 
 Sign\'{a}tum e\libertineGlyph{s_t} super nos lumen vultus tui \textbf{D\'{o}}mine : \gresixstar\ ded\'{i}\libertineGlyph{s_t}i l\ae t\'{i}tiam in \emph{corde} \textbf{me}o.
 
@@ -3271,9 +2982,9 @@ Sc\'{a}pulis suis obumbr\'{a}bit \textbf{ti}bi : \gresixstar\ et sub pennis e\em
 
 Scuto circ\'{u}mdabit te v\'{e}ritas \textbf{e}jus : \gresixstar\ non tim\'{e}bis a tim\'{o}\emph{re noc}\textbf{t\'{u}}rno.
 
-A sag\'{i}tta vol\'{a}nte in die, \gredagger\ a neg\'{o}tio perambul\'{a}nte in \textbf{t\'{e}}nebris : \gresixstar\ ab inc\'{u}rsu, et d\ae m\'{o}nio me\emph{ridi}\textbf{\'{a}}no.
+A sag\'{i}tta vol\'{a}nte in die, \GreDagger\ a neg\'{o}tio perambul\'{a}nte in \textbf{t\'{e}}nebris : \gresixstar\ ab inc\'{u}rsu, et d\ae m\'{o}nio me\emph{ridi}\textbf{\'{a}}no.
 
-Cadent a l\'{a}tere tuo mille, \gredagger\ et decem m\'{i}llia a dextris \textbf{tu}is : \gresixstar\ ad te autem non ap\emph{propin}\textbf{qu\'{a}}bit.
+Cadent a l\'{a}tere tuo mille, \GreDagger\ et decem m\'{i}llia a dextris \textbf{tu}is : \gresixstar\ ad te autem non ap\emph{propin}\textbf{qu\'{a}}bit.
 
 Ver\'{u}mtamen \'{o}culis tuis conside\textbf{r\'{a}}bis : \gresixstar\ et retributi\'{o}nem peccat\'{o}\emph{rum vi}\textbf{d\'{e}}bis.
 
@@ -3289,7 +3000,7 @@ Super \'{a}spidem et basil\'{i}scum ambu\textbf{l\'{a}}bis : \gresixstar\ et con
 
 Qu\'{o}niam in me sper\'{a}vit, liber\'{a}bo \textbf{e}um : \gresixstar\ pr\'{o}tegam eum, qu\'{o}niam cogn\'{o}vit \emph{nomen} \textbf{me}um.
 
-Clam\'{a}bit ad me, et ego ex\'{a}udiam eum : \gredagger\ cum ipso sum in tribul\'{a}ti\textbf{o}ne : \gresixstar\ er\'{i}piam eum et glorifi\emph{c\'{a}bo} \textbf{e}um.
+Clam\'{a}bit ad me, et ego ex\'{a}udiam eum : \GreDagger\ cum ipso sum in tribul\'{a}ti\textbf{o}ne : \gresixstar\ er\'{i}piam eum et glorifi\emph{c\'{a}bo} \textbf{e}um.
 
 Longit\'{u}dine di\'{e}rum repl\'{e}bo \textbf{e}um : \gresixstar\ et o\libertineGlyph{s_t}\'{e}ndam illi salu\emph{t\'{a}re} \textbf{me}um.
 
@@ -3335,16 +3046,10 @@ Tonus Hymni \emph{\textcolor{black}{Te lucis ante t\'{e}rminum}} variatur secund
 
 \subsubsection*{Tonus in Feriis.}
 
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{3mm plus 0em minus 0em}
-
 \greannotation{VIII}
 \gregorioscore[a]{Completorium/TeLucisPAFeriis.gtex}
 
 \subsubsection*{Tonus in Sabbatis et Dominicis.}
-
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{3mm plus 0em minus 0em}
 
 \greannotation{VIII}
 \gregorioscore[a]{Completorium/TeLucisPADominicis.gtex}
@@ -3353,16 +3058,10 @@ Tonus Hymni \emph{\textcolor{black}{Te lucis ante t\'{e}rminum}} variatur secund
 
 \subsubsection*{Tonus in Festis Simplicibus.}
 
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{3mm plus 0em minus 0em}
-
 \greannotation{VIII}
 \gregorioscore[a]{Completorium/TeLucisPASimplex.gtex}
 
 \subsubsection*{Tonus in Festis Duplicibus.}
-
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{3mm plus 0em minus 0em}
 
 \greannotation{IV}
 \gregorioscore[a]{Completorium/TeLucisPADuplex.gtex}
@@ -3371,16 +3070,10 @@ Tonus Hymni \emph{\textcolor{black}{Te lucis ante t\'{e}rminum}} variatur secund
 
 \subsubsection*{Tonus in Tempore Adventus.}
 
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{3mm plus 0em minus 0em}
-
 \greannotation{II}
 \gregorioscore[a]{Completorium/TeLucisAdvent.gtex}
 
 \subsubsection*{Tonus in Tempore Quadragesim\ae.}
-
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{3mm plus 0em minus 0em}
 
 \greannotation{II}
 \gregorioscore[a]{Completorium/TeLucisLent.gtex}
@@ -3388,9 +3081,6 @@ Tonus Hymni \emph{\textcolor{black}{Te lucis ante t\'{e}rminum}} variatur secund
 \vspace{10.0mm}
 
 \subsubsection*{Tonus et doxologia in Fe\libertineGlyph{s_t}is B. M. Virginis aut Corporis Chri\libertineGlyph{s_t}i, ac infra eorum O\libertineGlyph{c_t}avas.}
-
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{3mm plus 0em minus 0em}
 
 \greannotation{II}
 \gregorioscore[a]{Completorium/TeLucisBMVCorpChrist.gtex}
@@ -3408,7 +3098,7 @@ Tonus ut ad Vesperas ( p. \pageref{DominicaCapitulum} ).
 
 \vspace{-1.0mm}
 
-\begin{response}\lettrine{T}{u} autem in nobis es D\'{o}mine, \gredagger\ et nomen san\libertineGlyph{c_t}um tuum invoc\'{a}tum e\libertineGlyph{s_t} super nos : \gresixstar\ ne derel\'{i}nquas nos D\'{o}mine Deus no\libertineGlyph{s_t}er. \Rbar\ Deo grátias.
+\begin{response}\lettrine{T}{u} autem in nobis es D\'{o}mine, \GreDagger\ et nomen san\libertineGlyph{c_t}um tuum invoc\'{a}tum e\libertineGlyph{s_t} super nos : \gresixstar\ ne derel\'{i}nquas nos D\'{o}mine Deus no\libertineGlyph{s_t}er. \Rbar\ Deo grátias.
 
 \end{response}
 
@@ -3416,9 +3106,6 @@ Tonus ut ad Vesperas ( p. \pageref{DominicaCapitulum} ).
 
 \subsubsection*{Responsorium Breve.}
 \subsubsection*{Per Annum.}
-
-\setspaceafterinitial{1.7mm plus 0em minus 0em}
-\setspacebeforeinitial{2.5mm plus 0em minus 0em}
 
 \greannotation{VI}
 \gregorioscore[a]{Completorium/CompRespPA.gtex}
@@ -3436,9 +3123,6 @@ Tonus ut ad Vesperas ( p. \pageref{DominicaCapitulum} ).
 
 \subsubsection*{Tempore Adventus.}
 
-\setspaceafterinitial{1.7mm plus 0em minus 0em}
-\setspacebeforeinitial{2.5mm plus 0em minus 0em}
-
 \greannotation{IV}
 \gregorioscore[a]{Completorium/CompRespAdvent.gtex}
 
@@ -3452,9 +3136,6 @@ Tonus ut ad Vesperas ( p. \pageref{DominicaCapitulum} ).
 \end{response}
 
 \subsubsection*{Tempore Quadrageism\ae.}
-
-\setspaceafterinitial{1.7mm plus 0em minus 0em}
-\setspacebeforeinitial{2.5mm plus 0em minus 0em}
 
 \greannotation{IV}
 \gregorioscore[a]{Completorium/CompRespLent.gtex}
@@ -3475,9 +3156,6 @@ Tonus ut ad Vesperas ( p. \pageref{DominicaCapitulum} ).
 \subsection*{}
 
 \subsubsection*{Canticum Simeonis.\capitulumSpace \emph{Luc. 2, 29--32.}}
-
-\setspaceafterinitial{2mm plus 0em minus 0em}
-\setspacebeforeinitial{2.8mm plus 0em minus 0em}
 
 \greannotation{III a}
 \gregorioscore[a]{Completorium/CompNuncDimAnt-01.gtex}
@@ -3557,7 +3235,7 @@ Oratio canitur in Tono Simplici, ut in p.~\pageref{OratioSimplex}.
 
 \subsubsection*{\textcolor{black}{Or\'{e}mus.}\capitulumSpace \emph{Oratio.}}
 
-\begin{response}\lettrine{V}{i}sita, qu\'{\ae}sumus D\'{o}mine, habitati\'{o}nem i\libertineGlyph{s_t}am, et omnes ins\'{i}dias inim\'{i}ci ab ea longe rep\'{e}lle~:~\gredagger\ Angeli tui san\libertineGlyph{c_t}i h\'{a}bitent in ea, qui nos in pace cu\libertineGlyph{s_t}\'{o}diant~; \gresixstar\ et bened\'{i}\libertineGlyph{c_t}io tua sit super nos semper. Per D\'{o}minum no\libertineGlyph{s_t}rum Jesum Chri\libertineGlyph{s_t}um F\'{i}lium tuum : qui tecum vivit et regnat in unit\'{a}te Sp\'{i}ritus San\libertineGlyph{c_t}i Deus, per \'{o}mnia s\'{\ae}cula s\ae cul\'{o}rum. \Rbar\ Amen.
+\begin{response}\lettrine{V}{i}sita, qu\'{\ae}sumus D\'{o}mine, habitati\'{o}nem i\libertineGlyph{s_t}am, et omnes ins\'{i}dias inim\'{i}ci ab ea longe rep\'{e}lle~:~\GreDagger\ Angeli tui san\libertineGlyph{c_t}i h\'{a}bitent in ea, qui nos in pace cu\libertineGlyph{s_t}\'{o}diant~; \gresixstar\ et bened\'{i}\libertineGlyph{c_t}io tua sit super nos semper. Per D\'{o}minum no\libertineGlyph{s_t}rum Jesum Chri\libertineGlyph{s_t}um F\'{i}lium tuum : qui tecum vivit et regnat in unit\'{a}te Sp\'{i}ritus San\libertineGlyph{c_t}i Deus, per \'{o}mnia s\'{\ae}cula s\ae cul\'{o}rum. \Rbar\ Amen.
 
 \end{response}
 
@@ -3622,15 +3300,12 @@ Deinde dicuntur secreto \textcolor{black}{\emph{Pater no\libertineGlyph{s_t}er}}
 \chead{\color{benred8}\textsc{Tonus Orationis}}
 \thispagestyle{plain}
 
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{2.2mm plus 0em minus 0em}
-
 \gregorioscore[a]{TonusOrationis1.gtex}
 
 \vspace{1mm}
 
 \begin{rubric}
-In Orationibus fit flexa tantum in fine prim\ae\ distin\libertineGlyph{c_t}ionis ( sive \gredagger\ sive \gresixstar\ ) :
+In Orationibus fit flexa tantum in fine prim\ae\ distin\libertineGlyph{c_t}ionis ( sive \GreDagger\ sive \gresixstar\ ) :
 
 \end{rubric}
 
@@ -3683,9 +3358,6 @@ In Feriali tantum Officio, extra Tempus Paschale, etiam quando non dicuntur Prec
 
 \end{rubric}
 
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{2.2mm plus 0em minus 0em}
-
 \greannotation{II}
 \gregorioscore[a]{CommemoratioCrucis.gtex}
 
@@ -3715,9 +3387,6 @@ Sequentes Commemorationes de San\libertineGlyph{c_t}a Maria, de San\libertineGly
 % COMMEMORATION OF THE B. V. M.
 
 \subsubsection*{Commemoratio de San\libertineGlyph{c_t}a Maria.}
-
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{2.2mm plus 0em minus 0em}
 
 \greannotation{I}
 \gregorioscore[a]{CommemoratioBMV.gtex}
@@ -3749,16 +3418,13 @@ Ab Octava Epiphani\ae\ usque ad Purificationem :
 
 \subsubsection*{\textcolor{black}{Or\'{e}mus.}\capitulumSpace \emph{Oratio.}}
 
-\begin{response}\lettrine{D}{e}us, qui sal\'{u}tis \ae t\'{e}rn\ae , be\'{a}t\ae\ Mar\'{i}\ae\ virginit\'{a}te fec\'{u}nda, hum\'{a}no g\'{e}neri pr\'{\ae}mia \mbox{pr\ae\libertineGlyph{s_t}it\'{i}\libertineGlyph{s_t}i : \gredagger} tr\'{i}bue, qu\'{\ae}sumus ; ut ipsam pro nobis interc\'{e}dere senti\'{a}mus, \gresixstar\ per quam mer\'{u}imus au\libertineGlyph{c_t}\'{o}rem vit\ae\ susc\'{i}pere, D\'{o}minum no\libertineGlyph{s_t}rum Jesum Chri\libertineGlyph{s_t}um F\'{i}lium tuum.
+\begin{response}\lettrine{D}{e}us, qui sal\'{u}tis \ae t\'{e}rn\ae , be\'{a}t\ae\ Mar\'{i}\ae\ virginit\'{a}te fec\'{u}nda, hum\'{a}no g\'{e}neri pr\'{\ae}mia \mbox{pr\ae\libertineGlyph{s_t}it\'{i}\libertineGlyph{s_t}i : \GreDagger} tr\'{i}bue, qu\'{\ae}sumus ; ut ipsam pro nobis interc\'{e}dere senti\'{a}mus, \gresixstar\ per quam mer\'{u}imus au\libertineGlyph{c_t}\'{o}rem vit\ae\ susc\'{i}pere, D\'{o}minum no\libertineGlyph{s_t}rum Jesum Chri\libertineGlyph{s_t}um F\'{i}lium tuum.
 
 \end{response}
 
 %% COMMEMORATION OF ST JOSEPH
 
 \subsubsection*{Commemoratio de San\libertineGlyph{c_t}o Joseph.}
-
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{2.2mm plus 0em minus 0em}
 
 \greannotation{VIII}
 \gregorioscore[a]{CommemoratioJoseph.gtex}
@@ -3779,9 +3445,6 @@ Ab Octava Epiphani\ae\ usque ad Purificationem :
 %% COMMEMORATION OF THE APOSTLES
 
 \subsubsection*{Commemoratio de Apo\libertineGlyph{s_t}olis.}
-
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{2.2mm plus 0em minus 0em}
 
 \greannotation{VIII}
 \gregorioscore[a]{CommemoratioApost.gtex}
@@ -3826,7 +3489,7 @@ Fiat Commemoratio consueta ante vel po\libertineGlyph{s_t} Commemorationes pr\ae
 
 \subsubsection*{\textcolor{black}{Or\'{e}mus.}\capitulumSpace \emph{Oratio.}}
 
-\begin{response}\lettrine{D}{e}us, qui Eccl\'{e}siam tuam be\'{a}ti Bed\ae\ Confess\'{o}ris tui atque Do\libertineGlyph{c_t}\'{o}ris eruditi\'{o}ne clar\'{i}ficas~:~\gredagger\ conc\'{e}de prop\'{i}tius f\'{a}mulis tuis, \gresixstar\ ejus semper illustr\'{a}ri sapi\'{e}ntia et m\'{e}ritis adjuv\'{a}ri.
+\begin{response}\lettrine{D}{e}us, qui Eccl\'{e}siam tuam be\'{a}ti Bed\ae\ Confess\'{o}ris tui atque Do\libertineGlyph{c_t}\'{o}ris eruditi\'{o}ne clar\'{i}ficas~:~\GreDagger\ conc\'{e}de prop\'{i}tius f\'{a}mulis tuis, \gresixstar\ ejus semper illustr\'{a}ri sapi\'{e}ntia et m\'{e}ritis adjuv\'{a}ri.
 
 \end{response}
 
@@ -3840,9 +3503,6 @@ Ultimo loco~:
 
 \subsubsection*{Commemoratio de Pace.}
 
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{2.2mm plus 0em minus 0em}
-
 \greannotation{II}
 \gregorioscore[a]{CommemoratioPacis.gtex}
 
@@ -3855,7 +3515,7 @@ Ultimo loco~:
 
 \subsubsection*{\textcolor{black}{Or\'{e}mus.}\capitulumSpace \emph{Oratio.}}
 
-\begin{response}\lettrine{D}{e}us, a quo san\libertineGlyph{c_t}a desid\'{e}ria, re\libertineGlyph{c_t}a cons\'{i}lia, et justa sunt \'{o}pera : \gredagger\ da servis tuis illam, quam mundus dare non pote\libertineGlyph{s_t}, pacem ; \gresixstar\ ut et corda no\libertineGlyph{s_t}ra mand\'{a}tis tuis d\'{e}dita, et h\'{o}\libertineGlyph{s_t}ium subl\'{a}ta form\'{i}dine, t\'{e}mpora sint tua prote\libertineGlyph{c_t}ione tranqu\'{i}lla. Per D\'{o}minum no\libertineGlyph{s_t}rum Jesum Chri\libertineGlyph{s_t}um F\'{i}lium tuum : qui tecum vivit et regnat in unit\'{a}te Sp\'{i}ritus San\libertineGlyph{c_t}i Deus, per \'{o}mnia s\'{\ae}cula s\ae cul\'{o}rum. \Rbar\ Amen.
+\begin{response}\lettrine{D}{e}us, a quo san\libertineGlyph{c_t}a desid\'{e}ria, re\libertineGlyph{c_t}a cons\'{i}lia, et justa sunt \'{o}pera : \GreDagger\ da servis tuis illam, quam mundus dare non pote\libertineGlyph{s_t}, pacem ; \gresixstar\ ut et corda no\libertineGlyph{s_t}ra mand\'{a}tis tuis d\'{e}dita, et h\'{o}\libertineGlyph{s_t}ium subl\'{a}ta form\'{i}dine, t\'{e}mpora sint tua prote\libertineGlyph{c_t}ione tranqu\'{i}lla. Per D\'{o}minum no\libertineGlyph{s_t}rum Jesum Chri\libertineGlyph{s_t}um F\'{i}lium tuum : qui tecum vivit et regnat in unit\'{a}te Sp\'{i}ritus San\libertineGlyph{c_t}i Deus, per \'{o}mnia s\'{\ae}cula s\ae cul\'{o}rum. \Rbar\ Amen.
 
 \end{response}
 
@@ -3876,9 +3536,6 @@ Ultimo loco~:
 
 \end{rubric}
 
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{2.2mm plus 0em minus 0em}
-
 \greannotation{V}
 \gregorioscore[a]{AlmaRedemptorisSolemn.gtex}
 
@@ -3898,7 +3555,7 @@ In Adventu :
 
 \subsubsection*{\textcolor{black}{Or\'{e}mus.}\capitulumSpace \emph{Oratio.}}
 
-\begin{response}\lettrine{G}{r}\'{a}tiam tuam, qu\'{\ae}sumus D\'{o}mine, m\'{e}ntibus no\libertineGlyph{s_t}ris inf\'{u}nde : \gredagger\ ut qui, Angelo nunti\'{a}nte, Chri\libertineGlyph{s_t}i F\'{i}lii tui Incarnati\'{o}nem cogn\'{o}vimus, \gresixstar\ per passi\'{o}nem ejus et crucem ad resurre\libertineGlyph{c_t}i\'{o}nis gl\'{o}riam perduc\'{a}mur. Per e\'{u}mdem Chri\libertineGlyph{s_t}um D\'{o}minum no\libertineGlyph{s_t}rum. \Rbar\ Amen.
+\begin{response}\lettrine{G}{r}\'{a}tiam tuam, qu\'{\ae}sumus D\'{o}mine, m\'{e}ntibus no\libertineGlyph{s_t}ris inf\'{u}nde : \GreDagger\ ut qui, Angelo nunti\'{a}nte, Chri\libertineGlyph{s_t}i F\'{i}lii tui Incarnati\'{o}nem cogn\'{o}vimus, \gresixstar\ per passi\'{o}nem ejus et crucem ad resurre\libertineGlyph{c_t}i\'{o}nis gl\'{o}riam perduc\'{a}mur. Per e\'{u}mdem Chri\libertineGlyph{s_t}um D\'{o}minum no\libertineGlyph{s_t}rum. \Rbar\ Amen.
 
 \end{response}
 
@@ -3916,7 +3573,7 @@ A primis Vesperis Nativitatis Domini et deinceps :
 
 \subsubsection*{\textcolor{black}{Or\'{e}mus.}\capitulumSpace \emph{Oratio.}}
 
-\begin{response}\lettrine{D}{e}us, qui sal\'{u}tis \ae t\'{e}rn\ae , be\'{a}t\ae\ Mar\'{i}\ae\ virginit\'{a}te fec\'{u}nda, hum\'{a}no g\'{e}neri pr\'{\ae}mia \mbox{pr\ae\libertineGlyph{s_t}it\'{i}\libertineGlyph{s_t}i : \gredagger} tr\'{i}bue, qu\'{\ae}sumus ; ut ipsam pro nobis interc\'{e}dere senti\'{a}mus, \gresixstar\ per quam mer\'{u}imus au\libertineGlyph{c_t}\'{o}rem vit\ae\ susc\'{i}pere, D\'{o}minum no\libertineGlyph{s_t}rum Jesum Chri\libertineGlyph{s_t}um F\'{i}lium tuum. \Rbar\ Amen.
+\begin{response}\lettrine{D}{e}us, qui sal\'{u}tis \ae t\'{e}rn\ae , be\'{a}t\ae\ Mar\'{i}\ae\ virginit\'{a}te fec\'{u}nda, hum\'{a}no g\'{e}neri pr\'{\ae}mia \mbox{pr\ae\libertineGlyph{s_t}it\'{i}\libertineGlyph{s_t}i : \GreDagger} tr\'{i}bue, qu\'{\ae}sumus ; ut ipsam pro nobis interc\'{e}dere senti\'{a}mus, \gresixstar\ per quam mer\'{u}imus au\libertineGlyph{c_t}\'{o}rem vit\ae\ susc\'{i}pere, D\'{o}minum no\libertineGlyph{s_t}rum Jesum Chri\libertineGlyph{s_t}um F\'{i}lium tuum. \Rbar\ Amen.
 
 \end{response}
 
@@ -3926,9 +3583,6 @@ A primis Vesperis Nativitatis Domini et deinceps :
 \newpage
 
 \begin{rubric}Po\libertineGlyph{s_t} Purificationem, id est, a fine Completorii illius diei 2 Februarii inclusive, etiam quando transferatur fe\libertineGlyph{s_t}um Purificationis B. M. V., usque ad Feriam V in C\oe na Domini exclusive.\end{rubric}
-
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{2.2mm plus 0em minus 0em}
 
 \greannotation{VI}
 \gregorioscore[a]{AveReginaCaelorumSolemn.gtex}
@@ -3944,7 +3598,7 @@ A primis Vesperis Nativitatis Domini et deinceps :
 
 \subsubsection*{\textcolor{black}{Or\'{e}mus.}\capitulumSpace \emph{Oratio.}}
 
-\begin{response}\lettrine{C}{o}nc\'{e}de, mis\'{e}ricors Deus, fragilit\'{a}ti no\libertineGlyph{s_t}r\ae\ pr\ae s\'{i}dium : \gredagger\ ut qui san\libertineGlyph{c_t}\ae\ Dei Genitr\'{i}cis mem\'{o}riam \'{a}gimus, \gresixstar\ intercessi\'{o}nis ejus aux\'{i}lio, a no\libertineGlyph{s_t}ris iniquit\'{a}tibus resurg\'{a}mus. Per e\'{u}mdem Chri\libertineGlyph{s_t}um D\'{o}minum no\libertineGlyph{s_t}rum. \Rbar\ Amen.
+\begin{response}\lettrine{C}{o}nc\'{e}de, mis\'{e}ricors Deus, fragilit\'{a}ti no\libertineGlyph{s_t}r\ae\ pr\ae s\'{i}dium : \GreDagger\ ut qui san\libertineGlyph{c_t}\ae\ Dei Genitr\'{i}cis mem\'{o}riam \'{a}gimus, \gresixstar\ intercessi\'{o}nis ejus aux\'{i}lio, a no\libertineGlyph{s_t}ris iniquit\'{a}tibus resurg\'{a}mus. Per e\'{u}mdem Chri\libertineGlyph{s_t}um D\'{o}minum no\libertineGlyph{s_t}rum. \Rbar\ Amen.
 
 \end{response}
 
@@ -3956,9 +3610,6 @@ A primis Vesperis Nativitatis Domini et deinceps :
 A Completorio Sabbati San\libertineGlyph{c_t}i usque ad Nonam Sabbati infra O\libertineGlyph{c_t}avam Penteco\libertineGlyph{s_t}es inclusive.
 
 \end{rubric}
-
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{2.2mm plus 0em minus 0em}
 
 \greannotation{VI}
 \gregorioscore[a]{ReginaCaeliSolemn2.gtex}
@@ -3974,7 +3625,7 @@ A Completorio Sabbati San\libertineGlyph{c_t}i usque ad Nonam Sabbati infra O\li
 
 \subsubsection*{\textcolor{black}{Or\'{e}mus.}\capitulumSpace \emph{Oratio.}}
 
-\begin{response}\lettrine{D}{e}us, qui per resurre\libertineGlyph{c_t}i\'{o}nem F\'{i}lii tui D\'{o}mini no\libertineGlyph{s_t}ri Jesu Chri\libertineGlyph{s_t}i mundum l\ae tific\'{a}re dign\'{a}tus es : \gredagger\ pr\ae\libertineGlyph{s_t}a, qu\'{\ae}sumus ; ut per ejus Genitr\'{i}cem V\'{i}rginem Mar\'{i}am, \gresixstar\ perp\'{e}tu\ae\ capi\'{a}mus g\'{a}udia vit\ae . Per e\'{u}mdem Chri\libertineGlyph{s_t}um D\'{o}minum no\libertineGlyph{s_t}rum. \Rbar\ Amen.
+\begin{response}\lettrine{D}{e}us, qui per resurre\libertineGlyph{c_t}i\'{o}nem F\'{i}lii tui D\'{o}mini no\libertineGlyph{s_t}ri Jesu Chri\libertineGlyph{s_t}i mundum l\ae tific\'{a}re dign\'{a}tus es : \GreDagger\ pr\ae\libertineGlyph{s_t}a, qu\'{\ae}sumus ; ut per ejus Genitr\'{i}cem V\'{i}rginem Mar\'{i}am, \gresixstar\ perp\'{e}tu\ae\ capi\'{a}mus g\'{a}udia vit\ae . Per e\'{u}mdem Chri\libertineGlyph{s_t}um D\'{o}minum no\libertineGlyph{s_t}rum. \Rbar\ Amen.
 
 \end{response}
 
@@ -3986,9 +3637,6 @@ A Completorio Sabbati San\libertineGlyph{c_t}i usque ad Nonam Sabbati infra O\li
 A primis Vesperis Fe\libertineGlyph{s_t}i Ss.~Trinitatis usque ad Nonam Sabbati ante Adventum inclusive.
 
 \end{rubric}
-
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{2.2mm plus 0em minus 0em}
 
 {\grespacelinestext=4.60mm
 \greannotation{I}
@@ -4007,7 +3655,7 @@ A primis Vesperis Fe\libertineGlyph{s_t}i Ss.~Trinitatis usque ad Nonam Sabbati 
 
 \subsubsection*{\textcolor{black}{Or\'{e}mus.}\capitulumSpace \emph{Oratio.}}
 
-\begin{response}\lettrine{O}{m}n\'{i}potens sempit\'{e}rn\ae\ Deus, qui glori\'{o}s\ae\ V\'{i}rginis Matris Mar\'{i}\ae\ corpus et \'{a}nimam, ut dignum F\'{i}lii tui habit\'{a}culum \'{e}ffici merer\'{e}tur, Sp\'{i}ritu San\libertineGlyph{c_t}o cooper\'{a}nte pr\ae par\'{a}\libertineGlyph{s_t}i : \gredagger\ da, ut cujus commemorati\'{o}ne l\ae t\'{a}mur, \gresixstar\ ejus pia intercessi\'{o}ne ab in\libertineGlyph{s_t}\'{a}ntibus malis et a morte perp\'{e}tua liber\'{e}mur. Per e\'{u}mdem Chri\libertineGlyph{s_t}um D\'{o}minum no\libertineGlyph{s_t}rum. \Rbar\ Amen.
+\begin{response}\lettrine{O}{m}n\'{i}potens sempit\'{e}rn\ae\ Deus, qui glori\'{o}s\ae\ V\'{i}rginis Matris Mar\'{i}\ae\ corpus et \'{a}nimam, ut dignum F\'{i}lii tui habit\'{a}culum \'{e}ffici merer\'{e}tur, Sp\'{i}ritu San\libertineGlyph{c_t}o cooper\'{a}nte pr\ae par\'{a}\libertineGlyph{s_t}i : \GreDagger\ da, ut cujus commemorati\'{o}ne l\ae t\'{a}mur, \gresixstar\ ejus pia intercessi\'{o}ne ab in\libertineGlyph{s_t}\'{a}ntibus malis et a morte perp\'{e}tua liber\'{e}mur. Per e\'{u}mdem Chri\libertineGlyph{s_t}um D\'{o}minum no\libertineGlyph{s_t}rum. \Rbar\ Amen.
 
 \end{response}
 
@@ -4018,9 +3666,6 @@ A primis Vesperis Fe\libertineGlyph{s_t}i Ss.~Trinitatis usque ad Nonam Sabbati 
 \section*{Antiphon\ae\ Finales B. Mari\ae\ Virginis\\\begin{Large}in Cantu Simplici\end{Large}}
 
 \thispagestyle{plain}
-
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{2.2mm plus 0em minus 0em}
 
 {\grespacelinestext=7.5mm
 \greannotation{V}
@@ -4090,31 +3735,3 @@ Amen.
 \vspace*{\fill}
 
 \end{document}
-
-
-
-%\Vbar . \textcolor{benred1}{\Vbar .} \textcolor{benred8}{\Vbar .} \textcolor{benred12}{\Vbar .} \textcolor{red}{\Vbar .}
-%\Rbar . \textcolor{benred1}{\Rbar .} \textcolor{benred8}{\Vbar .} \textcolor{benred12}{\Vbar .} \textcolor{red}{\Rbar .}
-%\Abar . \textcolor{benred1}{\Abar .} \textcolor{benred8}{\Vbar .} \textcolor{benred12}{\Vbar .} \textcolor{red}{\Abar .}
-%
-%\begin{Large}
-%
-%\textcolor{red}{Red : \Vbar .} \textcolor{benred1}{ONE \Vbar .} \textcolor{benred2}{TWO \Vbar .} \textcolor{benred3}{THREE \Vbar .} \textcolor{benred4}{FOUR \Vbar .} \textcolor{benred5}{FIVE \Vbar .} \textcolor{benred6}{SIX \Vbar .} \textcolor{benred7}{SEVEN \Vbar .} \textcolor{benred8}{EIGHT \Vbar .} \textcolor{benred9}{NINE \Vbar .} \textcolor{benred10}{TEN \Vbar .} \textcolor{benred11}{ELEVEN \Vbar .} \textcolor{benred12}{TWELVE \Vbar .}
-%
-%
-%
-%\end{Large}
-%
-%\textcolor{red}{Red : \Vbar .} \textcolor{benred1}{ONE \Vbar .} \textcolor{benred2}{TWO \Vbar .} \textcolor{benred3}{THREE \Vbar .} \textcolor{benred4}{FOUR \Vbar .} \textcolor{benred5}{FIVE \Vbar .} \textcolor{benred6}{SIX \Vbar .} \textcolor{benred7}{SEVEN \Vbar .} \textcolor{benred8}{EIGHT \Vbar .} \textcolor{benred9}{NINE \Vbar .} \textcolor{benred10}{TEN \Vbar .} \textcolor{benred11}{ELEVEN \Vbar .} \textcolor{benred12}{TWELVE \Vbar .}
-%
-%\textcolor{benred8}{EIGHT \Vbar .}
-%
-%\textcolor{benred9}{NINE \Vbar .}
-%
-%\textcolor{benred11}{ELEVEN \Vbar .}
-%
-%\textcolor{benred12}{TWELVE \Vbar .}
-
-
-
-
