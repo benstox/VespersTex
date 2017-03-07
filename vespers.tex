@@ -1,14 +1,10 @@
 % !TEX TS-program = lualatex
 % !TEX encoding = UTF-8
 
-% This is a simple template for a LuaLaTeX document using gregorio scores.
-
 \documentclass[12pt]{article} % use larger type; default would be 10pt
 
-% places something at specfic coordinates on a page
-\usepackage[pscoord]{eso-pic}% The zero point of the coordinate systemis the lower left corner of the page (the default).
-
 % usual packages loading:
+\usepackage{forloop}
 \usepackage{calc}
 \usepackage{fontspec}
 \usepackage{graphicx} % support the \includegraphics command and options
@@ -22,14 +18,20 @@
 \usepackage{lettrine}
 \setlength{\parindent}{-0.25in}
 
+% Repeat something:
+\newcounter{loopcntr}
+\newcommand{\repeatthing}[2][1]{%
+  \forloop{loopcntr}{0}{\value{loopcntr}<#1}{#2}%
+}
 
+% STYLE FOR THE TITLE PAGE
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \lhead{}
-\chead{\color{benblue1}{\greornamentation  \char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76}} 
+\chead{\color{benblue1}{ \repeatthing[17]{\greornamentation{2}{12}} }}
 \rhead{}
 \lfoot{}
-\cfoot{\color{benblue1}{\greornamentation  \char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76\char76}\\ \color{black}\thepage}
+\cfoot{\color{benblue1}{ \repeatthing[17]{\greornamentation{2}{12}} }\\ \color{black}\thepage}
 \rfoot{}
 \renewcommand{\headrulewidth}{0pt}
 
@@ -63,9 +65,8 @@
 \definecolor{benyellow1}{HTML}{FFD435}
 \definecolor{benyellow2}{HTML}{7C6F3B}
 
-% TRYING TO DEFINE THE FORMATTING OF
+% DEFINE THE FORMATTING OF
 % PSALM TEXT
-
 \newenvironment{psalmtext}{\leftskip 0.25in}{\vspace{2 mm}}
 \newenvironment{rubric}{\color{benred8} \itshape \leftskip 0in \setlength{\parindent}{0.25in}}{\vspace{2 mm}}
 \newenvironment{response}{\leftskip 0in \setlength{\parindent}{0in}}{\vspace{2 mm}}
@@ -146,7 +147,7 @@
 
 \begin{document}
 
-% \pagenumbering{gobble}
+\pagenumbering{gobble}
 
 \vspace*{35 pt}
 
@@ -216,22 +217,22 @@ ORNATUM SIGNIS RHYTHMICIS
 
 \end{center}
 
-% %redefine 'plain' page style to have blue page numbers too
-% \fancypagestyle{plain}{
-% 	\chead{}
-% 	\cfoot{\textcolor{benblue1}{Page number.}}%\thepage}}
+%redefine 'plain' page style to have blue page numbers too
+\fancypagestyle{plain}{
+    \chead{}
+    \cfoot{\textcolor{benblue1}{\thepage}}
 
-% }
+}
 
 \newpage
-% \thispagestyle{empty}
-% \mbox{}
-% \newpage
-% \chead{\color{benred8}\textsc{Dominica}}
-% \cfoot{\textcolor{benblue1}{Page number.}}%\thepage}}
-% \thispagestyle{plain}
-% \pagenumbering{arabic}  
-% \setcounter{page}{3}
+\thispagestyle{empty}
+\mbox{}
+\newpage
+\chead{\color{benred8}\textsc{Dominica}}
+\cfoot{\textcolor{benblue1}{\thepage}}
+\thispagestyle{plain}
+\pagenumbering{arabic}  
+\setcounter{page}{3}
 
 \begin{center}\begin{Huge}\textsc{\textcolor{benred8}{Dominica ad Vesperas}}\end{Huge}\end{center}
 
@@ -242,14 +243,6 @@ ORNATUM SIGNIS RHYTHMICIS
 
 \gregorioscore[a]{DeusInAdjutorium.gtex}
 
-
-%%%%%%%%%%%%%%%%
-% eso pic here ???
-% the staff of the first line of the Dixit Dominus extends too far into the right margin
-% this thing should cover that up
-% \placetextbox{0.95}{0.55}{\includegraphics[width=2.963cm]{blank.PNG}}%
-%%%%%%%%%%%%%%%%
-
 \begin{rubric}
 A Septuagesima usque ad Pascha, loco \emph{\textcolor{black}{Allelúia}}, canitur :
 
@@ -257,11 +250,11 @@ A Septuagesima usque ad Pascha, loco \emph{\textcolor{black}{Allelúia}}, canitu
 
 \gregorioscore[a]{LausTibi.gtex}
 
-%\vspace{2 mm}
+% \vspace{2 mm}
 
 \begin{center}\begin{large}\textbf{\textsc{\textcolor{benred8}{1 Antiphona. VII c 2}}}\end{large}\end{center}
 
-\vspace*{-1.75 cm}
+% \vspace*{-1.75 cm}
 
 \gregorioscore[a]{Dominica/DomAnt1-01.gtex}
 
@@ -272,23 +265,23 @@ A Septuagesima usque ad Pascha, loco \emph{\textcolor{black}{Allelúia}}, canitu
 }
 
 \begin{psalmtext}
-Donec ponam ini\textbf{mí}cos \textbf{tu}os, \gresixstar\ scabéllum \textbf{pe}dum tu\textbf{ó}rum.
+Donec ponam ini\textbf{mí}cos \textbf{tu}os, \GreStar\ scabéllum \textbf{pe}dum tu\textbf{ó}rum.
 
-Virgam virtútis tuæ emíttet Dómi\textbf{nus} ex \textbf{Si}on : \gresixstar\ domináre in médio inimi\textbf{có}rum tu\textbf{ó}rum.
+Virgam virtútis tuæ emíttet Dómi\textbf{nus} ex \textbf{Si}on : \GreStar\ domináre in médio inimi\textbf{có}rum tu\textbf{ó}rum.
 
-Tecum princípium in die virtútis tuæ in splendóri\textbf{bus} sanc\textbf{tó}rum : \gresixstar\ ex útero ante lucíferum \textbf{gé}nu\textbf{i} te.
+Tecum princípium in die virtútis tuæ in splendóri\textbf{bus} sanc\textbf{tó}rum : \GreStar\ ex útero ante lucíferum \textbf{gé}nu\textbf{i} te.
 
-Jurávit Dóminus et non pæni\textbf{té}bit \textbf{e}um : \gresixstar\ Tu es sacérdos in æt\'{e}rnum secúndum órdi\textbf{nem} Mel\textbf{chí}sedech.
+Jurávit Dóminus et non pæni\textbf{té}bit \textbf{e}um : \GreStar\ Tu es sacérdos in æt\'{e}rnum secúndum órdi\textbf{nem} Mel\textbf{chí}sedech.
 
-Dóminus a \textbf{dex}tris \textbf{tu}is, \gresixstar\ confrégit in die iræ \textbf{su}æ \textbf{re}ges.
+Dóminus a \textbf{dex}tris \textbf{tu}is, \GreStar\ confrégit in die iræ \textbf{su}æ \textbf{re}ges.
 
-Judicábit in natiónibus, im\textbf{plé}bit ru\textbf{í}nas : \gresixstar\ conquassábit cápita in \textbf{ter}ra mul\textbf{tó}rum.
+Judicábit in natiónibus, im\textbf{plé}bit ru\textbf{í}nas : \GreStar\ conquassábit cápita in \textbf{ter}ra mul\textbf{tó}rum.
 
-De torrénte in \textbf{vi}a \textbf{bi}bet : \gresixstar\ proptérea exal\textbf{tá}bit \textbf{ca}put.
+De torrénte in \textbf{vi}a \textbf{bi}bet : \GreStar\ proptérea exal\textbf{tá}bit \textbf{ca}put.
 
-Glória \textbf{Pa}tri, et \textbf{Fí}lio, \gresixstar\ et Spi\textbf{rí}tui \textbf{Sanc}to.
+Glória \textbf{Pa}tri, et \textbf{Fí}lio, \GreStar\ et Spi\textbf{rí}tui \textbf{Sanc}to.
 
-Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et in sǽcula sæcu\textbf{ló}rum. \textbf{A}men.
+Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \GreStar\ et in sǽcula sæcu\textbf{ló}rum. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -313,27 +306,27 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 
 
 \begin{psalmtext}
-Magna ó\emph{pera} \textbf{Dó}mini : \gresixstar\ exquisíta in omnes voluntátes \textbf{e}jus.
+Magna ó\emph{pera} \textbf{Dó}mini : \GreStar\ exquisíta in omnes voluntátes \textbf{e}jus.
 
-Conféssio et magnificéntia \emph{opus} \textbf{e}jus : \gresixstar\ et ju\libertineGlyph{s_t}ítia ejus manet in sǽculum \textbf{sǽ}culi.
+Conféssio et magnificéntia \emph{opus} \textbf{e}jus : \GreStar\ et ju\libertineGlyph{s_t}ítia ejus manet in sǽculum \textbf{sǽ}culi.
 
-Memóriam fécit mirabílium suórum, \GreDagger\ miséricors et mise\emph{rátor} \textbf{Dó}minus : \gresixstar\ escam dedit timénti\textbf{bus} se.
+Memóriam fécit mirabílium suórum, \GreDagger\ miséricors et mise\emph{rátor} \textbf{Dó}minus : \GreStar\ escam dedit timénti\textbf{bus} se.
 
-Memor erit in sǽculum te\libertineGlyph{s_t}a\emph{ménti} \textbf{su}i : \gresixstar\ virtútem óperum suórum annuntiábit pópulo \textbf{su}o :
+Memor erit in sǽculum te\libertineGlyph{s_t}a\emph{ménti} \textbf{su}i : \GreStar\ virtútem óperum suórum annuntiábit pópulo \textbf{su}o :
 
-Ut det illis hæredi\emph{tátem} \textbf{gén}tium : \gresixstar\ ópera mánuum ejus véritas et ju\textbf{dí}cium.
+Ut det illis hæredi\emph{tátem} \textbf{gén}tium : \GreStar\ ópera mánuum ejus véritas et ju\textbf{dí}cium.
 
-Fidélia ómnia mandáta ejus : \GreDagger\ confirmáta in sǽ\emph{culum} \textbf{sǽ}culi : \gresixstar\ fa\libertineGlyph{c_t}a in veritáte et æqui\textbf{tá}te.
+Fidélia ómnia mandáta ejus : \GreDagger\ confirmáta in sǽ\emph{culum} \textbf{sǽ}culi : \GreStar\ fa\libertineGlyph{c_t}a in veritáte et æqui\textbf{tá}te.
 
-Redemptiónem misit pó\emph{pulo} \textbf{su}o : \gresixstar\ mandávit in ætérnum te\libertineGlyph{s_t}améntum \textbf{su}um.
+Redemptiónem misit pó\emph{pulo} \textbf{su}o : \GreStar\ mandávit in ætérnum te\libertineGlyph{s_t}améntum \textbf{su}um.
 
-\textcolor{benred8}{\emph{Fit reverentia :}} San\libertineGlyph{c_t}um et terríbile \emph{nomen} \textbf{e}jus : \gresixstar\ inítium sapiéntiae timor \textbf{Dó}mini.
+\textcolor{benred8}{\emph{Fit reverentia :}} San\libertineGlyph{c_t}um et terríbile \emph{nomen} \textbf{e}jus : \GreStar\ inítium sapiéntiae timor \textbf{Dó}mini.
 
-Intellé\libertineGlyph{c_t}us bonus ómnibus facién\emph{tibus} \textbf{e}um : \gresixstar\ laudátio ejus manet in sǽculum \textbf{sǽ}culi.
+Intellé\libertineGlyph{c_t}us bonus ómnibus facién\emph{tibus} \textbf{e}um : \GreStar\ laudátio ejus manet in sǽculum \textbf{sǽ}culi.
 
-Glória Pa\emph{tri, et} \textbf{Fí}lio, \gresixstar\ et Spirítui \textbf{Sanc}to.
+Glória Pa\emph{tri, et} \textbf{Fí}lio, \GreStar\ et Spirítui \textbf{Sanc}to.
 
-Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in sǽcula sæculórum. \textbf{A}men.
+Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \GreStar\ et in sǽcula sæculórum. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -360,25 +353,25 @@ Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in
 
 
 \begin{psalmtext}
-Potens in terra erit \emph{semen} \textbf{e}jus : \gresixstar\ generátio re\libertineGlyph{c_t}órum \emph{benedi}\textbf{cé}tur.
+Potens in terra erit \emph{semen} \textbf{e}jus : \GreStar\ generátio re\libertineGlyph{c_t}órum \emph{benedi}\textbf{cé}tur.
 
-Glória et divítiae in \emph{domo} \textbf{e}jus : \gresixstar\ et ju\libertineGlyph{s_t}ítia ejus manet in \emph{sǽculum} \textbf{sǽ}culi.
+Glória et divítiae in \emph{domo} \textbf{e}jus : \GreStar\ et ju\libertineGlyph{s_t}ítia ejus manet in \emph{sǽculum} \textbf{sǽ}culi.
 
-Exórtum e\libertineGlyph{s_t} in ténebris \emph{lumen} \textbf{rec}tis : \gresixstar\ miséricors, et mise\emph{rátor, et} \textbf{jus}tus.
+Exórtum e\libertineGlyph{s_t} in ténebris \emph{lumen} \textbf{rec}tis : \GreStar\ miséricors, et mise\emph{rátor, et} \textbf{jus}tus.
 
-Jucúndus homo qui miserétur et cómmodat, \GreDagger\ dispónet sermónes suos \emph{in ju}\textbf{dí}cio : \gresixstar\ quia in ætérnum \emph{non commo}\textbf{vé}bitur.
+Jucúndus homo qui miserétur et cómmodat, \GreDagger\ dispónet sermónes suos \emph{in ju}\textbf{dí}cio : \GreStar\ quia in ætérnum \emph{non commo}\textbf{vé}bitur.
 
-In memória ætérna \emph{erit} \textbf{jus}tus : \gresixstar\ ab auditióne ma\emph{la non ti}\textbf{mé}bit.
+In memória ætérna \emph{erit} \textbf{jus}tus : \GreStar\ ab auditióne ma\emph{la non ti}\textbf{mé}bit.
 
-Parátum cor ejus speráre in Dómino, \GreDagger\ confirmátum \emph{e\libertineGlyph{s_t} cor} \textbf{e}jus : \gresixstar\ non commovébitur donec despíciat i\emph{nimícos} \textbf{su}os.
+Parátum cor ejus speráre in Dómino, \GreDagger\ confirmátum \emph{e\libertineGlyph{s_t} cor} \textbf{e}jus : \GreStar\ non commovébitur donec despíciat i\emph{nimícos} \textbf{su}os.
 
-Dispérsit, dedit paupéribus : \GreDagger\ ju\libertineGlyph{s_t}ítia ejus manet in sǽ\emph{culum} \textbf{sǽ}culi : \gresixstar\ cornu ejus exaltá\emph{bitur in} \textbf{gló}ria.
+Dispérsit, dedit paupéribus : \GreDagger\ ju\libertineGlyph{s_t}ítia ejus manet in sǽ\emph{culum} \textbf{sǽ}culi : \GreStar\ cornu ejus exaltá\emph{bitur in} \textbf{gló}ria.
 
-Peccátor vidébit, et irascétur, \GreDagger\ déntibus suis fremet \emph{et ta}\textbf{bé}scet : \gresixstar\ desidérium pecca\emph{tórum pe}\textbf{rí}bit.
+Peccátor vidébit, et irascétur, \GreDagger\ déntibus suis fremet \emph{et ta}\textbf{bé}scet : \GreStar\ desidérium pecca\emph{tórum pe}\textbf{rí}bit.
 
-Glória Pa\emph{tri, et} \textbf{Fí}lio, \gresixstar\ et Sp\emph{irítui} \textbf{Sanc}to.
+Glória Pa\emph{tri, et} \textbf{Fí}lio, \GreStar\ et Sp\emph{irítui} \textbf{Sanc}to.
 
-Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in sǽcula sæ\emph{culórum}. \textbf{A}men.
+Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \GreStar\ et in sǽcula sæ\emph{culórum}. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -398,23 +391,23 @@ Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in
 \gregorioscore[a]{Dominica/DomFL4.gtex}
 
 \begin{psalmtext}
-\textcolor{benred8}{\emph{Fit reverentia :}} Sit nomen Dómini \textbf{be}ne\textbf{díc}tum, \gresixstar\ ex hoc nunc, et \textbf{us}que in \textbf{sǽ}culum.
+\textcolor{benred8}{\emph{Fit reverentia :}} Sit nomen Dómini \textbf{be}ne\textbf{díc}tum, \GreStar\ ex hoc nunc, et \textbf{us}que in \textbf{sǽ}culum.
 
-A solis ortu usque \textbf{ad} oc\textbf{cá}sum, \gresixstar\ laudábile \textbf{no}men \textbf{Dó}mini.
+A solis ortu usque \textbf{ad} oc\textbf{cá}sum, \GreStar\ laudábile \textbf{no}men \textbf{Dó}mini.
 
-Excélsus super omnes \textbf{gen}tes \textbf{Dó}minus, \gresixstar\ et super cælos \textbf{gló}ria \textbf{e}jus.
+Excélsus super omnes \textbf{gen}tes \textbf{Dó}minus, \GreStar\ et super cælos \textbf{gló}ria \textbf{e}jus.
 
-Quis sicut Dóminus Deus no\libertineGlyph{s_t}er, qui in \textbf{al}tis \textbf{há}bitat, \gresixstar\ et humília réspicit in cælo \textbf{et} in \textbf{ter}ra?
+Quis sicut Dóminus Deus no\libertineGlyph{s_t}er, qui in \textbf{al}tis \textbf{há}bitat, \GreStar\ et humília réspicit in cælo \textbf{et} in \textbf{ter}ra?
 
-Súscitans a \textbf{ter}ra \textbf{í}nopem, \gresixstar\ et de \libertineGlyph{s_t}ércore \textbf{é}rigens \textbf{páu}perem :
+Súscitans a \textbf{ter}ra \textbf{í}nopem, \GreStar\ et de \libertineGlyph{s_t}ércore \textbf{é}rigens \textbf{páu}perem :
 
-Ut cóllocet eum \textbf{cum} prin\textbf{cí}pibus, \gresixstar\ cum princípibus \textbf{pó}puli \textbf{su}i.
+Ut cóllocet eum \textbf{cum} prin\textbf{cí}pibus, \GreStar\ cum princípibus \textbf{pó}puli \textbf{su}i.
 
-Qui habitáre facit \libertineGlyph{s_t}éri\textbf{lem} in \textbf{do}mo, \gresixstar\ matrem fili\textbf{ó}rum lae\textbf{tán}tem.
+Qui habitáre facit \libertineGlyph{s_t}éri\textbf{lem} in \textbf{do}mo, \GreStar\ matrem fili\textbf{ó}rum lae\textbf{tán}tem.
 
-Glória \textbf{Pa}tri, et \textbf{Fí}lio, \gresixstar\ et Spi\textbf{rí}tui \textbf{Sanc}to.
+Glória \textbf{Pa}tri, et \textbf{Fí}lio, \GreStar\ et Spi\textbf{rí}tui \textbf{Sanc}to.
 
-Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et in sǽcula sæcu\textbf{ló}rum. \textbf{A}men.
+Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \GreStar\ et in sǽcula sæcu\textbf{ló}rum. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -434,61 +427,61 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \gregorioscore[a]{Dominica/DomFL5.gtex}
 
 \begin{psalmtext}
-Fa\libertineGlyph{c_t}a e\libertineGlyph{s_t} Judǽa san\libertineGlyph{c_t}ifi\emph{cátio} \textbf{e}jus, \gresixstar\ Israel potés\emph{tas} \textbf{e}jus.
+Fa\libertineGlyph{c_t}a e\libertineGlyph{s_t} Judǽa san\libertineGlyph{c_t}ifi\emph{cátio} \textbf{e}jus, \GreStar\ Israel potés\emph{tas} \textbf{e}jus.
 
-Mare \emph{vidit, et} \textbf{fu}git : \gresixstar\ Jordánis convérsus e\libertineGlyph{s_t} \emph{re}\textbf{trór}sum.
+Mare \emph{vidit, et} \textbf{fu}git : \GreStar\ Jordánis convérsus e\libertineGlyph{s_t} \emph{re}\textbf{trór}sum.
 
-Montes exsultavé\emph{runt ut a}\textbf{rí}etes : \gresixstar\ et colles sicut a\emph{gni} \textbf{ó}vium.
+Montes exsultavé\emph{runt ut a}\textbf{rí}etes : \GreStar\ et colles sicut a\emph{gni} \textbf{ó}vium.
 
-Quid e\libertineGlyph{s_t} tibi ma\emph{re quod fu}\textbf{gís}ti? \gresixstar\ et tu Jordánis, quia convérsus es \emph{re}\textbf{trór}sum.
+Quid e\libertineGlyph{s_t} tibi ma\emph{re quod fu}\textbf{gís}ti? \GreStar\ et tu Jordánis, quia convérsus es \emph{re}\textbf{trór}sum.
 
-Montes exsultá\libertineGlyph{s_t}is \emph{sicut a}\textbf{rí}etes, \gresixstar\ et colles sicut a\emph{gni} \textbf{ó}vium?
+Montes exsultá\libertineGlyph{s_t}is \emph{sicut a}\textbf{rí}etes, \GreStar\ et colles sicut a\emph{gni} \textbf{ó}vium?
 
-A fácie Dómini \emph{mota e\libertineGlyph{s_t}} \textbf{ter}ra, \gresixstar\ a fácie De\emph{i} \textbf{Ja}cob : 
+A fácie Dómini \emph{mota e\libertineGlyph{s_t}} \textbf{ter}ra, \GreStar\ a fácie De\emph{i} \textbf{Ja}cob : 
 
-Qui convértit petram in \emph{\libertineGlyph{s_t}agna a}\textbf{quá}rum, \gresixstar\ et rupem in fontes \emph{a}\textbf{quá}rum.
+Qui convértit petram in \emph{\libertineGlyph{s_t}agna a}\textbf{quá}rum, \GreStar\ et rupem in fontes \emph{a}\textbf{quá}rum.
 
-Non nobis Dó\emph{mine, non} \textbf{no}bis : \gresixstar\ sed nómini tuo \emph{da} \textbf{gló}riam.
+Non nobis Dó\emph{mine, non} \textbf{no}bis : \GreStar\ sed nómini tuo \emph{da} \textbf{gló}riam.
 
-Super misericórdia tua et ve\emph{ritáte} \textbf{tu}a : \gresixstar\ nequándo dicant gentes : Ubi e\libertineGlyph{s_t} Deus \emph{e}\textbf{ó}rum?
+Super misericórdia tua et ve\emph{ritáte} \textbf{tu}a : \GreStar\ nequándo dicant gentes : Ubi e\libertineGlyph{s_t} Deus \emph{e}\textbf{ó}rum?
 
-Deus autem \emph{no\libertineGlyph{s_t}er in} \textbf{cæ}lo : \gresixstar\ ómnia quæcúmque vólu\emph{it}, \textbf{fe}cit.
+Deus autem \emph{no\libertineGlyph{s_t}er in} \textbf{cæ}lo : \GreStar\ ómnia quæcúmque vólu\emph{it}, \textbf{fe}cit.
 
-Simulácra géntium ar\emph{géntum et} \textbf{au}rum, \gresixstar\ ópera mánu\emph{um} \textbf{hó}minum.
+Simulácra géntium ar\emph{géntum et} \textbf{au}rum, \GreStar\ ópera mánu\emph{um} \textbf{hó}minum.
 
-Os habent, \emph{et non lo}\textbf{quén}tur : \gresixstar\ óculos habent, et non \emph{vi}\textbf{dé}bunt.
+Os habent, \emph{et non lo}\textbf{quén}tur : \GreStar\ óculos habent, et non \emph{vi}\textbf{dé}bunt.
 
-Aures ha\emph{bent, et non} \textbf{áu}dient : \gresixstar\ nares habent, et non o\emph{do}\textbf{rá}bunt.
+Aures ha\emph{bent, et non} \textbf{áu}dient : \GreStar\ nares habent, et non o\emph{do}\textbf{rá}bunt.
 
-Manus habent, et non palpábunt : \GreDagger\ pedes habent, et \emph{non ambu}\textbf{lá}bunt : \gresixstar\ non clamábunt in gúttu\emph{re} \textbf{su}o.
+Manus habent, et non palpábunt : \GreDagger\ pedes habent, et \emph{non ambu}\textbf{lá}bunt : \GreStar\ non clamábunt in gúttu\emph{re} \textbf{su}o.
 
-Símiles illis fiant qui \emph{fáciunt} \textbf{e}a : \gresixstar\ et omnes qui confídunt \emph{in} \textbf{e}is.
+Símiles illis fiant qui \emph{fáciunt} \textbf{e}a : \GreStar\ et omnes qui confídunt \emph{in} \textbf{e}is.
 
-Domus Israel spe\emph{rávit in} \textbf{Dó}mino : \gresixstar\ adjútor eórum et proté\libertineGlyph{c_t}or \emph{e}\textbf{ó}rum e\libertineGlyph{s_t}.
+Domus Israel spe\emph{rávit in} \textbf{Dó}mino : \GreStar\ adjútor eórum et proté\libertineGlyph{c_t}or \emph{e}\textbf{ó}rum e\libertineGlyph{s_t}.
 
-Domus Aaron spe\emph{rávit in} \textbf{Dó}mino : \gresixstar\ adjútor eórum et proté\libertineGlyph{c_t}or \emph{e}\textbf{ó}rum e\libertineGlyph{s_t}.
+Domus Aaron spe\emph{rávit in} \textbf{Dó}mino : \GreStar\ adjútor eórum et proté\libertineGlyph{c_t}or \emph{e}\textbf{ó}rum e\libertineGlyph{s_t}.
 
-Qui timent Dóminum spera\emph{vérunt in} \textbf{Dó}mino : \gresixstar\ adjútor eórum et proté\libertineGlyph{c_t}or \emph{e}\textbf{ó}rum e\libertineGlyph{s_t}.
+Qui timent Dóminum spera\emph{vérunt in} \textbf{Dó}mino : \GreStar\ adjútor eórum et proté\libertineGlyph{c_t}or \emph{e}\textbf{ó}rum e\libertineGlyph{s_t}.
 
-Dóminus me\emph{mor fuit} \textbf{nos}tri : \gresixstar\ et benedí\emph{xit} \textbf{no}bis.
+Dóminus me\emph{mor fuit} \textbf{nos}tri : \GreStar\ et benedí\emph{xit} \textbf{no}bis.
 
-Benedíxit \emph{dómui} \textbf{Is}rael : \gresixstar\ benedíxit dómu\emph{i} \textbf{A}aron.
+Benedíxit \emph{dómui} \textbf{Is}rael : \GreStar\ benedíxit dómu\emph{i} \textbf{A}aron.
 
-Benedíxit ómnibus \emph{qui timent} \textbf{Dó}minum \gresixstar\ pusíllis cum \emph{ma}\textbf{jór}ibus.
+Benedíxit ómnibus \emph{qui timent} \textbf{Dó}minum \GreStar\ pusíllis cum \emph{ma}\textbf{jór}ibus.
 
-Adjíciat \emph{Dóminus} \textbf{su}per vos : \gresixstar\ super vos, et super fíli\emph{os} \textbf{ves}tros.
+Adjíciat \emph{Dóminus} \textbf{su}per vos : \GreStar\ super vos, et super fíli\emph{os} \textbf{ves}tros.
 
-Benedíc\emph{ti vos a} \textbf{Dó}mino, \gresixstar\ qui fecit cælum \emph{et} \textbf{ter}ram.
+Benedíc\emph{ti vos a} \textbf{Dó}mino, \GreStar\ qui fecit cælum \emph{et} \textbf{ter}ram.
 
-Cæ\emph{lum cæli} \textbf{Dó}mino : \gresixstar\ terram autem dedit fíli\emph{is} \textbf{hó}minum.
+Cæ\emph{lum cæli} \textbf{Dó}mino : \GreStar\ terram autem dedit fíli\emph{is} \textbf{hó}minum.
 
-Non mórtui lau\emph{dábunt te} \textbf{Dó}mine : \gresixstar\ neque omnes qui descéndunt in \emph{in}\textbf{fér}num.
+Non mórtui lau\emph{dábunt te} \textbf{Dó}mine : \GreStar\ neque omnes qui descéndunt in \emph{in}\textbf{fér}num.
 
-Sed nos qui vívimus bene\emph{dícimus} \textbf{Dó}mino, \gresixstar\ ex hoc nunc et usque \emph{in} \textbf{sǽ}culum.
+Sed nos qui vívimus bene\emph{dícimus} \textbf{Dó}mino, \GreStar\ ex hoc nunc et usque \emph{in} \textbf{sǽ}culum.
 
-Glória \emph{Patri, et} \textbf{Fí}lio, \gresixstar\ et Spirítu\emph{i} \textbf{Sanc}to.
+Glória \emph{Patri, et} \textbf{Fí}lio, \GreStar\ et Spirítu\emph{i} \textbf{Sanc}to.
 
-Sicut erat in princípio, \emph{et nunc, et} \textbf{sem}per, \gresixstar\ et in sǽcula sæculó\emph{rum}. \textbf{A}men.
+Sicut erat in princípio, \emph{et nunc, et} \textbf{sem}per, \GreStar\ et in sǽcula sæculó\emph{rum}. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -600,29 +593,29 @@ Canitur Antiphona propria.
 
 \begin{psalmtext}
 \lettrine[lhang=0.70]{M}{a}gn\'{i}ficat \grealtcross\ \'{a}nima mea D\'{o}minum :
-%Magn\'{i}ficat \gresixstar\ \'{a}nima mea D\'{o}minum :
+%Magn\'{i}ficat \GreStar\ \'{a}nima mea D\'{o}minum :
 
-\hspace*{9.5 mm}Et exsult\'{a}vit sp\'{i}ritus meus \gresixstar\ in Deo salut\'{a}ri meo.
+\hspace*{9.5 mm}Et exsult\'{a}vit sp\'{i}ritus meus \GreStar\ in Deo salut\'{a}ri meo.
 
-Quia resp\'{e}xit humilit\'{a}tem anc\'{i}ll\ae\ su\ae\ : \gresixstar\ ecce enim ex hoc be\'{a}tam me dicent omnes generati\'{o}nes.
+Quia resp\'{e}xit humilit\'{a}tem anc\'{i}ll\ae\ su\ae\ : \GreStar\ ecce enim ex hoc be\'{a}tam me dicent omnes generati\'{o}nes.
 
-Quia fecit mihi magna qui potens e\libertineGlyph{s_t} : \gresixstar\ et san\libertineGlyph{c_t}um nomen ejus.
+Quia fecit mihi magna qui potens e\libertineGlyph{s_t} : \GreStar\ et san\libertineGlyph{c_t}um nomen ejus.
 
-Et miseric\'{o}rdia ejus a prog\'{e}nie in prog\'{e}nies \gresixstar\ tim\'{e}ntibus eum.
+Et miseric\'{o}rdia ejus a prog\'{e}nie in prog\'{e}nies \GreStar\ tim\'{e}ntibus eum.
 
-Fecit pot\'{e}ntiam in br\'{a}chio suo : \gresixstar\ disp\'{e}rsit sup\'{e}rbos mente cordis sui.
+Fecit pot\'{e}ntiam in br\'{a}chio suo : \GreStar\ disp\'{e}rsit sup\'{e}rbos mente cordis sui.
 
-Dep\'{o}suit pot\'{e}ntes de sede, \gresixstar\ et exalt\'{a}vit h\'{u}miles.
+Dep\'{o}suit pot\'{e}ntes de sede, \GreStar\ et exalt\'{a}vit h\'{u}miles.
 
-Esuri\'{e}ntes impl\'{e}vit bonis : \gresixstar\ et d\'{i}vites dim\'{i}sit in\'{a}nes.
+Esuri\'{e}ntes impl\'{e}vit bonis : \GreStar\ et d\'{i}vites dim\'{i}sit in\'{a}nes.
 
-Susc\'{e}pit Israel p\'{u}erum suum, \gresixstar\ record\'{a}tus miseric\'{o}rdi\ae\ su\ae.
+Susc\'{e}pit Israel p\'{u}erum suum, \GreStar\ record\'{a}tus miseric\'{o}rdi\ae\ su\ae.
 
-Sicut loc\'{u}tus e\libertineGlyph{s_t} ad patres nostros, \gresixstar\ Abraham, et s\'{e}mini ejus in s\'{\ae}cula.
+Sicut loc\'{u}tus e\libertineGlyph{s_t} ad patres nostros, \GreStar\ Abraham, et s\'{e}mini ejus in s\'{\ae}cula.
 
-Glória Patri, et Fílio, \gresixstar\ et Spirítui San\libertineGlyph{c_t}o.
+Glória Patri, et Fílio, \GreStar\ et Spirítui San\libertineGlyph{c_t}o.
 
-Sicut erat in princípio, et nunc, et semper, \gresixstar\ et in sǽcula sæculórum. Amen.
+Sicut erat in princípio, et nunc, et semper, \GreStar\ et in sǽcula sæculórum. Amen.
 
 \end{psalmtext}
 
@@ -717,25 +710,25 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 \gregorioscore[a]{F2/F2FL1.gtex}
 
 \begin{psalmtext}
-Quia inclinávit aurem \textbf{su}am \textbf{mi}hi : \gresixstar\ et in diébus meis \emph{invo}\textbf{cá}bo.
+Quia inclinávit aurem \textbf{su}am \textbf{mi}hi : \GreStar\ et in diébus meis \emph{invo}\textbf{cá}bo.
 
-Circumdedérunt me do\textbf{ló}res \textbf{mor}tis : \gresixstar\ et perícula inférni \emph{inve}\textbf{né}runt me.
+Circumdedérunt me do\textbf{ló}res \textbf{mor}tis : \GreStar\ et perícula inférni \emph{inve}\textbf{né}runt me.
 
-Tribulatiónem et do\textbf{ló}rem in\textbf{vé}ni : \gresixstar\ et nomen Dómini \emph{invo}\textbf{cá}vi.
+Tribulatiónem et do\textbf{ló}rem in\textbf{vé}ni : \GreStar\ et nomen Dómini \emph{invo}\textbf{cá}vi.
 
-O Dómine líbera ánimam meam : \GreDagger\ miséricors Dómi\textbf{nus}, et \textbf{jus}tus, \gresixstar\ et Deus no\libertineGlyph{s_t}er \emph{mise}\textbf{ré}tur.
+O Dómine líbera ánimam meam : \GreDagger\ miséricors Dómi\textbf{nus}, et \textbf{jus}tus, \GreStar\ et Deus no\libertineGlyph{s_t}er \emph{mise}\textbf{ré}tur.
 
-Cu\libertineGlyph{s_t}ódiens \textbf{pár}vulos \textbf{Dó}minus : \gresixstar\ humiliátus sum, et \emph{libe}\textbf{rá}vit me.
+Cu\libertineGlyph{s_t}ódiens \textbf{pár}vulos \textbf{Dó}minus : \GreStar\ humiliátus sum, et \emph{libe}\textbf{rá}vit me.
 
-Convértere ánima mea in \textbf{ré}quiem \textbf{tu}am : \gresixstar\ quia Dóminus bene\emph{fécit} \textbf{ti}bi.
+Convértere ánima mea in \textbf{ré}quiem \textbf{tu}am : \GreStar\ quia Dóminus bene\emph{fécit} \textbf{ti}bi.
 
-Quia erípuit ánimam meam de morte : \GreDagger\ óculos \textbf{me}os a \textbf{lác}rimis, \gresixstar\ pedes me\emph{os a} \textbf{lap}su.
+Quia erípuit ánimam meam de morte : \GreDagger\ óculos \textbf{me}os a \textbf{lác}rimis, \GreStar\ pedes me\emph{os a} \textbf{lap}su.
 
-Pla\textbf{cé}bo \textbf{Dó}mino \gresixstar\ in regió\emph{ne vi}\textbf{vó}rum.
+Pla\textbf{cé}bo \textbf{Dó}mino \GreStar\ in regió\emph{ne vi}\textbf{vó}rum.
 
-Glória \textbf{Pat}ri, et \textbf{Fí}lio, \gresixstar\ et Spirí\emph{tui} \textbf{Sanc}to.
+Glória \textbf{Pat}ri, et \textbf{Fí}lio, \GreStar\ et Spirí\emph{tui} \textbf{Sanc}to.
 
-Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
+Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \GreStar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -753,23 +746,23 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \subsubsection*{Psalmus 115.}
 
 \begin{psalmtext}
-Ego dixi in excéssu \textbf{me}o : \gresixstar\ Omnis \emph{homo} \textbf{men}dax.
+Ego dixi in excéssu \textbf{me}o : \GreStar\ Omnis \emph{homo} \textbf{men}dax.
 
-Quid retríbuam \textbf{Dó}mino, \gresixstar\ pro ómnibus quæ retrí\emph{buit} \textbf{mi}hi?
+Quid retríbuam \textbf{Dó}mino, \GreStar\ pro ómnibus quæ retrí\emph{buit} \textbf{mi}hi?
 
-Cálicem salutáris ac\textbf{cí}piam : \gresixstar\ et nomen Dómini \emph{invo}\textbf{cá}bo.
+Cálicem salutáris ac\textbf{cí}piam : \GreStar\ et nomen Dómini \emph{invo}\textbf{cá}bo.
 
-Vota mea Dómino reddam coram omni pópulo \textbf{e}jus : \gresixstar\ pretiósa in conspé\libertineGlyph{c_t}u Dómini mors sanc\emph{tórum} \textbf{e}jus :
+Vota mea Dómino reddam coram omni pópulo \textbf{e}jus : \GreStar\ pretiósa in conspé\libertineGlyph{c_t}u Dómini mors sanc\emph{tórum} \textbf{e}jus :
 
-O Dómine quia ego servus \textbf{tu}us : \gresixstar\ ego servus tuus, et fílius an\emph{cíllæ} \textbf{tu}æ.
+O Dómine quia ego servus \textbf{tu}us : \GreStar\ ego servus tuus, et fílius an\emph{cíllæ} \textbf{tu}æ.
 
-Dirupí\libertineGlyph{s_t}i víncula mea : \GreDagger\ tibi sacrificábo hó\libertineGlyph{s_t}iam \textbf{lau}dis, \gresixstar\ et nomen Dómini \emph{invo}\textbf{cá}bo.
+Dirupí\libertineGlyph{s_t}i víncula mea : \GreDagger\ tibi sacrificábo hó\libertineGlyph{s_t}iam \textbf{lau}dis, \GreStar\ et nomen Dómini \emph{invo}\textbf{cá}bo.
 
-Vota mea Dómino reddam in conspé\libertineGlyph{c_t}u omnis pópuli \textbf{e}jus, \gresixstar\ in átriis domus Dómini, in médio tu\emph{i Je}\textbf{rú}salem.
+Vota mea Dómino reddam in conspé\libertineGlyph{c_t}u omnis pópuli \textbf{e}jus, \GreStar\ in átriis domus Dómini, in médio tu\emph{i Je}\textbf{rú}salem.
 
-Glória Patri, et \textbf{Fí}lio, \gresixstar\ et Spirí\emph{tui} \textbf{Sanc}to.
+Glória Patri, et \textbf{Fí}lio, \GreStar\ et Spirí\emph{tui} \textbf{Sanc}to.
 
-Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
+Sicut erat in princípio, et nunc, et \textbf{sem}per, \GreStar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -787,11 +780,11 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \subsubsection*{Psalmus 116.}
 
 \begin{psalmtext}
-Quóniam confirmáta e\libertineGlyph{s_t} super nos misericórdi\emph{a} \textbf{e}jus : \gresixstar\ et véritas Dómini manet \emph{in æ}\textbf{tér}num.
+Quóniam confirmáta e\libertineGlyph{s_t} super nos misericórdi\emph{a} \textbf{e}jus : \GreStar\ et véritas Dómini manet \emph{in æ}\textbf{tér}num.
 
-Glória Patri, \emph{et} \textbf{Fí}lio, \gresixstar\ et Spirí\emph{tui} \textbf{Sanc}to.
+Glória Patri, \emph{et} \textbf{Fí}lio, \GreStar\ et Spirí\emph{tui} \textbf{Sanc}to.
 
-Sicut erat in princípio, et nunc, \emph{et} \textbf{sem}per, \gresixstar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
+Sicut erat in princípio, et nunc, \emph{et} \textbf{sem}per, \GreStar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -811,19 +804,19 @@ Sicut erat in princípio, et nunc, \emph{et} \textbf{sem}per, \gresixstar\ et in
 \gregorioscore[a]{F2/F2FL4.gtex}
 
 \begin{psalmtext}
-Dómine líbera ánimam meam a lábiis i\textbf{ní}quis, \gresixstar\ et a \textbf{lin}gua do\textbf{ló}sa.
+Dómine líbera ánimam meam a lábiis i\textbf{ní}quis, \GreStar\ et a \textbf{lin}gua do\textbf{ló}sa.
 
-Quid detur tibi, aut quid apponátur \textbf{ti}bi \gresixstar\ ad \textbf{lin}guam do\textbf{ló}sam?
+Quid detur tibi, aut quid apponátur \textbf{ti}bi \GreStar\ ad \textbf{lin}guam do\textbf{ló}sam?
 
-Sagíttæ poténtis a\textbf{cú}tæ, \gresixstar\ cum carbónibus de\textbf{so}la\textbf{tó}riis.
+Sagíttæ poténtis a\textbf{cú}tæ, \GreStar\ cum carbónibus de\textbf{so}la\textbf{tó}riis.
 
-Heu mihi, quia incolátus meus prolongátus e\libertineGlyph{s_t} : \GreDagger\ habitávi cum habitántibus \textbf{Ce}dar : \gresixstar\ multum íncola fuit \textbf{á}nima \textbf{me}a.
+Heu mihi, quia incolátus meus prolongátus e\libertineGlyph{s_t} : \GreDagger\ habitávi cum habitántibus \textbf{Ce}dar : \GreStar\ multum íncola fuit \textbf{á}nima \textbf{me}a.
 
-Cum his qui odérunt pacem, eram pa\textbf{cí}ficus : \gresixstar\ cum loquébar illis, impu\textbf{gná}bant me \textbf{gra}tis.
+Cum his qui odérunt pacem, eram pa\textbf{cí}ficus : \GreStar\ cum loquébar illis, impu\textbf{gná}bant me \textbf{gra}tis.
 
-Glória Patri, et \textbf{Fí}lio, \gresixstar\ et Spi\textbf{rí}tui \textbf{Sanc}to.
+Glória Patri, et \textbf{Fí}lio, \GreStar\ et Spi\textbf{rí}tui \textbf{Sanc}to.
 
-Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcula sæcu\textbf{ló}rum. \textbf{A}men.
+Sicut erat in princípio, et nunc, et \textbf{sem}per, \GreStar\ et in sǽcula sæcu\textbf{ló}rum. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -843,23 +836,23 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \gregorioscore[a]{F2/F2FL5.gtex}
 
 \begin{psalmtext}
-Auxílium \textbf{me}um a \textbf{Dó}mino, \gresixstar\ qui fecit cæ\emph{lum et} \textbf{ter}ram.
+Auxílium \textbf{me}um a \textbf{Dó}mino, \GreStar\ qui fecit cæ\emph{lum et} \textbf{ter}ram.
 
-Non det in commotiónem \textbf{pe}dem \textbf{tu}um : \gresixstar\ neque dormítet \emph{qui cus}\textbf{tó}dit te.
+Non det in commotiónem \textbf{pe}dem \textbf{tu}um : \GreStar\ neque dormítet \emph{qui cus}\textbf{tó}dit te.
 
-Ecce non dormitábit \textbf{ne}que \textbf{dór}miet, \gresixstar\ qui cus\emph{tódit} \textbf{Is}rael.
+Ecce non dormitábit \textbf{ne}que \textbf{dór}miet, \GreStar\ qui cus\emph{tódit} \textbf{Is}rael.
 
-Dóminus cu\libertineGlyph{s_t}ódit te, Dóminus pro\textbf{téc}tio \textbf{tu}a, \gresixstar\ super manum déx\emph{teram} \textbf{tu}am.
+Dóminus cu\libertineGlyph{s_t}ódit te, Dóminus pro\textbf{téc}tio \textbf{tu}a, \GreStar\ super manum déx\emph{teram} \textbf{tu}am.
 
-Per diem \textbf{sol} non \textbf{u}ret te : \gresixstar\ neque lu\emph{na per} \textbf{noc}tem.
+Per diem \textbf{sol} non \textbf{u}ret te : \GreStar\ neque lu\emph{na per} \textbf{noc}tem.
 
-Dóminus cu\libertineGlyph{s_t}ódit te ab \textbf{om}ni \textbf{ma}lo : \gresixstar\ cu\libertineGlyph{s_t}ódiat ánimam \emph{tuam} \textbf{Dó}minus.
+Dóminus cu\libertineGlyph{s_t}ódit te ab \textbf{om}ni \textbf{ma}lo : \GreStar\ cu\libertineGlyph{s_t}ódiat ánimam \emph{tuam} \textbf{Dó}minus.
 
-Dóminus cu\libertineGlyph{s_t}ódiat intróitum tuum et \textbf{éx}itum \textbf{tu}um : \gresixstar\ ex hoc nunc, et us\emph{que in} \textbf{sǽ}culum.
+Dóminus cu\libertineGlyph{s_t}ódiat intróitum tuum et \textbf{éx}itum \textbf{tu}um : \GreStar\ ex hoc nunc, et us\emph{que in} \textbf{sǽ}culum.
 
-Glória \textbf{Pa}tri, et \textbf{Fí}lio, \gresixstar\ et Spirí\emph{tui} \textbf{Sanc}to.
+Glória \textbf{Pa}tri, et \textbf{Fí}lio, \GreStar\ et Spirí\emph{tui} \textbf{Sanc}to.
 
-Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
+Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \GreStar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -873,7 +866,7 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 
 \subsubsection*{Capitulum.\capitulumSpace \emph{2 Cor. 1, 3--4.}}
 
-\begin{response}\lettrine{B}{e}nedí\libertineGlyph{c_t}us Deus, et Pater Dómini no\libertineGlyph{s_t}ri Jesu Chri\libertineGlyph{s_t}i, \GreDagger\ Pater misericordiárum, et Deus totíus consolatiónis, \gresixstar\ qui consolátur nos in omni tribulatióne no\libertineGlyph{s_t}ra. \Rbar\ Deo grátias.
+\begin{response}\lettrine{B}{e}nedí\libertineGlyph{c_t}us Deus, et Pater Dómini no\libertineGlyph{s_t}ri Jesu Chri\libertineGlyph{s_t}i, \GreDagger\ Pater misericordiárum, et Deus totíus consolatiónis, \GreStar\ qui consolátur nos in omni tribulatióne no\libertineGlyph{s_t}ra. \Rbar\ Deo grátias.
 
 \end{response}
 
@@ -919,25 +912,25 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \gregorioscore[a]{F2/F2MagAnt-01.gtex}
 
 \begin{psalmtext}
-Quia resp\'{e}xit humilit\'{a}tem anc\'{i}ll\ae\ \textbf{su}\ae\ : \gresixstar\ ecce enim ex hoc be\'{a}tam me dicent omnes gene\emph{rati}\textbf{\'{o}}nes.
+Quia resp\'{e}xit humilit\'{a}tem anc\'{i}ll\ae\ \textbf{su}\ae\ : \GreStar\ ecce enim ex hoc be\'{a}tam me dicent omnes gene\emph{rati}\textbf{\'{o}}nes.
 
-Quia fecit mihi magna qui \textbf{po}tens e\libertineGlyph{s_t} : \gresixstar\ et san\libertineGlyph{c_t}um \emph{nomen} \textbf{e}jus.
+Quia fecit mihi magna qui \textbf{po}tens e\libertineGlyph{s_t} : \GreStar\ et san\libertineGlyph{c_t}um \emph{nomen} \textbf{e}jus.
 
-Et miseric\'{o}rdia ejus a prog\'{e}nie in pro\textbf{g\'{e}}nies \gresixstar\ tim\'{e}n\emph{tibus} \textbf{e}um.
+Et miseric\'{o}rdia ejus a prog\'{e}nie in pro\textbf{g\'{e}}nies \GreStar\ tim\'{e}n\emph{tibus} \textbf{e}um.
 
-Fecit pot\'{e}ntiam in br\'{a}chio \textbf{su}o : \gresixstar\ disp\'{e}rsit sup\'{e}rbos mente \emph{cordis} \textbf{su}i.
+Fecit pot\'{e}ntiam in br\'{a}chio \textbf{su}o : \GreStar\ disp\'{e}rsit sup\'{e}rbos mente \emph{cordis} \textbf{su}i.
 
-Dep\'{o}suit pot\'{e}ntes de \textbf{se}de, \gresixstar\ et exal\emph{t\'{a}vit} \textbf{h\'{u}}miles.
+Dep\'{o}suit pot\'{e}ntes de \textbf{se}de, \GreStar\ et exal\emph{t\'{a}vit} \textbf{h\'{u}}miles.
 
-Esuri\'{e}ntes impl\'{e}vit \textbf{bo}nis : \gresixstar\ et d\'{i}vites dim\'{i}\emph{sit i}\textbf{n\'{a}}nes.
+Esuri\'{e}ntes impl\'{e}vit \textbf{bo}nis : \GreStar\ et d\'{i}vites dim\'{i}\emph{sit i}\textbf{n\'{a}}nes.
 
-Susc\'{e}pit Israel p\'{u}erum \textbf{su}um, \gresixstar\ record\'{a}tus miseric\'{o}r\emph{di\ae} \textbf{su}\ae.
+Susc\'{e}pit Israel p\'{u}erum \textbf{su}um, \GreStar\ record\'{a}tus miseric\'{o}r\emph{di\ae} \textbf{su}\ae.
 
-Sicut loc\'{u}tus e\libertineGlyph{s_t} ad patres \textbf{nos}tros, \gresixstar\ Abraham, et s\'{e}mini e\emph{jus in} \textbf{s\'{\ae}}cula.
+Sicut loc\'{u}tus e\libertineGlyph{s_t} ad patres \textbf{nos}tros, \GreStar\ Abraham, et s\'{e}mini e\emph{jus in} \textbf{s\'{\ae}}cula.
 
-Glória Patri, et \textbf{Fí}lio, \gresixstar\ et Spirí\emph{tui} \textbf{Sanc}to.
+Glória Patri, et \textbf{Fí}lio, \GreStar\ et Spirí\emph{tui} \textbf{Sanc}to.
 
-Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
+Sicut erat in princípio, et nunc, et \textbf{sem}per, \GreStar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -1015,52 +1008,52 @@ In feriis Adventus, Quadragesim\ae , Quatuor Temporum et Vigiliis qu\ae\ jejunan
 
 \gregorioscore[a]{Miserere.gtex}
 
-%\lettrine{M}{i}ser\'{e}re mei Deus, \gresixstar\ sec\'{u}ndum magnam miseric\'{o}rdiam tuam.
+%\lettrine{M}{i}ser\'{e}re mei Deus, \GreStar\ sec\'{u}ndum magnam miseric\'{o}rdiam tuam.
 
 \begin{psalmtext}
-%\hspace{1.0cm}Et sec\'{u}ndum multit\'{u}dinem miserati\'{o}num tu\'{a}rum, \gresixstar\ dele iniquit\'{a}tem meam.
+%\hspace{1.0cm}Et sec\'{u}ndum multit\'{u}dinem miserati\'{o}num tu\'{a}rum, \GreStar\ dele iniquit\'{a}tem meam.
 
-Et sec\'{u}ndum multit\'{u}dinem miserati\'{o}\emph{num tu}\textbf{\'{a}}rum, \gresixstar\ dele iniquit\'{a}tem meam.
+Et sec\'{u}ndum multit\'{u}dinem miserati\'{o}\emph{num tu}\textbf{\'{a}}rum, \GreStar\ dele iniquit\'{a}tem meam.
 
-Amplius lava me ab iniqui\emph{t\'{a}te} \textbf{me}a : \gresixstar\ et a pecc\'{a}to meo munda me.
+Amplius lava me ab iniqui\emph{t\'{a}te} \textbf{me}a : \GreStar\ et a pecc\'{a}to meo munda me.
 
-Qu\'{o}niam iniquit\'{a}tem meam e\emph{go co}\textbf{gn\'{o}}sco : \gresixstar\ et pecc\'{a}tum meum contra me e\libertineGlyph{s_t} semper.
+Qu\'{o}niam iniquit\'{a}tem meam e\emph{go co}\textbf{gn\'{o}}sco : \GreStar\ et pecc\'{a}tum meum contra me e\libertineGlyph{s_t} semper.
 
-Tibi soli pecc\'{a}vi, et malum co\emph{ram te} \textbf{fe}ci : \gresixstar\ ut ju\libertineGlyph{s_t}ific\'{e}ris in serm\'{o}nibus tuis, et vincas cum judic\'{a}ris.
+Tibi soli pecc\'{a}vi, et malum co\emph{ram te} \textbf{fe}ci : \GreStar\ ut ju\libertineGlyph{s_t}ific\'{e}ris in serm\'{o}nibus tuis, et vincas cum judic\'{a}ris.
 
-Ecce enim in iniquit\'{a}ti\emph{bus con}\textbf{c\'{e}p}tus sum : \gresixstar\ et in pecc\'{a}tis conc\'{e}pit me mater mea.
+Ecce enim in iniquit\'{a}ti\emph{bus con}\textbf{c\'{e}p}tus sum : \GreStar\ et in pecc\'{a}tis conc\'{e}pit me mater mea.
 
-Ecce enim verit\'{a}tem \emph{dile}\textbf{x\'{i}}\libertineGlyph{s_t}i : \gresixstar\ inc\'{e}rta et occ\'{u}lta sapi\'{e}nti\ae\  tu\ae\ manife\libertineGlyph{s_t}\'{a}\libertineGlyph{s_t}i mihi.
+Ecce enim verit\'{a}tem \emph{dile}\textbf{x\'{i}}\libertineGlyph{s_t}i : \GreStar\ inc\'{e}rta et occ\'{u}lta sapi\'{e}nti\ae\  tu\ae\ manife\libertineGlyph{s_t}\'{a}\libertineGlyph{s_t}i mihi.
 
-Asp\'{e}rges me hyss\'{o}po, \emph{et mun}\textbf{d\'{a}}bor : \gresixstar\ lav\'{a}bis me, et super nivem dealb\'{a}bor.
+Asp\'{e}rges me hyss\'{o}po, \emph{et mun}\textbf{d\'{a}}bor : \GreStar\ lav\'{a}bis me, et super nivem dealb\'{a}bor.
 
-Aud\'{i}tui meo dabis g\'{a}udium \emph{et l\ae}\textbf{t\'{i}}tiam : \gresixstar\ et exsult\'{a}bunt ossa humili\'{a}ta.
+Aud\'{i}tui meo dabis g\'{a}udium \emph{et l\ae}\textbf{t\'{i}}tiam : \GreStar\ et exsult\'{a}bunt ossa humili\'{a}ta.
 
-Av\'{e}rte f\'{a}ciem tuam a pec\emph{c\'{a}tis} \textbf{me}is : \gresixstar\ et omnes iniquit\'{a}tes meas dele.
+Av\'{e}rte f\'{a}ciem tuam a pec\emph{c\'{a}tis} \textbf{me}is : \GreStar\ et omnes iniquit\'{a}tes meas dele.
 
-Cor mundum crea \emph{in me} \textbf{De}us : \gresixstar\ et sp\'{i}ritum re\libertineGlyph{c_t}um \'{i}nnova in visc\'{e}ribus meis.
+Cor mundum crea \emph{in me} \textbf{De}us : \GreStar\ et sp\'{i}ritum re\libertineGlyph{c_t}um \'{i}nnova in visc\'{e}ribus meis.
 
-Ne proj\'{i}cias me a f\'{a}\emph{cie} \textbf{tu}a : \gresixstar\ et sp\'{i}ritum san\libertineGlyph{c_t}um tuum ne \'{a}uferas a me.
+Ne proj\'{i}cias me a f\'{a}\emph{cie} \textbf{tu}a : \GreStar\ et sp\'{i}ritum san\libertineGlyph{c_t}um tuum ne \'{a}uferas a me.
 
-Redde mihi l\ae t\'{i}tiam salu\emph{t\'{a}ris} \textbf{tu}i : \gresixstar\ et sp\'{i}ritu princip\'{a}li conf\'{i}rma me.
+Redde mihi l\ae t\'{i}tiam salu\emph{t\'{a}ris} \textbf{tu}i : \GreStar\ et sp\'{i}ritu princip\'{a}li conf\'{i}rma me.
 
-Doc\'{e}bo in\'{i}quos \emph{vias} \textbf{tu}as : \gresixstar\ et \'{i}mpii ad te convert\'{e}ntur.
+Doc\'{e}bo in\'{i}quos \emph{vias} \textbf{tu}as : \GreStar\ et \'{i}mpii ad te convert\'{e}ntur.
 
-L\'{i}bera me de sangu\'{i}nibus Deus, Deus sa\emph{l\'{u}tis} \textbf{me}\ae\ : \gresixstar\ et exsult\'{a}bit lingua mea ju\libertineGlyph{s_t}\'{i}tiam tuam.
+L\'{i}bera me de sangu\'{i}nibus Deus, Deus sa\emph{l\'{u}tis} \textbf{me}\ae\ : \GreStar\ et exsult\'{a}bit lingua mea ju\libertineGlyph{s_t}\'{i}tiam tuam.
 
-D\'{o}mine l\'{a}bia me\emph{a a}\textbf{p\'{e}}ries : \gresixstar\ et os meum annunti\'{a}bit laudem tuam.
+D\'{o}mine l\'{a}bia me\emph{a a}\textbf{p\'{e}}ries : \GreStar\ et os meum annunti\'{a}bit laudem tuam.
 
-Qu\'{o}niam si volu\'{i}sses sacrif\'{i}cium, de\emph{d\'{i}ssem} \textbf{\'{u}}tique : \gresixstar\ holoc\'{a}u\libertineGlyph{s_t}is non dele\libertineGlyph{c_t}\'{a}beris.
+Qu\'{o}niam si volu\'{i}sses sacrif\'{i}cium, de\emph{d\'{i}ssem} \textbf{\'{u}}tique : \GreStar\ holoc\'{a}u\libertineGlyph{s_t}is non dele\libertineGlyph{c_t}\'{a}beris.
 
-Sacrif\'{i}cium Deo sp\'{i}ritus con\emph{tribu}\textbf{l\'{a}}tus : \gresixstar\ cor contr\'{i}tum et humili\'{a}tum Deus non desp\'{i}cies.
+Sacrif\'{i}cium Deo sp\'{i}ritus con\emph{tribu}\textbf{l\'{a}}tus : \GreStar\ cor contr\'{i}tum et humili\'{a}tum Deus non desp\'{i}cies.
 
-Ben\'{i}gne fac D\'{o}mine in bona volunt\'{a}te \emph{tua} \textbf{Si}on : \gresixstar\ ut \ae dific\'{e}ntur muri Jer\'{u}salem.
+Ben\'{i}gne fac D\'{o}mine in bona volunt\'{a}te \emph{tua} \textbf{Si}on : \GreStar\ ut \ae dific\'{e}ntur muri Jer\'{u}salem.
 
-Tunc accept\'{a}bis sacrif\'{i}cium ju\libertineGlyph{s_t}\'{i}ti\ae , oblati\'{o}nes et \emph{holo}\textbf{c\'{a}us}ta : \gresixstar\ tunc imp\'{o}nent super alt\'{a}re tuum v\'{i}tulos.
+Tunc accept\'{a}bis sacrif\'{i}cium ju\libertineGlyph{s_t}\'{i}ti\ae , oblati\'{o}nes et \emph{holo}\textbf{c\'{a}us}ta : \GreStar\ tunc imp\'{o}nent super alt\'{a}re tuum v\'{i}tulos.
 
-Gl\'{o}ria Pa\emph{tri, et} \textbf{F\'{i}}lio, \gresixstar\ et Spir\'{i}tui San\libertineGlyph{c_t}o.
+Gl\'{o}ria Pa\emph{tri, et} \textbf{F\'{i}}lio, \GreStar\ et Spir\'{i}tui San\libertineGlyph{c_t}o.
 
-Sicut erat in princ\'{i}pio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in s\'{\ae}cula s\ae cul\'{o}rum. Amen.
+Sicut erat in princ\'{i}pio, et \emph{nunc, et} \textbf{sem}per, \GreStar\ et in s\'{\ae}cula s\ae cul\'{o}rum. Amen.
 
 \end{psalmtext}
 
@@ -1146,25 +1139,25 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 \gregorioscore[a]{F3/F3FL1.gtex}
 
 \begin{psalmtext}
-Stantes erant \emph{pedes} \textbf{no}\libertineGlyph{s_t}ri, \gresixstar\ in átriis \emph{tuis Je}\textbf{rúsa}lem.
+Stantes erant \emph{pedes} \textbf{no}\libertineGlyph{s_t}ri, \GreStar\ in átriis \emph{tuis Je}\textbf{rúsa}lem.
 
-Jerúsalem, quæ ædificá\emph{tur ut} \textbf{cí}vitas : \gresixstar\ cujus participátio e\emph{jus in i}\textbf{díp}sum.
+Jerúsalem, quæ ædificá\emph{tur ut} \textbf{cí}vitas : \GreStar\ cujus participátio e\emph{jus in i}\textbf{díp}sum.
 
-Illuc enim ascendérunt tribus, \emph{tribus} \textbf{Dó}mini : \gresixstar\ te\libertineGlyph{s_t}imónium Israel ad confiténdum \emph{nómini} \textbf{Dómi}ni.
+Illuc enim ascendérunt tribus, \emph{tribus} \textbf{Dó}mini : \GreStar\ te\libertineGlyph{s_t}imónium Israel ad confiténdum \emph{nómini} \textbf{Dómi}ni.
 
-Quia illic sedérunt sedes \emph{in ju}\textbf{dí}cio, \gresixstar\ sedes su\emph{per domum} \textbf{Da}vid.
+Quia illic sedérunt sedes \emph{in ju}\textbf{dí}cio, \GreStar\ sedes su\emph{per domum} \textbf{Da}vid.
 
-Rogáte quæ ad pacem \emph{sunt Je}\textbf{rú}salem : \gresixstar\ et abundántia di\emph{ligénti}\textbf{bus} te.
+Rogáte quæ ad pacem \emph{sunt Je}\textbf{rú}salem : \GreStar\ et abundántia di\emph{ligénti}\textbf{bus} te.
 
-Fiat pax in vir\emph{túte} \textbf{tu}a : \gresixstar\ et abundántia in \emph{túrribus} \textbf{tu}is.
+Fiat pax in vir\emph{túte} \textbf{tu}a : \GreStar\ et abundántia in \emph{túrribus} \textbf{tu}is.
 
-Propter fratres meos et pró\emph{ximos} \textbf{me}os, \gresixstar\ loqué\emph{bar pacem} \textbf{de} te :
+Propter fratres meos et pró\emph{ximos} \textbf{me}os, \GreStar\ loqué\emph{bar pacem} \textbf{de} te :
 
-Propter domum Dómini \emph{Dei} \textbf{nos}tri, \gresixstar\ quæsí\emph{vi bona} \textbf{ti}bi.
+Propter domum Dómini \emph{Dei} \textbf{nos}tri, \GreStar\ quæsí\emph{vi bona} \textbf{ti}bi.
 
-Glória Pa\emph{tri, et} \textbf{Fí}lio, \gresixstar\ et Spi\emph{rítui} \textbf{Sanc}to.
+Glória Pa\emph{tri, et} \textbf{Fí}lio, \GreStar\ et Spi\emph{rítui} \textbf{Sanc}to.
 
-Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in sǽcula sæ\emph{culórum}. \textbf{A}men.
+Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \GreStar\ et in sǽcula sæ\emph{culórum}. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -1184,17 +1177,17 @@ Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in
 \gregorioscore[a]{F3/F3FL2.gtex}
 
 \begin{psalmtext}
-Ecce sicut óculi ser\textbf{vó}rum \gresixstar\ in mánibus dominó\emph{rum su}\textbf{ó}rum,
+Ecce sicut óculi ser\textbf{vó}rum \GreStar\ in mánibus dominó\emph{rum su}\textbf{ó}rum,
 
-Sicut óculi ancíllæ in mánibus dóminæ \textbf{su}æ : \gresixstar\ ita óculi no\libertineGlyph{s_t}ri ad Dóminum Deum no\libertineGlyph{s_t}rum donec misere\emph{átur} \textbf{nos}tri.
+Sicut óculi ancíllæ in mánibus dóminæ \textbf{su}æ : \GreStar\ ita óculi no\libertineGlyph{s_t}ri ad Dóminum Deum no\libertineGlyph{s_t}rum donec misere\emph{átur} \textbf{nos}tri.
 
-Miserére no\libertineGlyph{s_t}ri Dómine, miserére \textbf{nos}tri : \gresixstar\ quia multum repléti sumus des\emph{pe\libertineGlyph{c_t}i}\textbf{ó}ne.
+Miserére no\libertineGlyph{s_t}ri Dómine, miserére \textbf{nos}tri : \GreStar\ quia multum repléti sumus des\emph{pe\libertineGlyph{c_t}i}\textbf{ó}ne.
 
-Quia multum repléta e\libertineGlyph{s_t} ánima \textbf{nos}tra : \gresixstar\ oppróbrium abundántibus, et despé\libertineGlyph{c_t}i\emph{o su}\textbf{pér}bis.
+Quia multum repléta e\libertineGlyph{s_t} ánima \textbf{nos}tra : \GreStar\ oppróbrium abundántibus, et despé\libertineGlyph{c_t}i\emph{o su}\textbf{pér}bis.
 
-Glória Patri, et \textbf{Fí}lio, \gresixstar\ et Spirí\emph{tui} \textbf{Sanc}to.
+Glória Patri, et \textbf{Fí}lio, \GreStar\ et Spirí\emph{tui} \textbf{Sanc}to.
 
-Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
+Sicut erat in princípio, et nunc, et \textbf{sem}per, \GreStar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -1214,23 +1207,23 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \gregorioscore[a]{F3/F3FL3.gtex}
 
 \begin{psalmtext}
-Cum exsúrgerent \textbf{hó}mines \textbf{in} nos, \gresixstar\ forte vivos \emph{deglu}\textbf{tís}sent nos :
+Cum exsúrgerent \textbf{hó}mines \textbf{in} nos, \GreStar\ forte vivos \emph{deglu}\textbf{tís}sent nos :
 
-Cum irascerétur furor e\textbf{ó}rum \textbf{in} nos, \gresixstar\ fórsitan aqua ab\emph{sorbu}\textbf{ís}set nos.
+Cum irascerétur furor e\textbf{ó}rum \textbf{in} nos, \GreStar\ fórsitan aqua ab\emph{sorbu}\textbf{ís}set nos.
 
-Torréntem pertransívit \textbf{á}nima \textbf{nos}tra : \gresixstar\ fórsitan pertransísset ánima no\libertineGlyph{s_t}ra aquam in\emph{tole}\textbf{rá}bilem.
+Torréntem pertransívit \textbf{á}nima \textbf{nos}tra : \GreStar\ fórsitan pertransísset ánima no\libertineGlyph{s_t}ra aquam in\emph{tole}\textbf{rá}bilem.
 
-Bene\textbf{díc}tus \textbf{Dó}minus, \gresixstar\ qui non dedit nos in captiónem dénti\emph{bus e}\textbf{ó}rum.
+Bene\textbf{díc}tus \textbf{Dó}minus, \GreStar\ qui non dedit nos in captiónem dénti\emph{bus e}\textbf{ó}rum.
 
-Anima no\libertineGlyph{s_t}ra sicut \textbf{pas}ser e\textbf{rép}ta e\libertineGlyph{s_t} \gresixstar\ de láque\emph{o ve}\textbf{nán}tium.
+Anima no\libertineGlyph{s_t}ra sicut \textbf{pas}ser e\textbf{rép}ta e\libertineGlyph{s_t} \GreStar\ de láque\emph{o ve}\textbf{nán}tium.
 
-Láque\textbf{us} con\textbf{trí}tus e\libertineGlyph{s_t}, \gresixstar\ et nos libe\emph{ráti} \textbf{su}mus.
+Láque\textbf{us} con\textbf{trí}tus e\libertineGlyph{s_t}, \GreStar\ et nos libe\emph{ráti} \textbf{su}mus.
 
-Adjutórium no\libertineGlyph{s_t}rum in \textbf{nó}mine \textbf{Dó}mini, \gresixstar\ qui fecit cæ\emph{lum et} \textbf{ter}ram.
+Adjutórium no\libertineGlyph{s_t}rum in \textbf{nó}mine \textbf{Dó}mini, \GreStar\ qui fecit cæ\emph{lum et} \textbf{ter}ram.
 
-Glória \textbf{Pa}tri, et \textbf{Fí}lio, \gresixstar\ et Spirí\emph{tui} \textbf{Sanc}to.
+Glória \textbf{Pa}tri, et \textbf{Fí}lio, \GreStar\ et Spirí\emph{tui} \textbf{Sanc}to.
 
-Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
+Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \GreStar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -1250,17 +1243,17 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \gregorioscore[a]{F3/F3FL4.gtex}
 
 \begin{psalmtext}
-Montes in circúitu ejus : \GreDagger\ et Dóminus in circúitu pópuli \textbf{su}i, \gresixstar\ ex hoc nunc et us\emph{que in} \textbf{sǽ}culum.
+Montes in circúitu ejus : \GreDagger\ et Dóminus in circúitu pópuli \textbf{su}i, \GreStar\ ex hoc nunc et us\emph{que in} \textbf{sǽ}culum.
 
-Quia non relínquet Dóminus virgam peccatórum super sortem jus\textbf{tó}rum : \gresixstar\ ut non exténdant ju\libertineGlyph{s_t}i ad iniquitátem \emph{manus} \textbf{su}as.
+Quia non relínquet Dóminus virgam peccatórum super sortem jus\textbf{tó}rum : \GreStar\ ut non exténdant ju\libertineGlyph{s_t}i ad iniquitátem \emph{manus} \textbf{su}as.
 
-Bénefac Dómine \textbf{bo}nis, \gresixstar\ et \emph{re\libertineGlyph{c_t}is} \textbf{cor}de.
+Bénefac Dómine \textbf{bo}nis, \GreStar\ et \emph{re\libertineGlyph{c_t}is} \textbf{cor}de.
 
-Declinántes autem in obligatiónes addúcet Dóminus cum operántibus iniqui\textbf{tá}tem : \gresixstar\ pax \emph{super} \textbf{Is}rael.
+Declinántes autem in obligatiónes addúcet Dóminus cum operántibus iniqui\textbf{tá}tem : \GreStar\ pax \emph{super} \textbf{Is}rael.
 
-Glória Patri, et \textbf{Fí}lio, \gresixstar\ et Spirí\emph{tui} \textbf{Sanc}to.
+Glória Patri, et \textbf{Fí}lio, \GreStar\ et Spirí\emph{tui} \textbf{Sanc}to.
 
-Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
+Sicut erat in princípio, et nunc, et \textbf{sem}per, \GreStar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -1280,23 +1273,23 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \gregorioscore[a]{F3/F3FL5.gtex}
 
 \begin{psalmtext}
-Tunc replétum e\libertineGlyph{s_t} gáudi\textbf{o} os \textbf{nos}trum : \gresixstar\ et lingua no\libertineGlyph{s_t}ra exsul\emph{tati}\textbf{ó}ne.
+Tunc replétum e\libertineGlyph{s_t} gáudi\textbf{o} os \textbf{nos}trum : \GreStar\ et lingua no\libertineGlyph{s_t}ra exsul\emph{tati}\textbf{ó}ne.
 
-Tunc dicent \textbf{in}ter \textbf{gen}tes : \gresixstar\ Magnificávit Dóminus fáce\emph{re cum} \textbf{e}is.
+Tunc dicent \textbf{in}ter \textbf{gen}tes : \GreStar\ Magnificávit Dóminus fáce\emph{re cum} \textbf{e}is.
 
-Magnificávit Dóminus fáce\textbf{re} no\textbf{bís}cum : \gresixstar\ fa\libertineGlyph{c_t}i su\emph{mus læ}\textbf{tán}tes.
+Magnificávit Dóminus fáce\textbf{re} no\textbf{bís}cum : \GreStar\ fa\libertineGlyph{c_t}i su\emph{mus læ}\textbf{tán}tes.
 
-Convérte Dómine captivi\textbf{tá}tem \textbf{nos}tram, \gresixstar\ sicut tor\emph{rens in} \textbf{Aus}tro.
+Convérte Dómine captivi\textbf{tá}tem \textbf{nos}tram, \GreStar\ sicut tor\emph{rens in} \textbf{Aus}tro.
 
-Qui sémi\textbf{nant} in \textbf{lác}rimis, \gresixstar\ in exsultati\emph{óne} \textbf{me}tent.
+Qui sémi\textbf{nant} in \textbf{lác}rimis, \GreStar\ in exsultati\emph{óne} \textbf{me}tent.
 
-Eúntes \textbf{i}bant et \textbf{fle}bant, \gresixstar\ mi\libertineGlyph{t_t}éntes sé\emph{mina} \textbf{su}a.
+Eúntes \textbf{i}bant et \textbf{fle}bant, \GreStar\ mi\libertineGlyph{t_t}éntes sé\emph{mina} \textbf{su}a.
 
-Veniéntes autem vénient cum exsul\textbf{ta}ti\textbf{ó}ne, \gresixstar\ portántes maní\emph{pulos} \textbf{su}os.
+Veniéntes autem vénient cum exsul\textbf{ta}ti\textbf{ó}ne, \GreStar\ portántes maní\emph{pulos} \textbf{su}os.
 
-Glória \textbf{Pa}tri, et \textbf{Fí}lio, \gresixstar\ et Spirí\emph{tui} \textbf{Sanc}to.
+Glória \textbf{Pa}tri, et \textbf{Fí}lio, \GreStar\ et Spirí\emph{tui} \textbf{Sanc}to.
 
-Sicut erat in princípio, et \textbf{nunc}, et s\textbf{em}per, \gresixstar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
+Sicut erat in princípio, et \textbf{nunc}, et s\textbf{em}per, \GreStar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -1310,7 +1303,7 @@ Sicut erat in princípio, et \textbf{nunc}, et s\textbf{em}per, \gresixstar\ et 
 
 \subsubsection*{Capitulum.\capitulumSpace \emph{2 Cor. 1, 3--4.}}
 
-\begin{response}\lettrine{B}{e}nedí\libertineGlyph{c_t}us Deus, et Pater Dómini no\libertineGlyph{s_t}ri Jesu Chri\libertineGlyph{s_t}i, \GreDagger\ Pater misericordiárum, et Deus totíus consolatiónis, \gresixstar\ qui consolátur nos in omni tribulatióne no\libertineGlyph{s_t}ra. \Rbar\ Deo grátias.
+\begin{response}\lettrine{B}{e}nedí\libertineGlyph{c_t}us Deus, et Pater Dómini no\libertineGlyph{s_t}ri Jesu Chri\libertineGlyph{s_t}i, \GreDagger\ Pater misericordiárum, et Deus totíus consolatiónis, \GreStar\ qui consolátur nos in omni tribulatióne no\libertineGlyph{s_t}ra. \Rbar\ Deo grátias.
 
 \end{response}
 
@@ -1356,25 +1349,25 @@ Sicut erat in princípio, et \textbf{nunc}, et s\textbf{em}per, \gresixstar\ et 
 \gregorioscore[a]{F3/F3MagAnt-01.gtex}
 
 \begin{psalmtext}
-Quia resp\'{e}xit humilit\'{a}tem anc\'{i}ll\ae\ \textbf{su}\ae\ : \gresixstar\ ecce enim ex hoc be\'{a}tam me dicent omnes gene\textbf{ra}ti\textbf{\'{o}}nes.
+Quia resp\'{e}xit humilit\'{a}tem anc\'{i}ll\ae\ \textbf{su}\ae\ : \GreStar\ ecce enim ex hoc be\'{a}tam me dicent omnes gene\textbf{ra}ti\textbf{\'{o}}nes.
 
-Quia fecit mihi magna qui \textbf{po}tens e\libertineGlyph{s_t} : \gresixstar\ et san\libertineGlyph{c_t}um \textbf{no}men \textbf{e}jus.
+Quia fecit mihi magna qui \textbf{po}tens e\libertineGlyph{s_t} : \GreStar\ et san\libertineGlyph{c_t}um \textbf{no}men \textbf{e}jus.
 
-Et miseric\'{o}rdia ejus a prog\'{e}nie in pro\textbf{g\'{e}}nies \gresixstar\ ti\textbf{m\'{e}}ntibus \textbf{e}um.
+Et miseric\'{o}rdia ejus a prog\'{e}nie in pro\textbf{g\'{e}}nies \GreStar\ ti\textbf{m\'{e}}ntibus \textbf{e}um.
 
-Fecit pot\'{e}ntiam in br\'{a}chio \textbf{su}o : \gresixstar\ disp\'{e}rsit sup\'{e}rbos mente \textbf{cor}dis \textbf{su}i.
+Fecit pot\'{e}ntiam in br\'{a}chio \textbf{su}o : \GreStar\ disp\'{e}rsit sup\'{e}rbos mente \textbf{cor}dis \textbf{su}i.
 
-Dep\'{o}suit pot\'{e}ntes de \textbf{se}de, \gresixstar\ et exal\textbf{t\'{a}}vit \textbf{h\'{u}}miles.
+Dep\'{o}suit pot\'{e}ntes de \textbf{se}de, \GreStar\ et exal\textbf{t\'{a}}vit \textbf{h\'{u}}miles.
 
-Esuri\'{e}ntes impl\'{e}vit \textbf{bo}nis : \gresixstar\ et d\'{i}vites di\textbf{m\'{i}}sit i\textbf{n\'{a}}nes.
+Esuri\'{e}ntes impl\'{e}vit \textbf{bo}nis : \GreStar\ et d\'{i}vites di\textbf{m\'{i}}sit i\textbf{n\'{a}}nes.
 
-Susc\'{e}pit Israel p\'{u}erum \textbf{su}um, \gresixstar\ record\'{a}tus miseri\textbf{c\'{o}r}di\ae\ \textbf{su}\ae.
+Susc\'{e}pit Israel p\'{u}erum \textbf{su}um, \GreStar\ record\'{a}tus miseri\textbf{c\'{o}r}di\ae\ \textbf{su}\ae.
 
-Sicut loc\'{u}tus e\libertineGlyph{s_t} ad patres \textbf{nos}tros, \gresixstar\ Abraham, et s\'{e}mini \textbf{e}jus in \textbf{s\'{\ae}}cula.
+Sicut loc\'{u}tus e\libertineGlyph{s_t} ad patres \textbf{nos}tros, \GreStar\ Abraham, et s\'{e}mini \textbf{e}jus in \textbf{s\'{\ae}}cula.
 
-Glória Patri, et \textbf{Fí}lio, \gresixstar\ et Spi\textbf{rí}tui \textbf{Sanc}to.
+Glória Patri, et \textbf{Fí}lio, \GreStar\ et Spi\textbf{rí}tui \textbf{Sanc}to.
 
-Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcula sæcu\textbf{ló}rum. \textbf{A}men.
+Sicut erat in princípio, et nunc, et \textbf{sem}per, \GreStar\ et in sǽcula sæcu\textbf{ló}rum. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -1442,19 +1435,19 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 \gregorioscore[a]{F4/F4FL1.gtex}
 
 \begin{psalmtext}
-Nisi Dóminus cu\libertineGlyph{s_t}odíerit civi\textbf{tá}tem, \gresixstar\ fru\libertineGlyph{s_t}ra vígilat qui cu\libertineGlyph{s_t}ó\emph{dit} \textbf{e}am.
+Nisi Dóminus cu\libertineGlyph{s_t}odíerit civi\textbf{tá}tem, \GreStar\ fru\libertineGlyph{s_t}ra vígilat qui cu\libertineGlyph{s_t}ó\emph{dit} \textbf{e}am.
 
-Vanum e\libertineGlyph{s_t} vobis ante lucem \textbf{súr}gere : \gresixstar\ súrgite po\libertineGlyph{s_t}quam sedéritis, qui manducátis panem \emph{do}\textbf{ló}ris.
+Vanum e\libertineGlyph{s_t} vobis ante lucem \textbf{súr}gere : \GreStar\ súrgite po\libertineGlyph{s_t}quam sedéritis, qui manducátis panem \emph{do}\textbf{ló}ris.
 
-Cum déderit dilé\libertineGlyph{c_t}is suis \textbf{som}num : \gresixstar\ ecce hæréditas Dómini, f\'{i}lii : merces, fruc\emph{tus} \textbf{ven}tris.
+Cum déderit dilé\libertineGlyph{c_t}is suis \textbf{som}num : \GreStar\ ecce hæréditas Dómini, f\'{i}lii : merces, fruc\emph{tus} \textbf{ven}tris.
 
-Sicut sagí\libertineGlyph{t_t}æ in manu po\textbf{tén}tis : \gresixstar\ ita fílii ex\emph{cus}\textbf{só}rum.
+Sicut sagí\libertineGlyph{t_t}æ in manu po\textbf{tén}tis : \GreStar\ ita fílii ex\emph{cus}\textbf{só}rum.
 
-Beatus vir qui implévit desidérium suum ex \textbf{ip}sis : \gresixstar\ non confundétur cum loquétur inimícis suis \emph{in} \textbf{por}ta.
+Beatus vir qui implévit desidérium suum ex \textbf{ip}sis : \GreStar\ non confundétur cum loquétur inimícis suis \emph{in} \textbf{por}ta.
 
-Glória Patri, et \textbf{Fí}lio, \gresixstar\ et Spirítu\emph{i} \textbf{Sanc}to.
+Glória Patri, et \textbf{Fí}lio, \GreStar\ et Spirítu\emph{i} \textbf{Sanc}to.
 
-Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcula sæculó\emph{rum}. \textbf{A}men.
+Sicut erat in princípio, et nunc, et \textbf{sem}per, \GreStar\ et in sǽcula sæculó\emph{rum}. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -1472,21 +1465,21 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \subsubsection*{Psalmus 127.}
 
 \begin{psalmtext}
-Labóres mánuum tuárum quia mandu\textbf{cá}bis : \gresixstar\ beátus es, et bene ti\emph{bi} \textbf{e}rit.
+Labóres mánuum tuárum quia mandu\textbf{cá}bis : \GreStar\ beátus es, et bene ti\emph{bi} \textbf{e}rit.
 
-Uxor tua sicut vitis a\textbf{bún}dans, \gresixstar\ in latéribus do\emph{mus} \textbf{tu}æ.
+Uxor tua sicut vitis a\textbf{bún}dans, \GreStar\ in latéribus do\emph{mus} \textbf{tu}æ.
 
-Fílii tui sicut novéllæ oli\textbf{vá}rum, \gresixstar\ in circúitu men\emph{sæ} \textbf{tu}æ.
+Fílii tui sicut novéllæ oli\textbf{vá}rum, \GreStar\ in circúitu men\emph{sæ} \textbf{tu}æ.
 
-Ecce sic benedicétur \textbf{ho}mo \gresixstar\ qui ti\emph{met} \textbf{Dómi}num.
+Ecce sic benedicétur \textbf{ho}mo \GreStar\ qui ti\emph{met} \textbf{Dómi}num.
 
-Benedícat tibi Dóminus ex \textbf{Si}on : \gresixstar\ et vídeas bona Jerúsalem ómnibus diébus vi\emph{tæ} \textbf{tu}æ.
+Benedícat tibi Dóminus ex \textbf{Si}on : \GreStar\ et vídeas bona Jerúsalem ómnibus diébus vi\emph{tæ} \textbf{tu}æ.
 
-Et vídeas fílios filiórum tu\textbf{ó}rum, \gresixstar\ pacem su\emph{per} \textbf{Isra}el.
+Et vídeas fílios filiórum tu\textbf{ó}rum, \GreStar\ pacem su\emph{per} \textbf{Isra}el.
 
-Glória Patri, et \textbf{Fí}lio, \gresixstar\ et Spirítu\emph{i} \textbf{Sanc}to.
+Glória Patri, et \textbf{Fí}lio, \GreStar\ et Spirítu\emph{i} \textbf{Sanc}to.
 
-Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcula sæculó\emph{rum}. \textbf{A}men.
+Sicut erat in princípio, et nunc, et \textbf{sem}per, \GreStar\ et in sǽcula sæculó\emph{rum}. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -1504,21 +1497,21 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \subsubsection*{Psalmus 128.}
 
 \begin{psalmtext}
-Sæpe expugnavérunt me a juventúte \textbf{me}a : \gresixstar\ étenim non potué\emph{runt} \textbf{mi}hi.
+Sæpe expugnavérunt me a juventúte \textbf{me}a : \GreStar\ étenim non potué\emph{runt} \textbf{mi}hi.
 
-Supra dorsum meum fabricavérunt pecca\textbf{tó}res : \gresixstar\ prolongavérunt iniquitá\emph{tem} \textbf{su}am.
+Supra dorsum meum fabricavérunt pecca\textbf{tó}res : \GreStar\ prolongavérunt iniquitá\emph{tem} \textbf{su}am.
 
-Dóminus ju\libertineGlyph{s_t}us concídit cervíces pecca\textbf{tó}rum : \gresixstar\ confundántur et convertántur retrórsum omnes qui odé\emph{runt} \textbf{Si}on.
+Dóminus ju\libertineGlyph{s_t}us concídit cervíces pecca\textbf{tó}rum : \GreStar\ confundántur et convertántur retrórsum omnes qui odé\emph{runt} \textbf{Si}on.
 
-Fiant sicut fœnum tec\textbf{tó}rum : \gresixstar\ quod priúsquam evellátur, \emph{ex}\textbf{áru}it.
+Fiant sicut fœnum tec\textbf{tó}rum : \GreStar\ quod priúsquam evellátur, \emph{ex}\textbf{áru}it.
 
-De quo non implévit manum suam qui \textbf{me}tit, \gresixstar\ et sinum suum qui manípu\emph{los} \textbf{cólli}git.
+De quo non implévit manum suam qui \textbf{me}tit, \GreStar\ et sinum suum qui manípu\emph{los} \textbf{cólli}git.
 
-Et non dixérunt qui præteríbant : Benedí\libertineGlyph{c_t}io Dómini \textbf{su}per vos : \gresixstar\ benedíximus vobis in nómi\emph{ne} \textbf{Dómi}ni.
+Et non dixérunt qui præteríbant : Benedí\libertineGlyph{c_t}io Dómini \textbf{su}per vos : \GreStar\ benedíximus vobis in nómi\emph{ne} \textbf{Dómi}ni.
 
-Glória Patri, et \textbf{Fí}lio, \gresixstar\ et Spirítu\emph{i} \textbf{Sanc}to.
+Glória Patri, et \textbf{Fí}lio, \GreStar\ et Spirítu\emph{i} \textbf{Sanc}to.
 
-Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcula sæculó\emph{rum}. \textbf{A}men.
+Sicut erat in princípio, et nunc, et \textbf{sem}per, \GreStar\ et in sǽcula sæculó\emph{rum}. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -1536,23 +1529,23 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \subsubsection*{Psalmus 129.}
 
 \begin{psalmtext}
-Fiant aures tuæ inten\textbf{dén}tes \gresixstar\ in vocem deprecati\emph{ónis} \textbf{me}æ.
+Fiant aures tuæ inten\textbf{dén}tes \GreStar\ in vocem deprecati\emph{ónis} \textbf{me}æ.
 
-Si iniquitátes observáveris \textbf{Dó}mine, \gresixstar\ Dómine quis \emph{su\libertineGlyph{s_t}i}\textbf{né}bit?
+Si iniquitátes observáveris \textbf{Dó}mine, \GreStar\ Dómine quis \emph{su\libertineGlyph{s_t}i}\textbf{né}bit?
 
-Quia apud te propitiáti\textbf{o} e\libertineGlyph{s_t} : \gresixstar\ et propter legem tuam su\libertineGlyph{s_t}ínu\emph{i te} \textbf{Dó}mine.
+Quia apud te propitiáti\textbf{o} e\libertineGlyph{s_t} : \GreStar\ et propter legem tuam su\libertineGlyph{s_t}ínu\emph{i te} \textbf{Dó}mine.
 
-Su\libertineGlyph{s_t}ínuit ánima mea in verbo \textbf{e}jus : \gresixstar\ sperávit ánima me\emph{a in} \textbf{Dó}mino.
+Su\libertineGlyph{s_t}ínuit ánima mea in verbo \textbf{e}jus : \GreStar\ sperávit ánima me\emph{a in} \textbf{Dó}mino.
 
-A cu\libertineGlyph{s_t}ódia matutína usque ad \textbf{noc}tem, \gresixstar\ speret Isra\emph{el in} \textbf{Dó}mino.
+A cu\libertineGlyph{s_t}ódia matutína usque ad \textbf{noc}tem, \GreStar\ speret Isra\emph{el in} \textbf{Dó}mino.
 
-Quia apud Dóminum miseri\textbf{cór}dia : \gresixstar\ et copiósa apud e\emph{um re}\textbf{démp}tio.
+Quia apud Dóminum miseri\textbf{cór}dia : \GreStar\ et copiósa apud e\emph{um re}\textbf{démp}tio.
 
-Et ipse rédimet \textbf{Is}rael \gresixstar\ ex ómnibus iniquitá\emph{tibus} \textbf{e}jus.
+Et ipse rédimet \textbf{Is}rael \GreStar\ ex ómnibus iniquitá\emph{tibus} \textbf{e}jus.
 
-Glória Patri, et \textbf{Fí}lio, \gresixstar\ et Spirí\emph{tui} \textbf{Sanc}to.
+Glória Patri, et \textbf{Fí}lio, \GreStar\ et Spirí\emph{tui} \textbf{Sanc}to.
 
-Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
+Sicut erat in princípio, et nunc, et \textbf{sem}per, \GreStar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -1572,17 +1565,17 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \gregorioscore[a]{F4/F4FL5.gtex}
 
 \begin{psalmtext}
-Neque ambulávi in \textbf{ma}gnis : \gresixstar\ neque in mira\textbf{bí}libus \textbf{su}per me.
+Neque ambulávi in \textbf{ma}gnis : \GreStar\ neque in mira\textbf{bí}libus \textbf{su}per me.
 
-Si non humíliter senti\textbf{é}bam : \gresixstar\ sed exaltávi \textbf{á}nimam \textbf{me}am :
+Si non humíliter senti\textbf{é}bam : \GreStar\ sed exaltávi \textbf{á}nimam \textbf{me}am :
 
-Sicut abla\libertineGlyph{c_t}átus e\libertineGlyph{s_t} super matre \textbf{su}a, \gresixstar\ ita retribútio in \textbf{á}nima \textbf{me}a.
+Sicut abla\libertineGlyph{c_t}átus e\libertineGlyph{s_t} super matre \textbf{su}a, \GreStar\ ita retribútio in \textbf{á}nima \textbf{me}a.
 
-Speret Israel in \textbf{Dó}mino, \gresixstar\ ex hoc nunc et \textbf{us}que in \textbf{sǽ}culum.
+Speret Israel in \textbf{Dó}mino, \GreStar\ ex hoc nunc et \textbf{us}que in \textbf{sǽ}culum.
 
-Glória Patri, et \textbf{Fí}lio, \gresixstar\ et Spi\textbf{rí}tui \textbf{Sanc}to.
+Glória Patri, et \textbf{Fí}lio, \GreStar\ et Spi\textbf{rí}tui \textbf{Sanc}to.
 
-Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcula sæcu\textbf{ló}rum. \textbf{A}men.
+Sicut erat in princípio, et nunc, et \textbf{sem}per, \GreStar\ et in sǽcula sæcu\textbf{ló}rum. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -1596,7 +1589,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \subsubsection*{Capitulum.\capitulumSpace \emph{2 Cor. 1, 3--4.}}
 
-\begin{response}\lettrine{B}{e}nedí\libertineGlyph{c_t}us Deus, et Pater Dómini no\libertineGlyph{s_t}ri Jesu Chri\libertineGlyph{s_t}i, \GreDagger\ Pater misericordiárum, et Deus totíus consolatiónis, \gresixstar\ qui consolátur nos in omni tribulatióne no\libertineGlyph{s_t}ra. \Rbar\ Deo grátias.
+\begin{response}\lettrine{B}{e}nedí\libertineGlyph{c_t}us Deus, et Pater Dómini no\libertineGlyph{s_t}ri Jesu Chri\libertineGlyph{s_t}i, \GreDagger\ Pater misericordiárum, et Deus totíus consolatiónis, \GreStar\ qui consolátur nos in omni tribulatióne no\libertineGlyph{s_t}ra. \Rbar\ Deo grátias.
 
 \end{response}
 
@@ -1640,25 +1633,25 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \gregorioscore[a]{F4/F4MagAnt-01.gtex}
 
 \begin{psalmtext}
-Quia resp\'{e}xit humilit\'{a}tem anc\'{i}ll\ae\ \textbf{su}\ae\ : \gresixstar\ ecce enim ex hoc be\'{a}tam me dicent omnes gene\emph{rati}\textbf{\'{o}}nes.
+Quia resp\'{e}xit humilit\'{a}tem anc\'{i}ll\ae\ \textbf{su}\ae\ : \GreStar\ ecce enim ex hoc be\'{a}tam me dicent omnes gene\emph{rati}\textbf{\'{o}}nes.
 
-Quia fecit mihi magna qui \textbf{po}tens e\libertineGlyph{s_t} : \gresixstar\ et san\libertineGlyph{c_t}um \emph{nomen} \textbf{e}jus.
+Quia fecit mihi magna qui \textbf{po}tens e\libertineGlyph{s_t} : \GreStar\ et san\libertineGlyph{c_t}um \emph{nomen} \textbf{e}jus.
 
-Et miseric\'{o}rdia ejus a prog\'{e}nie in pro\textbf{g\'{e}}nies \gresixstar\ tim\'{e}n\emph{tibus} \textbf{e}um.
+Et miseric\'{o}rdia ejus a prog\'{e}nie in pro\textbf{g\'{e}}nies \GreStar\ tim\'{e}n\emph{tibus} \textbf{e}um.
 
-Fecit pot\'{e}ntiam in br\'{a}chio \textbf{su}o : \gresixstar\ disp\'{e}rsit sup\'{e}rbos mente \emph{cordis} \textbf{su}i.
+Fecit pot\'{e}ntiam in br\'{a}chio \textbf{su}o : \GreStar\ disp\'{e}rsit sup\'{e}rbos mente \emph{cordis} \textbf{su}i.
 
-Dep\'{o}suit pot\'{e}ntes de \textbf{se}de, \gresixstar\ et exal\emph{t\'{a}vit} \textbf{h\'{u}}miles.
+Dep\'{o}suit pot\'{e}ntes de \textbf{se}de, \GreStar\ et exal\emph{t\'{a}vit} \textbf{h\'{u}}miles.
 
-Esuri\'{e}ntes impl\'{e}vit \textbf{bo}nis : \gresixstar\ et d\'{i}vites dim\'{i}\emph{sit i}\textbf{n\'{a}}nes.
+Esuri\'{e}ntes impl\'{e}vit \textbf{bo}nis : \GreStar\ et d\'{i}vites dim\'{i}\emph{sit i}\textbf{n\'{a}}nes.
 
-Susc\'{e}pit Israel p\'{u}erum \textbf{su}um, \gresixstar\ record\'{a}tus miseric\'{o}r\emph{di\ae} \textbf{su}\ae.
+Susc\'{e}pit Israel p\'{u}erum \textbf{su}um, \GreStar\ record\'{a}tus miseric\'{o}r\emph{di\ae} \textbf{su}\ae.
 
-Sicut loc\'{u}tus e\libertineGlyph{s_t} ad patres \textbf{nos}tros, \gresixstar\ Abraham, et s\'{e}mini e\emph{jus in} \textbf{s\'{\ae}}cula.
+Sicut loc\'{u}tus e\libertineGlyph{s_t} ad patres \textbf{nos}tros, \GreStar\ Abraham, et s\'{e}mini e\emph{jus in} \textbf{s\'{\ae}}cula.
 
-Glória Patri, et \textbf{Fí}lio, \gresixstar\ et Spirí\emph{tui} \textbf{Sanc}to.
+Glória Patri, et \textbf{Fí}lio, \GreStar\ et Spirí\emph{tui} \textbf{Sanc}to.
 
-Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
+Sicut erat in princípio, et nunc, et \textbf{sem}per, \GreStar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -1726,45 +1719,45 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 \gregorioscore[a]{F5/F5FL1.gtex}
 
 \begin{psalmtext}
-Sicut jurávit \textbf{Dó}mino, \gresixstar\ votum vovit \textbf{De}o \textbf{Ja}cob :
+Sicut jurávit \textbf{Dó}mino, \GreStar\ votum vovit \textbf{De}o \textbf{Ja}cob :
 
-Si introíero in tabernáculum domus \textbf{me}æ, \gresixstar\ si ascéndero in le\libertineGlyph{c_t}um \textbf{\libertineGlyph{s_t}ra}ti \textbf{me}i :
+Si introíero in tabernáculum domus \textbf{me}æ, \GreStar\ si ascéndero in le\libertineGlyph{c_t}um \textbf{\libertineGlyph{s_t}ra}ti \textbf{me}i :
 
-Si dédero somnum óculis \textbf{me}is, \gresixstar\ et pálpebris meis dormi\textbf{ta}ti\textbf{ó}nem :
+Si dédero somnum óculis \textbf{me}is, \GreStar\ et pálpebris meis dormi\textbf{ta}ti\textbf{ó}nem :
 
-Et réquiem tempóribus meis : donec invéniam locum \textbf{Dó}mino, \gresixstar\ tabernáculum \textbf{De}o \textbf{Ja}cob.
+Et réquiem tempóribus meis : donec invéniam locum \textbf{Dó}mino, \GreStar\ tabernáculum \textbf{De}o \textbf{Ja}cob.
 
-Ecce audívimus eam in \textbf{Eph}rata : \gresixstar\ invénimus eam in \textbf{cam}pis \textbf{sil}væ.
+Ecce audívimus eam in \textbf{Eph}rata : \GreStar\ invénimus eam in \textbf{cam}pis \textbf{sil}væ.
 
-Introíbimus in tabernáculum \textbf{e}jus : \gresixstar\ adorábimus in loco ubi \libertineGlyph{s_t}etérunt \textbf{pe}des \textbf{e}jus.
+Introíbimus in tabernáculum \textbf{e}jus : \GreStar\ adorábimus in loco ubi \libertineGlyph{s_t}etérunt \textbf{pe}des \textbf{e}jus.
 
-Surge Dómine in réquiem \textbf{tu}am, \gresixstar\ tu et arca san\libertineGlyph{c_t}ificati\textbf{ó}nis \textbf{tu}æ.
+Surge Dómine in réquiem \textbf{tu}am, \GreStar\ tu et arca san\libertineGlyph{c_t}ificati\textbf{ó}nis \textbf{tu}æ.
 
-Sacerdótes tui induántur jus\textbf{tí}tiam : \gresixstar\ et san\libertineGlyph{c_t}i \textbf{tu}i ex\textbf{súl}tent.
+Sacerdótes tui induántur jus\textbf{tí}tiam : \GreStar\ et san\libertineGlyph{c_t}i \textbf{tu}i ex\textbf{súl}tent.
 
-Propter David servum \textbf{tu}um, \gresixstar\ non avértas fáciem \textbf{Chris}ti \textbf{tu}i.
+Propter David servum \textbf{tu}um, \GreStar\ non avértas fáciem \textbf{Chris}ti \textbf{tu}i.
 
-Jurávit Dóminus David veritátem, et non fru\libertineGlyph{s_t}rábitur \textbf{e}am : \gresixstar\ de fru\libertineGlyph{c_t}u ventris tui ponam super \textbf{se}dem \textbf{tu}am.
+Jurávit Dóminus David veritátem, et non fru\libertineGlyph{s_t}rábitur \textbf{e}am : \GreStar\ de fru\libertineGlyph{c_t}u ventris tui ponam super \textbf{se}dem \textbf{tu}am.
 
-Si cu\libertineGlyph{s_t}odíerint fílii tui te\libertineGlyph{s_t}améntum \textbf{me}um, \gresixstar\ et te\libertineGlyph{s_t}imónia mea hæc, quæ do\textbf{cé}bo \textbf{e}os :
+Si cu\libertineGlyph{s_t}odíerint fílii tui te\libertineGlyph{s_t}améntum \textbf{me}um, \GreStar\ et te\libertineGlyph{s_t}imónia mea hæc, quæ do\textbf{cé}bo \textbf{e}os :
 
-Et fílii eórum usque in \textbf{sǽ}culum, \gresixstar\ sedébunt super \textbf{se}dem \textbf{tu}am.
+Et fílii eórum usque in \textbf{sǽ}culum, \GreStar\ sedébunt super \textbf{se}dem \textbf{tu}am.
 
-Quóniam elégit Dóminus \textbf{Si}on : \gresixstar\ elégit eam in habitati\textbf{ó}nem \textbf{si}bi.
+Quóniam elégit Dóminus \textbf{Si}on : \GreStar\ elégit eam in habitati\textbf{ó}nem \textbf{si}bi.
 
-Hæc réquies mea in sǽculum \textbf{sǽ}culi : \gresixstar\ hic habitábo quóniam e\textbf{lé}gi \textbf{e}am.
+Hæc réquies mea in sǽculum \textbf{sǽ}culi : \GreStar\ hic habitábo quóniam e\textbf{lé}gi \textbf{e}am.
 
-Víduam ejus benedícens bene\textbf{dí}cam : \gresixstar\ páuperes ejus satu\textbf{rá}bo \textbf{pá}nibus.
+Víduam ejus benedícens bene\textbf{dí}cam : \GreStar\ páuperes ejus satu\textbf{rá}bo \textbf{pá}nibus.
 
-Sacerdótes ejus índuam salu\textbf{tá}ri : \gresixstar\ et san\libertineGlyph{c_t}i ejus exsultatióne \textbf{ex}sul\textbf{tá}bunt.
+Sacerdótes ejus índuam salu\textbf{tá}ri : \GreStar\ et san\libertineGlyph{c_t}i ejus exsultatióne \textbf{ex}sul\textbf{tá}bunt.
 
-Illuc prodúcam cornu \textbf{Da}vid : \gresixstar\ parávi lucérnam \textbf{Chris}to \textbf{me}o.
+Illuc prodúcam cornu \textbf{Da}vid : \GreStar\ parávi lucérnam \textbf{Chris}to \textbf{me}o.
 
-Inimícos ejus índuam confusi\textbf{ó}ne : \gresixstar\ super ipsum autem efflorébit san\libertineGlyph{c_t}ifi\textbf{cá}tio \textbf{me}a.
+Inimícos ejus índuam confusi\textbf{ó}ne : \GreStar\ super ipsum autem efflorébit san\libertineGlyph{c_t}ifi\textbf{cá}tio \textbf{me}a.
 
-Glória Patri, et \textbf{Fí}lio, \gresixstar\ et Spi\textbf{rí}tui \textbf{Sanc}to.
+Glória Patri, et \textbf{Fí}lio, \GreStar\ et Spi\textbf{rí}tui \textbf{Sanc}to.
 
-Sicut erat in princípio, et nunc, et\textbf{ sem}per, \gresixstar\ et in sǽcula sæcu\textbf{ló}rum. \textbf{A}men.
+Sicut erat in princípio, et nunc, et\textbf{ sem}per, \GreStar\ et in sǽcula sæcu\textbf{ló}rum. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -1782,15 +1775,15 @@ Sicut erat in princípio, et nunc, et\textbf{ sem}per, \gresixstar\ et in sǽcul
 \subsubsection*{Psalmus 132.}
 
 \begin{psalmtext}
-Sicut ungu\textbf{én}tum in \textbf{cá}pite, \gresixstar\ quod descéndit in barbam, \emph{barbam} \textbf{A}aron.
+Sicut ungu\textbf{én}tum in \textbf{cá}pite, \GreStar\ quod descéndit in barbam, \emph{barbam} \textbf{A}aron.
 
-Quod descéndit in oram ve\libertineGlyph{s_t}i\textbf{mén}ti \textbf{e}jus : \gresixstar\ sicut ros Hermon, qui descéndit in \emph{montem} \textbf{Si}on.
+Quod descéndit in oram ve\libertineGlyph{s_t}i\textbf{mén}ti \textbf{e}jus : \GreStar\ sicut ros Hermon, qui descéndit in \emph{montem} \textbf{Si}on.
 
-Quóniam illic mandávit Dóminus bene\textbf{dic}ti\textbf{ó}nem, \gresixstar\ et vitam us\emph{que in} \textbf{sǽ}culum.
+Quóniam illic mandávit Dóminus bene\textbf{dic}ti\textbf{ó}nem, \GreStar\ et vitam us\emph{que in} \textbf{sǽ}culum.
 
-Glória \textbf{Pa}tri, et \textbf{Fí}lio, \gresixstar\ et Spirí\emph{tui} \textbf{Sanc}to.
+Glória \textbf{Pa}tri, et \textbf{Fí}lio, \GreStar\ et Spirí\emph{tui} \textbf{Sanc}to.
 
-Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
+Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \GreStar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -1810,49 +1803,49 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \gregorioscore[a]{F5/F5FL3.gtex}
 
 \begin{psalmtext}
-Qui \libertineGlyph{s_t}atis in \textbf{do}mo \textbf{Dómi}ni, \gresixstar\ in átriis domus \textbf{De}i \textbf{nos}tri.
+Qui \libertineGlyph{s_t}atis in \textbf{do}mo \textbf{Dómi}ni, \GreStar\ in átriis domus \textbf{De}i \textbf{nos}tri.
 
-Laudáte Dóminum, quia \textbf{bo}nus \textbf{Dómi}nus : \gresixstar\ psállite nómini ejus, quóni\textbf{am} su\textbf{á}ve.
+Laudáte Dóminum, quia \textbf{bo}nus \textbf{Dómi}nus : \GreStar\ psállite nómini ejus, quóni\textbf{am} su\textbf{á}ve.
 
-Quóniam Jacob elégit \textbf{si}bi \textbf{Dómi}nus, \gresixstar\ Israel in possessi\textbf{ó}nem \textbf{si}bi.
+Quóniam Jacob elégit \textbf{si}bi \textbf{Dómi}nus, \GreStar\ Israel in possessi\textbf{ó}nem \textbf{si}bi.
 
-Quia ego cognóvi quod \textbf{ma}gnus e\libertineGlyph{s_t} \textbf{Dómi}nus, \gresixstar\ et Deus no\libertineGlyph{s_t}er præ \textbf{óm}nibus \textbf{di}is.
+Quia ego cognóvi quod \textbf{ma}gnus e\libertineGlyph{s_t} \textbf{Dómi}nus, \GreStar\ et Deus no\libertineGlyph{s_t}er præ \textbf{óm}nibus \textbf{di}is.
 
-Omnia quæcúmque vóluit, Dóminus fecit in cælo \textbf{et} in \textbf{ter}ra, \gresixstar\ in mari et in ómni\textbf{bus} a\textbf{býs}sis.
+Omnia quæcúmque vóluit, Dóminus fecit in cælo \textbf{et} in \textbf{ter}ra, \GreStar\ in mari et in ómni\textbf{bus} a\textbf{býs}sis.
 
-Edúcens nubes ab ex\textbf{tré}mo \textbf{ter}ræ : \gresixstar\ fúlgura in \textbf{plú}viam \textbf{fe}cit.
+Edúcens nubes ab ex\textbf{tré}mo \textbf{ter}ræ : \GreStar\ fúlgura in \textbf{plú}viam \textbf{fe}cit.
 
-Qui prodúcit ventos de the\textbf{sáu}ris \textbf{su}is : \gresixstar\ qui percússit primogénita Ægýpti ab hómine \textbf{us}que ad \textbf{pe}cus.
+Qui prodúcit ventos de the\textbf{sáu}ris \textbf{su}is : \GreStar\ qui percússit primogénita Ægýpti ab hómine \textbf{us}que ad \textbf{pe}cus.
 
-Et misit signa et prodígia in médio \textbf{tu}i Æ\textbf{gýp}te : \gresixstar\ in Pharaónem et in omnes \textbf{ser}vos \textbf{e}jus.
+Et misit signa et prodígia in médio \textbf{tu}i Æ\textbf{gýp}te : \GreStar\ in Pharaónem et in omnes \textbf{ser}vos \textbf{e}jus.
 
-Qui percússit \textbf{gen}tes \textbf{mul}tas : \gresixstar\ et occídit \textbf{re}ges \textbf{for}tes.
+Qui percússit \textbf{gen}tes \textbf{mul}tas : \GreStar\ et occídit \textbf{re}ges \textbf{for}tes.
 
-Sehon regem Amorrhæórum, et Og \textbf{re}gem \textbf{Ba}san, \gresixstar\ et ómnia \textbf{re}gna \textbf{Chá}naan.
+Sehon regem Amorrhæórum, et Og \textbf{re}gem \textbf{Ba}san, \GreStar\ et ómnia \textbf{re}gna \textbf{Chá}naan.
 
-Et dedit terram eórum hæ\textbf{re}di\textbf{tá}tem, \gresixstar\ hæreditátem Israel \textbf{pó}pulo \textbf{su}o.
+Et dedit terram eórum hæ\textbf{re}di\textbf{tá}tem, \GreStar\ hæreditátem Israel \textbf{pó}pulo \textbf{su}o.
 
-Dómine nomen tuum \textbf{in} æ\textbf{tér}num : \gresixstar\ Dómine memoriále tuum in generatiónem et gene\textbf{ra}ti\textbf{ó}nem.
+Dómine nomen tuum \textbf{in} æ\textbf{tér}num : \GreStar\ Dómine memoriále tuum in generatiónem et gene\textbf{ra}ti\textbf{ó}nem.
 
-Quia judicábit Dóminus \textbf{pó}pulum \textbf{su}um : \gresixstar\ et in servis suis \textbf{de}pre\textbf{cá}bitur.
+Quia judicábit Dóminus \textbf{pó}pulum \textbf{su}um : \GreStar\ et in servis suis \textbf{de}pre\textbf{cá}bitur.
 
-Simulácra géntium ar\textbf{gén}tum et \textbf{au}rum, \gresixstar\ ópera \textbf{má}nuum \textbf{hó}minum.
+Simulácra géntium ar\textbf{gén}tum et \textbf{au}rum, \GreStar\ ópera \textbf{má}nuum \textbf{hó}minum.
 
-Os habent, et \textbf{non} lo\textbf{quén}tur : \gresixstar\ óculos habent, et \textbf{non} vi\textbf{dé}bunt.
+Os habent, et \textbf{non} lo\textbf{quén}tur : \GreStar\ óculos habent, et \textbf{non} vi\textbf{dé}bunt.
 
-Aures habent, \textbf{et} non \textbf{áudi}ent : \gresixstar\ neque enim e\libertineGlyph{s_t} spíritus in \textbf{o}re ip\textbf{só}rum.
+Aures habent, \textbf{et} non \textbf{áudi}ent : \GreStar\ neque enim e\libertineGlyph{s_t} spíritus in \textbf{o}re ip\textbf{só}rum.
 
-Símiles illis fiant qui \textbf{fá}ciunt \textbf{e}a : \gresixstar\ et omnes qui con\textbf{fí}dunt in \textbf{e}is.
+Símiles illis fiant qui \textbf{fá}ciunt \textbf{e}a : \GreStar\ et omnes qui con\textbf{fí}dunt in \textbf{e}is.
 
-Domus Israel bene\textbf{dí}cite \textbf{Dómi}no : \gresixstar\ domus Aaron bene\textbf{dí}cite \textbf{Dó}mino.
+Domus Israel bene\textbf{dí}cite \textbf{Dómi}no : \GreStar\ domus Aaron bene\textbf{dí}cite \textbf{Dó}mino.
 
-Domus Levi bene\textbf{dí}cite \textbf{Dómi}no : \gresixstar\ qui timétis Dóminum bene\textbf{dí}cite \textbf{Dó}mino.
+Domus Levi bene\textbf{dí}cite \textbf{Dómi}no : \GreStar\ qui timétis Dóminum bene\textbf{dí}cite \textbf{Dó}mino.
 
-Benedí\libertineGlyph{c_t}us Dómi\textbf{nus} ex \textbf{Si}on, \gresixstar\ qui hábitat \textbf{in} Je\textbf{rú}salem.
+Benedí\libertineGlyph{c_t}us Dómi\textbf{nus} ex \textbf{Si}on, \GreStar\ qui hábitat \textbf{in} Je\textbf{rú}salem.
 
-Glória \textbf{Pa}tri, et \textbf{Fíli}o, \gresixstar\ et Spi\textbf{rí}tui \textbf{Sanc}to.
+Glória \textbf{Pa}tri, et \textbf{Fíli}o, \GreStar\ et Spi\textbf{rí}tui \textbf{Sanc}to.
 
-Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et in sǽcula sæcu\textbf{ló}rum. \textbf{A}men.
+Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \GreStar\ et in sǽcula sæcu\textbf{ló}rum. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -1872,61 +1865,61 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \gregorioscore[a]{F5/F5FL4.gtex}
 
 \begin{psalmtext}
-Confitémini \textbf{De}o de\textbf{ó}rum : \gresixstar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
+Confitémini \textbf{De}o de\textbf{ó}rum : \GreStar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
 
-Confitémini Dómino \textbf{do}mi\textbf{nó}rum : \gresixstar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
+Confitémini Dómino \textbf{do}mi\textbf{nó}rum : \GreStar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
 
-Qui facit mirabília \textbf{ma}gna \textbf{so}lus : \gresixstar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
+Qui facit mirabília \textbf{ma}gna \textbf{so}lus : \GreStar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
 
-Qui fecit cælos \textbf{in} intel\textbf{léc}tu : \gresixstar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
+Qui fecit cælos \textbf{in} intel\textbf{léc}tu : \GreStar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
 
-Qui firmávit terram \textbf{su}per \textbf{a}quas : \gresixstar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
+Qui firmávit terram \textbf{su}per \textbf{a}quas : \GreStar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
 
-Qui fecit lumi\textbf{ná}ria \textbf{ma}gna : \gresixstar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
+Qui fecit lumi\textbf{ná}ria \textbf{ma}gna : \GreStar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
 
-Solem in potes\textbf{tá}tem di\textbf{é}i : \gresixstar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
+Solem in potes\textbf{tá}tem di\textbf{é}i : \GreStar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
 
-Lunam et \libertineGlyph{s_t}ellas in potes\textbf{tá}tem \textbf{noc}tis : \gresixstar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
+Lunam et \libertineGlyph{s_t}ellas in potes\textbf{tá}tem \textbf{noc}tis : \GreStar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
 
-Qui percússit Ægýptum cum primogéni\textbf{tis} e\textbf{ó}rum : \gresixstar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
+Qui percússit Ægýptum cum primogéni\textbf{tis} e\textbf{ó}rum : \GreStar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
 
-Qui edúxit Israel de médi\textbf{o} e\textbf{ó}rum : \gresixstar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
+Qui edúxit Israel de médi\textbf{o} e\textbf{ó}rum : \GreStar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
 
-In manu poténti, et bráchi\textbf{o} ex\textbf{cél}so : \gresixstar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
+In manu poténti, et bráchi\textbf{o} ex\textbf{cél}so : \GreStar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
 
-Qui divísit mare Rubrum in di\textbf{vi}si\textbf{ó}nes : \gresixstar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
+Qui divísit mare Rubrum in di\textbf{vi}si\textbf{ó}nes : \GreStar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
 
-Et edúxit Israel per \textbf{mé}dium \textbf{e}jus : \gresixstar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
+Et edúxit Israel per \textbf{mé}dium \textbf{e}jus : \GreStar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
 
-Et excússit Pharaónem et virtútem ejus in \textbf{ma}ri \textbf{Rub}ro : \gresixstar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
+Et excússit Pharaónem et virtútem ejus in \textbf{ma}ri \textbf{Rub}ro : \GreStar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
 
-Qui tradúxit pópulum suum \textbf{per} de\textbf{sér}tum : \gresixstar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
+Qui tradúxit pópulum suum \textbf{per} de\textbf{sér}tum : \GreStar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
 
-Qui percússit \textbf{re}ges \textbf{ma}gnos : \gresixstar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
+Qui percússit \textbf{re}ges \textbf{ma}gnos : \GreStar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
 
-Et occídit \textbf{re}ges \textbf{for}tes : \gresixstar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
+Et occídit \textbf{re}ges \textbf{for}tes : \GreStar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
 
-Sehon regem A\textbf{mor}rhæ\textbf{ó}rum : \gresixstar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
+Sehon regem A\textbf{mor}rhæ\textbf{ó}rum : \GreStar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
 
-Et Og \textbf{re}gem \textbf{Ba}san : \gresixstar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
+Et Og \textbf{re}gem \textbf{Ba}san : \GreStar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
 
-Et dedit terram eórum hæ\textbf{re}di\textbf{tá}tem : \gresixstar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
+Et dedit terram eórum hæ\textbf{re}di\textbf{tá}tem : \GreStar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
 
-Hæreditátem Israel \textbf{ser}vo \textbf{su}o : \gresixstar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
+Hæreditátem Israel \textbf{ser}vo \textbf{su}o : \GreStar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
 
-Quia in humilitáte no\libertineGlyph{s_t}ra memor \textbf{fu}it \textbf{nos}tri : \gresixstar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
+Quia in humilitáte no\libertineGlyph{s_t}ra memor \textbf{fu}it \textbf{nos}tri : \GreStar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
 
-Et redémit nos ab ini\textbf{mí}cis \textbf{nos}tris : \gresixstar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
+Et redémit nos ab ini\textbf{mí}cis \textbf{nos}tris : \GreStar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
 
-Qui dat escam \textbf{om}ni \textbf{car}ni : \gresixstar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
+Qui dat escam \textbf{om}ni \textbf{car}ni : \GreStar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
 
-Confitémini \textbf{De}o \textbf{cæ}li : \gresixstar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
+Confitémini \textbf{De}o \textbf{cæ}li : \GreStar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
 
-Confitémini Dómino \textbf{do}mi\textbf{nó}rum : \gresixstar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
+Confitémini Dómino \textbf{do}mi\textbf{nó}rum : \GreStar\ quóniam in ætérnum miseri\textbf{cór}dia \textbf{e}jus.
 
-Glória \textbf{Pa}tri, et \textbf{Fíli}o, \gresixstar\ et Spi\textbf{rí}tui \textbf{Sanc}to.
+Glória \textbf{Pa}tri, et \textbf{Fíli}o, \GreStar\ et Spi\textbf{rí}tui \textbf{Sanc}to.
 
-Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et in sǽcula sæcu\textbf{ló}rum. \textbf{A}men.
+Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \GreStar\ et in sǽcula sæcu\textbf{ló}rum. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -1946,31 +1939,31 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \gregorioscore[a]{F5/F5FL5.gtex}
 
 \begin{psalmtext}
-In salícibus in médio \textbf{e}jus, \gresixstar\ suspéndimus ór\emph{gana} \textbf{nos}tra.
+In salícibus in médio \textbf{e}jus, \GreStar\ suspéndimus ór\emph{gana} \textbf{nos}tra.
 
-Quia illic interrogavérunt nos, qui captívos du\textbf{xé}runt nos, \gresixstar\ verba \emph{canti}\textbf{ó}num :
+Quia illic interrogavérunt nos, qui captívos du\textbf{xé}runt nos, \GreStar\ verba \emph{canti}\textbf{ó}num :
 
-Et qui abdu\textbf{xé}runt nos : \gresixstar\ Hymnum cantáte nobis de cán\emph{ticis} \textbf{Si}on.
+Et qui abdu\textbf{xé}runt nos : \GreStar\ Hymnum cantáte nobis de cán\emph{ticis} \textbf{Si}on.
 
-Quómodo cantábimus cánticum \textbf{Dó}mini \gresixstar\ in terra \emph{ali}\textbf{é}na?
+Quómodo cantábimus cánticum \textbf{Dó}mini \GreStar\ in terra \emph{ali}\textbf{é}na?
 
-Si oblítus fúero tui Je\textbf{rú}salem, \gresixstar\ oblivióni detur déx\emph{tera} \textbf{me}a.
+Si oblítus fúero tui Je\textbf{rú}salem, \GreStar\ oblivióni detur déx\emph{tera} \textbf{me}a.
 
-Adhǽreat lingua mea fáucibus \textbf{me}is, \gresixstar\ si non memí\emph{nero} \textbf{tu}i :
+Adhǽreat lingua mea fáucibus \textbf{me}is, \GreStar\ si non memí\emph{nero} \textbf{tu}i :
 
-Si non proposúero Je\textbf{rú}salem, \gresixstar\ in princípio lætí\emph{tiæ} \textbf{me}æ.
+Si non proposúero Je\textbf{rú}salem, \GreStar\ in princípio lætí\emph{tiæ} \textbf{me}æ.
 
-Memor e\libertineGlyph{s_t}o Dómine filiórum \textbf{E}dom, \gresixstar\ in di\emph{e Je}\textbf{rú}salem :
+Memor e\libertineGlyph{s_t}o Dómine filiórum \textbf{E}dom, \GreStar\ in di\emph{e Je}\textbf{rú}salem :
 
-Qui dicunt : Exinaníte, exina\textbf{ní}te \gresixstar\ usque ad fundamén\emph{tum in} \textbf{e}a.
+Qui dicunt : Exinaníte, exina\textbf{ní}te \GreStar\ usque ad fundamén\emph{tum in} \textbf{e}a.
 
-Fília Babylónis \textbf{mí}sera : \gresixstar\ beátus qui retríbuet tibi retributiónem tuam, quam retribu\emph{í\libertineGlyph{s_t}i} \textbf{no}bis.
+Fília Babylónis \textbf{mí}sera : \GreStar\ beátus qui retríbuet tibi retributiónem tuam, quam retribu\emph{í\libertineGlyph{s_t}i} \textbf{no}bis.
 
-Beátus qui te\textbf{né}bit \gresixstar\ et allídet párvulos tu\emph{os ad} \textbf{pe}tram.
+Beátus qui te\textbf{né}bit \GreStar\ et allídet párvulos tu\emph{os ad} \textbf{pe}tram.
 
-Glória Patri, et \textbf{Fí}lio, \gresixstar\ et Spirí\emph{tui} \textbf{Sanc}to.
+Glória Patri, et \textbf{Fí}lio, \GreStar\ et Spirí\emph{tui} \textbf{Sanc}to.
 
-Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
+Sicut erat in princípio, et nunc, et \textbf{sem}per, \GreStar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -1984,7 +1977,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \subsubsection*{Capitulum.\capitulumSpace \emph{2 Cor. 1, 3--4.}}
 
-\begin{response}\lettrine{B}{e}nedí\libertineGlyph{c_t}us Deus, et Pater Dómini no\libertineGlyph{s_t}ri Jesu Chri\libertineGlyph{s_t}i, \GreDagger\ Pater misericordiárum, et Deus totíus consolatiónis, \gresixstar\ qui consolátur nos in omni tribulatióne no\libertineGlyph{s_t}ra. \Rbar\ Deo grátias.
+\begin{response}\lettrine{B}{e}nedí\libertineGlyph{c_t}us Deus, et Pater Dómini no\libertineGlyph{s_t}ri Jesu Chri\libertineGlyph{s_t}i, \GreDagger\ Pater misericordiárum, et Deus totíus consolatiónis, \GreStar\ qui consolátur nos in omni tribulatióne no\libertineGlyph{s_t}ra. \Rbar\ Deo grátias.
 
 \end{response}
 
@@ -2028,25 +2021,25 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \gregorioscore[a]{F5/F5MagAnt-01.gtex}
 
 \begin{psalmtext}
-Quia resp\'{e}xit humilit\'{a}tem an\textbf{c\'{i}l}l\ae\ \textbf{su}\ae\ : \gresixstar\ ecce enim ex hoc be\'{a}tam me dicent omnes gene\textbf{ra}ti\textbf{\'{o}}nes.
+Quia resp\'{e}xit humilit\'{a}tem an\textbf{c\'{i}l}l\ae\ \textbf{su}\ae\ : \GreStar\ ecce enim ex hoc be\'{a}tam me dicent omnes gene\textbf{ra}ti\textbf{\'{o}}nes.
 
-Quia fecit mihi \textbf{ma}gna qui \textbf{po}tens e\libertineGlyph{s_t} : \gresixstar\ et san\libertineGlyph{c_t}um \textbf{no}men \textbf{e}jus.
+Quia fecit mihi \textbf{ma}gna qui \textbf{po}tens e\libertineGlyph{s_t} : \GreStar\ et san\libertineGlyph{c_t}um \textbf{no}men \textbf{e}jus.
 
-Et miseric\'{o}rdia ejus a prog\'{e}nie \textbf{in} pro\textbf{g\'{e}}nies \gresixstar\ ti\textbf{m\'{e}}ntibus \textbf{e}um.
+Et miseric\'{o}rdia ejus a prog\'{e}nie \textbf{in} pro\textbf{g\'{e}}nies \GreStar\ ti\textbf{m\'{e}}ntibus \textbf{e}um.
 
-Fecit pot\'{e}ntiam in \textbf{br\'{a}}chio \textbf{su}o : \gresixstar\ disp\'{e}rsit sup\'{e}rbos mente \textbf{cor}dis \textbf{su}i.
+Fecit pot\'{e}ntiam in \textbf{br\'{a}}chio \textbf{su}o : \GreStar\ disp\'{e}rsit sup\'{e}rbos mente \textbf{cor}dis \textbf{su}i.
 
-Dep\'{o}suit po\textbf{t\'{e}n}tes de \textbf{se}de, \gresixstar\ et exal\textbf{t\'{a}}vit \textbf{h\'{u}}miles.
+Dep\'{o}suit po\textbf{t\'{e}n}tes de \textbf{se}de, \GreStar\ et exal\textbf{t\'{a}}vit \textbf{h\'{u}}miles.
 
-Esuri\'{e}ntes im\textbf{pl\'{e}}vit \textbf{bo}nis : \gresixstar\ et d\'{i}vites di\textbf{m\'{i}}sit i\textbf{n\'{a}}nes.
+Esuri\'{e}ntes im\textbf{pl\'{e}}vit \textbf{bo}nis : \GreStar\ et d\'{i}vites di\textbf{m\'{i}}sit i\textbf{n\'{a}}nes.
 
-Susc\'{e}pit Israel \textbf{p\'{u}}erum \textbf{su}um, \gresixstar\ record\'{a}tus miseri\textbf{c\'{o}r}di\ae\ \textbf{su}\ae.
+Susc\'{e}pit Israel \textbf{p\'{u}}erum \textbf{su}um, \GreStar\ record\'{a}tus miseri\textbf{c\'{o}r}di\ae\ \textbf{su}\ae.
 
-Sicut loc\'{u}tus e\libertineGlyph{s_t} ad \textbf{pa}tres \textbf{nos}tros, \gresixstar\ Abraham, et s\'{e}mini \textbf{e}jus in \textbf{s\'{\ae}}cula.
+Sicut loc\'{u}tus e\libertineGlyph{s_t} ad \textbf{pa}tres \textbf{nos}tros, \GreStar\ Abraham, et s\'{e}mini \textbf{e}jus in \textbf{s\'{\ae}}cula.
 
-Glória \textbf{Pa}tri, et \textbf{Fí}lio, \gresixstar\ et Spi\textbf{rí}tui \textbf{Sanc}to.
+Glória \textbf{Pa}tri, et \textbf{Fí}lio, \GreStar\ et Spi\textbf{rí}tui \textbf{Sanc}to.
 
-Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et in sǽcula sæcu\textbf{ló}rum. \textbf{A}men.
+Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \GreStar\ et in sǽcula sæcu\textbf{ló}rum. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -2114,25 +2107,25 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 \gregorioscore[a]{F6/F6FL1.gtex}
 
 \begin{psalmtext}
-In conspé\libertineGlyph{c_t}u Angelórum psallam \textbf{ti}bi : \gresixstar\ adorábo ad templum san\libertineGlyph{c_t}um tuum, et confitébor \textbf{nó}mini \textbf{tu}o.
+In conspé\libertineGlyph{c_t}u Angelórum psallam \textbf{ti}bi : \GreStar\ adorábo ad templum san\libertineGlyph{c_t}um tuum, et confitébor \textbf{nó}mini \textbf{tu}o.
 
-Super misericórdia tua et veritáte \textbf{tu}a : \gresixstar\ quóniam magnificá\libertineGlyph{s_t}i super omne, nomen \textbf{sanc}tum \textbf{tu}um.
+Super misericórdia tua et veritáte \textbf{tu}a : \GreStar\ quóniam magnificá\libertineGlyph{s_t}i super omne, nomen \textbf{sanc}tum \textbf{tu}um.
 
-In quacúmque die invocávero te, ex\textbf{áu}di me : \gresixstar\ multiplicábis in ánima \textbf{me}a vir\textbf{tú}tem.
+In quacúmque die invocávero te, ex\textbf{áu}di me : \GreStar\ multiplicábis in ánima \textbf{me}a vir\textbf{tú}tem.
 
-Confiteántur tibi Dómine omnes reges \textbf{ter}ræ : \gresixstar\ quia audiérunt ómnia verba \textbf{o}ris \textbf{tu}i :
+Confiteántur tibi Dómine omnes reges \textbf{ter}ræ : \GreStar\ quia audiérunt ómnia verba \textbf{o}ris \textbf{tu}i :
 
-Et cantent in viis \textbf{Dó}mini : \gresixstar\ quóniam magna e\libertineGlyph{s_t} \textbf{gló}ria \textbf{Dó}mini.
+Et cantent in viis \textbf{Dó}mini : \GreStar\ quóniam magna e\libertineGlyph{s_t} \textbf{gló}ria \textbf{Dó}mini.
 
-Quóniam excélsus Dóminus, et humília \textbf{rés}picit : \gresixstar\ et alta a \textbf{lon}ge co\textbf{gnó}scit.
+Quóniam excélsus Dóminus, et humília \textbf{rés}picit : \GreStar\ et alta a \textbf{lon}ge co\textbf{gnó}scit.
 
-Si ambulávero in médio tribulatiónis, vivificábis me : \GreDagger\ et super iram inimicórum meórum extendí\libertineGlyph{s_t}i manum \textbf{tu}am, \gresixstar\ et salvum me fecit \textbf{déx}tera \textbf{tu}a.
+Si ambulávero in médio tribulatiónis, vivificábis me : \GreDagger\ et super iram inimicórum meórum extendí\libertineGlyph{s_t}i manum \textbf{tu}am, \GreStar\ et salvum me fecit \textbf{déx}tera \textbf{tu}a.
 
-Dóminus retríbuet pro me : \GreDagger\ Dómine misericórdia tua in \textbf{sǽ}culum : \gresixstar\ ópera mánuum tuárum \textbf{ne} des\textbf{pí}cias.
+Dóminus retríbuet pro me : \GreDagger\ Dómine misericórdia tua in \textbf{sǽ}culum : \GreStar\ ópera mánuum tuárum \textbf{ne} des\textbf{pí}cias.
 
-Glória Patri, et \textbf{Fí}lio, \gresixstar\ et Spi\textbf{rí}tui \textbf{Sanc}to.
+Glória Patri, et \textbf{Fí}lio, \GreStar\ et Spi\textbf{rí}tui \textbf{Sanc}to.
 
-Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcula sæcu\textbf{ló}rum. \textbf{A}men.
+Sicut erat in princípio, et nunc, et \textbf{sem}per, \GreStar\ et in sǽcula sæcu\textbf{ló}rum. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -2150,53 +2143,53 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \subsubsection*{Psalmus 138.}
 
 \begin{psalmtext}
-Intellexí\libertineGlyph{s_t}i cogitatiónes \textbf{me}as de \textbf{lon}ge : \gresixstar\ sémitam meam et funículum meum in\textbf{ves}ti\textbf{gás}ti.
+Intellexí\libertineGlyph{s_t}i cogitatiónes \textbf{me}as de \textbf{lon}ge : \GreStar\ sémitam meam et funículum meum in\textbf{ves}ti\textbf{gás}ti.
 
-Et omnes vias meas \textbf{præ}vi\textbf{dís}ti : \gresixstar\ quia non e\libertineGlyph{s_t} sermo in \textbf{lin}gua \textbf{me}a.
+Et omnes vias meas \textbf{præ}vi\textbf{dís}ti : \GreStar\ quia non e\libertineGlyph{s_t} sermo in \textbf{lin}gua \textbf{me}a.
 
-Ecce Dómine tu cognoví\libertineGlyph{s_t}i ómnia novíssima \textbf{et} an\textbf{tí}qua : \gresixstar\ tu formá\libertineGlyph{s_t}i me, et posuí\libertineGlyph{s_t}i super me \textbf{ma}num \textbf{tu}am.
+Ecce Dómine tu cognoví\libertineGlyph{s_t}i ómnia novíssima \textbf{et} an\textbf{tí}qua : \GreStar\ tu formá\libertineGlyph{s_t}i me, et posuí\libertineGlyph{s_t}i super me \textbf{ma}num \textbf{tu}am.
 
-Mirábilis fa\libertineGlyph{c_t}a e\libertineGlyph{s_t} sciéntia \textbf{tu}a \textbf{ex} me : \gresixstar\ confortáta e\libertineGlyph{s_t}, et non póter\textbf{o} ad \textbf{e}am.
+Mirábilis fa\libertineGlyph{c_t}a e\libertineGlyph{s_t} sciéntia \textbf{tu}a \textbf{ex} me : \GreStar\ confortáta e\libertineGlyph{s_t}, et non póter\textbf{o} ad \textbf{e}am.
 
-Quo ibo a \textbf{spí}ritu \textbf{tu}o? \gresixstar\ et quo a fácie \textbf{tu}a \textbf{fú}giam?
+Quo ibo a \textbf{spí}ritu \textbf{tu}o? \GreStar\ et quo a fácie \textbf{tu}a \textbf{fú}giam?
 
-Si ascéndero in \textbf{cæ}lum, tu \textbf{illic} es : \gresixstar\ si descéndero in in\textbf{fér}num, \textbf{a}des.
+Si ascéndero in \textbf{cæ}lum, tu \textbf{illic} es : \GreStar\ si descéndero in in\textbf{fér}num, \textbf{a}des.
 
-Si súmpsero pennas \textbf{me}as di\textbf{lúcu}lo, \gresixstar\ et havitávero in ex\textbf{tré}mis \textbf{ma}ris :
+Si súmpsero pennas \textbf{me}as di\textbf{lúcu}lo, \GreStar\ et havitávero in ex\textbf{tré}mis \textbf{ma}ris :
 
-Etenim illuc manus \textbf{tu}a de\textbf{dúcet} me : \gresixstar\ et tenébit me \textbf{déx}tera \textbf{tu}a.
+Etenim illuc manus \textbf{tu}a de\textbf{dúcet} me : \GreStar\ et tenébit me \textbf{déx}tera \textbf{tu}a.
 
-Et dixi : Fórsitan ténebræ \textbf{con}cul\textbf{cábunt} me : \gresixstar\ et nox illuminátio mea in de\textbf{lí}ciis \textbf{me}is.
+Et dixi : Fórsitan ténebræ \textbf{con}cul\textbf{cábunt} me : \GreStar\ et nox illuminátio mea in de\textbf{lí}ciis \textbf{me}is.
 
-Quia ténebræ non obscurabúntur a te, \GreDagger\ et nox sicut dies il\textbf{lu}mi\textbf{nábi}tur : \gresixstar\ sicut ténebræ ejus, ita et \textbf{lu}men \textbf{e}jus.
+Quia ténebræ non obscurabúntur a te, \GreDagger\ et nox sicut dies il\textbf{lu}mi\textbf{nábi}tur : \GreStar\ sicut ténebræ ejus, ita et \textbf{lu}men \textbf{e}jus.
 
-Quia tu possed\'{i}sti \textbf{re}nes \textbf{me}os : \gresixstar\ suscep\'{i}sti me de \'{u}tero \textbf{ma}tris \textbf{me}\ae .
+Quia tu possed\'{i}sti \textbf{re}nes \textbf{me}os : \GreStar\ suscep\'{i}sti me de \'{u}tero \textbf{ma}tris \textbf{me}\ae .
 
-Confitébor tibi quia terribíliter magnificátus es : \GreDagger\ mirabília \textbf{ó}pera \textbf{tu}a, \gresixstar\ et ánima mea co\textbf{gnó}scit \textbf{ni}mis.
+Confitébor tibi quia terribíliter magnificátus es : \GreDagger\ mirabília \textbf{ó}pera \textbf{tu}a, \GreStar\ et ánima mea co\textbf{gnó}scit \textbf{ni}mis.
 
-Non e\libertineGlyph{s_t} occultátum os meum a te, quod fecí\libertineGlyph{s_t}i \textbf{in} oc\textbf{cúl}to : \gresixstar\ et sub\libertineGlyph{s_t}ántia mea in inferi\textbf{ó}ribus \textbf{ter}ræ.
+Non e\libertineGlyph{s_t} occultátum os meum a te, quod fecí\libertineGlyph{s_t}i \textbf{in} oc\textbf{cúl}to : \GreStar\ et sub\libertineGlyph{s_t}ántia mea in inferi\textbf{ó}ribus \textbf{ter}ræ.
 
-Imperfé\libertineGlyph{c_t}um meum vidérunt óculi tui, \GreDagger\ et in libro tuo \textbf{om}nes scri\textbf{bén}tur : \gresixstar\ dies formabúntur, et \textbf{ne}mo in \textbf{e}is.
+Imperfé\libertineGlyph{c_t}um meum vidérunt óculi tui, \GreDagger\ et in libro tuo \textbf{om}nes scri\textbf{bén}tur : \GreStar\ dies formabúntur, et \textbf{ne}mo in \textbf{e}is.
 
-Mihi autem nimis honorificáti sunt amíci \textbf{tu}i \textbf{De}us : \gresixstar\ nimis confortátus e\libertineGlyph{s_t} princi\textbf{pá}tus e\textbf{ó}rum.
+Mihi autem nimis honorificáti sunt amíci \textbf{tu}i \textbf{De}us : \GreStar\ nimis confortátus e\libertineGlyph{s_t} princi\textbf{pá}tus e\textbf{ó}rum.
 
-Dinumerábo eos, et super arénam multi\textbf{pli}ca\textbf{bún}tur : \gresixstar\ exsurréxi, et \textbf{ad}huc sum \textbf{te}cum.
+Dinumerábo eos, et super arénam multi\textbf{pli}ca\textbf{bún}tur : \GreStar\ exsurréxi, et \textbf{ad}huc sum \textbf{te}cum.
 
-Si occíderis Deus \textbf{pec}ca\textbf{tó}res : \gresixstar\ viri sánguinum decli\textbf{ná}te \textbf{a} me :
+Si occíderis Deus \textbf{pec}ca\textbf{tó}res : \GreStar\ viri sánguinum decli\textbf{ná}te \textbf{a} me :
 
-Quia dícitis in cogi\textbf{ta}ti\textbf{ó}ne : \gresixstar\ accípient in vanitáte civi\textbf{tá}tes \textbf{tu}as.
+Quia dícitis in cogi\textbf{ta}ti\textbf{ó}ne : \GreStar\ accípient in vanitáte civi\textbf{tá}tes \textbf{tu}as.
 
-Nonne qui odérunt te \textbf{Dó}mine, \textbf{óde}ram? \gresixstar\ et super inimícos tuos \textbf{ta}be\textbf{scé}bam?
+Nonne qui odérunt te \textbf{Dó}mine, \textbf{óde}ram? \GreStar\ et super inimícos tuos \textbf{ta}be\textbf{scé}bam?
 
-Perfé\libertineGlyph{c_t}o ódio \textbf{ó}deram \textbf{il}los : \gresixstar\ et inimíci \textbf{fac}ti sunt \textbf{mi}hi.
+Perfé\libertineGlyph{c_t}o ódio \textbf{ó}deram \textbf{il}los : \GreStar\ et inimíci \textbf{fac}ti sunt \textbf{mi}hi.
 
-Proba me Deus, et \textbf{sci}to cor \textbf{me}um : \gresixstar\ intérroga me, et cognósce \textbf{sé}mitas \textbf{me}as.
+Proba me Deus, et \textbf{sci}to cor \textbf{me}um : \GreStar\ intérroga me, et cognósce \textbf{sé}mitas \textbf{me}as.
 
-Et vide, si via iniqui\textbf{tá}tis in \textbf{me} e\libertineGlyph{s_t} : \gresixstar\ et deduc me in \textbf{vi}a æ\textbf{tér}na.
+Et vide, si via iniqui\textbf{tá}tis in \textbf{me} e\libertineGlyph{s_t} : \GreStar\ et deduc me in \textbf{vi}a æ\textbf{tér}na.
 
-Glória \textbf{Pa}tri, et \textbf{Fíli}o, \gresixstar\ et Spi\textbf{rí}tui \textbf{Sanc}to.
+Glória \textbf{Pa}tri, et \textbf{Fíli}o, \GreStar\ et Spi\textbf{rí}tui \textbf{Sanc}to.
 
-Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et in sǽcula sæcul\textbf{ór}um. \textbf{A}men.
+Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \GreStar\ et in sǽcula sæcul\textbf{ór}um. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -2216,35 +2209,35 @@ Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et 
 \gregorioscore[a]{F6/F6FL3.gtex}
 
 \begin{psalmtext}
-Qui cogitavérunt iniquitá\emph{tes in} \textbf{cor}de : \gresixstar\ tota die con\libertineGlyph{s_t}ituébant \textbf{prǽ}lia.
+Qui cogitavérunt iniquitá\emph{tes in} \textbf{cor}de : \GreStar\ tota die con\libertineGlyph{s_t}ituébant \textbf{prǽ}lia.
 
-Acuérunt linguas suas si\emph{cut ser}\textbf{pén}tis : \gresixstar\ venénum áspidum sub lábiis e\textbf{ó}rum.
+Acuérunt linguas suas si\emph{cut ser}\textbf{pén}tis : \GreStar\ venénum áspidum sub lábiis e\textbf{ó}rum.
 
-Cu\libertineGlyph{s_t}ódi me Dómine de manu \emph{pecca}\textbf{tó}ris : \gresixstar\ et ab homínibus iníquis éri\textbf{pe} me.
+Cu\libertineGlyph{s_t}ódi me Dómine de manu \emph{pecca}\textbf{tó}ris : \GreStar\ et ab homínibus iníquis éri\textbf{pe} me.
 
-Qui cogitavérunt supplantáre \emph{gressus} \textbf{me}os : \gresixstar\ abscondérunt supérbi láqueum \textbf{mi}hi :
+Qui cogitavérunt supplantáre \emph{gressus} \textbf{me}os : \GreStar\ abscondérunt supérbi láqueum \textbf{mi}hi :
 
-Et funes extendé\emph{runt in} \textbf{lá}queum : \gresixstar\ juxta iter scándalum posuérunt \textbf{mi}hi.
+Et funes extendé\emph{runt in} \textbf{lá}queum : \GreStar\ juxta iter scándalum posuérunt \textbf{mi}hi.
 
-Dixi Dómino : Deus \emph{meus} \textbf{es} tu : \gresixstar\ exáudi Dómine vocem deprecatiónis \textbf{me}æ.
+Dixi Dómino : Deus \emph{meus} \textbf{es} tu : \GreStar\ exáudi Dómine vocem deprecatiónis \textbf{me}æ.
 
-Dómine, Dómine virtus sa\emph{lútis} \textbf{me}æ : \gresixstar\ obumbrá\libertineGlyph{s_t}i super caput meum in die \textbf{bel}li :
+Dómine, Dómine virtus sa\emph{lútis} \textbf{me}æ : \GreStar\ obumbrá\libertineGlyph{s_t}i super caput meum in die \textbf{bel}li :
 
-Ne tradas me Dómine a desidério meo peccatóri : \GreDagger\ cogita\emph{vérunt} \textbf{con}tra me, \gresixstar\ ne derelínquas me, ne forte exal\textbf{tén}tur.
+Ne tradas me Dómine a desidério meo peccatóri : \GreDagger\ cogita\emph{vérunt} \textbf{con}tra me, \GreStar\ ne derelínquas me, ne forte exal\textbf{tén}tur.
 
-Caput circúi\emph{tus e}\textbf{ó}rum : \gresixstar\ labor labiórum ipsórum opériet \textbf{e}os :
+Caput circúi\emph{tus e}\textbf{ó}rum : \GreStar\ labor labiórum ipsórum opériet \textbf{e}os :
 
-Cadent super eos carbónes, \GreDagger\ in ignem dejí\emph{cies} \textbf{e}os : \gresixstar\ in misériis non sub\textbf{sís}tent.
+Cadent super eos carbónes, \GreDagger\ in ignem dejí\emph{cies} \textbf{e}os : \GreStar\ in misériis non sub\textbf{sís}tent.
 
-Vir linguósus non dirigé\emph{tur in} \textbf{ter}ra : \gresixstar\ virum injú\libertineGlyph{s_t}um mala cápient in in\textbf{té}ritu.
+Vir linguósus non dirigé\emph{tur in} \textbf{ter}ra : \GreStar\ virum injú\libertineGlyph{s_t}um mala cápient in in\textbf{té}ritu.
 
-Cognóvi quia fáciet Dóminus judí\emph{cium} \textbf{í}nopis : \gresixstar\ et vindí\libertineGlyph{c_t}am \textbf{páu}perum.
+Cognóvi quia fáciet Dóminus judí\emph{cium} \textbf{í}nopis : \GreStar\ et vindí\libertineGlyph{c_t}am \textbf{páu}perum.
 
-Verúmtamen ju\libertineGlyph{s_t}i confitebúntur nó\emph{mini} \textbf{tu}o : \gresixstar\ et habitábunt re\libertineGlyph{c_t}i cum vultu \textbf{tu}o.
+Verúmtamen ju\libertineGlyph{s_t}i confitebúntur nó\emph{mini} \textbf{tu}o : \GreStar\ et habitábunt re\libertineGlyph{c_t}i cum vultu \textbf{tu}o.
 
-Glória Pa\emph{tri, et} \textbf{Fí}lio, \gresixstar\ et Spirítui \textbf{Sanc}to.
+Glória Pa\emph{tri, et} \textbf{Fí}lio, \GreStar\ et Spirítui \textbf{Sanc}to.
 
-Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in sǽcula sæculórum. \textbf{A}men.
+Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \GreStar\ et in sǽcula sæculórum. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -2262,29 +2255,29 @@ Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in
 \subsubsection*{Psalmus 140.}
 
 \begin{psalmtext}
-Dirigátur orátio mea sicut incénsum in conspé\libertineGlyph{c_t}u \textbf{tu}o : \gresixstar\ elevátio mánuum meárum sacrifícium \emph{vesper}\textbf{tí}num.
+Dirigátur orátio mea sicut incénsum in conspé\libertineGlyph{c_t}u \textbf{tu}o : \GreStar\ elevátio mánuum meárum sacrifícium \emph{vesper}\textbf{tí}num.
 
-Pone Dómine cu\libertineGlyph{s_t}ódiam ori \textbf{me}o : \gresixstar\ et ó\libertineGlyph{s_t}ium circum\libertineGlyph{s_t}ántiæ lá\emph{biis} \textbf{me}is.
+Pone Dómine cu\libertineGlyph{s_t}ódiam ori \textbf{me}o : \GreStar\ et ó\libertineGlyph{s_t}ium circum\libertineGlyph{s_t}ántiæ lá\emph{biis} \textbf{me}is.
 
-Non declínes cor meum in verba ma\textbf{lí}tiæ, \gresixstar\ ad excusándas excusatiónes \emph{in pec}\textbf{cá}tis.
+Non declínes cor meum in verba ma\textbf{lí}tiæ, \GreStar\ ad excusándas excusatiónes \emph{in pec}\textbf{cá}tis.
 
-Cum homínibus operántibus iniqui\textbf{tá}tem : \gresixstar\ et non communicábo cum eléc\emph{tis e}\textbf{ó}rum.
+Cum homínibus operántibus iniqui\textbf{tá}tem : \GreStar\ et non communicábo cum eléc\emph{tis e}\textbf{ó}rum.
 
-Corrípiet me ju\libertineGlyph{s_t}us in misericórdia, et incre\textbf{pá}bit me : \gresixstar\ óleum autem peccatóris non impínguet \emph{caput} \textbf{me}um.
+Corrípiet me ju\libertineGlyph{s_t}us in misericórdia, et incre\textbf{pá}bit me : \GreStar\ óleum autem peccatóris non impínguet \emph{caput} \textbf{me}um.
 
-Quóniam adhuc et orátio mea in beneplácitis e\textbf{ó}rum : \gresixstar\ absórpti sunt jun\libertineGlyph{c_t}i petræ júdi\emph{ces e}\textbf{ó}rum.
+Quóniam adhuc et orátio mea in beneplácitis e\textbf{ó}rum : \GreStar\ absórpti sunt jun\libertineGlyph{c_t}i petræ júdi\emph{ces e}\textbf{ó}rum.
 
-Audient verba mea quóniam potu\textbf{é}runt : \gresixstar\ sicut crassitúdo terræ erúpta e\libertineGlyph{s_t} \emph{super} \textbf{ter}ram.
+Audient verba mea quóniam potu\textbf{é}runt : \GreStar\ sicut crassitúdo terræ erúpta e\libertineGlyph{s_t} \emph{super} \textbf{ter}ram.
 
-Dissipáta sunt ossa no\libertineGlyph{s_t}ra secus inférnum : \GreDagger\ quia ad te Dómine, Dómine óculi \textbf{me}i : \gresixstar\ in te sperávi, non áuferas á\emph{nimam} \textbf{me}am.
+Dissipáta sunt ossa no\libertineGlyph{s_t}ra secus inférnum : \GreDagger\ quia ad te Dómine, Dómine óculi \textbf{me}i : \GreStar\ in te sperávi, non áuferas á\emph{nimam} \textbf{me}am.
 
-Cu\libertineGlyph{s_t}ódi me a láqueo quem \libertineGlyph{s_t}atuérunt \textbf{mi}hi : \gresixstar\ et a scándalis operántium in\emph{iqui}\textbf{tá}tem.
+Cu\libertineGlyph{s_t}ódi me a láqueo quem \libertineGlyph{s_t}atuérunt \textbf{mi}hi : \GreStar\ et a scándalis operántium in\emph{iqui}\textbf{tá}tem.
 
-Cadent in retiáculo ejus pecca\textbf{tó}res : \gresixstar\ singuláriter sum ego \emph{donec} \textbf{trán}seam.
+Cadent in retiáculo ejus pecca\textbf{tó}res : \GreStar\ singuláriter sum ego \emph{donec} \textbf{trán}seam.
 
-Glória Patri, et \textbf{Fí}lio, \gresixstar\ et Spirí\emph{tui} \textbf{Sanc}to.
+Glória Patri, et \textbf{Fí}lio, \GreStar\ et Spirí\emph{tui} \textbf{Sanc}to.
 
-Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
+Sicut erat in princípio, et nunc, et \textbf{sem}per, \GreStar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -2304,27 +2297,27 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \gregorioscore[a]{F6/F6FL5.gtex}
 
 \begin{psalmtext}
-Effúndo in conspé\libertineGlyph{c_t}u ejus oratiónem \textbf{me}am, \gresixstar\ et tribulatiónem meam ante ip\emph{sum pro}\textbf{nún}tio.
+Effúndo in conspé\libertineGlyph{c_t}u ejus oratiónem \textbf{me}am, \GreStar\ et tribulatiónem meam ante ip\emph{sum pro}\textbf{nún}tio.
 
-In deficiéndo ex me spíritum \textbf{me}um, \gresixstar\ et tu cognoví\libertineGlyph{s_t}i sé\emph{mitas} \textbf{me}as.
+In deficiéndo ex me spíritum \textbf{me}um, \GreStar\ et tu cognoví\libertineGlyph{s_t}i sé\emph{mitas} \textbf{me}as.
 
-In via hac qua ambu\textbf{lá}bam, \gresixstar\ abscondérunt lá\emph{queum} \textbf{mi}hi.
+In via hac qua ambu\textbf{lá}bam, \GreStar\ abscondérunt lá\emph{queum} \textbf{mi}hi.
 
-Considerábam ad déxteram et vi\textbf{dé}bam : \gresixstar\ et non erat qui co\emph{gnósce}\textbf{ret} me.
+Considerábam ad déxteram et vi\textbf{dé}bam : \GreStar\ et non erat qui co\emph{gnósce}\textbf{ret} me.
 
-Périit fuga \textbf{a} me, \gresixstar\ et non e\libertineGlyph{s_t} qui requírat á\emph{nimam} \textbf{me}am.
+Périit fuga \textbf{a} me, \GreStar\ et non e\libertineGlyph{s_t} qui requírat á\emph{nimam} \textbf{me}am.
 
-Clamávi ad te Dómine, \GreDagger\ dixi : Tu es spes \textbf{me}a, \gresixstar\ pórtio mea in ter\emph{ra vi}\textbf{vén}tium.
+Clamávi ad te Dómine, \GreDagger\ dixi : Tu es spes \textbf{me}a, \GreStar\ pórtio mea in ter\emph{ra vi}\textbf{vén}tium.
 
-Inténde ad deprecatiónem \textbf{me}am : \gresixstar\ quia humiliá\emph{tus sum} \textbf{ni}mis.
+Inténde ad deprecatiónem \textbf{me}am : \GreStar\ quia humiliá\emph{tus sum} \textbf{ni}mis.
 
-Líbera me a persequénti\textbf{bus} me : \gresixstar\ quia confortá\emph{ti sunt} \textbf{su}per me.
+Líbera me a persequénti\textbf{bus} me : \GreStar\ quia confortá\emph{ti sunt} \textbf{su}per me.
 
-Educ de cu\libertineGlyph{s_t}ódia ánimam meam ad confiténdum nómini \textbf{tu}o : \gresixstar\ me exspé\libertineGlyph{c_t}ant ju\libertineGlyph{s_t}i, donec retrí\emph{buas} \textbf{mi}hi.
+Educ de cu\libertineGlyph{s_t}ódia ánimam meam ad confiténdum nómini \textbf{tu}o : \GreStar\ me exspé\libertineGlyph{c_t}ant ju\libertineGlyph{s_t}i, donec retrí\emph{buas} \textbf{mi}hi.
 
-Glória Patri, et \textbf{Fí}lio, \gresixstar\ et Spirí\emph{tui} \textbf{Sanc}to.
+Glória Patri, et \textbf{Fí}lio, \GreStar\ et Spirí\emph{tui} \textbf{Sanc}to.
 
-Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
+Sicut erat in princípio, et nunc, et \textbf{sem}per, \GreStar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -2338,7 +2331,7 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 
 \subsubsection*{Capitulum.\capitulumSpace \emph{2 Cor. 1, 3--4.}}
 
-\begin{response}\lettrine{B}{e}nedí\libertineGlyph{c_t}us Deus, et Pater Dómini no\libertineGlyph{s_t}ri Jesu Chri\libertineGlyph{s_t}i, \GreDagger\ Pater misericordiárum, et Deus totíus consolatiónis, \gresixstar\ qui consolátur nos in omni tribulatióne no\libertineGlyph{s_t}ra. \Rbar\ Deo grátias.
+\begin{response}\lettrine{B}{e}nedí\libertineGlyph{c_t}us Deus, et Pater Dómini no\libertineGlyph{s_t}ri Jesu Chri\libertineGlyph{s_t}i, \GreDagger\ Pater misericordiárum, et Deus totíus consolatiónis, \GreStar\ qui consolátur nos in omni tribulatióne no\libertineGlyph{s_t}ra. \Rbar\ Deo grátias.
 
 \end{response}
 
@@ -2382,25 +2375,25 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \gregorioscore[a]{F6/F6MagAnt-01.gtex}
 
 \begin{psalmtext}
-Quia resp\'{e}xit humilit\'{a}tem an\textbf{c\'{i}l}l\ae\ \textbf{su}\ae\ : \gresixstar\ ecce enim ex hoc be\'{a}tam me dicent omnes gene\emph{rati}\textbf{\'{o}}nes.
+Quia resp\'{e}xit humilit\'{a}tem an\textbf{c\'{i}l}l\ae\ \textbf{su}\ae\ : \GreStar\ ecce enim ex hoc be\'{a}tam me dicent omnes gene\emph{rati}\textbf{\'{o}}nes.
 
-Quia fecit mihi \textbf{ma}gna qui \textbf{po}tens e\libertineGlyph{s_t} : \gresixstar\ et san\libertineGlyph{c_t}um \emph{nomen} \textbf{e}jus.
+Quia fecit mihi \textbf{ma}gna qui \textbf{po}tens e\libertineGlyph{s_t} : \GreStar\ et san\libertineGlyph{c_t}um \emph{nomen} \textbf{e}jus.
 
-Et miseric\'{o}rdia ejus a prog\'{e}nie \textbf{in} pro\textbf{g\'{e}}nies \gresixstar\ tim\'{e}n\emph{tibus} \textbf{e}um.
+Et miseric\'{o}rdia ejus a prog\'{e}nie \textbf{in} pro\textbf{g\'{e}}nies \GreStar\ tim\'{e}n\emph{tibus} \textbf{e}um.
 
-Fecit pot\'{e}ntiam in \textbf{br\'{a}}chio \textbf{su}o : \gresixstar\ disp\'{e}rsit sup\'{e}rbos mente \emph{cordis} \textbf{su}i.
+Fecit pot\'{e}ntiam in \textbf{br\'{a}}chio \textbf{su}o : \GreStar\ disp\'{e}rsit sup\'{e}rbos mente \emph{cordis} \textbf{su}i.
 
-Dep\'{o}suit po\textbf{t\'{e}n}tes de \textbf{se}de, \gresixstar\ et exal\emph{t\'{a}vit} \textbf{h\'{u}}miles.
+Dep\'{o}suit po\textbf{t\'{e}n}tes de \textbf{se}de, \GreStar\ et exal\emph{t\'{a}vit} \textbf{h\'{u}}miles.
 
-Esuri\'{e}ntes im\textbf{pl\'{e}}vit \textbf{bo}nis : \gresixstar\ et d\'{i}vites dim\'{i}\emph{sit i}\textbf{n\'{a}}nes.
+Esuri\'{e}ntes im\textbf{pl\'{e}}vit \textbf{bo}nis : \GreStar\ et d\'{i}vites dim\'{i}\emph{sit i}\textbf{n\'{a}}nes.
 
-Susc\'{e}pit Israel \textbf{p\'{u}}erum \textbf{su}um, \gresixstar\ record\'{a}tus miseric\'{o}r\emph{di\ae} \textbf{su}\ae.
+Susc\'{e}pit Israel \textbf{p\'{u}}erum \textbf{su}um, \GreStar\ record\'{a}tus miseric\'{o}r\emph{di\ae} \textbf{su}\ae.
 
-Sicut loc\'{u}tus e\libertineGlyph{s_t} ad \textbf{pa}tres \textbf{nos}tros, \gresixstar\ Abraham, et s\'{e}mini e\emph{jus in} \textbf{s\'{\ae}}cula.
+Sicut loc\'{u}tus e\libertineGlyph{s_t} ad \textbf{pa}tres \textbf{nos}tros, \GreStar\ Abraham, et s\'{e}mini e\emph{jus in} \textbf{s\'{\ae}}cula.
 
-Glória \textbf{Pa}tri, et \textbf{Fí}lio, \gresixstar\ et Spirí\emph{tui} \textbf{Sanc}to.
+Glória \textbf{Pa}tri, et \textbf{Fí}lio, \GreStar\ et Spirí\emph{tui} \textbf{Sanc}to.
 
-Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
+Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \GreStar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -2466,43 +2459,43 @@ Si po\libertineGlyph{s_t} Vesperas immediate sequatur Completorium, di\libertine
 \subsubsection*{Psalmus 143.}
 
 \begin{psalmtext}
-Misericórdia mea, et refúgi\emph{um} \textbf{me}um : \gresixstar\ suscéptor meus, et libe\emph{rátor} \textbf{me}us :
+Misericórdia mea, et refúgi\emph{um} \textbf{me}um : \GreStar\ suscéptor meus, et libe\emph{rátor} \textbf{me}us :
 
-Proté\libertineGlyph{c_t}or meus, et in ipso \emph{spe}\textbf{rá}vi : \gresixstar\ qui subdit pópulum \emph{meum} \textbf{sub} me.
+Proté\libertineGlyph{c_t}or meus, et in ipso \emph{spe}\textbf{rá}vi : \GreStar\ qui subdit pópulum \emph{meum} \textbf{sub} me.
 
-Dómine quid e\libertineGlyph{s_t} homo, quia innotuís\emph{ti} \textbf{e}i? \gresixstar\ aut fílius hóminis, quia ré\emph{putas} \textbf{e}um?
+Dómine quid e\libertineGlyph{s_t} homo, quia innotuís\emph{ti} \textbf{e}i? \GreStar\ aut fílius hóminis, quia ré\emph{putas} \textbf{e}um?
 
-Homo vanitáti sími\emph{lis} \textbf{fac}tus e\libertineGlyph{s_t} : \gresixstar\ dies ejus sicut um\emph{bra præ}\textbf{té}reunt.
+Homo vanitáti sími\emph{lis} \textbf{fac}tus e\libertineGlyph{s_t} : \GreStar\ dies ejus sicut um\emph{bra præ}\textbf{té}reunt.
 
-Dómine inclína cælos tuos, et \emph{de}\textbf{scén}de : \gresixstar\ tange montes, et \emph{fumi}\textbf{gá}bunt.
+Dómine inclína cælos tuos, et \emph{de}\textbf{scén}de : \GreStar\ tange montes, et \emph{fumi}\textbf{gá}bunt.
 
-Fúlgura coruscatiónem, et dissipá\emph{bis} \textbf{e}os : \gresixstar\ emí\libertineGlyph{t_t}e sagí\libertineGlyph{t_t}as tuas, et contur\emph{bábis} \textbf{e}os :
+Fúlgura coruscatiónem, et dissipá\emph{bis} \textbf{e}os : \GreStar\ emí\libertineGlyph{t_t}e sagí\libertineGlyph{t_t}as tuas, et contur\emph{bábis} \textbf{e}os :
 
-Emí\libertineGlyph{t_t}e manum tuam de alto, \GreDagger\ éripe me, et líbera me de a\emph{quis} \textbf{mul}tis : \gresixstar\ de manu filiórum a\emph{lie}\textbf{nó}rum.
+Emí\libertineGlyph{t_t}e manum tuam de alto, \GreDagger\ éripe me, et líbera me de a\emph{quis} \textbf{mul}tis : \GreStar\ de manu filiórum a\emph{lie}\textbf{nó}rum.
 
-Quorum os locútum e\libertineGlyph{s_t} va\emph{ni}\textbf{tá}tem : \gresixstar\ et déxtera eórum, déxtera i\emph{niqui}\textbf{tá}tis.
+Quorum os locútum e\libertineGlyph{s_t} va\emph{ni}\textbf{tá}tem : \GreStar\ et déxtera eórum, déxtera i\emph{niqui}\textbf{tá}tis.
 
-Deus cánticum novum cantá\emph{bo} \textbf{ti}bi : \gresixstar\ in psaltério, decachórdo \emph{psallam} \textbf{ti}bi.
+Deus cánticum novum cantá\emph{bo} \textbf{ti}bi : \GreStar\ in psaltério, decachórdo \emph{psallam} \textbf{ti}bi.
 
-Qui das salú\emph{tem} \textbf{ré}gibus : \gresixstar\ qui redemí\libertineGlyph{s_t}i David servum tuum de gládio malígno : \emph{éri}\textbf{pe} me.
+Qui das salú\emph{tem} \textbf{ré}gibus : \GreStar\ qui redemí\libertineGlyph{s_t}i David servum tuum de gládio malígno : \emph{éri}\textbf{pe} me.
 
-Et érue me de manu filiórum alienórum, \GreDagger\ quorum os locútum e\libertineGlyph{s_t} va\emph{ni}\textbf{tá}tem : \gresixstar\ et déxtera eórum, déxtera i\emph{niqui}\textbf{tá}tis.
+Et érue me de manu filiórum alienórum, \GreDagger\ quorum os locútum e\libertineGlyph{s_t} va\emph{ni}\textbf{tá}tem : \GreStar\ et déxtera eórum, déxtera i\emph{niqui}\textbf{tá}tis.
 
-Quorum fílii, sicut novéllæ planta\emph{ti}\textbf{ó}nes \gresixstar\ in juven\emph{túte} \textbf{su}a.
+Quorum fílii, sicut novéllæ planta\emph{ti}\textbf{ó}nes \GreStar\ in juven\emph{túte} \textbf{su}a.
 
-Fíliæ eórum \emph{com}\textbf{pó}sitæ : \gresixstar\ circumornátæ ut simili\emph{túdo} \textbf{tem}pli.
+Fíliæ eórum \emph{com}\textbf{pó}sitæ : \GreStar\ circumornátæ ut simili\emph{túdo} \textbf{tem}pli.
 
-Promptuária eó\emph{rum} \textbf{ple}na, \gresixstar\ eru\libertineGlyph{c_t}ántia ex \emph{hoc in} \textbf{il}lud.
+Promptuária eó\emph{rum} \textbf{ple}na, \GreStar\ eru\libertineGlyph{c_t}ántia ex \emph{hoc in} \textbf{il}lud.
 
-Oves eórum fetósæ, abundántes in egréssi\emph{bus} \textbf{su}is : \gresixstar\ boves e\emph{órum} \textbf{cras}sæ.
+Oves eórum fetósæ, abundántes in egréssi\emph{bus} \textbf{su}is : \GreStar\ boves e\emph{órum} \textbf{cras}sæ.
 
-Non e\libertineGlyph{s_t} ruína macériæ, ne\emph{que} \textbf{trán}situs : \gresixstar\ neque clamor in platé\emph{is e}\textbf{ó}rum.
+Non e\libertineGlyph{s_t} ruína macériæ, ne\emph{que} \textbf{trán}situs : \GreStar\ neque clamor in platé\emph{is e}\textbf{ó}rum.
 
-Beátum dixérunt pópulum cu\emph{i} \textbf{hæc} sunt : \gresixstar\ beátus pópulus cujus Dóminus \emph{Deus} \textbf{e}jus.
+Beátum dixérunt pópulum cu\emph{i} \textbf{hæc} sunt : \GreStar\ beátus pópulus cujus Dóminus \emph{Deus} \textbf{e}jus.
 
-Glória Patri, \emph{et} \textbf{Fí}lio, \gresixstar\ et Spirí\emph{tui} \textbf{Sanc}to.
+Glória Patri, \emph{et} \textbf{Fí}lio, \GreStar\ et Spirí\emph{tui} \textbf{Sanc}to.
 
-Sicut erat in princípio, et nunc, \emph{et} \textbf{sem}per, \gresixstar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
+Sicut erat in princípio, et nunc, \emph{et} \textbf{sem}per, \GreStar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -2522,51 +2515,51 @@ Sicut erat in princípio, et nunc, \emph{et} \textbf{sem}per, \gresixstar\ et in
 \gregorioscore[a]{Sabbato/SabFL2.gtex}
 
 \begin{psalmtext}
-Per síngulos dies benedícam \textbf{ti}bi : \gresixstar\ et laudábo nomen tuum in sǽculum et in sǽ\emph{culum} \textbf{sǽ}culi.
+Per síngulos dies benedícam \textbf{ti}bi : \GreStar\ et laudábo nomen tuum in sǽculum et in sǽ\emph{culum} \textbf{sǽ}culi.
 
-Magnus Dóminus et laudábilis \textbf{ni}mis : \gresixstar\ et magnitúdinis ejus \emph{non e\libertineGlyph{s_t}} \textbf{fi}nis.
+Magnus Dóminus et laudábilis \textbf{ni}mis : \GreStar\ et magnitúdinis ejus \emph{non e\libertineGlyph{s_t}} \textbf{fi}nis.
 
-Generátio et generátio laudábit ópera \textbf{tu}a : \gresixstar\ et poténtiam tuam pro\emph{nunti}\textbf{á}bunt.
+Generátio et generátio laudábit ópera \textbf{tu}a : \GreStar\ et poténtiam tuam pro\emph{nunti}\textbf{á}bunt.
 
-Magnificéntiam glóriæ san\libertineGlyph{c_t}itátis tuæ lo\textbf{quén}tur : \gresixstar\ et mirabília tu\emph{a nar}\textbf{rá}bunt.
+Magnificéntiam glóriæ san\libertineGlyph{c_t}itátis tuæ lo\textbf{quén}tur : \GreStar\ et mirabília tu\emph{a nar}\textbf{rá}bunt.
 
-Et virtútem terribílium tuórum \textbf{di}cent : \gresixstar\ et magnitúdinem tu\emph{am nar}\textbf{rá}bunt.
+Et virtútem terribílium tuórum \textbf{di}cent : \GreStar\ et magnitúdinem tu\emph{am nar}\textbf{rá}bunt.
 
-Memóriam abundántiæ suavitátis tuæ eruc\textbf{tá}bunt : \gresixstar\ et ju\libertineGlyph{s_t}ítia tua \emph{exsul}\textbf{tá}bunt.
+Memóriam abundántiæ suavitátis tuæ eruc\textbf{tá}bunt : \GreStar\ et ju\libertineGlyph{s_t}ítia tua \emph{exsul}\textbf{tá}bunt.
 
-Miserátor et miséricors \textbf{Dó}minus : \gresixstar\ pátiens et mul\emph{tum mi}\textbf{sé}ricors.
+Miserátor et miséricors \textbf{Dó}minus : \GreStar\ pátiens et mul\emph{tum mi}\textbf{sé}ricors.
 
-Suávis Dóminus uni\textbf{vér}sis : \gresixstar\ et miseratiónes ejus super ómnia ó\emph{pera} \textbf{e}jus.
+Suávis Dóminus uni\textbf{vér}sis : \GreStar\ et miseratiónes ejus super ómnia ó\emph{pera} \textbf{e}jus.
 
-Confiteántur tibi Dómine ómnia ópera \textbf{tu}a : \gresixstar\ et san\libertineGlyph{c_t}i tui bene\emph{dícant} \textbf{ti}bi.
+Confiteántur tibi Dómine ómnia ópera \textbf{tu}a : \GreStar\ et san\libertineGlyph{c_t}i tui bene\emph{dícant} \textbf{ti}bi.
 
-Glóriam regni tui \textbf{di}cent : \gresixstar\ et poténtiam tu\emph{am lo}\textbf{quén}tur :
+Glóriam regni tui \textbf{di}cent : \GreStar\ et poténtiam tu\emph{am lo}\textbf{quén}tur :
 
-Ut notam fáciant fíliis hóminum poténtiam \textbf{tu}am : \gresixstar\ et glóriam magnificéntiæ \emph{regni} \textbf{tu}i.
+Ut notam fáciant fíliis hóminum poténtiam \textbf{tu}am : \GreStar\ et glóriam magnificéntiæ \emph{regni} \textbf{tu}i.
 
-Regnum tuum regnum ómnium sæcu\textbf{ló}rum : \gresixstar\ et dominátio tua in omni generatióne et gene\emph{rati}\textbf{ó}nem.
+Regnum tuum regnum ómnium sæcu\textbf{ló}rum : \GreStar\ et dominátio tua in omni generatióne et gene\emph{rati}\textbf{ó}nem.
 
-Fidélis Dóminus in ómnibus verbis \textbf{su}is : \gresixstar\ et san\libertineGlyph{c_t}us in ómnibus opé\emph{ribus} \textbf{su}is.
+Fidélis Dóminus in ómnibus verbis \textbf{su}is : \GreStar\ et san\libertineGlyph{c_t}us in ómnibus opé\emph{ribus} \textbf{su}is.
 
-Allevat Dóminus omnes qui \textbf{cór}ruunt : \gresixstar\ et érigit om\emph{nes e}\textbf{lí}sos.
+Allevat Dóminus omnes qui \textbf{cór}ruunt : \GreStar\ et érigit om\emph{nes e}\textbf{lí}sos.
 
-Oculi ómnium in te sperant \textbf{Dó}mine : \gresixstar\ et tu das escam illórum in témpore \emph{oppor}\textbf{tú}no.
+Oculi ómnium in te sperant \textbf{Dó}mine : \GreStar\ et tu das escam illórum in témpore \emph{oppor}\textbf{tú}no.
 
-Aperis tu manum \textbf{tu}am : \gresixstar\ et imples omne ánimal bene\emph{di\libertineGlyph{c_t}i}\textbf{ó}ne.
+Aperis tu manum \textbf{tu}am : \GreStar\ et imples omne ánimal bene\emph{di\libertineGlyph{c_t}i}\textbf{ó}ne.
 
-Ju\libertineGlyph{s_t}us Dóminus in ómnibus viis \textbf{su}is : \gresixstar\ et san\libertineGlyph{c_t}us in ómnibus opé\emph{ribus} \textbf{su}is.
+Ju\libertineGlyph{s_t}us Dóminus in ómnibus viis \textbf{su}is : \GreStar\ et san\libertineGlyph{c_t}us in ómnibus opé\emph{ribus} \textbf{su}is.
 
-Prope e\libertineGlyph{s_t} Dóminus ómnibus invocántibus \textbf{e}um : \gresixstar\ ómnibus invocántibus eum in \emph{veri}\textbf{tá}te.
+Prope e\libertineGlyph{s_t} Dóminus ómnibus invocántibus \textbf{e}um : \GreStar\ ómnibus invocántibus eum in \emph{veri}\textbf{tá}te.
 
-Voluntátem timéntium se fáciet : \GreDagger\ et deprecatiónem eórum ex\textbf{áu}diet : \gresixstar\ et salvos fá\emph{ciet} \textbf{e}os.
+Voluntátem timéntium se fáciet : \GreDagger\ et deprecatiónem eórum ex\textbf{áu}diet : \GreStar\ et salvos fá\emph{ciet} \textbf{e}os.
 
-Cu\libertineGlyph{s_t}ódit Dóminus omnes dili\textbf{gén}tes se : \gresixstar\ et omnes peccató\emph{res dis}\textbf{pér}det.
+Cu\libertineGlyph{s_t}ódit Dóminus omnes dili\textbf{gén}tes se : \GreStar\ et omnes peccató\emph{res dis}\textbf{pér}det.
 
-Laudatiónem Dómini loquétur os \textbf{me}um : \gresixstar\ et benedícat omnis caro nómini san\libertineGlyph{c_t}o ejus in sǽculum et in sǽ\emph{culum} \textbf{sǽ}culi.
+Laudatiónem Dómini loquétur os \textbf{me}um : \GreStar\ et benedícat omnis caro nómini san\libertineGlyph{c_t}o ejus in sǽculum et in sǽ\emph{culum} \textbf{sǽ}culi.
 
-Glória Patri, et \textbf{Fí}lio, \gresixstar\ et Spirí\emph{tui} \textbf{Sanc}to.
+Glória Patri, et \textbf{Fí}lio, \GreStar\ et Spirí\emph{tui} \textbf{Sanc}to.
 
-Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
+Sicut erat in princípio, et nunc, et \textbf{sem}per, \GreStar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -2586,25 +2579,25 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \gregorioscore[a]{Sabbato/SabFL3.gtex}
 
 \begin{psalmtext}
-Nolíte confídere \emph{in prin}\textbf{cí}pibus : \gresixstar\ in fíliis hóminum, in qui\emph{bus non e\libertineGlyph{s_t}} \textbf{sa}lus.
+Nolíte confídere \emph{in prin}\textbf{cí}pibus : \GreStar\ in fíliis hóminum, in qui\emph{bus non e\libertineGlyph{s_t}} \textbf{sa}lus.
 
-Exíbit spíritus ejus, et revertétur in \emph{terram} \textbf{su}am : \gresixstar\ in illa die períbunt omnes cogitati\emph{ónes e}\textbf{ó}rum.
+Exíbit spíritus ejus, et revertétur in \emph{terram} \textbf{su}am : \GreStar\ in illa die períbunt omnes cogitati\emph{ónes e}\textbf{ó}rum.
 
-Beátus cujus Deus Jacob adjútor ejus, \GreDagger\ spes ejus in Dómino De\emph{o ip}\textbf{sí}us : \gresixstar\ qui fecit cælum et terram, mare, et ómni\emph{a quæ in} \textbf{eis} sunt.
+Beátus cujus Deus Jacob adjútor ejus, \GreDagger\ spes ejus in Dómino De\emph{o ip}\textbf{sí}us : \GreStar\ qui fecit cælum et terram, mare, et ómni\emph{a quæ in} \textbf{eis} sunt.
 
-Qui cu\libertineGlyph{s_t}ódit veritátem in sǽculum, \GreDagger\ facit judícium injúriam \emph{pati}\textbf{én}tibus : \gresixstar\ dat escam \emph{esuri}\textbf{énti}bus.
+Qui cu\libertineGlyph{s_t}ódit veritátem in sǽculum, \GreDagger\ facit judícium injúriam \emph{pati}\textbf{én}tibus : \GreStar\ dat escam \emph{esuri}\textbf{énti}bus.
 
-Dóminus solvit \emph{compe}\textbf{dí}tos : \gresixstar\ Dóminus il\emph{lúminat} \textbf{cæ}cos.
+Dóminus solvit \emph{compe}\textbf{dí}tos : \GreStar\ Dóminus il\emph{lúminat} \textbf{cæ}cos.
 
-Dóminus éri\emph{git e}\textbf{lí}sos, \gresixstar\ Dóminus \emph{díligit} \textbf{jus}tos.
+Dóminus éri\emph{git e}\textbf{lí}sos, \GreStar\ Dóminus \emph{díligit} \textbf{jus}tos.
 
-Dóminus cu\libertineGlyph{s_t}ódit ádvenas, \GreDagger\ pupíllum et vídu\emph{am su}\textbf{scí}piet : \gresixstar\ et vias pecca\emph{tórum dis}\textbf{pér}det.
+Dóminus cu\libertineGlyph{s_t}ódit ádvenas, \GreDagger\ pupíllum et vídu\emph{am su}\textbf{scí}piet : \GreStar\ et vias pecca\emph{tórum dis}\textbf{pér}det.
 
-Regnábit Dóminus in sǽcula Deus \emph{tuus} \textbf{Si}on, \gresixstar\ in generatiónem et ge\emph{nerati}\textbf{ó}nem.
+Regnábit Dóminus in sǽcula Deus \emph{tuus} \textbf{Si}on, \GreStar\ in generatiónem et ge\emph{nerati}\textbf{ó}nem.
 
-Glória Pa\emph{tri, et} \textbf{Fí}lio, \gresixstar\ et Spi\emph{rítui} \textbf{Sanc}to.
+Glória Pa\emph{tri, et} \textbf{Fí}lio, \GreStar\ et Spi\emph{rítui} \textbf{Sanc}to.
 
-Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in sǽcula sæ\emph{culórum}. \textbf{A}men.
+Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \GreStar\ et in sǽcula sæ\emph{culórum}. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -2624,31 +2617,31 @@ Sicut erat in princípio, et \emph{nunc, et} \textbf{sem}per, \gresixstar\ et in
 \gregorioscore[a]{Sabbato/SabFL4.gtex}
 
 \begin{psalmtext}
-Ædíficans Jerúsalem \textbf{Dó}minus : \gresixstar\ dispersiónes Israélis \emph{congre}\textbf{gá}bit.
+Ædíficans Jerúsalem \textbf{Dó}minus : \GreStar\ dispersiónes Israélis \emph{congre}\textbf{gá}bit.
 
-Qui sanat contrítos \textbf{cor}de : \gresixstar\ et álligat contritió\emph{nes e}\textbf{ó}rum.
+Qui sanat contrítos \textbf{cor}de : \GreStar\ et álligat contritió\emph{nes e}\textbf{ó}rum.
 
-Qui númerat multitúdinem \libertineGlyph{s_t}el\textbf{lá}rum : \gresixstar\ et ómnibus eis nó\emph{mina} \textbf{vo}cat.
+Qui númerat multitúdinem \libertineGlyph{s_t}el\textbf{lá}rum : \GreStar\ et ómnibus eis nó\emph{mina} \textbf{vo}cat.
 
-Magnus Dóminus no\libertineGlyph{s_t}er, et magna virtus \textbf{e}jus : \gresixstar\ sapiéntiæ ejus \emph{non e\libertineGlyph{s_t}} \textbf{nú}merus.
+Magnus Dóminus no\libertineGlyph{s_t}er, et magna virtus \textbf{e}jus : \GreStar\ sapiéntiæ ejus \emph{non e\libertineGlyph{s_t}} \textbf{nú}merus.
 
-Suscípiens mansuétos \textbf{Dó}minus : \gresixstar\ humílians autem peccatóres us\emph{que ad} \textbf{ter}ram.
+Suscípiens mansuétos \textbf{Dó}minus : \GreStar\ humílians autem peccatóres us\emph{que ad} \textbf{ter}ram.
 
-Præcínite Dómino in confessi\textbf{ó}ne : \gresixstar\ psállite Deo nos\emph{tro in} \textbf{cí}thara.
+Præcínite Dómino in confessi\textbf{ó}ne : \GreStar\ psállite Deo nos\emph{tro in} \textbf{cí}thara.
 
-Qui óperit cælum \textbf{nú}bibus : \gresixstar\ et parat \emph{terræ} \textbf{plú}viam.
+Qui óperit cælum \textbf{nú}bibus : \GreStar\ et parat \emph{terræ} \textbf{plú}viam.
 
-Qui prodúcit in móntibus \textbf{fœ}num : \gresixstar\ et herbam servi\emph{túti} \textbf{hó}minum.
+Qui prodúcit in móntibus \textbf{fœ}num : \GreStar\ et herbam servi\emph{túti} \textbf{hó}minum.
 
-Qui dat juméntis escam ip\textbf{só}rum : \gresixstar\ et pullis corvórum invocán\emph{tibus} \textbf{e}um.
+Qui dat juméntis escam ip\textbf{só}rum : \GreStar\ et pullis corvórum invocán\emph{tibus} \textbf{e}um.
 
-Non in fortitúdine equi voluntátem ha\textbf{bé}bit : \gresixstar\ nec in tíbiis viri beneplácitum \emph{erit} \textbf{e}i.
+Non in fortitúdine equi voluntátem ha\textbf{bé}bit : \GreStar\ nec in tíbiis viri beneplácitum \emph{erit} \textbf{e}i.
 
-Beneplácitum e\libertineGlyph{s_t} Dómino super timéntes \textbf{e}um : \gresixstar\ et in eis qui sperant super misericór\emph{dia} \textbf{e}jus.
+Beneplácitum e\libertineGlyph{s_t} Dómino super timéntes \textbf{e}um : \GreStar\ et in eis qui sperant super misericór\emph{dia} \textbf{e}jus.
 
-Glória Patri, et \textbf{Fí}lio, \gresixstar\ et Spirí\emph{tui} \textbf{Sanc}to.
+Glória Patri, et \textbf{Fí}lio, \GreStar\ et Spirí\emph{tui} \textbf{Sanc}to.
 
-Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
+Sicut erat in princípio, et nunc, et \textbf{sem}per, \GreStar\ et in sǽcula sæcu\emph{lórum}. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -2666,25 +2659,25 @@ Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcul
 \subsubsection*{Psalmus 147.}
 
 \begin{psalmtext}
-Quóniam confortávit seras portárum tu\textbf{á}rum : \gresixstar\ benedíxit fíliis \textbf{tu}is \textbf{in} te.
+Quóniam confortávit seras portárum tu\textbf{á}rum : \GreStar\ benedíxit fíliis \textbf{tu}is \textbf{in} te.
 
-Qui pósuit fines tuos \textbf{pa}cem : \gresixstar\ et ádipe fruménti \textbf{sá}ti\textbf{at} te.
+Qui pósuit fines tuos \textbf{pa}cem : \GreStar\ et ádipe fruménti \textbf{sá}ti\textbf{at} te.
 
-Qui emí\libertineGlyph{t_t}it elóquium suum \textbf{ter}ræ : \gresixstar\ velóciter currit \textbf{ser}mo \textbf{e}jus.
+Qui emí\libertineGlyph{t_t}it elóquium suum \textbf{ter}ræ : \GreStar\ velóciter currit \textbf{ser}mo \textbf{e}jus.
 
-Qui dat nivem sicut \textbf{la}nam : \gresixstar\ nébulam sicut \textbf{cí}nerem \textbf{spar}git.
+Qui dat nivem sicut \textbf{la}nam : \GreStar\ nébulam sicut \textbf{cí}nerem \textbf{spar}git.
 
-Mi\libertineGlyph{t_t}it cry\libertineGlyph{s_t}állum suam sicut buc\textbf{cél}las : \gresixstar\ ante fáciem frígoris ejus \textbf{quis} su\libertineGlyph{s_t}i\textbf{né}bit?
+Mi\libertineGlyph{t_t}it cry\libertineGlyph{s_t}állum suam sicut buc\textbf{cél}las : \GreStar\ ante fáciem frígoris ejus \textbf{quis} su\libertineGlyph{s_t}i\textbf{né}bit?
 
-Emí\libertineGlyph{t_t}et verbum suum, et liquefáciet \textbf{e}a : \gresixstar\ flabit spíritus ejus, et \textbf{flu}ent \textbf{a}quæ.
+Emí\libertineGlyph{t_t}et verbum suum, et liquefáciet \textbf{e}a : \GreStar\ flabit spíritus ejus, et \textbf{flu}ent \textbf{a}quæ.
 
-Qui annúntiat verbum suum \textbf{Ja}cob : \gresixstar\ ju\libertineGlyph{s_t}ítias et judícia \textbf{su}a \textbf{Is}rael.
+Qui annúntiat verbum suum \textbf{Ja}cob : \GreStar\ ju\libertineGlyph{s_t}ítias et judícia \textbf{su}a \textbf{Is}rael.
 
-Non fecit táliter omni nati\textbf{ó}ni : \gresixstar\ et judícia sua non manifes\textbf{tá}vit \textbf{e}is.
+Non fecit táliter omni nati\textbf{ó}ni : \GreStar\ et judícia sua non manifes\textbf{tá}vit \textbf{e}is.
 
-Glória Patri, et \textbf{Fí}lio, \gresixstar\ et Spi\textbf{rí}tui \textbf{Sanc}to.
+Glória Patri, et \textbf{Fí}lio, \GreStar\ et Spi\textbf{rí}tui \textbf{Sanc}to.
 
-Sicut erat in princípio, et nunc, et \textbf{sem}per, \gresixstar\ et in sǽcula sæcu\textbf{ló}rum. \textbf{A}men.
+Sicut erat in princípio, et nunc, et \textbf{sem}per, \GreStar\ et in sǽcula sæcu\textbf{ló}rum. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -2703,7 +2696,7 @@ Sequens Capitulum \emph{\textcolor{black}{O altit\'{u}do}} canitur in Vesperis S
 
 \subsubsection*{Capitulum.\capitulumSpace \emph{Rom. 11, 33.}}
 
-\begin{response}\lettrine{O}{ a}ltit\'{u}do diviti\'{a}rum sapi\'{e}nti\ae\ et sci\'{e}nti\ae\ Dei : \GreDagger\ quam incomprehensib\'{i}lia sunt jud\'{i}cia ejus, \gresixstar\ et inve\libertineGlyph{s_t}ig\'{a}biles vi\ae\ ejus! \Rbar\ Deo grátias.
+\begin{response}\lettrine{O}{ a}ltit\'{u}do diviti\'{a}rum sapi\'{e}nti\ae\ et sci\'{e}nti\ae\ Dei : \GreDagger\ quam incomprehensib\'{i}lia sunt jud\'{i}cia ejus, \GreStar\ et inve\libertineGlyph{s_t}ig\'{a}biles vi\ae\ ejus! \Rbar\ Deo grátias.
 
 \end{response}
 
@@ -2752,25 +2745,25 @@ Quando fit Commemoratio B. M. V., canitur doxologia \emph{\textcolor{black}{Gl\'
 \gregorioscore[a]{Sabbato/SabMagAnt-01.gtex}
 
 \begin{psalmtext}
-Quia resp\'{e}xit humilit\'{a}tem an\textbf{c\'{i}l}l\ae\ \textbf{su}\ae\ : \gresixstar\ ecce enim ex hoc be\'{a}tam me dicent omnes gene\textbf{ra}ti\textbf{\'{o}}nes.
+Quia resp\'{e}xit humilit\'{a}tem an\textbf{c\'{i}l}l\ae\ \textbf{su}\ae\ : \GreStar\ ecce enim ex hoc be\'{a}tam me dicent omnes gene\textbf{ra}ti\textbf{\'{o}}nes.
 
-Quia fecit mihi \textbf{ma}gna qui \textbf{po}tens e\libertineGlyph{s_t} : \gresixstar\ et san\libertineGlyph{c_t}um \textbf{no}men \textbf{e}jus.
+Quia fecit mihi \textbf{ma}gna qui \textbf{po}tens e\libertineGlyph{s_t} : \GreStar\ et san\libertineGlyph{c_t}um \textbf{no}men \textbf{e}jus.
 
-Et miseric\'{o}rdia ejus a prog\'{e}nie \textbf{in} pro\textbf{g\'{e}}nies \gresixstar\ ti\textbf{m\'{e}}ntibus \textbf{e}um.
+Et miseric\'{o}rdia ejus a prog\'{e}nie \textbf{in} pro\textbf{g\'{e}}nies \GreStar\ ti\textbf{m\'{e}}ntibus \textbf{e}um.
 
-Fecit pot\'{e}ntiam in \textbf{br\'{a}}chio \textbf{su}o : \gresixstar\ disp\'{e}rsit sup\'{e}rbos mente \textbf{cor}dis \textbf{su}i.
+Fecit pot\'{e}ntiam in \textbf{br\'{a}}chio \textbf{su}o : \GreStar\ disp\'{e}rsit sup\'{e}rbos mente \textbf{cor}dis \textbf{su}i.
 
-Dep\'{o}suit po\textbf{t\'{e}n}tes de \textbf{se}de, \gresixstar\ et exal\textbf{t\'{a}}vit \textbf{h\'{u}}miles.
+Dep\'{o}suit po\textbf{t\'{e}n}tes de \textbf{se}de, \GreStar\ et exal\textbf{t\'{a}}vit \textbf{h\'{u}}miles.
 
-Esuri\'{e}ntes im\textbf{pl\'{e}}vit \textbf{bo}nis : \gresixstar\ et d\'{i}vites di\textbf{m\'{i}}sit i\textbf{n\'{a}}nes.
+Esuri\'{e}ntes im\textbf{pl\'{e}}vit \textbf{bo}nis : \GreStar\ et d\'{i}vites di\textbf{m\'{i}}sit i\textbf{n\'{a}}nes.
 
-Susc\'{e}pit Israel \textbf{p\'{u}}erum \textbf{su}um, \gresixstar\ record\'{a}tus miseri\textbf{c\'{o}r}di\ae\ \textbf{su}\ae.
+Susc\'{e}pit Israel \textbf{p\'{u}}erum \textbf{su}um, \GreStar\ record\'{a}tus miseri\textbf{c\'{o}r}di\ae\ \textbf{su}\ae.
 
-Sicut loc\'{u}tus e\libertineGlyph{s_t} ad \textbf{pa}tres \textbf{nos}tros, \gresixstar\ Abraham, et s\'{e}mini \textbf{e}jus in \textbf{s\'{\ae}}cula.
+Sicut loc\'{u}tus e\libertineGlyph{s_t} ad \textbf{pa}tres \textbf{nos}tros, \GreStar\ Abraham, et s\'{e}mini \textbf{e}jus in \textbf{s\'{\ae}}cula.
 
-Glória \textbf{Pa}tri, et \textbf{Fí}lio, \gresixstar\ et Spi\textbf{rí}tui \textbf{Sanc}to.
+Glória \textbf{Pa}tri, et \textbf{Fí}lio, \GreStar\ et Spi\textbf{rí}tui \textbf{Sanc}to.
 
-Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et in sǽcula sæcu\textbf{ló}rum. \textbf{A}men.
+Sicut erat in princípio, et \textbf{nunc}, et \textbf{sem}per, \GreStar\ et in sǽcula sæcu\textbf{ló}rum. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -2916,27 +2909,27 @@ A Septuagesima usque ad Pascha, loco \emph{\textcolor{black}{Allelúia}}, canitu
 %\vspace{2 mm}
 
 \begin{psalmtext}
-Miser\'{e}re \textbf{me}i, \gresixstar\ et ex\'{a}udi orati\emph{\'{o}nem} \textbf{me}am.
+Miser\'{e}re \textbf{me}i, \GreStar\ et ex\'{a}udi orati\emph{\'{o}nem} \textbf{me}am.
 
-F\'{i}lii h\'{o}minum \'{u}squequo gravi \textbf{cor}de? \gresixstar\ ut quid dil\'{i}gitis vanit\'{a}tem et qu\'{\ae}ri\emph{tis men}\textbf{d\'{a}}cium?
+F\'{i}lii h\'{o}minum \'{u}squequo gravi \textbf{cor}de? \GreStar\ ut quid dil\'{i}gitis vanit\'{a}tem et qu\'{\ae}ri\emph{tis men}\textbf{d\'{a}}cium?
 
-Et scit\'{o}te qu\'{o}niam mirific\'{a}vit D\'{o}minus san\libertineGlyph{c_t}um \textbf{su}um, \gresixstar\ D\'{o}minus ex\'{a}udiet me cum clam\'{a}ve\emph{ro ad} \textbf{e}um.
+Et scit\'{o}te qu\'{o}niam mirific\'{a}vit D\'{o}minus san\libertineGlyph{c_t}um \textbf{su}um, \GreStar\ D\'{o}minus ex\'{a}udiet me cum clam\'{a}ve\emph{ro ad} \textbf{e}um.
 
-Irasc\'{i}mini, et nol\'{i}te pecc\'{a}re : \GreDagger\ qu\ae\ d\'{i}citis in c\'{o}rdibus \textbf{ves}tris, \gresixstar\ in cub\'{i}libus ve\libertineGlyph{s_t}ris \emph{compun}\textbf{g\'{i}}mini.
+Irasc\'{i}mini, et nol\'{i}te pecc\'{a}re : \GreDagger\ qu\ae\ d\'{i}citis in c\'{o}rdibus \textbf{ves}tris, \GreStar\ in cub\'{i}libus ve\libertineGlyph{s_t}ris \emph{compun}\textbf{g\'{i}}mini.
 
-Sacrific\'{a}te sacrif\'{i}cium ju\libertineGlyph{s_t}\'{i}ti\ae , \GreDagger\ et sper\'{a}te  in \textbf{D\'{o}}mino. \gresixstar\ Multi dicunt : Quis o\libertineGlyph{s_t}\'{e}ndit \emph{nobis} \textbf{bo}na?
+Sacrific\'{a}te sacrif\'{i}cium ju\libertineGlyph{s_t}\'{i}ti\ae , \GreDagger\ et sper\'{a}te  in \textbf{D\'{o}}mino. \GreStar\ Multi dicunt : Quis o\libertineGlyph{s_t}\'{e}ndit \emph{nobis} \textbf{bo}na?
 
-Sign\'{a}tum e\libertineGlyph{s_t} super nos lumen vultus tui \textbf{D\'{o}}mine : \gresixstar\ ded\'{i}\libertineGlyph{s_t}i l\ae t\'{i}tiam in \emph{corde} \textbf{me}o.
+Sign\'{a}tum e\libertineGlyph{s_t} super nos lumen vultus tui \textbf{D\'{o}}mine : \GreStar\ ded\'{i}\libertineGlyph{s_t}i l\ae t\'{i}tiam in \emph{corde} \textbf{me}o.
 
-A fru\libertineGlyph{c_t}u frum\'{e}nti, vini et \'{o}lei \textbf{su}i \gresixstar\ mul\emph{tipli}\textbf{c\'{a}}ti sunt.
+A fru\libertineGlyph{c_t}u frum\'{e}nti, vini et \'{o}lei \textbf{su}i \GreStar\ mul\emph{tipli}\textbf{c\'{a}}ti sunt.
 
-In pace in id\textbf{\'{i}p}sum \gresixstar\ d\'{o}rmiam et \emph{requi}\textbf{\'{e}s}cam.
+In pace in id\textbf{\'{i}p}sum \GreStar\ d\'{o}rmiam et \emph{requi}\textbf{\'{e}s}cam.
 
-Qu\'{o}niam tu D\'{o}mine singul\'{a}riter \textbf{in} spe \gresixstar\ con\emph{\libertineGlyph{s_t}itu}\textbf{\'{i}s}ti me.
+Qu\'{o}niam tu D\'{o}mine singul\'{a}riter \textbf{in} spe \GreStar\ con\emph{\libertineGlyph{s_t}itu}\textbf{\'{i}s}ti me.
 
-Gl\'{o}ria Patri, et \textbf{F\'{i}}lio, \gresixstar\ et Spir\'{i}\emph{tui} \textbf{Sanc}to.
+Gl\'{o}ria Patri, et \textbf{F\'{i}}lio, \GreStar\ et Spir\'{i}\emph{tui} \textbf{Sanc}to.
 
-Sicut erat in princ\'{i}pio, et nunc, et \textbf{sem}per, \gresixstar\ et in s\'{\ae}cula s\ae cu\emph{l\'{o}rum}. \textbf{A}men.
+Sicut erat in princ\'{i}pio, et nunc, et \textbf{sem}per, \GreStar\ et in s\'{\ae}cula s\ae cu\emph{l\'{o}rum}. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -2949,19 +2942,19 @@ Sicut erat in princ\'{i}pio, et nunc, et \textbf{sem}per, \gresixstar\ et in s\'
 %\vspace{2 mm}
 
 \begin{psalmtext}
-Incl\'{i}na ad me aurem \textbf{tu}am, \gresixstar\ acc\'{e}lera ut \emph{\'{e}ru}\textbf{as} me.
+Incl\'{i}na ad me aurem \textbf{tu}am, \GreStar\ acc\'{e}lera ut \emph{\'{e}ru}\textbf{as} me.
 
-E\libertineGlyph{s_t}o mihi in Deum protect\'{o}rem : et in domum re\textbf{f\'{u}}gii, \gresixstar\ ut sal\emph{vum me} \textbf{f\'{a}}cias.
+E\libertineGlyph{s_t}o mihi in Deum protect\'{o}rem : et in domum re\textbf{f\'{u}}gii, \GreStar\ ut sal\emph{vum me} \textbf{f\'{a}}cias.
 
-Qu\'{o}niam fortit\'{u}do mea, et ref\'{u}gium meum \textbf{es} tu : \gresixstar\ et propter nomen tuum ded\'{u}ces me, et e\emph{n\'{u}tri}\textbf{es} me.
+Qu\'{o}niam fortit\'{u}do mea, et ref\'{u}gium meum \textbf{es} tu : \GreStar\ et propter nomen tuum ded\'{u}ces me, et e\emph{n\'{u}tri}\textbf{es} me.
 
-Ed\'{u}ces me de l\'{a}queo hoc, quem abscond\'{e}runt \textbf{mi}hi : \gresixstar\ qu\'{o}niam tu es pro\emph{t\'{e}\libertineGlyph{c_t}or} \textbf{me}us.
+Ed\'{u}ces me de l\'{a}queo hoc, quem abscond\'{e}runt \textbf{mi}hi : \GreStar\ qu\'{o}niam tu es pro\emph{t\'{e}\libertineGlyph{c_t}or} \textbf{me}us.
 
-In manus tuas comm\'{e}ndo sp\'{i}ritum \textbf{me}um : \gresixstar\ redem\'{i}\libertineGlyph{s_t}i me D\'{o}mine Deus \emph{veri}\textbf{t\'{a}}tis.
+In manus tuas comm\'{e}ndo sp\'{i}ritum \textbf{me}um : \GreStar\ redem\'{i}\libertineGlyph{s_t}i me D\'{o}mine Deus \emph{veri}\textbf{t\'{a}}tis.
 
-Gl\'{o}ria Patri, et \textbf{F\'{i}}lio, \gresixstar\ et Spir\'{i}\emph{tui} \textbf{Sanc}to.
+Gl\'{o}ria Patri, et \textbf{F\'{i}}lio, \GreStar\ et Spir\'{i}\emph{tui} \textbf{Sanc}to.
 
-Sicut erat in princ\'{i}pio, et nunc, et \textbf{sem}per, \gresixstar\ et in s\'{\ae}cula s\ae cu\emph{l\'{o}rum}. \textbf{A}men.
+Sicut erat in princ\'{i}pio, et nunc, et \textbf{sem}per, \GreStar\ et in s\'{\ae}cula s\ae cu\emph{l\'{o}rum}. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -2974,39 +2967,39 @@ Sicut erat in princ\'{i}pio, et nunc, et \textbf{sem}per, \gresixstar\ et in s\'
 %\vspace{2 mm}
 
 \begin{psalmtext}
-Dicet D\'{o}mino : Susc\'{e}ptor meus es tu et ref\'{u}gium \textbf{me}um : \gresixstar\ Deus meus sper\'{a}\emph{bo in} \textbf{e}um.
+Dicet D\'{o}mino : Susc\'{e}ptor meus es tu et ref\'{u}gium \textbf{me}um : \GreStar\ Deus meus sper\'{a}\emph{bo in} \textbf{e}um.
 
-Qu\'{o}niam ipse liber\'{a}vit me de l\'{a}queo ve\textbf{n\'{a}n}tium, \gresixstar\ et a \emph{verbo} \textbf{\'{a}s}pero.
+Qu\'{o}niam ipse liber\'{a}vit me de l\'{a}queo ve\textbf{n\'{a}n}tium, \GreStar\ et a \emph{verbo} \textbf{\'{a}s}pero.
 
-Sc\'{a}pulis suis obumbr\'{a}bit \textbf{ti}bi : \gresixstar\ et sub pennis e\emph{jus spe}\textbf{r\'{a}}bis.
+Sc\'{a}pulis suis obumbr\'{a}bit \textbf{ti}bi : \GreStar\ et sub pennis e\emph{jus spe}\textbf{r\'{a}}bis.
 
-Scuto circ\'{u}mdabit te v\'{e}ritas \textbf{e}jus : \gresixstar\ non tim\'{e}bis a tim\'{o}\emph{re noc}\textbf{t\'{u}}rno.
+Scuto circ\'{u}mdabit te v\'{e}ritas \textbf{e}jus : \GreStar\ non tim\'{e}bis a tim\'{o}\emph{re noc}\textbf{t\'{u}}rno.
 
-A sag\'{i}tta vol\'{a}nte in die, \GreDagger\ a neg\'{o}tio perambul\'{a}nte in \textbf{t\'{e}}nebris : \gresixstar\ ab inc\'{u}rsu, et d\ae m\'{o}nio me\emph{ridi}\textbf{\'{a}}no.
+A sag\'{i}tta vol\'{a}nte in die, \GreDagger\ a neg\'{o}tio perambul\'{a}nte in \textbf{t\'{e}}nebris : \GreStar\ ab inc\'{u}rsu, et d\ae m\'{o}nio me\emph{ridi}\textbf{\'{a}}no.
 
-Cadent a l\'{a}tere tuo mille, \GreDagger\ et decem m\'{i}llia a dextris \textbf{tu}is : \gresixstar\ ad te autem non ap\emph{propin}\textbf{qu\'{a}}bit.
+Cadent a l\'{a}tere tuo mille, \GreDagger\ et decem m\'{i}llia a dextris \textbf{tu}is : \GreStar\ ad te autem non ap\emph{propin}\textbf{qu\'{a}}bit.
 
-Ver\'{u}mtamen \'{o}culis tuis conside\textbf{r\'{a}}bis : \gresixstar\ et retributi\'{o}nem peccat\'{o}\emph{rum vi}\textbf{d\'{e}}bis.
+Ver\'{u}mtamen \'{o}culis tuis conside\textbf{r\'{a}}bis : \GreStar\ et retributi\'{o}nem peccat\'{o}\emph{rum vi}\textbf{d\'{e}}bis.
 
-Qu\'{o}niam tu es D\'{o}mine spes \textbf{me}a : \gresixstar\ Alt\'{i}ssimum posu\'{i}\libertineGlyph{s_t}i ref\'{u}\emph{gium} \textbf{tu}um.
+Qu\'{o}niam tu es D\'{o}mine spes \textbf{me}a : \GreStar\ Alt\'{i}ssimum posu\'{i}\libertineGlyph{s_t}i ref\'{u}\emph{gium} \textbf{tu}um.
 
-Non acc\'{e}det ad te \textbf{ma}lum : \gresixstar\ et flag\'{e}llum non appropinqu\'{a}bit tabern\'{a}\emph{culo} \textbf{tu}o.
+Non acc\'{e}det ad te \textbf{ma}lum : \GreStar\ et flag\'{e}llum non appropinqu\'{a}bit tabern\'{a}\emph{culo} \textbf{tu}o.
 
-Qu\'{o}niam Angelis suis mand\'{a}vit \textbf{de} te : \gresixstar\ ut cust\'{o}diant te in \'{o}mnibus \emph{viis} \textbf{tu}is.
+Qu\'{o}niam Angelis suis mand\'{a}vit \textbf{de} te : \GreStar\ ut cust\'{o}diant te in \'{o}mnibus \emph{viis} \textbf{tu}is.
 
-In m\'{a}nibus por\textbf{t\'{a}}bunt te : \gresixstar\ ne forte off\'{e}ndas ad l\'{a}pidem \emph{pedem} \textbf{tu}um.
+In m\'{a}nibus por\textbf{t\'{a}}bunt te : \GreStar\ ne forte off\'{e}ndas ad l\'{a}pidem \emph{pedem} \textbf{tu}um.
 
-Super \'{a}spidem et basil\'{i}scum ambu\textbf{l\'{a}}bis : \gresixstar\ et conculc\'{a}bis le\'{o}nem \emph{et dra}\textbf{c\'{o}}nem.
+Super \'{a}spidem et basil\'{i}scum ambu\textbf{l\'{a}}bis : \GreStar\ et conculc\'{a}bis le\'{o}nem \emph{et dra}\textbf{c\'{o}}nem.
 
-Qu\'{o}niam in me sper\'{a}vit, liber\'{a}bo \textbf{e}um : \gresixstar\ pr\'{o}tegam eum, qu\'{o}niam cogn\'{o}vit \emph{nomen} \textbf{me}um.
+Qu\'{o}niam in me sper\'{a}vit, liber\'{a}bo \textbf{e}um : \GreStar\ pr\'{o}tegam eum, qu\'{o}niam cogn\'{o}vit \emph{nomen} \textbf{me}um.
 
-Clam\'{a}bit ad me, et ego ex\'{a}udiam eum : \GreDagger\ cum ipso sum in tribul\'{a}ti\textbf{o}ne : \gresixstar\ er\'{i}piam eum et glorifi\emph{c\'{a}bo} \textbf{e}um.
+Clam\'{a}bit ad me, et ego ex\'{a}udiam eum : \GreDagger\ cum ipso sum in tribul\'{a}ti\textbf{o}ne : \GreStar\ er\'{i}piam eum et glorifi\emph{c\'{a}bo} \textbf{e}um.
 
-Longit\'{u}dine di\'{e}rum repl\'{e}bo \textbf{e}um : \gresixstar\ et o\libertineGlyph{s_t}\'{e}ndam illi salu\emph{t\'{a}re} \textbf{me}um.
+Longit\'{u}dine di\'{e}rum repl\'{e}bo \textbf{e}um : \GreStar\ et o\libertineGlyph{s_t}\'{e}ndam illi salu\emph{t\'{a}re} \textbf{me}um.
 
-Gl\'{o}ria Patri, et \textbf{F\'{i}}lio, \gresixstar\ et Spir\'{i}\emph{tui} \textbf{Sanc}to.
+Gl\'{o}ria Patri, et \textbf{F\'{i}}lio, \GreStar\ et Spir\'{i}\emph{tui} \textbf{Sanc}to.
 
-Sicut erat in princ\'{i}pio, et nunc, et \textbf{sem}per, \gresixstar\ et in s\'{\ae}cula s\ae cu\emph{l\'{o}rum}. \textbf{A}men.
+Sicut erat in princ\'{i}pio, et nunc, et \textbf{sem}per, \GreStar\ et in s\'{\ae}cula s\ae cu\emph{l\'{o}rum}. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -3019,15 +3012,15 @@ Sicut erat in princ\'{i}pio, et nunc, et \textbf{sem}per, \gresixstar\ et in s\'
 %\vspace{2 mm}
 
 \begin{psalmtext}
-Qui \libertineGlyph{s_t}atis in domo \textbf{D\'{o}}mini, \gresixstar\ in \'{a}triis domus \emph{Dei} \textbf{nos}tri.
+Qui \libertineGlyph{s_t}atis in domo \textbf{D\'{o}}mini, \GreStar\ in \'{a}triis domus \emph{Dei} \textbf{nos}tri.
 
-In n\'{o}\libertineGlyph{c_t}ibus ext\'{o}llite manus ve\libertineGlyph{s_t}ras in \textbf{sanc}ta, \gresixstar\ et bened\'{i}\emph{cite} \textbf{D\'{o}}minum.
+In n\'{o}\libertineGlyph{c_t}ibus ext\'{o}llite manus ve\libertineGlyph{s_t}ras in \textbf{sanc}ta, \GreStar\ et bened\'{i}\emph{cite} \textbf{D\'{o}}minum.
 
-Bened\'{i}cat te D\'{o}minus ex \textbf{Si}on, \gresixstar\ qui fecit c\ae\emph{lum et} \textbf{ter}ram.
+Bened\'{i}cat te D\'{o}minus ex \textbf{Si}on, \GreStar\ qui fecit c\ae\emph{lum et} \textbf{ter}ram.
 
-Gl\'{o}ria Patri, et \textbf{F\'{i}}lio, \gresixstar\ et Spir\'{i}\emph{tui} \textbf{Sanc}to.
+Gl\'{o}ria Patri, et \textbf{F\'{i}}lio, \GreStar\ et Spir\'{i}\emph{tui} \textbf{Sanc}to.
 
-Sicut erat in princ\'{i}pio, et nunc, et \textbf{sem}per, \gresixstar\ et in s\'{\ae}cula s\ae cu\emph{l\'{o}rum}. \textbf{A}men.
+Sicut erat in princ\'{i}pio, et nunc, et \textbf{sem}per, \GreStar\ et in s\'{\ae}cula s\ae cu\emph{l\'{o}rum}. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -3098,7 +3091,7 @@ Tonus ut ad Vesperas ( p. \pageref{DominicaCapitulum} ).
 
 \vspace{-1.0mm}
 
-\begin{response}\lettrine{T}{u} autem in nobis es D\'{o}mine, \GreDagger\ et nomen san\libertineGlyph{c_t}um tuum invoc\'{a}tum e\libertineGlyph{s_t} super nos : \gresixstar\ ne derel\'{i}nquas nos D\'{o}mine Deus no\libertineGlyph{s_t}er. \Rbar\ Deo grátias.
+\begin{response}\lettrine{T}{u} autem in nobis es D\'{o}mine, \GreDagger\ et nomen san\libertineGlyph{c_t}um tuum invoc\'{a}tum e\libertineGlyph{s_t} super nos : \GreStar\ ne derel\'{i}nquas nos D\'{o}mine Deus no\libertineGlyph{s_t}er. \Rbar\ Deo grátias.
 
 \end{response}
 
@@ -3161,15 +3154,15 @@ Tonus ut ad Vesperas ( p. \pageref{DominicaCapitulum} ).
 \gregorioscore[a]{Completorium/CompNuncDimAnt-01.gtex}
 
 \begin{psalmtext}
-Quia vid\'{e}runt \textbf{\'{o}}culi \textbf{me}i \gresixstar\ salu\textbf{t\'{a}}re \textbf{tu}um :
+Quia vid\'{e}runt \textbf{\'{o}}culi \textbf{me}i \GreStar\ salu\textbf{t\'{a}}re \textbf{tu}um :
 
-\textbf{Quod} pa\textbf{r\'{a}}\libertineGlyph{s_t}i \gresixstar\ ante f\'{a}ciem \'{o}mnium \textbf{po}pu\textbf{l\'{o}}rum :
+\textbf{Quod} pa\textbf{r\'{a}}\libertineGlyph{s_t}i \GreStar\ ante f\'{a}ciem \'{o}mnium \textbf{po}pu\textbf{l\'{o}}rum :
 
-Lumen ad revelati\textbf{\'{o}}nem \textbf{g\'{e}nti}um, \gresixstar\ et gl\'{o}riam plebis \textbf{tu}\ae\ \textbf{Is}rael.
+Lumen ad revelati\textbf{\'{o}}nem \textbf{g\'{e}nti}um, \GreStar\ et gl\'{o}riam plebis \textbf{tu}\ae\ \textbf{Is}rael.
 
-Gl\'{o}ria \textbf{Pa}tri, et \textbf{F\'{i}li}o, \gresixstar\ et Spi\textbf{r\'{i}}tui \textbf{Sanc}to.
+Gl\'{o}ria \textbf{Pa}tri, et \textbf{F\'{i}li}o, \GreStar\ et Spi\textbf{r\'{i}}tui \textbf{Sanc}to.
 
-Sicut erat in princ\'{i}pio, et \textbf{nunc}, et \textbf{sem}per, \gresixstar\ et in s\'{\ae}cula s\ae cu\textbf{l\'{o}}rum. \textbf{A}men.
+Sicut erat in princ\'{i}pio, et \textbf{nunc}, et \textbf{sem}per, \GreStar\ et in s\'{\ae}cula s\ae cu\textbf{l\'{o}}rum. \textbf{A}men.
 
 \end{psalmtext}
 
@@ -3235,7 +3228,7 @@ Oratio canitur in Tono Simplici, ut in p.~\pageref{OratioSimplex}.
 
 \subsubsection*{\textcolor{black}{Or\'{e}mus.}\capitulumSpace \emph{Oratio.}}
 
-\begin{response}\lettrine{V}{i}sita, qu\'{\ae}sumus D\'{o}mine, habitati\'{o}nem i\libertineGlyph{s_t}am, et omnes ins\'{i}dias inim\'{i}ci ab ea longe rep\'{e}lle~:~\GreDagger\ Angeli tui san\libertineGlyph{c_t}i h\'{a}bitent in ea, qui nos in pace cu\libertineGlyph{s_t}\'{o}diant~; \gresixstar\ et bened\'{i}\libertineGlyph{c_t}io tua sit super nos semper. Per D\'{o}minum no\libertineGlyph{s_t}rum Jesum Chri\libertineGlyph{s_t}um F\'{i}lium tuum : qui tecum vivit et regnat in unit\'{a}te Sp\'{i}ritus San\libertineGlyph{c_t}i Deus, per \'{o}mnia s\'{\ae}cula s\ae cul\'{o}rum. \Rbar\ Amen.
+\begin{response}\lettrine{V}{i}sita, qu\'{\ae}sumus D\'{o}mine, habitati\'{o}nem i\libertineGlyph{s_t}am, et omnes ins\'{i}dias inim\'{i}ci ab ea longe rep\'{e}lle~:~\GreDagger\ Angeli tui san\libertineGlyph{c_t}i h\'{a}bitent in ea, qui nos in pace cu\libertineGlyph{s_t}\'{o}diant~; \GreStar\ et bened\'{i}\libertineGlyph{c_t}io tua sit super nos semper. Per D\'{o}minum no\libertineGlyph{s_t}rum Jesum Chri\libertineGlyph{s_t}um F\'{i}lium tuum : qui tecum vivit et regnat in unit\'{a}te Sp\'{i}ritus San\libertineGlyph{c_t}i Deus, per \'{o}mnia s\'{\ae}cula s\ae cul\'{o}rum. \Rbar\ Amen.
 
 \end{response}
 
@@ -3305,7 +3298,7 @@ Deinde dicuntur secreto \textcolor{black}{\emph{Pater no\libertineGlyph{s_t}er}}
 \vspace{1mm}
 
 \begin{rubric}
-In Orationibus fit flexa tantum in fine prim\ae\ distin\libertineGlyph{c_t}ionis ( sive \GreDagger\ sive \gresixstar\ ) :
+In Orationibus fit flexa tantum in fine prim\ae\ distin\libertineGlyph{c_t}ionis ( sive \GreDagger\ sive \GreStar\ ) :
 
 \end{rubric}
 
@@ -3375,7 +3368,7 @@ Sequens tonus adhibetur in omnibus versiculis Commemorationum :
 
 \subsubsection*{\textcolor{black}{Or\'{e}mus.}\capitulumSpace \emph{Oratio.}}
 
-\begin{response}\lettrine[nindent=-1.5mm]{P}{e}rp\'{e}tua nos, qu\'{\ae}sumus D\'{o}mine, pace cu\libertineGlyph{s_t}\'{o}di : \gresixstar\ quos per lignum sanct\ae\ Crucis red\'{i}mere dign\'{a}tus es.
+\begin{response}\lettrine[nindent=-1.5mm]{P}{e}rp\'{e}tua nos, qu\'{\ae}sumus D\'{o}mine, pace cu\libertineGlyph{s_t}\'{o}di : \GreStar\ quos per lignum sanct\ae\ Crucis red\'{i}mere dign\'{a}tus es.
 
 \end{response}
 
@@ -3400,7 +3393,7 @@ Sequentes Commemorationes de San\libertineGlyph{c_t}a Maria, de San\libertineGly
 
 \subsubsection*{\textcolor{black}{Or\'{e}mus.}\capitulumSpace \emph{Oratio.}}
 
-\begin{response}\lettrine{C}{o}nc\'{e}de nos f\'{a}mulos tuos, qu\'{\ae}sumus D\'{o}mine Deus, perp\'{e}tua mentis et c\'{o}rporis sanit\'{a}te gaud\'{e}re, \gresixstar\ et glori\'{o}sa be\'{a}t\ae\ Mar\'{i}\ae\ semper V\'{i}rginis intercessi\'{o}ne, a pr\ae s\'{e}nti liber\'{a}ri tri\libertineGlyph{s_t}\'{i}tia, et \ae t\'{e}rna p\'{e}rfrui l\ae t\'{i}tia.
+\begin{response}\lettrine{C}{o}nc\'{e}de nos f\'{a}mulos tuos, qu\'{\ae}sumus D\'{o}mine Deus, perp\'{e}tua mentis et c\'{o}rporis sanit\'{a}te gaud\'{e}re, \GreStar\ et glori\'{o}sa be\'{a}t\ae\ Mar\'{i}\ae\ semper V\'{i}rginis intercessi\'{o}ne, a pr\ae s\'{e}nti liber\'{a}ri tri\libertineGlyph{s_t}\'{i}tia, et \ae t\'{e}rna p\'{e}rfrui l\ae t\'{i}tia.
 
 \end{response}
 
@@ -3418,7 +3411,7 @@ Ab Octava Epiphani\ae\ usque ad Purificationem :
 
 \subsubsection*{\textcolor{black}{Or\'{e}mus.}\capitulumSpace \emph{Oratio.}}
 
-\begin{response}\lettrine{D}{e}us, qui sal\'{u}tis \ae t\'{e}rn\ae , be\'{a}t\ae\ Mar\'{i}\ae\ virginit\'{a}te fec\'{u}nda, hum\'{a}no g\'{e}neri pr\'{\ae}mia \mbox{pr\ae\libertineGlyph{s_t}it\'{i}\libertineGlyph{s_t}i : \GreDagger} tr\'{i}bue, qu\'{\ae}sumus ; ut ipsam pro nobis interc\'{e}dere senti\'{a}mus, \gresixstar\ per quam mer\'{u}imus au\libertineGlyph{c_t}\'{o}rem vit\ae\ susc\'{i}pere, D\'{o}minum no\libertineGlyph{s_t}rum Jesum Chri\libertineGlyph{s_t}um F\'{i}lium tuum.
+\begin{response}\lettrine{D}{e}us, qui sal\'{u}tis \ae t\'{e}rn\ae , be\'{a}t\ae\ Mar\'{i}\ae\ virginit\'{a}te fec\'{u}nda, hum\'{a}no g\'{e}neri pr\'{\ae}mia \mbox{pr\ae\libertineGlyph{s_t}it\'{i}\libertineGlyph{s_t}i : \GreDagger} tr\'{i}bue, qu\'{\ae}sumus ; ut ipsam pro nobis interc\'{e}dere senti\'{a}mus, \GreStar\ per quam mer\'{u}imus au\libertineGlyph{c_t}\'{o}rem vit\ae\ susc\'{i}pere, D\'{o}minum no\libertineGlyph{s_t}rum Jesum Chri\libertineGlyph{s_t}um F\'{i}lium tuum.
 
 \end{response}
 
@@ -3438,7 +3431,7 @@ Ab Octava Epiphani\ae\ usque ad Purificationem :
 
 \subsubsection*{\textcolor{black}{Or\'{e}mus.}\capitulumSpace \emph{Oratio.}}
 
-\begin{response}\lettrine{D}{e}us, qui ineff\'{a}bili provid\'{e}ntia be\'{a}tum Joseph san\libertineGlyph{c_t}\'{i}ssim\ae\ Genetr\'{i}cis tu\ae\ sponsum el\'{i}gere dign\'{a}tus es : \gresixstar\ pr\ae \libertineGlyph{s_t}a, qu\'{\ae}sumus ; ut quem prote\libertineGlyph{c_t}\'{o}rem vener\'{a}mur in terris, intercess\'{o}rem hab\'{e}re mere\'{a}mur in c\ae lis.
+\begin{response}\lettrine{D}{e}us, qui ineff\'{a}bili provid\'{e}ntia be\'{a}tum Joseph san\libertineGlyph{c_t}\'{i}ssim\ae\ Genetr\'{i}cis tu\ae\ sponsum el\'{i}gere dign\'{a}tus es : \GreStar\ pr\ae \libertineGlyph{s_t}a, qu\'{\ae}sumus ; ut quem prote\libertineGlyph{c_t}\'{o}rem vener\'{a}mur in terris, intercess\'{o}rem hab\'{e}re mere\'{a}mur in c\ae lis.
 
 \end{response}
 
@@ -3458,7 +3451,7 @@ Ab Octava Epiphani\ae\ usque ad Purificationem :
 
 \subsubsection*{\textcolor{black}{Or\'{e}mus.}\capitulumSpace \emph{Oratio.}}
 
-\begin{response}\lettrine{D}{e}us, cujus d\'{e}xtera be\'{a}tum Petrum ambul\'{a}ntem in fl\'{u}\libertineGlyph{c_t}ibus, ne merger\'{e}tur, er\'{e}xit, et coap\'{o}\libertineGlyph{s_t}olum ejus Paulum t\'{e}rtio naufrag\'{a}ntem de prof\'{u}ndo p\'{e}lagi liber\'{a}vit : \gresixstar\ ex\'{a}udi nos prop\'{i}tius, et conc\'{e}de ; ut amb\'{o}rum m\'{e}ritis \ae ternit\'{a}tis gl\'{o}riam consequ\'{a}mur.
+\begin{response}\lettrine{D}{e}us, cujus d\'{e}xtera be\'{a}tum Petrum ambul\'{a}ntem in fl\'{u}\libertineGlyph{c_t}ibus, ne merger\'{e}tur, er\'{e}xit, et coap\'{o}\libertineGlyph{s_t}olum ejus Paulum t\'{e}rtio naufrag\'{a}ntem de prof\'{u}ndo p\'{e}lagi liber\'{a}vit : \GreStar\ ex\'{a}udi nos prop\'{i}tius, et conc\'{e}de ; ut amb\'{o}rum m\'{e}ritis \ae ternit\'{a}tis gl\'{o}riam consequ\'{a}mur.
 
 \end{response}
 
@@ -3489,7 +3482,7 @@ Fiat Commemoratio consueta ante vel po\libertineGlyph{s_t} Commemorationes pr\ae
 
 \subsubsection*{\textcolor{black}{Or\'{e}mus.}\capitulumSpace \emph{Oratio.}}
 
-\begin{response}\lettrine{D}{e}us, qui Eccl\'{e}siam tuam be\'{a}ti Bed\ae\ Confess\'{o}ris tui atque Do\libertineGlyph{c_t}\'{o}ris eruditi\'{o}ne clar\'{i}ficas~:~\GreDagger\ conc\'{e}de prop\'{i}tius f\'{a}mulis tuis, \gresixstar\ ejus semper illustr\'{a}ri sapi\'{e}ntia et m\'{e}ritis adjuv\'{a}ri.
+\begin{response}\lettrine{D}{e}us, qui Eccl\'{e}siam tuam be\'{a}ti Bed\ae\ Confess\'{o}ris tui atque Do\libertineGlyph{c_t}\'{o}ris eruditi\'{o}ne clar\'{i}ficas~:~\GreDagger\ conc\'{e}de prop\'{i}tius f\'{a}mulis tuis, \GreStar\ ejus semper illustr\'{a}ri sapi\'{e}ntia et m\'{e}ritis adjuv\'{a}ri.
 
 \end{response}
 
@@ -3515,7 +3508,7 @@ Ultimo loco~:
 
 \subsubsection*{\textcolor{black}{Or\'{e}mus.}\capitulumSpace \emph{Oratio.}}
 
-\begin{response}\lettrine{D}{e}us, a quo san\libertineGlyph{c_t}a desid\'{e}ria, re\libertineGlyph{c_t}a cons\'{i}lia, et justa sunt \'{o}pera : \GreDagger\ da servis tuis illam, quam mundus dare non pote\libertineGlyph{s_t}, pacem ; \gresixstar\ ut et corda no\libertineGlyph{s_t}ra mand\'{a}tis tuis d\'{e}dita, et h\'{o}\libertineGlyph{s_t}ium subl\'{a}ta form\'{i}dine, t\'{e}mpora sint tua prote\libertineGlyph{c_t}ione tranqu\'{i}lla. Per D\'{o}minum no\libertineGlyph{s_t}rum Jesum Chri\libertineGlyph{s_t}um F\'{i}lium tuum : qui tecum vivit et regnat in unit\'{a}te Sp\'{i}ritus San\libertineGlyph{c_t}i Deus, per \'{o}mnia s\'{\ae}cula s\ae cul\'{o}rum. \Rbar\ Amen.
+\begin{response}\lettrine{D}{e}us, a quo san\libertineGlyph{c_t}a desid\'{e}ria, re\libertineGlyph{c_t}a cons\'{i}lia, et justa sunt \'{o}pera : \GreDagger\ da servis tuis illam, quam mundus dare non pote\libertineGlyph{s_t}, pacem ; \GreStar\ ut et corda no\libertineGlyph{s_t}ra mand\'{a}tis tuis d\'{e}dita, et h\'{o}\libertineGlyph{s_t}ium subl\'{a}ta form\'{i}dine, t\'{e}mpora sint tua prote\libertineGlyph{c_t}ione tranqu\'{i}lla. Per D\'{o}minum no\libertineGlyph{s_t}rum Jesum Chri\libertineGlyph{s_t}um F\'{i}lium tuum : qui tecum vivit et regnat in unit\'{a}te Sp\'{i}ritus San\libertineGlyph{c_t}i Deus, per \'{o}mnia s\'{\ae}cula s\ae cul\'{o}rum. \Rbar\ Amen.
 
 \end{response}
 
@@ -3555,7 +3548,7 @@ In Adventu :
 
 \subsubsection*{\textcolor{black}{Or\'{e}mus.}\capitulumSpace \emph{Oratio.}}
 
-\begin{response}\lettrine{G}{r}\'{a}tiam tuam, qu\'{\ae}sumus D\'{o}mine, m\'{e}ntibus no\libertineGlyph{s_t}ris inf\'{u}nde : \GreDagger\ ut qui, Angelo nunti\'{a}nte, Chri\libertineGlyph{s_t}i F\'{i}lii tui Incarnati\'{o}nem cogn\'{o}vimus, \gresixstar\ per passi\'{o}nem ejus et crucem ad resurre\libertineGlyph{c_t}i\'{o}nis gl\'{o}riam perduc\'{a}mur. Per e\'{u}mdem Chri\libertineGlyph{s_t}um D\'{o}minum no\libertineGlyph{s_t}rum. \Rbar\ Amen.
+\begin{response}\lettrine{G}{r}\'{a}tiam tuam, qu\'{\ae}sumus D\'{o}mine, m\'{e}ntibus no\libertineGlyph{s_t}ris inf\'{u}nde : \GreDagger\ ut qui, Angelo nunti\'{a}nte, Chri\libertineGlyph{s_t}i F\'{i}lii tui Incarnati\'{o}nem cogn\'{o}vimus, \GreStar\ per passi\'{o}nem ejus et crucem ad resurre\libertineGlyph{c_t}i\'{o}nis gl\'{o}riam perduc\'{a}mur. Per e\'{u}mdem Chri\libertineGlyph{s_t}um D\'{o}minum no\libertineGlyph{s_t}rum. \Rbar\ Amen.
 
 \end{response}
 
@@ -3573,7 +3566,7 @@ A primis Vesperis Nativitatis Domini et deinceps :
 
 \subsubsection*{\textcolor{black}{Or\'{e}mus.}\capitulumSpace \emph{Oratio.}}
 
-\begin{response}\lettrine{D}{e}us, qui sal\'{u}tis \ae t\'{e}rn\ae , be\'{a}t\ae\ Mar\'{i}\ae\ virginit\'{a}te fec\'{u}nda, hum\'{a}no g\'{e}neri pr\'{\ae}mia \mbox{pr\ae\libertineGlyph{s_t}it\'{i}\libertineGlyph{s_t}i : \GreDagger} tr\'{i}bue, qu\'{\ae}sumus ; ut ipsam pro nobis interc\'{e}dere senti\'{a}mus, \gresixstar\ per quam mer\'{u}imus au\libertineGlyph{c_t}\'{o}rem vit\ae\ susc\'{i}pere, D\'{o}minum no\libertineGlyph{s_t}rum Jesum Chri\libertineGlyph{s_t}um F\'{i}lium tuum. \Rbar\ Amen.
+\begin{response}\lettrine{D}{e}us, qui sal\'{u}tis \ae t\'{e}rn\ae , be\'{a}t\ae\ Mar\'{i}\ae\ virginit\'{a}te fec\'{u}nda, hum\'{a}no g\'{e}neri pr\'{\ae}mia \mbox{pr\ae\libertineGlyph{s_t}it\'{i}\libertineGlyph{s_t}i : \GreDagger} tr\'{i}bue, qu\'{\ae}sumus ; ut ipsam pro nobis interc\'{e}dere senti\'{a}mus, \GreStar\ per quam mer\'{u}imus au\libertineGlyph{c_t}\'{o}rem vit\ae\ susc\'{i}pere, D\'{o}minum no\libertineGlyph{s_t}rum Jesum Chri\libertineGlyph{s_t}um F\'{i}lium tuum. \Rbar\ Amen.
 
 \end{response}
 
@@ -3598,7 +3591,7 @@ A primis Vesperis Nativitatis Domini et deinceps :
 
 \subsubsection*{\textcolor{black}{Or\'{e}mus.}\capitulumSpace \emph{Oratio.}}
 
-\begin{response}\lettrine{C}{o}nc\'{e}de, mis\'{e}ricors Deus, fragilit\'{a}ti no\libertineGlyph{s_t}r\ae\ pr\ae s\'{i}dium : \GreDagger\ ut qui san\libertineGlyph{c_t}\ae\ Dei Genitr\'{i}cis mem\'{o}riam \'{a}gimus, \gresixstar\ intercessi\'{o}nis ejus aux\'{i}lio, a no\libertineGlyph{s_t}ris iniquit\'{a}tibus resurg\'{a}mus. Per e\'{u}mdem Chri\libertineGlyph{s_t}um D\'{o}minum no\libertineGlyph{s_t}rum. \Rbar\ Amen.
+\begin{response}\lettrine{C}{o}nc\'{e}de, mis\'{e}ricors Deus, fragilit\'{a}ti no\libertineGlyph{s_t}r\ae\ pr\ae s\'{i}dium : \GreDagger\ ut qui san\libertineGlyph{c_t}\ae\ Dei Genitr\'{i}cis mem\'{o}riam \'{a}gimus, \GreStar\ intercessi\'{o}nis ejus aux\'{i}lio, a no\libertineGlyph{s_t}ris iniquit\'{a}tibus resurg\'{a}mus. Per e\'{u}mdem Chri\libertineGlyph{s_t}um D\'{o}minum no\libertineGlyph{s_t}rum. \Rbar\ Amen.
 
 \end{response}
 
@@ -3612,7 +3605,7 @@ A Completorio Sabbati San\libertineGlyph{c_t}i usque ad Nonam Sabbati infra O\li
 \end{rubric}
 
 \greannotation{VI}
-\gregorioscore[a]{ReginaCaeliSolemn2.gtex}
+\gregorioscore[a]{ReginaCaeliSolemn.gtex}
 
 \vspace{2mm}
 
@@ -3625,7 +3618,7 @@ A Completorio Sabbati San\libertineGlyph{c_t}i usque ad Nonam Sabbati infra O\li
 
 \subsubsection*{\textcolor{black}{Or\'{e}mus.}\capitulumSpace \emph{Oratio.}}
 
-\begin{response}\lettrine{D}{e}us, qui per resurre\libertineGlyph{c_t}i\'{o}nem F\'{i}lii tui D\'{o}mini no\libertineGlyph{s_t}ri Jesu Chri\libertineGlyph{s_t}i mundum l\ae tific\'{a}re dign\'{a}tus es : \GreDagger\ pr\ae\libertineGlyph{s_t}a, qu\'{\ae}sumus ; ut per ejus Genitr\'{i}cem V\'{i}rginem Mar\'{i}am, \gresixstar\ perp\'{e}tu\ae\ capi\'{a}mus g\'{a}udia vit\ae . Per e\'{u}mdem Chri\libertineGlyph{s_t}um D\'{o}minum no\libertineGlyph{s_t}rum. \Rbar\ Amen.
+\begin{response}\lettrine{D}{e}us, qui per resurre\libertineGlyph{c_t}i\'{o}nem F\'{i}lii tui D\'{o}mini no\libertineGlyph{s_t}ri Jesu Chri\libertineGlyph{s_t}i mundum l\ae tific\'{a}re dign\'{a}tus es : \GreDagger\ pr\ae\libertineGlyph{s_t}a, qu\'{\ae}sumus ; ut per ejus Genitr\'{i}cem V\'{i}rginem Mar\'{i}am, \GreStar\ perp\'{e}tu\ae\ capi\'{a}mus g\'{a}udia vit\ae . Per e\'{u}mdem Chri\libertineGlyph{s_t}um D\'{o}minum no\libertineGlyph{s_t}rum. \Rbar\ Amen.
 
 \end{response}
 
@@ -3638,7 +3631,7 @@ A primis Vesperis Fe\libertineGlyph{s_t}i Ss.~Trinitatis usque ad Nonam Sabbati 
 
 \end{rubric}
 
-{\grespacelinestext=4.60mm
+{
 \greannotation{I}
 \gregorioscore[a]{SalveReginaSolemn.gtex}
 
@@ -3655,7 +3648,7 @@ A primis Vesperis Fe\libertineGlyph{s_t}i Ss.~Trinitatis usque ad Nonam Sabbati 
 
 \subsubsection*{\textcolor{black}{Or\'{e}mus.}\capitulumSpace \emph{Oratio.}}
 
-\begin{response}\lettrine{O}{m}n\'{i}potens sempit\'{e}rn\ae\ Deus, qui glori\'{o}s\ae\ V\'{i}rginis Matris Mar\'{i}\ae\ corpus et \'{a}nimam, ut dignum F\'{i}lii tui habit\'{a}culum \'{e}ffici merer\'{e}tur, Sp\'{i}ritu San\libertineGlyph{c_t}o cooper\'{a}nte pr\ae par\'{a}\libertineGlyph{s_t}i : \GreDagger\ da, ut cujus commemorati\'{o}ne l\ae t\'{a}mur, \gresixstar\ ejus pia intercessi\'{o}ne ab in\libertineGlyph{s_t}\'{a}ntibus malis et a morte perp\'{e}tua liber\'{e}mur. Per e\'{u}mdem Chri\libertineGlyph{s_t}um D\'{o}minum no\libertineGlyph{s_t}rum. \Rbar\ Amen.
+\begin{response}\lettrine{O}{m}n\'{i}potens sempit\'{e}rn\ae\ Deus, qui glori\'{o}s\ae\ V\'{i}rginis Matris Mar\'{i}\ae\ corpus et \'{a}nimam, ut dignum F\'{i}lii tui habit\'{a}culum \'{e}ffici merer\'{e}tur, Sp\'{i}ritu San\libertineGlyph{c_t}o cooper\'{a}nte pr\ae par\'{a}\libertineGlyph{s_t}i : \GreDagger\ da, ut cujus commemorati\'{o}ne l\ae t\'{a}mur, \GreStar\ ejus pia intercessi\'{o}ne ab in\libertineGlyph{s_t}\'{a}ntibus malis et a morte perp\'{e}tua liber\'{e}mur. Per e\'{u}mdem Chri\libertineGlyph{s_t}um D\'{o}minum no\libertineGlyph{s_t}rum. \Rbar\ Amen.
 
 \end{response}
 
@@ -3667,7 +3660,7 @@ A primis Vesperis Fe\libertineGlyph{s_t}i Ss.~Trinitatis usque ad Nonam Sabbati 
 
 \thispagestyle{plain}
 
-{\grespacelinestext=7.5mm
+{
 \greannotation{V}
 \gregorioscore[a]{AlmaRedemptorisSimple.gtex}
 
@@ -3701,7 +3694,7 @@ A primis Vesperis Fe\libertineGlyph{s_t}i Ss.~Trinitatis usque ad Nonam Sabbati 
 \vspace*{\fill}
 
 \begin{center}
-\gresep{5}{36}
+\greseparator{5}{36}
 
 \vspace{2 mm}
 
@@ -3729,7 +3722,7 @@ Requiescant in pace.
 
 Amen.
 
-\gresep{5}{36}
+\greseparator{5}{36}
 \end{center}
 
 \vspace*{\fill}
