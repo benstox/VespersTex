@@ -140,6 +140,10 @@
 % SPACE BETWEEN Capitulum AND BIBLE VERSE
 \def\capitulumSpace{\hspace{20 mm}}
 
+% ANNOTATION STYLE
+\grechangestyle{annotation}{\small\scshape\bfseries\color{benred8}}
+\grechangedim{annotationraise}{-3 mm}{scalable}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % HERE BEGINS THE DOCUMENT %
@@ -238,9 +242,7 @@ ORNATUM SIGNIS RHYTHMICIS
 
 \begin{center}Pater no\libertineGlyph{s_t}er. Ave Mar\'{i}a.\end{center}
 
-\grechangestyle{annotation}{\small\scshape\bfseries\color{benred8}}
-\greannotation{\Vbar}
-
+\greannotation{asdf \Vbar}
 \gregorioscore[a]{DeusInAdjutorium.gtex}
 
 \begin{rubric}
