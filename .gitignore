@@ -1,4 +1,8 @@
 *.log
+*.glog
+*.gtex
+*.fdb_latexmk
+*.fls
 .goutputstream-3MWXCX
 *~
 *.gaux
