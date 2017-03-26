@@ -10,7 +10,7 @@
 \usepackage{graphicx} % support the \includegraphics command and options
 \usepackage{geometry} % See geometry.pdf to learn the layout options. There are lots.
 \geometry{a4paper} % or letterpaper (US) or a5paper or....
-\usepackage{gregoriotex} % for gregorio score inclusion
+\usepackage[allowdeprecated=false]{gregoriotex} % for gregorio score inclusion
 \usepackage{fullpage} % to reduce the margins
 \usepackage{titlesec}
 %\usepackage{bold-extra}
@@ -243,6 +243,7 @@ ORNATUM SIGNIS RHYTHMICIS
 
 \begin{center}Pater no\libertineGlyph{s_t}er. Ave Mar\'{i}a.\end{center}
 
+\grechangestyle{initial}{\fontsize{43}{43}\selectfont}
 \greannotation{\upshape\Vbar}
 \gregorioscore[a]{DeusInAdjutorium.gtex}
 
@@ -253,13 +254,19 @@ A Septuagesima usque ad Pascha, loco \emph{\textcolor{black}{Allelúia}}, canitu
 
 \gregorioscore[a]{LausTibi.gtex}
 
-% \vspace{2 mm}
+\vspace{-0.125in}
 
 \begin{center}\begin{large}\textbf{\textsc{\textcolor{benred8}{1 Antiphona. VII c 2}}}\end{large}\end{center}
 
-% \vspace*{-1.75 cm}
+\vspace{-0.125in}
 
+\gresetinitiallines{2}
+\grechangestyle{initial}{\fontsize{160}{160}\selectfont}
 \gregorioscore[a]{Dominica/DomAnt1-01.gtex}
+\gresetinitiallines{1}
+\grechangestyle{initial}{\fontsize{43}{43}\selectfont}
+
+\vspace{-0.125in}
 
 {
 \centering
