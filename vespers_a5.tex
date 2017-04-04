@@ -1,0 +1,13 @@
+% xelatex
+\documentclass[12pt]{article}
+\usepackage[a4paper]{geometry}
+\usepackage{pdfpages}
+    \includepdfset{pages=-}
+
+\begin{document}
+    % the 'signature' argument should be the number of a4 pages in vespers.pdf that will
+    % make one 'signature' in this booklet
+    \includepdf[pages=-,nup=1x2,landscape,signature=16]{vespers.pdf}
+
+\end{document}
+
